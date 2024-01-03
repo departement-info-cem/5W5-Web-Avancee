@@ -67,6 +67,12 @@ const config = {
           {
             type: "docSidebar",
             position: "left",
+            sidebarId: "exercices",
+            label: "Exercices",
+          },
+          {
+            type: "docSidebar",
+            position: "left",
             sidebarId: "tps",
             label: "Travaux Pratiques",
           },
@@ -74,17 +80,6 @@ const config = {
       },
       footer: {
         style: "dark",
-        links: [
-          {
-            title: "Sources",
-            items: [
-              {
-                label: "GitHub",
-                href: `https://github.com/departement-info-cem/${siteConfig.nomUrl}`,
-              },
-            ],
-          },
-        ],
         copyright: `Copyright © ${new Date().getFullYear()}. ${
           siteConfig.nom
         }. CÉGEP Édouard-Montpetit.`,
@@ -98,9 +93,9 @@ const config = {
       //   searchPagePath: 'search',
       // },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
-        additionalLanguages: ["csharp", "java", "dart"],
+        theme: darkCodeTheme,
+        darkTheme: lightCodeTheme,
+        additionalLanguages: ["csharp", "java", "dart", "powershell"],
       },
       metadata: [
         {
