@@ -3,6 +3,10 @@
 ## Pondération
 Chaque TP représente 20% de la note final
 
+TODO:
+- Pas de tests pour le TP1
+
+
 ## Évaluation du projet (Évaluation d’équipe)
 ### Fonctionnalités /10 – 5%
 Le projet est excellent.
@@ -141,22 +145,22 @@ o	L’application à corriger (client ou backend), votre application pourrait ê
 Pour la remise individuelle
 Il doit avoir de la validation à votre partie de code pour qu’elle soit suffisante pour la correction.
 Voici quelques exemples de features qui seraient suffisantes pour la correction :
-•	En Angular
-o	Enregistrement et connexion
-o	Consommer les évènements de la partie
-o	Gestion de la boucle de jeu
-	 (Alterner entre le polling pour mettre à jour le match et jouer une carte de sa main)
-•	En Web API
-o	Les combats et la génération des évènements
-o	AccountController, 
-	Si vous faites corriger AccountController, le contrôleur doit également inclure l'initialisation du joueur
-•	MVC
-o	Les outils d’administration
-	(Si vous avez fait une page pour arrêter les parties en cours, voir l’utilisateur en attente d’une partie, etc.)
-o	Gestion des cartes de départ
+- En Angular
+    - Enregistrement et connexion
+    - Consommer les évènements de la partie
+    - Gestion de la boucle de jeu
+        - (Alterner entre le polling pour mettre à jour le match et jouer une carte de sa main)
+- En Web API
+    - Les combats et la génération des évènements
+    - AccountController, 
+    - Si vous faites corriger AccountController, le contrôleur doit également inclure l'initialisation du joueur
+        - MVC
+- Les outils d’administration
+    - (Si vous avez fait une page pour arrêter les parties en cours, voir l’utilisateur en attente d’une partie, etc.)
+- Gestion des cartes de départ
 
-Tests unitaires
-•	Tester uniquement le backend
-•	Tester uniquement le / les services utilisé par la feature
-	Utiliser une InMemoryDatabase pour réaliser les tests
-•	Les tests doivent couvrir 100% des méthodes utilisées dans les services
+### Tests unitaires
+- Tester uniquement le backend
+- Tester uniquement le / les services utilisé par la feature
+    - Utiliser une InMemoryDatabase pour réaliser les tests
+- Les tests doivent couvrir 100% des méthodes utilisées dans les services
