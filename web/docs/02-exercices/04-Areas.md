@@ -89,7 +89,7 @@ Si tout fonctionne bien, on peut également créer des chats, les éditer et les
 - On peut ajouter **Swagger** à notre projet MVC pour nous permettre de voir nos contrôleurs
 - Premièrement, il faut ajouter la librairie
 
-![image](/img/exercices/areas/SwaggerPackage.png)
+![image](/img/exercices/areas/swaggerPackage.png)
 
 - Ensuite, il fautmodifier **Program.cs**
 ```csharp title=Program.cs
