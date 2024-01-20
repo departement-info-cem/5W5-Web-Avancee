@@ -1,4 +1,4 @@
-# Les Areas
+7# Les Areas
 ### Qu'est-ce qu'un Area?
 - Un Area c'est une section séparée de l'application asp.net (asp.net c'est le framework qui comprend MVC et Web API)
 - Un Area a une url séparée du reste de l'application
@@ -89,7 +89,7 @@ Si tout fonctionne bien, on peut également créer des chats, les éditer et les
 - On peut ajouter **Swagger** à notre projet MVC pour nous permettre de voir nos contrôleurs
 - Premièrement, il faut ajouter la librairie
 
-![image](/img/exercices/areas/SwaggerPackage.png)
+![image](/img/exercices/areas/swaggerPackage.png)
 
 - Ensuite, il fautmodifier **Program.cs**
 ```csharp title=Program.cs
@@ -112,7 +112,7 @@ else
 
 - Pour vérifier que Swagger fonctionne bien, on peut lancer le serveur et accéder à **/swagger/**
 
-| ![image](/img/exercices/areas/SwaggerScreenshot.png) |
+| ![image](/img/exercices/areas/swaggerScreenshot.png) |
 |-|
 
 - 🔗[Solution](https://github.com/CEM-420-5W5/Areas)
