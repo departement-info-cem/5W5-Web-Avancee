@@ -82,8 +82,10 @@ public AccountController(UserManager<IdentityUser> userManager, SignInManager<Id
     this.userManager = userManager;
     this.signInManager = signInManager;
 }
-Ajouter l'action Register
-Register peut être exactement le même code que ce qui était fait dans le cours de 4W6
+```
+### Ajouter l'action Register
+- Register peut être exactement le même code que ce qui était fait dans le cours de 4W6
+```csharp
 [HttpPost]
 public async Task<ActionResult> Register(RegisterDTO register)
 {
