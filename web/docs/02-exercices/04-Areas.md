@@ -1,4 +1,4 @@
-7# Les Areas
+# Les Areas
 ### Qu'est-ce qu'un Area?
 - Un Area c'est une section séparée de l'application asp.net (asp.net c'est le framework qui comprend MVC et Web API)
 - Un Area a une url séparée du reste de l'application

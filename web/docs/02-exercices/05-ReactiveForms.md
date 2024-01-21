@@ -1,4 +1,4 @@
-## Reactive Forms
+# Reactive Forms
 ### Créer un nouveau projet
 - Créer un nouveau projet Angular, les options ne sont pas importantes
 
