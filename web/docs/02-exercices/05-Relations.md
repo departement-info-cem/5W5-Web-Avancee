@@ -1,5 +1,7 @@
 # Relations
 
+🚧 À venir
+<!--
 ## Objectif
 L'objectif de cet exercice est de réviser les types de relations et de mieux comprendre comment elles fonctionnent.
 Les relations révisées sont:
@@ -522,4 +524,4 @@ public class GamePurchase
 }
 ```
 
-
+-->

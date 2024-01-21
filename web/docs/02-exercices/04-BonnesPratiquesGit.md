@@ -1,4 +1,7 @@
 # Les bonnes pratiques avec Git
+
+🚧 À venir
+<!--
 ## Ajouter un projet à un repository
 ## Les bonnes pratiques avec Git
 ### 1 Repo 👉 1 Projet
@@ -33,5 +36,5 @@ dotnet new gitignore
 - Faire une nouvelle branche pour chaque User Story (US)
 - Créer des sous branches pour la tâche est longue et/ou si plusieurs personnes travaillent sur la même US en même temps
 - Fusionner (Merge) la branche une fois la US terminée (Nous allons revenir sur ce sujet)
-
+-->
 

@@ -1,6 +1,5 @@
 # Rencontre 5
 
-## Présentation du TP1 et formation des équipes
+## Polling + Signal R
 
-### DevOps
-
+🚧 À venir
