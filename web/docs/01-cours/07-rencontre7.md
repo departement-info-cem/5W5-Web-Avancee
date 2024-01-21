@@ -1,7 +1,5 @@
 # Rencontre 7
 
-## Authentification par Cookie
-
-### Utiliser les Cookies pour se connecter à l'application
+## Gestion par évènements (première partie)
 
 🚧 À venir

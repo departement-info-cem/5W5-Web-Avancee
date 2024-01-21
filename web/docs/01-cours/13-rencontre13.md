@@ -1,5 +1,5 @@
 # Rencontre 13
 
-## Examen Intra
+## Évaluation de groupe du TP1
 
 🚧 À venir

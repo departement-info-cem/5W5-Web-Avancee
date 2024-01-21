@@ -1,5 +1,5 @@
 # Rencontre 6
 
-## Github par feature et Stubs
+## Polling et Signal R (première partie)
 
 🚧 À venir

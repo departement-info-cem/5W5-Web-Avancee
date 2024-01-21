@@ -1,9 +1,9 @@
 # Rencontre 1
 
-## Plan de cours et révision 3W6
+## Plan de cours, révision et Areas
 
-### Login par cookies et Areas
-- Les bonnes pratiques pour ajouter un projet à Git
+### MVC, Services et Areas
 - Avoir Web API et MVC dans une même application
+- Utilisation des Areas
 
 

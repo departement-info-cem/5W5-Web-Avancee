@@ -1,5 +1,5 @@
 # Rencontre 11
 
-## Pratique examen intra
+## Travail en équipe
 
 🚧 À venir

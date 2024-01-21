@@ -1,5 +1,7 @@
 # Rencontre 2
 
-## Relations N à N et révision MVC
+## Login par cookie
+
+## Comment debugger
 
 🚧 À venir

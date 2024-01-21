@@ -1,5 +1,5 @@
 # Rencontre 3
 
-## Présentation du TP1, GitHub par feature et stubs
+## Relations N à N et révision MVC
 
 🚧 À venir
