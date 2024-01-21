@@ -115,4 +115,5 @@ else
 | ![image](/img/exercices/areas/swaggerScreenshot.png) |
 |-|
 
-- 🔗[Solution](https://github.com/CEM-420-5W5/Areas)
+### Solution
+- 🔗[Solution GitHub](https://github.com/CEM-420-5W5/Areas)

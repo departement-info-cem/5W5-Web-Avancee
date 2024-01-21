@@ -67,3 +67,6 @@ builder.Services.AddDefaultIdentity<IdentityUser>()
 - Lister tous les chats présents dans la BD
 - Ajouter l'accès entre différents domaines pour Web API
 - Ajouter les autorisations CORS
+
+### Solution
+- [🔗Solution GitHub](https://github.com/CEM-420-5W5/DemoCours1)

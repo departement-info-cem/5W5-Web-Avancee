@@ -160,3 +160,8 @@ intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEven
   return next.handle(request);
 }
 ``` 
+
+### Solution
+- 🔗[Solution .Net](https://github.com/CEM-420-5W5/CookieAuthentication)
+- 🔗[Solution Angular](https://github.com/CEM-420-5W5/ngCookieAuthentication)
+
