@@ -50,7 +50,7 @@ app.MapControllerRoute(
 ```
 
 :::danger
-Attention! Il faut **conserver** le **MapControllerRoute** "default" et vous devevez mettre la nouvelle route "admin" **AVANT** la route "default"
+Attention! Il faut **conserver** le **MapControllerRoute** "default" et vous devez mettre la nouvelle route "admin" **AVANT** la route "default"
 :::
 
 ## Ajouter un contrôleur
@@ -116,13 +116,15 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseMigrationsEndPoint();
     // Utiliser Swagger
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-else
 ```
+
+:::danger
+Attention, il existe déjà un vérification if(!app.Environment.IsDevelopment()), vous voulez exactement le contraire!
+:::
 
 - Pour vérifier que Swagger fonctionne bien, on peut lancer le serveur et accéder à **/swagger/**
 
