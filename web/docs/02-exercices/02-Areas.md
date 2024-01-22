@@ -49,6 +49,10 @@ app.MapControllerRoute(
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 ```
 
+:::danger
+Attention! Il faut **conserver** le **MapControllerRoute** "default" et vous devevez mettre la nouvelle route "admin" **AVANT** la route "default"
+:::
+
 ## Ajouter un contrôleur
 ### Générer un contrôleur
 - On peut générer des contrôleurs dans l'area en ajoutant directement au dossier Controllers de l'area Admin
