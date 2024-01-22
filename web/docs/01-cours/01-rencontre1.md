@@ -6,10 +6,6 @@
 - Avoir Web API et MVC dans une même application
 - Utilisation des Areas
 
-### Démo
-
-[MVC et services](/exercices/MVCEtServices)
-
 ### Exercice
 
 [Areas](/exercices/Areas)

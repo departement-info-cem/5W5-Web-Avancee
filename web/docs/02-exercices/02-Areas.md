@@ -7,6 +7,13 @@
 
 - Ce sera particulièrement utile pour séparer la partie admin du reste de l'application
 
+## Créer une application pour gérer des chats
+### Création de l'application
+- Créer un projet de type modèle-vue-contrôleur en utilisant la version 7.0
+
+###  Ajouter votre classe de chat
+- Un chat doit au minimum avoir un nom et une image
+- L'image doit être une Url (string) pour simplifier l'application
 
 ## Configuration d'un Area
 ### Créer la structure des dossiers
@@ -32,7 +39,7 @@
 }
 ```
 
-## Configuration du routeage
+## Configuration du routage
 ### Modifier Program.cs
 
 - Ajouter une configuration pour le routage à la fin du fichier, juste avant la configuration des routes par défaut
@@ -76,6 +83,9 @@ Si tout fonctionne bien, on peut également créer des chats, les éditer et les
 
 :::
 
+- Modifier la vue Index pour afficher l'image du chat au lieu de l'url
+- Ajouter 3 ou 4 chats
+
 ## Contrôleur Web API 
 ### Ajouter un contrôleur directement dans le projet (pas sous un Area)
 - On va maintenant ajouter un autre contrôleur, mais cettes fois-ci, choisissez un contrôleur Web API
@@ -115,5 +125,15 @@ else
 | ![image](/img/exercices/areas/swaggerScreenshot.png) |
 |-|
 
+## Application Angular
+
+### Affichage des chats
+- Créer l'application Angular
+- Lister tous les chats présents dans la BD en appelant votre WebAPI
+- N'oubliez pas d'ajouter les autorisations CORS côté serveur!
+- Afficher les 3 ou 4 chats que vous avez ajouter avec l'application MVC
+
 ### Solution
-- 🔗[Solution GitHub](https://github.com/CEM-420-5W5/Areas)
+- 🔗[Solution .Net](https://github.com/CEM-420-5W5/Areas)
+- 🔗[Solution Angular](https://github.com/CEM-420-5W5/ngAreas)
+

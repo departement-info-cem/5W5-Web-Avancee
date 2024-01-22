@@ -110,8 +110,8 @@ public async Task<ActionResult> Register(RegisterDTO register)
 }
 ``` 
 
-Ajouter l'action Login
-Utiliser le SignInManager pour créer le Cookie
+### Ajouter l'action Login
+- Utiliser le SignInManager pour créer le Cookie
 
 ``` csharp
 var result = await signInManager.PasswordSignInAsync(login.UserName, login.Password, true, lockoutOnFailure: false);
@@ -121,8 +121,12 @@ if(result.Succeeded)
 }
                 
 return NotFound(new { Error = "L'utilisateur est introuvable ou le mot de passe de concorde pas" });
-Ajouter l'action Logout
-Utiliser le SignInManager pour faire le logout et détruire le Cookie
+```
+
+### Ajouter l'action Logout
+- Utiliser le SignInManager pour faire le logout et détruire le Cookie
+
+``` csharp
 public async Task<ActionResult> Logout()
 {
     await signInManager.SignOutAsync();
