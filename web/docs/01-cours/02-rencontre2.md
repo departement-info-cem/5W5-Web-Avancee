@@ -2,16 +2,16 @@
 
 ## Authentification par cookie et débogage
 
+## Info
+[Bonnes pratiques avec Git/GitHub](/info/BonnesPratiquesGit)
+
 ### Démo
 
 - Comment déboguer avec Angular
 
 ### Exercices
 
-🚧 À venir
-<!--
 [Authentification par cookie avec MVC et Angular](/exercices/AuthentificationParCookie)
--->
 
 ### Liens
 

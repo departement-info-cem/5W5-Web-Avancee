@@ -1,7 +1,5 @@
 # Les bonnes pratiques avec Git
 
-🚧 À venir
-<!--
 ## Ajouter un projet à un repository
 ## Les bonnes pratiques avec Git
 ### 1 Repo 👉 1 Projet
@@ -18,14 +16,13 @@
 
 ### Création du repo et .gitignore
 - À la création du repo, GitHub vous propose d'ajouter un template pour un .gitignore
-- Laisser le champ **VIDE**
-- Le framework utilisé vous générera un .gitignore mieux adapté sans problème
+- Laisser le champ **VIDE** pour les projets **Angular**
+- Pour un projet **.Net**, vous **pouvez** laisser vide, mais il faut alors utiliser la commande dans la console après avoir créer votre projet.
 
-### Angular
-- Le fichier est généré lors de la création d'un nouveau projet
+![image](/img/infos/creationProjetGitHub.png)
 
-### .Net
-- Ajouter le .gitignore en ligne de commande
+Ou
+
 ``` powershell
 dotnet new gitignore
 ```
@@ -36,5 +33,3 @@ dotnet new gitignore
 - Faire une nouvelle branche pour chaque User Story (US)
 - Créer des sous branches pour la tâche est longue et/ou si plusieurs personnes travaillent sur la même US en même temps
 - Fusionner (Merge) la branche une fois la US terminée (Nous allons revenir sur ce sujet)
--->
-

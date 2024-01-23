@@ -3,7 +3,7 @@
 ## Utiliser Identity avec MVC
 
 ## Création du projet (Étape 1)
-- Cocher "Authentification individuelle"
+- Choisir "Comptes individuels" pour le Type d'authentification
 - Par défaut, Identity est présent et fonctionnel avec l'utilisation de Cookies
 - L'interface utilisateur est générée en utilisant Identity.UI
 
@@ -12,31 +12,16 @@
 ### Configurer les accès entre domaines
 
 - Il faudra mettre à jours les autorisations CORS pour inclure l'utilisation de Cookies avec AllowCredentials()
+- Spécifier l'adresse ou les adresses des clients, car on ne peut plus accepter toutes les adresses
 
 ```csharp
-    policy.AllowCredentials();
-```
-
-- Spécifier l'adresse ou les adresses des clients
-- On ne peut plus accepter toutes les adresses
-
-```csharp
-    // Pour utiliser AllowCredentials, il faut spécifier les origines acceptés
-    // on ne peut plus utiliser AllowAnyOrigin
-    policy.WithOrigins("http://localhost:4200","https://localhost:4200");
-``` 
-
-### Une fois qu'on met tout ensemble
-
-```csharp
-    builder.Services.AddCors(options =>
+builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAlmostAll", policy =>
     {
-        // On n'accepte plus toutes les origines
-        //policy.AllowAnyOrigin();
         // Pour utiliser AllowCredentials, il faut spécifier les origines acceptés
         // on ne peut plus utiliser AllowAnyOrigin
+        //policy.AllowAnyOrigin();
         policy.WithOrigins("http://localhost:4200","https://localhost:4200");
         policy.AllowAnyHeader();
         policy.AllowAnyMethod();
@@ -68,23 +53,26 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 ## Ajouter un contrôleur d'API pour les connections (ÉTAPE 3)
 
-### Ajouter un contrôleur d'API appelé Account
+### Ajouter un contrôleur
+- Ajouter un contrôleur **Web API vide**
 - Ce contrôleur aura les actions Login, Register et Logout
 ### Injecter les dépendances
 - UserManager pour le Register
 - SignInManager pour le login
 ```csharp
-UserManager<IdentityUser> userManager;
-SignInManager<IdentityUser> signInManager;
+UserManager<IdentityUser> _userManager;
+SignInManager<IdentityUser> _signInManager;
 
 public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
 {
-    this.userManager = userManager;
-    this.signInManager = signInManager;
+    _userManager = userManager;
+    _signInManager = signInManager;
 }
 ```
 ### Ajouter l'action Register
 - Register peut être exactement le même code que ce qui était fait dans le cours de 4W6
+- Créer également une classe **DemoUser** qui hérite d'**IdentityUser**
+- Créer également une classe **RegisterDTO** qui contient les champs nécessaires
 ```csharp
 [HttpPost]
 public async Task<ActionResult> Register(RegisterDTO register)
@@ -99,7 +87,7 @@ public async Task<ActionResult> Register(RegisterDTO register)
         UserName = register.UserName,
         Email = register.Email
     };
-    IdentityResult identityResult = await this.userManager.CreateAsync(user, register.Password);
+    IdentityResult identityResult = await _userManager.CreateAsync(user, register.Password);
 
     if(!identityResult.Succeeded)
     {
@@ -112,9 +100,10 @@ public async Task<ActionResult> Register(RegisterDTO register)
 
 ### Ajouter l'action Login
 - Utiliser le SignInManager pour créer le Cookie
+- Il faut également créer un **LoginDTO**
 
 ``` csharp
-var result = await signInManager.PasswordSignInAsync(login.UserName, login.Password, true, lockoutOnFailure: false);
+var result = await _signInManager.PasswordSignInAsync(login.UserName, login.Password, true, lockoutOnFailure: false);
 if(result.Succeeded)
 {
    return Ok();
@@ -126,13 +115,29 @@ return NotFound(new { Error = "L'utilisateur est introuvable ou le mot de passe 
 ### Ajouter l'action Logout
 - Utiliser le SignInManager pour faire le logout et détruire le Cookie
 
-``` csharp
+```csharp
 public async Task<ActionResult> Logout()
 {
-    await signInManager.SignOutAsync();
+    await _signInManager.SignOutAsync();
     return Ok();
 }
 ``` 
+
+### Ajouter des actions
+- Pour pouvoir tester que l'on a accès ou non aux actions avec authorize avec notre cookie, on va créer les 2 actions suivantes:
+
+```csharp
+[Authorize]
+public ActionResult<string[]> PrivateData()
+{
+    return new string[] { "figue", "banane", "noix" };
+}
+
+public ActionResult<string[]> PublicData()
+{
+    return new string[] { "chien", "chat", "loutre" };
+}
+```
 
 
 ## Angular (ÉTAPE 4)
@@ -143,17 +148,25 @@ public async Task<ActionResult> Logout()
 ng serve --ssl
 ```
 
-### Effectuer une requête Http à partir d'Angular
-- À partir d'une requête de base
-``` ts
-let result = await lastValueFrom(this.http.get<Cat>('https://localhost:7219/api/cats/3'));
-``` 
+### Faites un client très simple avec les 5 boutons suivants:
+![image](/img/exercices/authentification/angularAuthentificationSimple.png)
 
-- Ajouter ensuite l'option withCredentials pour activer l'envoie du Cookie
+- Pour chaque action, affichez le résultat dans la console
+- Pour la requête publique, rien de spécial à faire et elle devrait fonctionner dès le départ.
+- Mais si vous essayer de faire la requête privée, vous devriez avoir un message d'erreur car l'utilisateur n'a pas accès!
+- Pour Enregistrer et Connecter, simplement utiliser des DTOs hardcodés.
+
+:::danger
+Attention, par défaut les mots de passes doivent suivre certaines règles. Un mot de passe qui fonctionne bien: Passw0rd!
+:::
+
+- Pour Déconnecter, rien de spécial
+- Pour faire fonctionner la requête privée il faut également joindre le cookie obtenu lors du login. On ajoute simplement l'option withCredentials!
 ``` ts
 let options = { withCredentials:true };
-let result = await lastValueFrom(this.http.get<Cat>('https://localhost:7219/api/cats/3', options));
+let result = await lastValueFrom(this.http.get<Cat>('https://localhost:7219/api/Account/PrivateData', options));
 ``` 
+- Testez maintenant que vous pouvez obtenir l'information privée avec un utilisateur connecté!
 
 ### Ajouter un interceptor
 - Automatiser l'ajout des options avec un interceptor
@@ -164,6 +177,14 @@ intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEven
   return next.handle(request);
 }
 ``` 
+
+- Retirez l'options withCredentials de votre appel à PrivateData
+- Testez encore que vous pouvez obtenir l'information privée en utilisant l'interceptor!
+
+:::info
+Le cookie reste dans votre navigateur après le login. Si vous fermez votre navigateur alors que vous êtes connecté et vous l'ouvrez de nouveau, vous êtes encore connecté!
+:::
+
 
 ### Solution
 - 🔗[Solution .Net](https://github.com/CEM-420-5W5/CookieAuthentication)
