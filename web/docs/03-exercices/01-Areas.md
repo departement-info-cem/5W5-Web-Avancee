@@ -49,6 +49,10 @@ app.MapControllerRoute(
     pattern: "{area:exists}/{controller=Home}/{action=Index}/{id?}");
 ```
 
+:::danger
+Attention! Il faut **conserver** le **MapControllerRoute** "default" et vous devez mettre la nouvelle route "admin" **AVANT** la route "default"
+:::
+
 ## Ajouter un contrôleur
 ### Générer un contrôleur
 - On peut générer des contrôleurs dans l'area en ajoutant directement au dossier Controllers de l'area Admin
@@ -112,13 +116,15 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseMigrationsEndPoint();
     // Utiliser Swagger
     app.UseSwagger();
     app.UseSwaggerUI();
 }
-else
 ```
+
+:::danger
+Attention, il existe déjà un vérification if(!app.Environment.IsDevelopment()), vous voulez exactement le contraire!
+:::
 
 - Pour vérifier que Swagger fonctionne bien, on peut lancer le serveur et accéder à **/swagger/**
 
