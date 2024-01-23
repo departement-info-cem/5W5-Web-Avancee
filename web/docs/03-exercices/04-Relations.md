@@ -8,6 +8,9 @@ Les relations révisées sont:
 - N à N (avec doublon) 
 
 ## Pour commencer l'exercice, il y a un projet de base que vous pouvez forker
+- Le projet sur GitHub:
+[Projet GitHub](https://github.com/CEM-420-5W5/RelationsNaN)
+
 - En créant un fork, vous allez pouvoir créer votre propre copie du projet
 
 ![image](/img/exercices/relations/fork.png)
@@ -136,6 +139,9 @@ remove-migration
 update-database
 ```
 - Générer un contrôleur avec une vue pour **Genre**
+:::danger
+Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas en créer un nouveau!
+:::
 ![image](/img/exercices/relations/GenerationController.png)
 
 - Ajouter un lien dans la barre de navigation
