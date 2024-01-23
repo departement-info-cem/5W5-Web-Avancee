@@ -1,13 +1,32 @@
 # Relations
 
-🚧 À venir
-<!--
 ## Objectif
 L'objectif de cet exercice est de réviser les types de relations et de mieux comprendre comment elles fonctionnent.
 Les relations révisées sont:
 - 1 à N
 - N à N (sans doublon) 
 - N à N (avec doublon) 
+
+## Pour commencer l'exercice, il y a un projet de base que vous pouvez forker
+- En créant un fork, vous allez pouvoir créer votre propre copie du projet
+
+![image](/img/exercices/relations/fork.png)
+
+- Vous allez pouvoir choisir pour quel utilisateur ou organisation vous créez la copie (fork).
+- C'est préférable de copier toutes les branches dans ce cas ci. Mais ce n'est pas très grave si vous avez uniquement copié seulement la branche main.
+
+![image](/img/exercices/relations/fork2.png)
+
+- Une fois que vous avez fait votre fork, vous allez voir le nouveau repo à l'endroit où vous l'avez créé (probablement dans votre profil personnel)
+- Vous pouvez simplement faire un clone et commencer à travailler!
+
+:::info
+Les forks sont très utiles. Un repo créé avec un fork contient une option pour mettre le projet à jour à partir du fork.
+:::
+
+:::info
+On peut également utiliser un fork pour faire une demande d'intégration vers le repo originale. C'est la façon de travailler pour de nombreux projets collaboratifs.
+:::
 
 ## Comprendre les migrations
 - Générer une première migration
@@ -49,7 +68,7 @@ protected override void Up(MigrationBuilder migrationBuilder)
 ```
 
 ## Relation 1 à N entre Game et Genre
-- Ajouter un lien entre **Game** et **Genre**. Pour l'instant, ne faites que modifier la classe **Game**. Chaque **Game** a qu'un seul **Genre**.
+- Ajouter une relation optionnelle entre **Game** et **Genre**. Pour l'instant, ne faites que modifier la classe **Game**. Chaque **Game** n'a qu'un seul **Genre**.
 ```csharp
 public class Game
 {
@@ -67,7 +86,7 @@ public class Game
 ```powershell
 add-migration relationGameGenre
 ```
-- Regarder la migration. Si on prend le temps de lire, c'est relativement simple. On a une nouvelle colonne qui contient un Index pour améliorer la performance et qui est une clé étrangère vers la table Genre.
+- Regarder la migration. Si on prend le temps de lire, c'est relativement simple. On a une nouvelle colonne qui contient un Index pour améliorer la performance et qui est une clé étrangère vers la table Genre. Nullable: true nous indique que la relation est **optionnelle**.
 ```csharp
 protected override void Up(MigrationBuilder migrationBuilder)
 {
@@ -147,7 +166,7 @@ update-database
 |-|
 
 - Afficher les images avec un height de 200
-- Corriger le Contrôleur GamesController pour afficher le **Name** des **Genre**. Il y a 4 endroits où un SelectList est créé. Il faut simplement utiliser le champ "Name" à la place du champ "Id"
+- Corriger le Contrôleur **GamesController** pour afficher le **Name** des **Genre**. Il y a 4 endroits où un SelectList est créé. Il faut simplement utiliser le champ "Name" à la place du champ "Id"
 - Corriger **les** vues **Edit** et **Create** pour bien supporter la possibilité d'avoir aucun genre
 ```html
 <select asp-for="GenreId" class="form-control" asp-items="ViewBag.GenreId">
@@ -188,7 +207,7 @@ public class Game
 }
 ```
 
-- Faites une migration. Cette fois-ci c'est un peuplus complexe. Il y a une table en plus qui est créé pour stocker l'information des relations multiples entre Game et Platform. Cette classe contient 2 champs pour l'Id de Game et de Platform.
+- Faites une migration. Cette fois-ci c'est un peu plus complexe. Il y a une table en plus qui est créé pour stocker l'information des relations multiples entre **Game** et **Platform**. Cette classe contient 2 champs pour l'Id de Game et de Platform.
 
 ```csharp
 protected override void Up(MigrationBuilder migrationBuilder)
@@ -243,29 +262,73 @@ if (_context.Platform.Count() == 0)
 {
     Platform ps5 = new Platform()
     {
-        Name = "PS3"
+        Name = "PS4"
     };
     await _context.Platform.AddAsync(ps5);
 
     Platform xbox360 = new Platform()
     {
-        Name = "Xbox 360"
+        Name = "Xbox One"
     };
     await _context.Platform.AddAsync(xbox360);
 
     Platform n64 = new Platform()
     {
-        Name = "N64"
+        Name = "Switch"
     };
     await _context.Platform.AddAsync(n64);
+
+    Platform pc = new Platform()
+    {
+        Name = "PC"
+    };
+    await _context.Platform.AddAsync(pc);
 
     await _context.SaveChangesAsync();
 }
 ```
 
-- Utiliser la vue qui est fournit pour afficher les Plateform d'un Game
-- Essayer d'ajouter 2 fois la même Platform!
-- Améliorer en filtrant la Platform pour éviter cette situation
+- Utiliser le code suivant pour afficher les Plateform d'un Game en utilisant des badges
+```html
+<td>
+    @foreach (var platform in item.Platforms)
+    {
+        <span class="badge bg-primary">@platform.Name</span>
+    }
+</td>
+```
+- Pour l'ajout et la suppression de Platforms, vous pouvez ajouter ceci à la vue Edit **(Au dessus du formulaire existant)**:
+```html
+@foreach (var platform in Model.Platforms)
+{
+    <form asp-action="RemovePlatform" method="post">
+        <input type="hidden" name="id" value="@Model.Id"/>
+        <input type="hidden" name="platformId" value="@platform.Id" />
+        <button type="submit" class="btn btn-danger m-1">
+            @platform.Name
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-trash3" viewBox="0 0 16 16">
+                <path d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47M8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5" />
+            </svg>
+        </button>
+    </form>
+}
+<form asp-action="AddPlatform" method="post">
+    <input type="hidden" name="id" value="@Model.Id" />
+    <div class="form-group">
+        <label asp-for="Platforms" class="control-label"></label>
+        <select name="platformId" class="form-control" asp-items="ViewBag.Platforms"></select>
+    </div>
+    <div class="form-group m-2">
+        <input type="submit" value="Add Platform" class="btn btn-primary" />
+    </div>
+</form>
+```
+- Vous allez devoir ajouter les actions AddPlatform et RemovePlatform qui vont recevoir les Ids et modifier le **Game**
+- Essayer d'ajouter 2 fois la même Platform. Essayer d'ajouter une autre Platform en double. Comme vu en classe, c'est problématique!
+- Comme on ne veut pas vraiment avoir des doublons pour les plateformes, on va améliorer notre logique pour que la liste affiche uniquement les plateformes qui ne sont pas déjà ajouté à ce Game. Modifiez le contrôleur pour y arriver.
+:::warn
+Faites attention, il y a plusieurs endroits où l'on génère une SelectList pour les plateformes. Pour l'exercice, ce n'est **pas** nécessaire de s'occuper des actions **Create**, seulement **Edit**.
+:::
 
 ## Relation N à N avec doublon entre Game et Purchase
 En créant une relation qui utilise une classe de relation, on a plus de contrôle sur notre façon de gérer la relation. On peut entre autres avoir plusieurs copies de la même relation.
@@ -414,7 +477,7 @@ protected override void Up(MigrationBuilder migrationBuilder)
 }
 ```
 
-- Ajouter ce contrôleur pour visualizer les données de Purchase
+- Ajouter ce contrôleur pour visualiser les données de Purchase
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -523,5 +586,3 @@ public class GamePurchase
     public Owner Owner { get; set; }
 }
 ```
-
--->

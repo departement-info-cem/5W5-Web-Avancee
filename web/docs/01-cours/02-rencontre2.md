@@ -3,11 +3,10 @@
 ## Authentification par cookie et débogage
 
 ## Info
+
 [Bonnes pratiques avec Git/GitHub](/info/BonnesPratiquesGit)
 
-### Démo
-
-- Comment déboguer avec Angular
+[Comment déboguer avec Angular](/info/DebogageAngular)
 
 ### Exercices
 
@@ -15,7 +14,4 @@
 
 ### Liens
 
-🚧 À venir
-<!--
-[🔗Cours2.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EXgLsnAyZVdKtNnYRXcSoaQBEB2PNCwTP2-aVgGvotjmPQ?e=L8J3AS)
--->
+[🔗Cours2.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EZbaWe8Msr5Fl1tiB3W-GTMBV8rUYmIXOhWPXoC0L3VHmw?e=DYQngn)

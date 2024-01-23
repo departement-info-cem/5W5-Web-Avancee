@@ -185,6 +185,25 @@ intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEven
 Le cookie reste dans votre navigateur après le login. Si vous fermez votre navigateur alors que vous êtes connecté et vous l'ouvrez de nouveau, vous êtes encore connecté!
 :::
 
+### Cookie
+- En ouvrant la console de développeur, on peut voir les cookies pour la page courrante
+![image](/img/exercices/authentification/cookie.png)
+- On peut remarquer que le premier cookie vient d'Identity. Si vous faites déconnecter il va disparaître et si vous faites connecter un nouveau cookie va apparaître.
+- 2 éléments intéressants:
+    - L'expiration du cookie. Après cette date, il faut se reconnecter pour obtenir un nouveau cookie.
+    - HttpOnly est bien faux, comme on l'a spécifié dans Program.cs (on peut donc lire le cookie à partir de notre code!)
+
+### Lecture du cookie avec Angular
+- Ajouter ngx-cookie-service pour être capable m'interagir facilement avec les Cookies
+[ngx-cookie-service](https://www.npmjs.com/package/ngx-cookie-service)
+- Une fois que vous avez injectez le service, vous pouvez ajouter une méthode pour vérifier si le cookie d'Identity est présent
+``` ts
+isLoggedIn(){
+    return this.cookieService.get(".AspNetCore.Identity.Application");
+}
+```
+- Modifiez également votre page pour afficher le bouton déconnecter seulement si il y a un cookie et le bouton connecter si il n'y en a pas!
+
 
 ### Solution
 - 🔗[Solution .Net](https://github.com/CEM-420-5W5/CookieAuthentication)
