@@ -6,6 +6,12 @@
 - Choisir "Comptes individuels" pour le Type d'authentification
 - Par défaut, Identity est présent et fonctionnel avec l'utilisation de Cookies
 - L'interface utilisateur est générée en utilisant Identity.UI
+- On ne veut pas qu'un utilisateur confirme son courriel pour pouvoir accéder à notre application. Assurez-vous d'avoir: **RequireConfirmedAccount = false**
+
+```csharp
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+```
 
 ## Configuration des Cookies (Étape 2)
 
@@ -155,18 +161,27 @@ ng serve --ssl
 - Pour la requête publique, rien de spécial à faire et elle devrait fonctionner dès le départ.
 - Mais si vous essayer de faire la requête privée, vous devriez avoir un message d'erreur car l'utilisateur n'a pas accès!
 - Pour Enregistrer et Connecter, simplement utiliser des DTOs hardcodés.
+- Pour faire l'appel de connection, c'est essentiel d'inclure l'option **withCredentials: true**
+``` ts
+let options = { withCredentials: true };
+let result = await lastValueFrom(this.http.post<any>('https://localhost:7219/api/Account/Login', registerData, options));
+```
 
 :::danger
 Attention, par défaut les mots de passes doivent suivre certaines règles. Un mot de passe qui fonctionne bien: Passw0rd!
 :::
 
-- Pour Déconnecter, rien de spécial
 - Pour faire fonctionner la requête privée il faut également joindre le cookie obtenu lors du login. On ajoute simplement l'option withCredentials!
 ``` ts
 let options = { withCredentials:true };
 let result = await lastValueFrom(this.http.get<Cat>('https://localhost:7219/api/Account/PrivateData', options));
 ``` 
 - Testez maintenant que vous pouvez obtenir l'information privée avec un utilisateur connecté!
+- Pour se déconnecter, il faut **ENCORE** inclure l'option **withCredentials: true**
+
+:::danger
+Faites toujours attention quand vous utilisez la méthode post avec des options. Car les paramètres sont (url, data, options). Alors si il n'y a pas de data, n'oubliez pas de mettre null ou sinon vous allez passer vos options comme du data!!
+:::
 
 ### Ajouter un interceptor
 - Automatiser l'ajout des options avec un interceptor
@@ -178,7 +193,7 @@ intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEven
 }
 ``` 
 
-- Retirez l'options withCredentials de votre appel à PrivateData
+- Retirez l'options withCredentials de vos appels
 - Testez encore que vous pouvez obtenir l'information privée en utilisant l'interceptor!
 
 :::info
