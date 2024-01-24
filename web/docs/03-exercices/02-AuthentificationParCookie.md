@@ -6,6 +6,12 @@
 - Choisir "Comptes individuels" pour le Type d'authentification
 - Par défaut, Identity est présent et fonctionnel avec l'utilisation de Cookies
 - L'interface utilisateur est générée en utilisant Identity.UI
+- On ne veut pas qu'un utilisateur confirme son courriel pour pouvoir accéder à notre application. Assurez-vous d'avoir: **RequireConfirmedAccount = false**
+
+```csharp
+builder.Services.AddDefaultIdentity<IdentityUser>(options => options.SignIn.RequireConfirmedAccount = false)
+    .AddEntityFrameworkStores<ApplicationDbContext>();
+```
 
 ## Configuration des Cookies (Étape 2)
 
