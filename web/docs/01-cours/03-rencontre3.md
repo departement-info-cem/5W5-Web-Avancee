@@ -2,6 +2,12 @@
 
 ## Relations et révision MVC
 
+Pour bien se préparer pour la prochaine rencontre, nous allons créer les équipes et les comptes pour utiliser Azure DevOps pendant cettre recontre.
+
+## Info
+
+
+
 ### Exercices
 
 [Relations et révision MVC](/exercices/Relations)
