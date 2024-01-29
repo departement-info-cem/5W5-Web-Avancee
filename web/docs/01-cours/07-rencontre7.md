@@ -1,5 +1,5 @@
 # Rencontre 7
 
-## Gestion par évènements (première partie)
+## Polling et Signal R (première partie)
 
 🚧 À venir

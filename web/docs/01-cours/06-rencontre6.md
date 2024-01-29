@@ -1,5 +1,5 @@
 # Rencontre 6
 
-## Polling et Signal R (première partie)
+## Reactive Forms, guards et routes enfants
 
 🚧 À venir

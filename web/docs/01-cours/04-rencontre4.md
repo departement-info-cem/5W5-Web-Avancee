@@ -1,18 +1,10 @@
 # Rencontre 4
 
-## Gestion de projet avec User Stories et Azure Devops
+## Gestion de projet avec User Stories et Azure Devops Boards
 
 ### Exercices
 
-<!--
-[Relations et révision MVC](/exercices/Relations)
-
-
-
-
-
-[🔗Cours4.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EfXih-QqxJ9KjuHxuYDFCnIBoihZuti-21ETCJPaSusHFg?e=cMYFqQ)
--->
+Exercice en équipe: [Azure Devops Boards](/exercices/AzureDevOpsBoards)
 
 ### Liens
 
@@ -20,3 +12,4 @@
 
 [🔗AzureDevops.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EdO0yiL8VHtNqFJRuIjpqc0BcwfAADJGKR33Iwv81O5Oyw?e=at23T4)
 
+[🔗Cours4.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/ESsediTHHHFOpHGbsafE7JAB-Ml-hE0PWG303LN0LaEHWw?e=R7zyiG)

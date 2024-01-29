@@ -1,5 +1,12 @@
 # Azure DevOps - Utilisation
 
+### Objectif
+
+Ce document est un complément d'information au power point:
+[🔗AzureDevops.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EdO0yiL8VHtNqFJRuIjpqc0BcwfAADJGKR33Iwv81O5Oyw?e=at23T4)
+
+**Azure DevOps Boards** est un outil complexe où il de nombreuses façon de faire les mêmes actions. Voici donc quelques façons de l'utiliser.
+
 ### Ajouter des features au backlog
 
 - Cliquer sur Backlogs dans menu de gauche (dans le menu Boards)
