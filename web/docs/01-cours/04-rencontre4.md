@@ -2,6 +2,10 @@
 
 ## Gestion de projet avec User Stories et Azure Devops Boards
 
+## Info
+
+[Exemples utilisations DevOps Boards](/info/AzureDevOpsUtilisation)
+
 ### Exercices
 
 Exercice en équipe: [Azure Devops Boards](/exercices/AzureDevOpsBoards)

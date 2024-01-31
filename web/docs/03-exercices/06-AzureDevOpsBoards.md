@@ -22,11 +22,11 @@ L'utilisation à l'intérieur des TPs sera évalué de façon **sommative**
 
 ### Scénario
 
-On est en **2006** et vous avez décider de révolutionner le monde de la musique avec votre application: **MusiquePlus** (Spotify...). Vous allez lancer une application qui va permettre aux artistes de partager leur musique en ligne (Dans cette version de la réalité, il n'y a pas de problème légaux avec les droits). Les invités vont pouvoir l'écouter gratuitement s'ils écoutent de la publicité. Les utilisateurs payants vont pouvoir l'écouter gratuitement. Les utilisateurs payant vont pouvoir créer des playlists et les partager.
+On est en **2006** et vous avez décider de révolutionner le monde de la musique avec votre application: **MusiquePlus** (Spotify...). Vous allez lancer une application qui va permettre aux artistes de partager leur musique en ligne (Dans cette version de la réalité, il n'y a pas de problème légaux avec les droits). Les invités vont pouvoir l'écouter gratuitement s'ils écoutent de la publicité. Les utilisateurs payants vont pouvoir l'écouter sans publicité. Les utilisateurs payant vont pouvoir créer des playlists et les partager.
 
 ### Travail à faire
 
-- Écrivez **au moins 5 epics** (Il y a déjà au moins déjà 4 **acteurs**, si on inclut les compagnies de publicités)
+- Écrivez **au moins 5 epics** (Il y a déjà au moins 4 **acteurs**, si on inclut les compagnies de publicités)
 - Choisissez **2 epics** qui vous semblent être les **plus prioritaires** et créer au moins **7 user stories** 
 - Choisissez les **3 users stories** qui vous semblent les **plus prioritaires** et créer aux moins **8 tâches en tout**
 - Inclure les **3 users stories** dans le sprint courrant et retirer le reste
