@@ -25,17 +25,13 @@ Si vous avez des erreurs avec un cookie qui est refusé par votre navigateur. C'
 
 ### Accepter avec Edge
 
-
-<!-- Il manque une image
 ![image](/img/infos/trucs/ChromeCookieBloque1.png)
--->
+
 ![image](/img/infos/trucs/ChromeCookieBloque2.png)
 
 ### Accepter avec Chrome
 
 ![image](/img/infos/trucs/EdgeCookieBloque1.png)
-
-![image](/img/infos/trucs/EdgeCookieBloque2.png)
 
 ![image](/img/infos/trucs/EdgeCookieBloque3.png)
 
