@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.1.0">
 <title data-rh="true">TP1 (Super Cartes Infinies) | 5W5 - Programmation Web Avancée</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp1"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="keywords" content="5W5 - Programmation Web Avancée, Site de référence du cours 5W5, informatique, technique, cégep, cegep, édouard-montpetit, edouard-montpetit, édouard montpetit, edouard montpetit"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="TP1 (Super Cartes Infinies) | 5W5 - Programmation Web Avancée"><meta data-rh="true" name="description" content="L&#x27;application"><meta data-rh="true" property="og:description" content="L&#x27;application"><link data-rh="true" rel="icon" href="/5W5-Web-Avancee/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp1"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp1" hreflang="fr"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp1" hreflang="x-default"><link rel="stylesheet" href="/5W5-Web-Avancee/assets/css/styles.187da608.css">
-<script src="/5W5-Web-Avancee/assets/js/runtime~main.d5a0b5e1.js" defer="defer"></script>
+<script src="/5W5-Web-Avancee/assets/js/runtime~main.bf1ca0cf.js" defer="defer"></script>
 <script src="/5W5-Web-Avancee/assets/js/main.829053c8.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -81,9 +81,10 @@
 </li>
 <li>Configuration:<!-- -->
 <ul>
+<li>Mettre en place le modèle de données de la configuration.</li>
 <li>Ajouter une page de configuration pour l’administrateur. Permettre de d’avoir une configuration pour le nombre de cartes de départ et la quantité de Mana reçu au début du tour.</li>
 <li>Ajouter un seed pour la configuration avec 4 cartes de départ et 3 manas par tour.</li>
-<li>Note : Ce n’est pas un problème que la configuration soit une table avec une seule entrée. Dans une version plus avancée du projet, on pourrait imaginer qu’il y ait plusieurs modes de jeu différents avec des configurations différentes, pour l ’instant on va toujours utiliser la seule configuration existante. Vous pouvez faire simplement utiliser First() sur le DbSet.</li>
+<li>Note : Ce n’est pas un problème que la configuration soit une table avec une seule entrée. Dans une version plus avancée du projet, on pourrait imaginer qu’il y ait plusieurs modes de jeu différents avec des configurations différentes, pour l’instant on va toujours utiliser la seule configuration existante. Vous pouvez faire simplement utiliser First() sur le DbSet.</li>
 <li>Il existe un <strong>STUB</strong> du ConfigurationService qui retourne le nombre de cartes reçu au début de la partie et le nombre de mana reçu par tour. Il faut retourner les valeurs de la configuration.</li>
 </ul>
 </li>
@@ -91,7 +92,7 @@
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="enregistrement-et-connexion">Enregistrement et connexion<a href="#enregistrement-et-connexion" class="hash-link" aria-label="Lien direct vers Enregistrement et connexion" title="Lien direct vers Enregistrement et connexion">​</a></h3>
 <p>.NET:</p>
 <ul>
-<li>Ajout du modèle de données <strong>OwnedCard</strong>.</li>
+<li>Mettre en place le modèle de données <strong>OwnedCard</strong> pour permettre aux players d&#x27;avoir ses propres cartes.</li>
 <li>Ajouter un contrôleur d&#x27;API pour gérer l&#x27;enregistrement, la connexion et la déconnexion.</li>
 <li>Lors de l&#x27;enregistrement, il faut appeler la méthode CreatePlayer de PlayersService.</li>
 <li>Il faut terminer l&#x27;implémentation de la méthode CreatePlayer de PlayersService.</li>
