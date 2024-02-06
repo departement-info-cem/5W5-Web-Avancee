@@ -169,7 +169,7 @@ export class RegisterComponent implements OnInit{
 
 ### setErrors
 
-C'est également possible de mettre une erreur directement sur un control à l'intérieur d'une validation de formulaire
+C'est également possible de mettre une erreur directement sur un control à l'intérieur d'une validation
 
 ```ts
 if(error){
@@ -179,6 +179,12 @@ else{
   form.get('email')?.setErrors(null);
 }
 ```
+
+
+:::danger
+Il faut être prudent avec l'utilisation de setErrors, surtout setErrors(null), car elle écrase les erreurs qui existent déjà!
+:::
+
 
 ### Version complète
 ```ts
@@ -229,15 +235,6 @@ export class RegisterComponent {
     }
     // On fait notre validation
     let formValid = email.includes(name);
-    // On mets les champs concernés en erreur pour qu'il s'affichent en rouge
-    if(!formValid) {
-      form.get('email')?.setErrors({nameInEmail:true});
-      form.get('name')?.setErrors({nameInEmail:true});
-    } else {
-      //S'il n'y a plus d'erreur, on les efface
-      form.get('email')?.setErrors(null);
-      form.get('name')?.setErrors(null);
-    }
     // Si le formulaire est invalide on retourne l'erreur
     // Si le formulaire est valide on retourne null  
     return !formValid?{nameInEmail:true}:null;
