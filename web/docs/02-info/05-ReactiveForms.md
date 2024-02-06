@@ -16,7 +16,7 @@ ng new --no-standalone ngReactiveForms
 
 ![image](/img/exercices/reactiveForms/5W5-s2-f1.jpg)
 
-## CONFIGURATION
+### Configuration
 
 ```ts title=app.modules.ts
 import { NgModule } from '@angular/core';
@@ -187,20 +187,24 @@ else{
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
-  form = this.fb.group({
-    email: ['', [Validators.required, Validators.email, this.gmailValidator]],
-    name: ['',[Validators.required]],
-  }, { validators: this.myCustomValidator });
-  // Le component contient une variable du même type que les champs du formulaire
+export class RegisterComponent {
+  
+  form:FormGroup<any>;
+    // Le component contient une variable du même type que les champs du formulaire
   formData?: Data;
-  constructor(private fb: FormBuilder) {  }
-  ngOnInit(): void {
-    // À chaque fois que les valeurs changent, notre propriétés formData sera mise à jour
+  
+  constructor(private fb: FormBuilder) {
+    form = this.fb.group({
+      email: ['', [Validators.required, Validators.email, this.gmailValidator]],
+      name: ['',[Validators.required]],
+    }, { validators: this.myCustomValidator });
+
+     // À chaque fois que les valeurs changent, notre propriétés formData sera mise à jour
     this.form.valueChanges.subscribe(() => {
       this.formData = this.form.value;
     });
   }
+  
   gmailValidator(control: AbstractControl): ValidationErrors | null {
     // On récupère la valeur du champs texte
     const email = control.value;
@@ -215,16 +219,25 @@ export class RegisterComponent implements OnInit {
     // Si le formulaire est valide on retourne null  
     return !formValid?{gmailValidator:true}:null;
   }
-  myCustomValidator(control: AbstractControl): ValidationErrors | null {
+  myCustomValidator(form: AbstractControl): ValidationErrors | null {
     // On récupère les valeurs de nos champs textes
-    const email = control.get('email')?.value;
-    const name = control.get('name')?.value;
+    const email = form.get('email')?.value;
+    const name = form.get('name')?.value;
     // On regarde si les champs sont remplis avant de faire la validation
     if (!email || !name) {
       return null;
     }
     // On fait notre validation
     let formValid = email.includes(name);
+    // On mets les champs concernés en erreur pour qu'il s'affichent en rouge
+    if(!formValid) {
+      form.get('email')?.setErrors({nameInEmail:true});
+      form.get('name')?.setErrors({nameInEmail:true});
+    } else {
+      //S'il n'y a plus d'erreur, on les efface
+      form.get('email')?.setErrors(null);
+      form.get('name')?.setErrors(null);
+    }
     // Si le formulaire est invalide on retourne l'erreur
     // Si le formulaire est valide on retourne null  
     return !formValid?{nameInEmail:true}:null;
@@ -286,6 +299,9 @@ Version finale
         <input matInput type="email" placeholder="Courriel" formControlName="email" name="email">
         <mat-error *ngIf="form.get('email')?.errors?.['email'] && !form.get('email')?.hasError('required')">
           Entrer une adresse courriel valide
+        </mat-error>
+        <mat-error *ngIf="form.get('email')?.hasError('gmail') && !loginForm.get('email')?.errors?.['email']">
+          Le courriel doit venir de <strong>Google</strong>
         </mat-error>
         <mat-error *ngIf="form.get('email')?.hasError('required')">
           Le courriel est <strong>requis</strong>
