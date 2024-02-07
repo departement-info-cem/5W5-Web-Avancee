@@ -1,4 +1,4 @@
-# Guards
+# Routage et Guards
 
 ### Créer un nouveau projet
 - Créer un nouveau projet Angular.
@@ -24,6 +24,11 @@ Vous pouvez utiliser [(ngModel)] et (ngModelChange) pour gérer l'état des pré
     - /verreDEau si l’utilisateur n’aime ni le sucre, ni le sel
     - /bonbon si l’utilisateur n’aime pas le sel, mais aime le sucre
     - /sel si l’utilisateur aime le sel, mais pas le sucre
+
+### Un exemple de présentation
+Si on clique sur "J'ai faim" alors qu'on aime les choses salés
+
+![Sel](/img/exercices/guards/sel.png)
 
 ### Solution
 - 🔗[Solution Angular](https://github.com/CEM-420-5W5/ngGuards)
