@@ -1,10 +1,13 @@
 # Reactive Forms
 
-🚧 À venir
-<!--
-
 ### Créer un nouveau projet
-- Créer un nouveau projet Angular, les options ne sont pas importantes
+- Créer un nouveau projet Angular en utilisant le mode **--no-standalone**
+
+```powershell
+ng new --no-standalone ngReactiveForms
+```
+
+- Les autres options ne sont pas importantes.
 
 ## Création d'un premier formulaire
 ### Validation dynamique
@@ -13,9 +16,7 @@
 
 ![image](/img/exercices/reactiveForms/5W5-s2-f1.jpg)
 
-CONFIGURATION
-Reactive Forms
-Ajouter les modules nécessaires à app.modules.ts
+### Configuration
 
 ```ts title=app.modules.ts
 import { NgModule } from '@angular/core';
@@ -43,24 +44,20 @@ import { MatInputModule } from '@angular/material/input';
 export class AppModule { }
 ```
 
-ReactiveFormsModule
-Nous permet de faire de la validation dynamique sur les champs d'un formulaire
-MatInputModule et Material
-Nous permet d'afficher facilement les messages d'erreurs sous les champs du formulaire
+- **ReactiveFormsModule** nous permet de faire de la validation dynamique sur les champs d'un formulaire
+- **MatInputModule et Material** Nous permet d'afficher facilement les messages d'erreurs sous les champs du formulaire
 
 :::warning
-
 Il faut installer Material pour utiliser MatInput
-
 :::
 
 ```powershell
 ng add @angular/material
 ```
 
-COMPONENT.TS
-Reactive Forms
-Injecter Formbuilder
+### Injecter Formbuilder
+
+Il faut injecter formBuilder dans le component où l'on veut ajouter notre formulaire.
 
 ```ts
 @Component({
@@ -76,7 +73,7 @@ export class RegisterComponent {
 
 ### Utiliser le FormBuilder
 - Créer un groupe de validation à partir du FormBuilder
-- Chaque champ du formulaire que l'on doit valider doit avoir un Validateur
+- Chaque champ du formulaire que l'on doit valider peut avoir un ou plusieurs validateurs
 ```ts
 form = this.fb.group({
   email: ['', [Validators.required, Validators.email]],
@@ -87,11 +84,11 @@ form = this.fb.group({
 ### Les Validators
 - Il existe plusieurs Validators par défaut
 - Vous retrouverez les même Validations que l'on peut mettre sur un modèle en C#
-- Utiliser les choix de réponses avec Validators. pour connaitre les options
+
 ![image](/img/exercices/reactiveForms/5W5-s2-f1.jpg)
 
 ### Créer un Validator
-- On peut créer des "custom" validator et les affecter à un champ du groupe
+On peut créer des "custom" validator et les affecter à un champ du groupe
 ```ts
 form = this.fb.group({
   email: ['', [Validators.required, Validators.email]],
@@ -99,17 +96,7 @@ form = this.fb.group({
 });
 ```
 
-Validator sur plusieurs champ
-On peut également utiliser un Validator pour valider plus d'un champ en même (ex. Mot de passe et confirmation)
-
-```ts
-form = this.fb.group({
-  email: ['', [Validators.required, Validators.email]],
-  name: ['',[Validators.required]],
-}, { validators: this.myCustomValidator });
-```
-
-myCustomValidator pour UN SEUL champs
+### Exemple sur un control
 
 ```ts
 myCustomValidator(control: AbstractControl): ValidationErrors | null {
@@ -127,27 +114,29 @@ myCustomValidator(control: AbstractControl): ValidationErrors | null {
 }
 ```
 
-myCustomValidator pour plusieurs champs
+### Validator sur plusieurs champ
+On peut également utiliser un Validator custom sur le formulaire pour faire une validations sur plusieurs champs (ex. Mot de passe et confirmation)
+
 ```ts
-myCustomValidator(control: AbstractControl): ValidationErrors | null {
+form = this.fb.group({
+  email: ['', [Validators.required, Validators.email]],
+  name: ['',[Validators.required]],
+}, { validators: this.myCustomValidator });
+```
+
+### Exemple sur un form
+```ts
+myCustomValidator(form: AbstractControl): ValidationErrors | null {
   // On récupère les valeurs de nos champs textes
-  const email = control.get('email')?.value;
-  const name = control.get('name')?.value;
+  const email = form.get('email')?.value;
+  const name = form.get('name')?.value;
   // On regarde si les champs sont remplis avant de faire la validation
   if (!email || !name) {
     return null;
   }
   // On fait notre validation
   let formValid = email.includes(name);
-  // On mets les champs concernés en erreur
-  if(!formValid) {
-    control.get('email')?.setErrors({nameInEmail:true});
-    control.get('name')?.setErrors({nameInEmail:true});
-  } else {
-    //S'il n'y a plus d'erreur, on les efface
-    control.get('email')?.setErrors(null);
-    control.get('name')?.setErrors(null);
-  }
+  
   // Si le formulaire est invalide on retourne l'erreur
   // Si le formulaire est valide on retourne null  
   return !formValid?{nameInEmail:true}:null;
@@ -178,27 +167,50 @@ export class RegisterComponent implements OnInit{
 }
 ```
 
-Version finale
+### setErrors
+
+C'est également possible de mettre une erreur directement sur un control à l'intérieur d'une validation
+
+```ts
+if(error){
+  form.get('email')?.setErrors({nameInEmail:true});
+}
+else{
+  form.get('email')?.setErrors(null);
+}
+```
+
+
+:::danger
+Il faut être prudent avec l'utilisation de setErrors, surtout setErrors(null), car elle écrase les erreurs qui existent déjà!
+:::
+
+
+### Version complète
 ```ts
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
   styleUrls: ['./register.component.css']
 })
-export class RegisterComponent implements OnInit {
-  form = this.fb.group({
-    email: ['', [Validators.required, Validators.email, , this.gmailValidator]],
-    name: ['',[Validators.required]],
-  }, { validators: this.myCustomValidator });
-  // Le component contient une variable du même type que les champs du formulaire
+export class RegisterComponent {
+  
+  form:FormGroup<any>;
+    // Le component contient une variable du même type que les champs du formulaire
   formData?: Data;
-  constructor(private fb: FormBuilder) {  }
-  ngOnInit(): void {
-    // À chaque fois que les valeurs changent, notre propriétés formData sera mise à jour
+  
+  constructor(private fb: FormBuilder) {
+    form = this.fb.group({
+      email: ['', [Validators.required, Validators.email, this.gmailValidator]],
+      name: ['',[Validators.required]],
+    }, { validators: this.myCustomValidator });
+
+     // À chaque fois que les valeurs changent, notre propriétés formData sera mise à jour
     this.form.valueChanges.subscribe(() => {
       this.formData = this.form.value;
     });
   }
+  
   gmailValidator(control: AbstractControl): ValidationErrors | null {
     // On récupère la valeur du champs texte
     const email = control.value;
@@ -213,25 +225,16 @@ export class RegisterComponent implements OnInit {
     // Si le formulaire est valide on retourne null  
     return !formValid?{gmailValidator:true}:null;
   }
-  myCustomValidator(control: AbstractControl): ValidationErrors | null {
+  myCustomValidator(form: AbstractControl): ValidationErrors | null {
     // On récupère les valeurs de nos champs textes
-    const email = control.get('email')?.value;
-    const name = control.get('name')?.value;
+    const email = form.get('email')?.value;
+    const name = form.get('name')?.value;
     // On regarde si les champs sont remplis avant de faire la validation
     if (!email || !name) {
       return null;
     }
     // On fait notre validation
     let formValid = email.includes(name);
-    // On mets les champs concernés en erreur
-    if(!formValid) {
-      control.get('email')?.setErrors({nameInEmail:true});
-      control.get('name')?.setErrors({nameInEmail:true});
-    } else {
-      //S'il n'y a plus d'erreur, on les efface
-      control.get('email')?.setErrors(null);
-      control.get('name')?.setErrors(null);
-    }
     // Si le formulaire est invalide on retourne l'erreur
     // Si le formulaire est valide on retourne null  
     return !formValid?{nameInEmail:true}:null;
@@ -244,15 +247,18 @@ interface Data {
 }
 ```
 
-### COMPONENT.HMTL
+
+### L'utilisation de ReactiveForms dans la vue
+
 - Ajouter le groupe de validation au formulaire hmtl
+
 ```html
 <form [formGroup]="form">
   ...
 </form>
 ```
 
-Ajouter les champs textes
+- Ajouter les champs textes
 
 ```html
 <mat-form-field style="width: 100%">
@@ -268,6 +274,7 @@ Ajouter les champs textes
 
 ### formControlName="name"
 - On lie le champ texte au contrôle "name" dans le groupe du formulaire (groupe de validation)
+
 ### form.get('name')?.hasError('required')
 - On vérifie s'il y a une erreur de type required sur le champ
 ### form.hasError('nameInEmail')
@@ -284,12 +291,14 @@ Version finale
 ```html
 <div style="width: 100%;height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column">
   <mat-card class="artist-card" style="margin: 16px; padding: 16px;">
-      
     <form [formGroup]="form">
       <mat-form-field style="width: 100%">
         <input matInput type="email" placeholder="Courriel" formControlName="email" name="email">
         <mat-error *ngIf="form.get('email')?.errors?.['email'] && !form.get('email')?.hasError('required')">
           Entrer une adresse courriel valide
+        </mat-error>
+        <mat-error *ngIf="form.get('email')?.hasError('gmail') && !loginForm.get('email')?.errors?.['email']">
+          Le courriel doit venir de <strong>Google</strong>
         </mat-error>
         <mat-error *ngIf="form.get('email')?.hasError('required')">
           Le courriel est <strong>requis</strong>
@@ -310,24 +319,9 @@ Version finale
 </div>
 ```
 
-
-## Création d'un 2e ReactiveForm 
-### Ajout d'un ReactiveForm pour savoir si on aime les chats
-- On va ajouter un autre formulaire dans la même page
-    - Ajouter un champ texte et un input
-        - Ce champ texte demande votre animal favoris
-        - La réponse est requise
-    - Ajouter un deuxième champ texte
-        - Le champ texte demande si on aime mieux les chats que l'informatique
-        - La réponse est requise
-    - Ajouter une validation du formulaire
-        - Le formulaire est seulement valide si l'utilisateur écris "chat" comme animal favoris **ET** qu'il répond "oui" à la 2e question
-        - Il faut afficher **"Vous devez préférer le chat!"** si la réponse à la 1ere question n'est pas chat
-        - Il faut afficher **"Vous devez répondre oui!"** si la réponse à la 2e question n'est pas oui
-    - Ajouter un bouton pour pouvoir soumettre le formulaire
-        - Le bouton est seulment actif si le formulaire est valide
+:::danger
+Un \<mat-error\> s'affiche uniquement si il est sur un control (ou formulaire) avec au moins une erreur. Si ce n'est pas le cas, il ne s'affiche pas, même si le *ngIf est vrai!
+:::
 
 
 - 🔗[Solution](https://github.com/CEM-420-5W5/ngReactiveForms)
-
--->
