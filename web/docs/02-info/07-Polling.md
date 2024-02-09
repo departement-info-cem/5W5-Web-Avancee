@@ -1,7 +1,7 @@
 # Polling
 
 ### Intérroger le serveur
-- Le polling est une méthode simple d'interroger le serveur jusqu'à ce qu'on ait la réponse attendue
+- Le polling est une méthode simple pour interroger le serveur jusqu'à ce qu'on ait la réponse attendue
 
 ### Exemple: Joindre une partie
 - Lorsque l'on veut joindre une partie, il faut attendre un autre joueur
@@ -25,3 +25,11 @@ async polling() {
   }
 }
 ```
+
+### Inefficace
+
+Le principal désavantage de cette technique, c'est qu'elle utilise mal les resources.
+
+Dans un cas où il y a de nombreux clients qui attendent en même temps et que l'on veut faire des requêtes assez fréquemment pour avoir une bonne interactivité, on se retrouve rapidement avec un très grand nombre de requêtes au serveur.
+
+Dans ce cas, la majorité des requêtes ne retournent aucune information pertinente, car rien n'a changé.
