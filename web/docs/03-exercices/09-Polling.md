@@ -2,7 +2,7 @@
 
 ## Objectifs
 Faire deux implémentations d’une application pour gérer des tâches:
-  - La première avec un Controller d’API
+  - La première avec un Controller d’API et du polling
   - La seconde avec SignalR
 
 Les deux versions vont utiliser 2 components différents en Angular et les deux implémentations vont exister en même temps sur le même serveur.
@@ -20,7 +20,7 @@ Les deux versions vont utiliser 2 components différents en Angular et les deux 
 
 ## Les tâches
 ### Configuration
-•	Modifier Program.cs, regardez les TODOs
+- Modifier Program.cs, regardez les TODOs
 
 ### Créer un Hub qui permet de supporter les actions suivantes :
 ### Connexion
