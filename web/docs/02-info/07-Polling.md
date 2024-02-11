@@ -14,15 +14,13 @@
 ```ts
 async polling() {
   console.log("======= Je polle ======");
-  // Si on n'a pas arrêté l'attente
-  if(this.retry) {
-    result = await this.api.maRequeteHttp();
-    // Si le résultat n'est pas celui attendu pour poursuivre
-    if(result==null) {
-      //On recommence dans 0.5 seconde
-      setTimeout(() => {this.polling()}, 500);
-    }
+  result = await this.api.maRequeteHttp();
+  // On peut décidé de continer de poller dans certains cas
+  if(result == something) {
+    //On recommence dans 0.5 seconde en rappelant la même méthode
+    setTimeout(() => {this.polling()}, 500);
   }
+  // Sinon on fait un retour sans timeout et on sort de la boucle infinie
 }
 ```
 
