@@ -10,7 +10,7 @@
 
 ### Exercices
 
-[Exercice Polling et SignalR](/exercice/Polling)
+[Exercice Polling et SignalR](/exercices/Polling)
 
 ### Liens
 
