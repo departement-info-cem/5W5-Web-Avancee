@@ -53,6 +53,18 @@ Maintenant que les deux versions sont fonctionnels, on va ajouter une fonctionna
 - Faire ensuite la même chose avec la déconnexion pour réduire le compte
 - Sur le client, il faut ajouter un affichage pour le nombre d'utilisateurs et la méthode pour mettre à jour le nombre de connexions.
 
+## Réflexion
+
+Est-ce que ça serait possible d'ajouter l'affichage du nombre d'utilisateurs avec la solution de polling?
+
+:::info
+C'est possible d'afficher le nombre d'utilisateurs connectés avec polling, mais ce n'est vraiment pas aussi simple. C'est surtout le fait de décrementer le nombre d'utilisateurs qui est complexe, car il n'y a pas de connexion/déconnexion.
+:::
+
+:::warning
+Ce n'est pas nécessaire de l'implémenter, mais si vous voulez l'essayer, n'hésitez pas à demander de l'aide à votre enseignant.
+:::
+
 ## Solution
 
 La solution est dans la branche **solution2** du repo
