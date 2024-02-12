@@ -36,8 +36,7 @@ Les deux versions vont utiliser 2 components différents en Angular et les deux 
 - Marquer une tâche comme complétée dans BD, puis déclencher la fonction TaskList sur **tous les clients**
 
 #### Déconnexion
-- S’enlever des utilisateurs actifs
-- Mettre à jour le nombre d’utilisateurs en ligne qui regardent les tâches
+- Décrémenter le nombre d'utilisateurs actifs
 - Déclencher la fonction UserCount sur les clients
 
 ### Angular

@@ -60,6 +60,8 @@ Avec SignalR, on peut utiliser un **Hub** pour:
 
 - C’est l’équivalent d’un contrôleur, mais pour SignalR.
 - C’est dans un hub que l’on va écrire tout notre code pour gérer notre communication avec les clients.
+- **Un Hub est simplement une classe qui hérite de la classe Hub**
+- Par convention, on met les classes de Hub dans le répertoirs **/Hubs/**
 
 
 ## Fonctionnalités du Hub
@@ -141,11 +143,13 @@ public async Task EnvoyerAUnUsager(int value, string groupName)
 ```csharp
 public override async Task OnConnectedAsync()
 {
+    base.OnConnectedAsync();
     // TODO: Ajouter votre logique
 }
 
 public override async Task OnDisconnectedAsync(Exception? exception)
 {
+    base.OnDisconnectedAsync(exception);
     // TODO: Ajouter votre logique
 }
 ```
