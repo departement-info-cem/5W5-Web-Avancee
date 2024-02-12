@@ -52,3 +52,7 @@ Maintenant que les deux versions sont fonctionnels, on va ajouter une fonctionna
 - Déclencher également une méthode sur les clients pour mettre à jour le nombre de connexions (Il faut ajouter la méthode)
 - Faire ensuite la même chose avec la déconnexion pour réduire le compte
 - Sur le client, il faut ajouter un affichage pour le nombre d'utilisateurs et la méthode pour mettre à jour le nombre de connexions.
+
+## Solution
+
+La solution est dans la branche **solution2** du repo
