@@ -2,4 +2,6 @@
 
 ## Pratique examen intra
 
-🚧 À venir
+- Révision en classe
+- Examen de pratique
+
