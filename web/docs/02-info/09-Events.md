@@ -46,7 +46,7 @@ Sérialisation:
 ## Des events dans des events
 
 :::danger
-Cet exemple est différent de l'implémentation d'événements que vous avez dans le véritable TP
+Cet exemple est différent de l'implémentation d'événements que vous avez dans le véritable TP. Dans le TP, il faut utiliser le PlayerStartTurnEvent.
 :::
 
 Un exemple qui contient des sous événements
@@ -124,10 +124,11 @@ public abstract class MatchEvent
 - Notre situation est plus complexe car on ne veut pas simplement mettre les données à jour.
     - Ça ne serait vraiment pas intéressant, si lorsque l’on joue une carte on voyait simplement le résultat sans voir la carte être jouée, les combats entre cartes, les dégâts reçus, etc.
 - On veut donc réappliquer les changements un à un sur le client!
+- Avec SignalR, on va pouvoir envoyer les events aux deux clients pour pouvoir mettre les données à jour.
 
 ## Le client
 
-- Le travail du client, c’est de traverser l’arbre d’events et d’afficher au joueur ce qui s’est produit.
+- Le travail du client, c’est de traverser l’arbre d’events et d’afficher au joueur ce qui s’est produit en modifiant les données un event à la fois.
 - Par exemple, afficher lorsqu’un joueur pige une carte ou lorsqu’une carte reçoit des dégâts.
 
 
