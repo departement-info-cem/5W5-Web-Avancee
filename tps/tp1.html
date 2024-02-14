@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.1.0">
 <title data-rh="true">TP1 (Super Cartes Infinies) | 5W5 - Programmation Web Avancée</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp1"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="keywords" content="5W5 - Programmation Web Avancée, Site de référence du cours 5W5, informatique, technique, cégep, cegep, édouard-montpetit, edouard-montpetit, édouard montpetit, edouard montpetit"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="TP1 (Super Cartes Infinies) | 5W5 - Programmation Web Avancée"><meta data-rh="true" name="description" content="Date de remise/évaluation"><meta data-rh="true" property="og:description" content="Date de remise/évaluation"><link data-rh="true" rel="icon" href="/5W5-Web-Avancee/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp1"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp1" hreflang="fr"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp1" hreflang="x-default"><link rel="stylesheet" href="/5W5-Web-Avancee/assets/css/styles.187da608.css">
-<script src="/5W5-Web-Avancee/assets/js/runtime~main.092382f0.js" defer="defer"></script>
+<script src="/5W5-Web-Avancee/assets/js/runtime~main.e6625b67.js" defer="defer"></script>
 <script src="/5W5-Web-Avancee/assets/js/main.10a816a4.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -140,9 +140,22 @@
 <li>Ajouter les events DrawCardEvent et GainManaEvent dans PlayerStartTurnEvent en utilisant MatchConfigurationService pour connaître la quantité de Mana.</li>
 <li>Ajouter les events DrawCardEvent dans StartMatchEvent en utilisant MatchConfigurationService pour connaître le nombre de cartes.</li>
 <li>Ajouter la logique de Connection/EndTurn/Surrender.</li>
-<li>Utiliser Authorize dans le Hub pour s&#x27;assurer que l&#x27;utilisateur est bien connecté.</li>
-<li>Utiliser le hub dans le service angular MatchService. L’affichage du Mana ne devrait pas encore fonctionner, mais tout devrait s’arranger une fois que l’on va faire l’intégration.</li>
+<li>Utiliser le hub du côté Angular. Regarder le code dans:<!-- -->
+<ul>
+<li>home.component.ts (Pour créer la connection et joindre un match)</li>
+<li>match.component.ts (Pour gérer le EndTurn, le Surrender et les events)</li>
 </ul>
+</li>
+<li>Créer un service pour votre Hub, c&#x27;est plus propre et ça va permettre d&#x27;utiliser dans MatchComponent la connection créer dans le HomeComponent<!-- -->
+<ul>
+<li>Il y a plusieurs façon de gérer les events, mais le HomeComponent peut s&#x27;enregistrer au service de Hub pour être mis à jour chaque fois que le Hub reçoit des events.</li>
+</ul>
+</li>
+<li>Dans match.component.ts, c&#x27;est <strong>possible</strong> d&#x27;établir une connection s&#x27;il n&#x27;y en a pas déjà une. C&#x27;est le cas si on fait un refresh sur cette page. Mais ce n&#x27;est pas obligatoire pour le TP1.</li>
+</ul>
+<div class="theme-admonition theme-admonition-warning admonition_xJq3 alert alert--warning"><div class="admonitionHeading_Gvgb"><span class="admonitionIcon_Rf37"><svg viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8.893 1.5c-.183-.31-.52-.5-.887-.5s-.703.19-.886.5L.138 13.499a.98.98 0 0 0 0 1.001c.193.31.53.501.886.501h13.964c.367 0 .704-.19.877-.5a1.03 1.03 0 0 0 .01-1.002L8.893 1.5zm.133 11.497H6.987v-2.003h2.039v2.003zm0-3.004H6.987V5.987h2.039v4.006z"></path></svg></span>attention</div><div class="admonitionContent_BuS1"><ul>
+<li>L’affichage du Mana ne devrait pas encore fonctionner, mais tout devrait s’arranger une fois que l’on va faire l’intégration.</li>
+</ul></div></div>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="intégration-à-faire-seulement-une-fois-que-les-fonctionnalités-sont-terminés-pour-lévaluation-de-groupe">Intégration (à faire seulement une fois que les fonctionnalités sont terminés pour l’évaluation de groupe)<a href="#intégration-à-faire-seulement-une-fois-que-les-fonctionnalités-sont-terminés-pour-lévaluation-de-groupe" class="hash-link" aria-label="Lien direct vers Intégration (à faire seulement une fois que les fonctionnalités sont terminés pour l’évaluation de groupe)" title="Lien direct vers Intégration (à faire seulement une fois que les fonctionnalités sont terminés pour l’évaluation de groupe)">​</a></h2>
 <ul>
 <li>Ramenez les différentes branches vers la branche Dev.</li>
@@ -154,6 +167,7 @@
 <li>Dans MatchPlayerData, utiliser les cartes du joueur.</li>
 <li>Utiliser un guard pour limiter l&#x27;accès à la page Mes Cartes et Match à un utilisateur connecté.</li>
 <li>Assurez-vous de vous déconnecter du Hub si vous faites cancel et de ne plus attendre pour un Match.</li>
+<li>Utiliser Authorize dans le Hub pour s&#x27;assurer que l&#x27;utilisateur est bien connecté.</li>
 </ul>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="grille-de-correction">Grille de correction<a href="#grille-de-correction" class="hash-link" aria-label="Lien direct vers Grille de correction" title="Lien direct vers Grille de correction">​</a></h2>
 <ul>
