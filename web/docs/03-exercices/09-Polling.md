@@ -36,8 +36,7 @@ Les deux versions vont utiliser 2 components différents en Angular et les deux 
 - Marquer une tâche comme complétée dans BD, puis déclencher la fonction TaskList sur **tous les clients**
 
 #### Déconnexion
-- S’enlever des utilisateurs actifs
-- Mettre à jour le nombre d’utilisateurs en ligne qui regardent les tâches
+- Décrémenter le nombre d'utilisateurs actifs
 - Déclencher la fonction UserCount sur les clients
 
 ### Angular
@@ -52,6 +51,18 @@ Maintenant que les deux versions sont fonctionnels, on va ajouter une fonctionna
 - Déclencher également une méthode sur les clients pour mettre à jour le nombre de connexions (Il faut ajouter la méthode)
 - Faire ensuite la même chose avec la déconnexion pour réduire le compte
 - Sur le client, il faut ajouter un affichage pour le nombre d'utilisateurs et la méthode pour mettre à jour le nombre de connexions.
+
+## Réflexion
+
+Est-ce que ça serait possible d'ajouter l'affichage du nombre d'utilisateurs avec la solution de polling?
+
+:::info
+C'est possible d'afficher le nombre d'utilisateurs connectés avec polling, mais ce n'est vraiment pas aussi simple. C'est surtout le fait de décrementer le nombre d'utilisateurs qui est complexe, car il n'y a pas de connexion/déconnexion.
+:::
+
+:::warning
+Ce n'est pas nécessaire de l'implémenter, mais si vous voulez l'essayer, n'hésitez pas à demander de l'aide à votre enseignant.
+:::
 
 ## Solution
 
