@@ -51,7 +51,7 @@
     - Tester les cas limites du type et de la logique
     - Tester les exceptions
 - Structure du code / standards
-    - Découpage en couches
+    - Découpage en couches (avec services)
     - Lisibilité du code (1 fonction < 1 page, commentaires etc.)
     - Structure et noms homogènes et respect des standards
     - Code factorisé (Réutilisation du code, encapsulation, dépendances minimales)
@@ -71,7 +71,7 @@
     - Tester les cas limites du type et de la logique
     - Tester les exceptions
 - Structure du code / standards
-    - Découpage en couches
+    - Découpage en couches (avec services)
     - Cohabitation avec Web API
     - Lisibilité du code (1 fonction < 1 page, commentaires etc.)
     - Structure et noms homogènes et respect des standards
