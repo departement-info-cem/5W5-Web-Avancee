@@ -1,5 +1,21 @@
 # Correction
 
+### Préparation pour une évaluation individuelle
+Pour se préparer à l'évaluation en classe, l'étudiant doit:
+
+1. Ouvrir son **serveur** et son **client** et être prête à faire une démonstration du travail
+    - Faire le **update-database**
+    - S'assurer que **tout fonctionne**
+    - N'oubliez pas de générer un bon certificat si nécessaire (**dotnet dev-certs https** ...)
+2. Ouvrir **DevOps** et être prêt à présenter ses tâches et UserStories
+3. Ouvrir **GitKraken** et être prêt à présenter ses commits 
+
+L'enseignant va prendre jusqu'à **5 minutes** pour vérifier:
+- Que les fontionnalités sont bien faites
+- Que le code est bien écrit
+    - L'enseignant peut poser des questions pour vérifier que l'étudiant comprend bien le code qui est présenté
+- Que DevOps et GitHub sont bien utilisés
+
 ### Pondération
 - Chaque TP représente 20% de la note final
 
