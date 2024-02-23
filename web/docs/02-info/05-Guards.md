@@ -73,7 +73,7 @@ ng generate guard
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
-  { path: '', component: HomeComponent, canActivate:[apiGuard] },
+  { path: '', component: HomeComponent, canActivate:[apiGuard, otherGuard] },
   { path: '**', redirectTo: '/'}
 ];
 ```
@@ -92,3 +92,6 @@ export const apiGuard: CanActivateFn = (route, state) => {
     return true;
 };
 ```
+
+- Si plusieurs guards sont spécifiés dans canActivate (comme apiGuard et otherGuard dans l'exemple précédent), ils sont évalués un à la suite de l'autre.
+  - Donc apiGuard est appelé et s'il retourne true, otherGuard est appelé et s'il retroune également true, la route ciblée est atteinte
