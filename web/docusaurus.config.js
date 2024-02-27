@@ -1,10 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+import { themes } from 'prism-react-renderer';
 
 const siteConfig = require("./config");
 
-const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
-const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
+const lightCodeTheme = themes.vsLight
+const darkCodeTheme = themes.vsDark
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -63,6 +64,12 @@ const config = {
             docId: "cours/rencontre1",
             position: "left",
             label: "Cours",
+          },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "info",
+            label: "Info",
           },
           {
             type: "docSidebar",
