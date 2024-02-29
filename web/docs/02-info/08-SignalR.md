@@ -86,6 +86,16 @@ public async Task EnvoyerAuxAutres(int value)
 }
 ```
 
+### Envoyer des données à une connection
+
+```csharp
+// Appeler une connection
+public async Task EnvoyerAUneConnection(int value, string connectionId)
+{
+    await Clients.Client(connectionId).SendAsync("UneFonctionClient", value);
+}
+```
+
 ### Envoyer des données à un usager
 
 ```csharp
