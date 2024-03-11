@@ -1,5 +1,7 @@
 # Rencontre 15
 
-## À venir
+- Présentation du TP2
+- Sprints avec Azure Boards
 
-🚧 À venir
+🚧 Détails à venir
+

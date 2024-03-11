@@ -1,5 +1,5 @@
 # Rencontre 19
 
-## À venir
+- Travail sur TP2
 
-🚧 À venir
+🚧 Détails à venir

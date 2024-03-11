@@ -1,5 +1,5 @@
 # Rencontre 27
 
-## À venir
+- Travail sur TP3
 
-🚧 À venir
+🚧 Détails à venir
