@@ -7,6 +7,8 @@ Ce document est un complément d'information au power point:
 
 **Azure DevOps Boards** est un outil complexe où il de nombreuses façon de faire les mêmes actions. Voici donc quelques façons de l'utiliser.
 
+[Azure Devops](https://dev.azure.com)
+
 ### Ajouter des features au backlog
 
 - Cliquer sur Backlogs dans menu de gauche (dans le menu Boards)
@@ -45,4 +47,20 @@ Ce document est un complément d'information au power point:
 
 ![image](/img/infos/DevOps/Utilisation/5W5-s2-sprints.jpg)
 
+### Créer un nouveau sprint
+
+Une fois que le premier sprint est terminé, on va vouloir en créer d'autres.
+Par défaut, les projets ont "généralement" déjà 3 sprints de créer, mais voici comment changer de sprint et en créer de nouveaux.
+
+![Alt text](/img/infos/DevOps/Utilisation/nouveauSprint1.png)
+
+![Alt text](/img/infos/DevOps/Utilisation/nouveauSprint2.png)
+
+On peut voir quel sprint est le sprint courant et on peut également en créer de nouveaux
+
+![Alt text](/img/infos/DevOps/Utilisation/nouveauSprint3.png)
+
+![Alt text](/img/infos/DevOps/Utilisation/nouveauSprint5.png)
+
+![Alt text](/img/infos/DevOps/Utilisation/nouveauSprint4.png)
 
