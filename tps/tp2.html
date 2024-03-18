@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.1.0">
 <title data-rh="true">TP2 (Suite de Super Cartes Infinies) | 5W5 - Programmation Web Avancée</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp2"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="keywords" content="5W5 - Programmation Web Avancée, Site de référence du cours 5W5, informatique, technique, cégep, cegep, édouard-montpetit, edouard-montpetit, édouard montpetit, edouard montpetit"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="TP2 (Suite de Super Cartes Infinies) | 5W5 - Programmation Web Avancée"><meta data-rh="true" name="description" content="Le projet"><meta data-rh="true" property="og:description" content="Le projet"><link data-rh="true" rel="icon" href="/5W5-Web-Avancee/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp2"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp2" hreflang="fr"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp2" hreflang="x-default"><link rel="stylesheet" href="/5W5-Web-Avancee/assets/css/styles.69ad63b2.css">
-<script src="/5W5-Web-Avancee/assets/js/runtime~main.a79a2ffb.js" defer="defer"></script>
+<script src="/5W5-Web-Avancee/assets/js/runtime~main.b10e3a0b.js" defer="defer"></script>
 <script src="/5W5-Web-Avancee/assets/js/main.c380db24.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -72,7 +72,7 @@
 <li>IMPORTANT: En écrivant la logique de jeu, il faut utiliser des MatchEvents. Ces MatchsEvents vont être utilisé pour rejouer les changements sur le client.</li>
 <li>Il faut donc au moint un MatchEvent pour <strong>chaque pouvoir</strong>, mais également un lorsqu&#x27;une carte <strong>attaque, reçoit des dégâts ou meurt</strong>.</li>
 <li>Conseil: Ajoutez également un <strong>CardActivationEvent</strong>, ce sera un bon endroit pour gérer le combat et vérifier les pouvoirs d&#x27;une carte et les déclencher</li>
-<li>Conseil: Utilisez les méthodes <strong>HasPower</strong> et <strong>GetPowerValue</strong> que vous avez ajouté à CardInstance pour écrire la logique de jeu.</li>
+<li>Conseil: Utilisez les méthodes <strong>HasPower</strong> et <strong>GetPowerValue</strong> que vous avez ajouté à PlayableCard pour écrire la logique de jeu.</li>
 </ul></div></div></details>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Ajout des decks</summary><div><div class="collapsibleContent_i85q"><ul>
 <li>Un deck a un nom en plus de contenir des cartes (les cartes qu&#x27;un joueur possède)</li>
@@ -82,7 +82,12 @@
 </ul>
 </li>
 <li>Lors du register, un deck qui se nomme &quot;Depart&quot; est créé automatiquement avec toutes les cartes du joueur. (C&#x27;est le deck courant du joueur)</li>
-<li>Une même carte peut faire partie de plusieurs decks.</li>
+<li>Une même carte peut faire partie de plusieurs decks. (Les decks sont indépendants les uns des autres)</li>
+<li>Si j&#x27;ai une copie (1 entrée OwnedCard) pour une carte, je peux la mettre au maximum une fois dans un deck. Si j&#x27;en ai N, je peux en ajouter N.<!-- -->
+<ul>
+<li>Donc quand j&#x27;ajoute une carte à un deck, je dois proposer à l&#x27;usager <strong>SES</strong> cartes qui ne sont <strong>PAS</strong> déjà dans <strong>CE</strong> deck.</li>
+</ul>
+</li>
 <li>Configuration MVC:<!-- -->
 <ul>
 <li>Nombre max de decks</li>
@@ -94,7 +99,11 @@
 <li>Afficher la liste des decks d&#x27;un joueur dans une section &quot;Mes Decks&quot;</li>
 <li>Pouvoir créer un nouveau deck avec un nom au choix (en respectant la limite de decks de la configuration)</li>
 <li>Pouvoir effacer un deck, si ce n&#x27;est pas le deck courant (On ne perd jamais de cartes!)</li>
-<li>Pouvoir ajouter et retirer une carte à un deck existant (en respectant la limite de carte de la configuration)</li>
+<li>Pouvoir ajouter et retirer une carte à un deck existant (en respectant la limite de carte de la configuration)<!-- -->
+<ul>
+<li>Assurez-vous de trier les cartes du joueur pour faciliter la sélection</li>
+</ul>
+</li>
 <li>Pouvoir rendre un deck courant</li>
 <li>Doit etre impossible d&#x27;effacer le deck courant (vérification serveur)</li>
 </ul>
@@ -146,7 +155,7 @@
 </ul>
 </li>
 </ul></div></div></details>
-<h2 class="anchor anchorWithStickyNavbar_LWe7" id="détails">Détails<a href="#détails" class="hash-link" aria-label="Lien direct vers Détails" title="Lien direct vers Détails">​</a></h2>
+<h2 class="anchor anchorWithStickyNavbar_LWe7" id="détails">Détails<a href="#détails" class="hash-link" aria-label="Lien direct vers D étails" title="Lien direct vers Détails">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="les-règles-de-jeu">Les règles de jeu<a href="#les-règles-de-jeu" class="hash-link" aria-label="Lien direct vers Les règles de jeu" title="Lien direct vers Les règles de jeu">​</a></h3>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Détails des règles de jeu</summary><div><div class="collapsibleContent_i85q"><ul>
 <li>Mélanger les cartes dans le CardsPile avant de démarrer une partie pour ne pas toujours commencer avec les mêmes cartes.</li>
