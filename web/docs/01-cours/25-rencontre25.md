@@ -1,5 +1,6 @@
 # Rencontre 25
 
-## À venir
+- Changement de base de données
+- Lier DevOps et GitHub
 
-🚧 À venir
+🚧 Détails à venir

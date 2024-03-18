@@ -1,5 +1,6 @@
 # Rencontre 18
 
-## À venir
+- Test Driven Development
+- Keep Alive et Invoke de serveur vers client avec SignalR
 
-🚧 À venir
+🚧 Détails à venir

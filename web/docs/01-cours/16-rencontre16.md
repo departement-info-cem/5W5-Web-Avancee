@@ -1,5 +1,6 @@
 # Rencontre 16
 
-## À venir
+- Gestion par évènements (2e partie)
+- Travail sur TP2
 
-🚧 À venir
+🚧 Détails à venir

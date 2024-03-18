@@ -1,5 +1,5 @@
 # Rencontre 17
 
-## À venir
+- Tests unitaires (révision)
 
-🚧 À venir
+🚧 Détails à venir

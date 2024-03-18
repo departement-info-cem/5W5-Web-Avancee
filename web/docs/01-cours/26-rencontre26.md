@@ -1,5 +1,5 @@
 # Rencontre 26
 
-## À venir
+- Déploiement
 
-🚧 À venir
+🚧 Détails à venir

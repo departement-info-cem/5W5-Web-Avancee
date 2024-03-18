@@ -1,5 +1,5 @@
 # Rencontre 20
 
-## À venir
+- Animations
 
-🚧 À venir
+🚧 Détails à venir

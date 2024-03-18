@@ -1,5 +1,5 @@
 # Rencontre 22
 
-## À venir
+- Présentation du TP3
 
-🚧 À venir
+🚧 Détails à venir
