@@ -22,7 +22,8 @@ Il faut également ajouter 2 invokes sur le client pour faire fonctionner les t�
 
 - Il faut mettre les clients à jour avec la liste des utilisateurs connectés après chaque connexion/déconnexion
 
-![alt text](/img/exercices/signalR2/image-8.png)
+| ![alt text](/img/exercices/signalR2/image-8.png) |
+|-|
 
 - Il faut mettre les clients à jour avec la liste des canaux à la connexion et quand il y a un changement
   - Il faut également gérer le message sur le client (TODO: Angular)
