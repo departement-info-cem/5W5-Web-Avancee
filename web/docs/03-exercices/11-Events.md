@@ -21,7 +21,8 @@ Il n'y a pas de base de données, alors si vous redémarrez le serveur pendant q
 
 - Le client se connecte déjà au Hub et écoute déjà la majorité des messages. Parcontre, le serveur ne fait rien du tout lorsqu'il reçoit une action pour voir si une lettre est dans le mot à deviner.
 
-![alt text](/img/exercices/events/image-2.png)
+|![alt text](/img/exercices/events/image-2.png)|
+|-|
 
 ## Complétez les tâches suivantes
 
@@ -37,7 +38,8 @@ Certains events ont besoin d'avoir des propriétés qui vont être lues par le c
 
 Voicie le résultat voulu:
 
-![alt text](/img/exercices/events/image-3.png)
+|![alt text](/img/exercices/events/image-3.png)|
+|-|
 
 C'est assez simplement, vous pouvez simplement créer un **GuessedLetterEvent** dans le constructeur de **GuessEvent**.
 
@@ -49,7 +51,8 @@ Si vous regardez le client, vous allez voir que pendant la gestion de l'événem
 
 N'hésitez pas à commencer simplement, au début vous pouvez tester en créant un **WrongGuessEvent** peu importe que ce soit une bonne lettre ou pas!
 
-![alt text](/img/exercices/events/image-4.png)
+|![alt text](/img/exercices/events/image-4.png)|
+|-|
 
 Ensuite, utilisez **HasSameLetterAtIndex** pour chercher la lettre et créer un **WrongGuessEvent** seulement si la lettre n'est pas présente!
 
@@ -65,7 +68,8 @@ Si vous voulez vérifier si vous mettez correctement GameData à jour, faites un
 
 Il faut créer un **RevealLetterEvent** pour chaque occurence de la lettre dans le mot.
 
-![alt text](/img/exercices/events/image-5.png)
+|![alt text](/img/exercices/events/image-5.png)|
+|-|
 
 ### Ajouter un **WinEvent**
 
@@ -75,7 +79,8 @@ Il **FAUT** enregistrer **WinEvent** pour qu'il soit correctement sérialisé lo
 
 Regardez maintenant sur le client, l'event "Win" n'est pas gérer. Il faut mettre la propriété won du GameData à jour.
 
-![alt text](/img/exercices/events/image-8.png)
+|![alt text](/img/exercices/events/image-8.png)|
+|-|
 
 ### Ajouter un **LoseEvent**
 
@@ -85,13 +90,15 @@ Regardez maintenant sur le client, l'event "Lose" n'est pas gérer non plus. Il 
 
 Lorsqu'on perd, il faudrait afficher le mot qu'on cherchait dans le message d'erreur. Il existe déjà la variable **wronglyGuessedWord** dans **app.component.ts**
 
-![alt text](/img/exercices/events/image-6.png)
+|![alt text](/img/exercices/events/image-6.png)|
+|-|
 
 ### Dead eyes
 
 Il existe une dernière étape au bonhomme pendu pour afficher les yeux rouges. Le mini défi c'est d'appeler hangman.showMore() une fois de plus après une défaite MAIS après un délai de quelques secondes.
 
-![alt text](/img/exercices/events/image-7.png)
+|![alt text](/img/exercices/events/image-7.png)|
+|-|
 
 ### Défi extra?
 
