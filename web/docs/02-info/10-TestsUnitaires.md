@@ -97,6 +97,12 @@ Les **étapes** indiqués dans l'exemple, montre dans quel ordre les méthodes s
 - Il est **IMPORTANT** d'effacer les données dans notre BD de tests entre 2 tests
 - Il est **IMPORTANT** que la BD utilise **UseLazyLoadingProxies(true)** si c'est également le cas dans notre projet!
 
+Il faut ajouter une libraire (Utiliser la même version que pour les librairies d'EntityFramework utilisées dans votre projet)
+
+| ![image](image.png) |
+|-|
+
+
 ### Exemple de test avec InMemoryDatabase
 ```csharp
 [TestClass]
@@ -194,6 +200,10 @@ Dans cet exemple:
 ### Utilisation
 - Pour démarrer la couverture de code, il faut sélectionner les tests qui nous intéresse
 - Ensuite faire Analyser la couverture du code
+
+:::warning
+Il faut la version **Pro** pour exécuter la couverture du code. **Ça FONCTIONNE à l'école**, mais ça ne fonctionnera pas si vous avez une version **Express**.
+:::
 
 | ![image](/img/infos/TestsUnitaires/OutilCouverture1.png) |
 |-|
