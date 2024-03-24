@@ -89,6 +89,13 @@ public class ServiceTests
 Les **étapes** indiqués dans l'exemple, montre dans quel ordre les méthodes sont appelées
 :::
 
+### Comment tester une exception?
+
+```csharp
+Exception e = Assert.ThrowsException<SomeException>(() => service.DoSomehting());
+Assert.AreEqual("ExcpectedMessage", e.Message);
+```            
+Il y a plusieurs façon de tester qu'un méthode lance bien une exception. En utilisant celle-ci, on peut également **valider le message de l'exception**.
 
 ## Comment tester du code qui utilise une BD?
 
