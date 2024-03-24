@@ -1,12 +1,101 @@
 # Tests Unitaires
 
-### Quoi tester?
-Nous testerons uniquement les services pour ce Sprint (TP2)
+## Les différents types de tests (liste incomplète):
 
-### Comment tester notre code qui utilise une BD?
+- Tests **unitaires** : vérifient le bon fonctionnement des composants individuels du logiciel.
+    - Pour nos services et éventuellements nos contrôleurs.
+- Tests **fonctionnels** : vérifient la conformité du logiciel aux exigences fonctionnelles.
+    - Pour tester la fonctionnalité du jeu.
+- Tests **de performance** : vérifient la capacité du logiciel à supporter des charges ou des contraintes.
+    - Pour vérifier que l'on peut gérer un grand nombre de parties en même temps.
 
-- Pour faire nos tests facilement, nous utiliserons une BD de tests de type InMemoryDatabase
-- Il est **IMPORTANT** que la BD est la plus petit durée de vie possible
+## Responsabilités des **contrôleurs** vs responsabilités des **services**
+
+### Un contrôleur ça fait quoi?
+
+- La sécurité à travers les **\[Authorize\]**
+- Obtient les **données de l'utilisateur qui a fait la requête**
+- Modifie les paramètres reçus pour faire les appels de services (Si nécessaire)
+- Retourne les données
+- Gère les exceptions et renvoi les erreurs
+
+### Un service ça fait quoi?
+
+- La validation des paramètres
+- Les requêtes dans la BD
+- La logique de l'application
+- Vérification des droits d'accès aux données
+    - À ne pas confondre avec \[Authorize\]. Ici on parle, par exemple, de vérifier qu'un usager n'efface pas les données d'un autre usager!
+- Lance une exception lorsqu'il y a un problème
+
+
+## Génération de tests
+
+| ![image](/img/infos/TestsUnitaires/CreerDesTestsUnitaires.png) |
+|-|
+
+:::info
+On peut utiliser cette fonctionnalité même si il n'y a pas encore de projet de tests dans la solution!
+:::
+
+## Test unitaires avec MSTest
+
+- **\[TestClass\]** Permet d'identifier la classe comme un classe de Test
+- Le **constructeur** est appelé une fois pour l'ensemble des tests de la classe
+- **\[TestInitialize\]** Marque une méthode pour qu'elle soit appelée **avant** chaque test
+- **\[TestCleanup\]** Marque une méthode pour qu'elle soit appelée **après** chaque test
+- **\[TestMethod\]** Marque une méthode pour indiquer que c'est un **test à exécuté**
+
+```csharp
+[TestClass]
+public class ServiceTests
+{
+    // Étape: 1
+    public ServiceTests()
+    {
+        // Exécuter une fois pour l'ensemble des tests de la classe
+    }
+
+    // Étapes: 2 et 5
+    [TestInitialize]
+    public void Init()
+    {
+        // Exécuter AVANT chaque test
+    }
+    
+    // Étapes: 4 et 7
+    [TestCleanup]
+    public void Dispose()
+    {
+        // Exécuter APRÈS chaque test
+    }
+
+    // Étape: 3
+    [TestMethod]
+    public void Test1()
+    {
+        // Exécution du test avec des Asserts
+    }
+    
+    // Étape: 6
+    [TestMethod]
+    public void Test2()
+    {
+        // Exécution d'un autre test avec des Asserts
+    }
+}
+```
+:::info
+Les **étapes** indiqués dans l'exemple, montre dans quel ordre les méthodes sont appelées
+:::
+
+
+## Comment tester du code qui utilise une BD?
+
+- Pour faire nos tests facilement, nous utiliserons une BD de tests de type **InMemoryDatabase**
+- Il est **IMPORTANT** que la BD est la **plus petit durée de vie possible** pour éviter des problèmes avec **Entity**
+- Il est **IMPORTANT** d'effacer les données dans notre BD de tests entre 2 tests
+- Il est **IMPORTANT** que la BD utilise **UseLazyLoadingProxies(true)** si c'est également le cas dans notre projet!
 
 ### Exemple de test avec InMemoryDatabase
 ```csharp
@@ -22,6 +111,7 @@ public class CardsServiceTests
         options = new DbContextOptionsBuilder<ApplicationDbContext>()
             // TODO il faut installer la dépendance Microsoft.EntityFrameworkCore.InMemory
             .UseInMemoryDatabase(databaseName: "CardsService")
+            .UseLazyLoadingProxies(true) // Active le lazy loading
             .Options;
     }
     [TestInitialize]
@@ -97,6 +187,9 @@ public class CardsServiceTests
 Dans cet exemple:
     - Les lignes de code en **bleu** sont couvertes par au moins un test
     - Les lignes de code en **rouge** ne sont pas couvertes par au moins un test
+    - Pour avoir une couverture de tests complètes, il faudrait:L
+        - Faire un test avec un nombre de matches plus grand que 1 (Première section rouge)
+        - Faire un test avec un nombre de matches égal à 1 (Deuxième section rouge)
 
 ### Utilisation
 - Pour démarrer la couverture de code, il faut sélectionner les tests qui nous intéresse
@@ -110,3 +203,7 @@ Dans cet exemple:
 
 | ![image](/img/infos/TestsUnitaires/OutilCouverture2.png) |
 |-|
+
+## Quoi tester?
+- Nous testerons uniquement les **services** et les méthodes **HasPower** et **GetPowerValue** pour le Sprint 2 **(TP2)**.
+- Plus tard, **TP3**, nous allons également apprendre à écrire des tests pour nos **contrôleurs**.
