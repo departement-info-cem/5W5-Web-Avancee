@@ -106,7 +106,7 @@ Il y a plusieurs façon de tester qu'un méthode lance bien une exception. En ut
 
 Il faut ajouter une libraire (Utiliser la même version que pour les librairies d'EntityFramework utilisées dans votre projet)
 
-| ![image](image.png) |
+| ![image](InMemory.png) |
 |-|
 
 

@@ -1,24 +1,22 @@
 # Animations
 
-### Vos options
+## Vos options
 On peut faire les animations en utilisant:
-- Angular animations
-OU
 - CSS
+OU
+- Angular animations
 
+## CSS
 ### Comment ça marche
-- Principalement (parce qu'on est loin loin loin d'être des experts) on change une propriété CSS
+- Principalement on change une propriété CSS
 - On décide combien de temps de ça va prendre à faire la transition
 
 ### Exemple
-- On change la propriété top de 10 à 20 en 0.2 seconde, voilà une animation
+- On change la propriété **top** de 0px à 20px en 0.2 seconde, voilà une animation qui fait descendre un objet de 20 pixels en 0.2 seconde.
 
 ### Keyframes
 - On peut avoir différentes étapes à notre animation
 - Ces étapes sont des Keyframes
-
-### CSS
-- Générateur d'animations CSS:  https://animista.net
 
 ### Utiliser avec Angular
 - Il faut commencer par créer l'animation en CSS
@@ -57,6 +55,8 @@ OU
 ```html
 <app-card [class.attack]="mycard.attack===true"></app-card>
 ```
+
+## Angular animations
 
 ### ng-animate
 - Librairie Angular pour les animations: https://www.npmjs.com/package/ng-animate
@@ -108,11 +108,42 @@ animations: [
 ```
 
 ### useAnimation
-- On utilise une animation prédéfinie
-- Mais on pourrait également créer nos propres animations au style de CSS avec des keyframes
+- Dans les exemples, on utilise une animation prédéfinie, mais on pourrait également créer nos propres animations avec des keyframes
+
+
+## Générateur d'animations CSS
+- Le site **animista** contient des centaines d'animations que l'on peut modifier avec des paramètres pour générer nos keyframes.
+
+[https://animista.net](https://animista.net)
+
+|![alt text](animista.png)|
+|-|
+
+## Délais
+Quand on parle d'animation, on parle presque toujours de délais. Surtout lorsque l'on fait des séquences d'animations.
+
+Dans l'exemple suivant, on voit que l'on set bounce à true et on le set à false après 1000 ms (donc 1 seconde).
+
+```ts
+bounceMe() {
+  this.bounce = true;
+  setTimeout(() => {this.bounce = false;}, 1000);
+}
+```
+
+On imagine qu'une animation est délenché quand la valeur de la variable bounce change (comme dans l'exemple complet un peu plus bas.)
+
+:::warning
+Sans le **setTimeout**, l'animation joue correctement la première fois, mais comme le système détecte les changements, rien ne se passe la 2e fois que l'on clique car bounce est **ENCORE** à true.
+:::
+
+:::danger
+Sans le **setTimeout**, on obtient des résultats encore **PLUS** bizarre. Par exemple, en jouant une autre animation, on risque d'avoir un **bounce** en plus à la fin car le système va réévaluer les animations après en avoir terminé une. En résumé, il faut utiliser un setTimeout de la même durée que notre animation pour remettre cette valeur à false.
+:::
 
 
 ## Exemple
+Un exemple qui montre comment utiliser à la fois des animations angular et des animations css générées avec **animista**
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
@@ -383,3 +414,8 @@ export class AppComponent {
 ```
   </TabItem>
 </Tabs>
+
+## Github
+
+Le code de cet [exemple](https://github.com/CEM-420-5W5/ngAnimationsInfo)
+
