@@ -60,6 +60,7 @@ OU
 
 ### ng-animate
 - Librairie Angular pour les animations: https://www.npmjs.com/package/ng-animate
+- [Page pour voir les animations](https://jiayihu.github.io/ng-animate/)
 
 ### Exemple
 ```ts

@@ -92,8 +92,8 @@ Les **étapes** indiqués dans l'exemple, montre dans quel ordre les méthodes s
 ### Comment tester une exception?
 
 ```csharp
-Exception e = Assert.ThrowsException<SomeException>(() => service.DoSomehting());
-Assert.AreEqual("ExcpectedMessage", e.Message);
+Exception e = Assert.ThrowsException<SomeException>(() => service.DoSomething());
+Assert.AreEqual("ExpectedMessage", e.Message);
 ```            
 Il y a plusieurs façon de tester qu'un méthode lance bien une exception. En utilisant celle-ci, on peut également **valider le message de l'exception**.
 
