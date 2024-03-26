@@ -8,6 +8,8 @@
     - Code pour les méthodes HasPower et GetPowerValue
     - Tests unitaires pour les méthodes HasPower et GetPowerValue
 
+- Explications sur MVC avec plusieurs forms dans une même page
+
 ## Info
 
 [Animations](/info/Animations)
