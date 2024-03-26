@@ -1,4 +1,4 @@
-# Animations simples
+# Animations
 
 ## Objectifs
 Modifier les déalis d'animations et créer des séquences et des boucles
@@ -108,9 +108,16 @@ Si ça fonctionne bien, Slimey va se déplacer rapidement de gauche à droite pe
 |![alt text](/img/exercices/animations/animistaWobble.png)|
 |-|
 
-### Empêcher que les actions se chevauchent (On ne veut pas faire 2 choses en même temps)
+- Ajoutez le css généré par animista au css de votre projet
+- Faites jouer cette animation lorsque Slimey est attaqué, méthode **hit()**
+- Cette fois-ci, utilisez directement la classe css que vous pouvez activer avec une variable css_hit
+- Dans le fichier html, vous pouvez utiliser cette technique pour activer la classe wobble_hor-bottom \[class.wobble-hor-bottom\]="css_hit"
 
-- Ajout d'un méthode **waitUntilEndOfAnimation(delay:number)**
+:::warning
+Il faut mettre la classe sur le parent (div) de l'image, sinon l'animation ne joue pas correctement!
+:::
+
+- Assurez-vous d'utiliser un setTimeout pour remettre la valeur à false si vous voulez pouvoir rejouer l'animation
 
 ## Solution
 
