@@ -14,4 +14,7 @@
 
 [Animations](/info/Animations)
 
-🚧 Détails à venir
+### Exercices
+
+- [Exercice Animations](/exercices/Animations1)
+
