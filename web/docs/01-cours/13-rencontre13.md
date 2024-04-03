@@ -2,4 +2,5 @@
 
 ## Évaluation de groupe du TP1
 
-🚧 À venir
+- Évaluation de groupe des projets
+- Réponses aux questions avant l'examen

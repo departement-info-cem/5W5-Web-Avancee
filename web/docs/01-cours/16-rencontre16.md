@@ -1,5 +1,12 @@
 # Rencontre 16
 
-## À venir
+- Gestion par évènements (2e partie)
+- Travail sur [TP2](/tps/tp2)
 
-🚧 À venir
+## Info (révision)
+
+[Événements](/info/Events)
+
+### Exercices
+
+- [Exercice Events](/exercices/Events) pour faire un bonhomme pendu avec SignalR et des Events.

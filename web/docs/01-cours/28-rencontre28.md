@@ -1,5 +1,3 @@
 # Rencontre 28
 
-## À venir
-
-🚧 À venir
+- Pratique examen final

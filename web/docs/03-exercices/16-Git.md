@@ -1,7 +1,3 @@
-🚧 À venir
-<!--
-
-
 # GIT
 ## Branches
 ### Jouer avec des branches!
@@ -120,5 +116,3 @@ Vous avez 3 options:
 Garder la version du code qui n'est pas encore enregistré sur le repo
 
 Voilà!
-
--->

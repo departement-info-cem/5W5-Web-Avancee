@@ -1,5 +1,9 @@
 # Rencontre 15
 
-## À venir
+- Présentation du TP2
+- Sprints avec Azure Boards
+- Révision de l'examen
 
-🚧 À venir
+### TP
+
+[Page du TP2](/tps/tp2)

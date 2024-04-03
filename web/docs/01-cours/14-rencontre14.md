@@ -2,4 +2,6 @@
 
 ## Examen Intra
 
-🚧 À venir
+- Guards
+- Reactive Forms
+- SignalR

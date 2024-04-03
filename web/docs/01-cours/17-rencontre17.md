@@ -1,5 +1,15 @@
 # Rencontre 17
 
-## À venir
+- Tests unitaires
+    - MSTests
+    - InMemoryDatabase
+    - Gestion des exceptions
+    - Couverture des tests
 
-🚧 À venir
+## Info
+
+[Tests unitaires](/info/TestsUnitaires)
+
+### Exercices
+
+- [Exercice tests unitaires](/exercices/TestsUnitaires)
