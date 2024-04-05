@@ -1,13 +1,11 @@
 # Animations (2e partie)
 
 ## Objectifs
-Créer des séquences et des boucles d'animation
-
-[Projet GitHub](https://github.com/CEM-420-5W5/ngRPGAnimations)
+Créer des séquences et des boucles d'animations
 
 ## État initial
 
-- Continuez avec le projet de l'exercice précédent
+Continuez avec le projet de l'exercice précédent
 
 ## Complétez les tâches suivantes
 
