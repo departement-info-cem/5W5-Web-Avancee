@@ -97,7 +97,6 @@ shakeFlipAndBounce_CSS_2() {
   setTimeout(() => {
     // Après 3 (1+2) secondes (flip est terminé)
     this.css_flip = false;
-    this.css_bounce = true;
   },3000);
   // Après 0 seconde
 }
@@ -160,7 +159,7 @@ async shakeFlipAndBounce_Angular_4() {
 }
 ```
 
-::: info
+:::info
 Comme on peut voir, en utilisant une méthode async et des animations angular, on arrive à une écriture qui est très facile à lire!
 :::
 
