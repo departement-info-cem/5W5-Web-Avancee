@@ -1,4 +1,4 @@
-# GIT
+# Git Branches et Merges
 ## Branches
 ### Jouer avec des branches!
 - Créer un nouveau repo sur GitHub appelé branches_de_chats

@@ -1,6 +1,8 @@
 # Pull Requests
 
-Faire un exercice qui se fait à 2 personnes et qui permet d'ajouter la protection à une branche et d'ajouter le fait de rouler les tests unitaires lorsqu'un commit est fait vers cette branche!
+:::info
+Il est toujours possible de faire un pull request, même si une branche n'est pas protégée. Par contre, si on veut s'assurer de mettre en place une bonne façon de travailler, c'est important de configurer la règle!
+:::
 
 ### Protéger une branche
 
