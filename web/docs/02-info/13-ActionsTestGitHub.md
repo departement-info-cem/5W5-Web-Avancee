@@ -1,36 +1,21 @@
 # Actions sur GitHub
 
+## Objectif
 
-### Protéger une branche
-
-![alt text](image-4.png)
-
-
-![alt text](image.png)
-
-### Pour tester la protecion en tant qu'admin!
-
-![alt text](image-1.png)
+- Apprendre à ajouter une action sur GitHub
+- L'exemple est une action qui roule les tests, mais il y a de très nombreuses options d'actions qui existent déjà!
 
 
-### Ajout d'un test qui ne passe pas
+## Les étapes
 
-![alt text](image-2.png)
+Pour ajouter une action à votre workflow
 
+![Alt text](/img/infos/GitHub/AddWorkflowAction.png)
 
-### Un commit dans la branche du pull request va déclencher l'exécution des tests unitaires
-![alt text](image-3.png)
+On va choisir une action de test d'intégration .NET
 
+![Alt text](/img/infos/GitHub/AddWorkflowTestAction.png)
 
-![alt text](image-6.png)
+Les options par défaut font bien ce que l'on veut
 
-![alt text](image-7.png)
-
-### Une fois que le test passe
-
-![alt text](image-5.png)
-
-![alt text](image-8.png)
-
-
-
+![Alt text](image.png)
