@@ -7,6 +7,43 @@ Bien comprendre l'utilisation de **setTimeout** et de **timer**, qui sont très 
 
 Il y a de nombreuses façons d'obtenir le même résultat lorsque l'on veut jouer des animations. Voici quelques exemples qui font tous un peu la même chose: "Jouer une animation shake pendant 1 seconde, puis flip pendant 2 secondes"
 
+Pour les explication suivantes, on assume qu'il y a une configuration comme cell-ci pour les animations Angular:
+
+```ts
+trigger('shake', [transition(':increment', useAnimation(shakeX, {params: {timing: 1000}}))]),
+trigger('flip', [transition(':increment', useAnimation(flip, {params: {timing: 2000}}))]),
+
+ng_shake = 0;
+ng_flip = 0;
+```
+
+```html
+<div [@shake]="ng_shake" [@flip]="ng_flip"></div>
+```
+
+Et dans le cas d'une animation CSS, il y a la configuration suivante:
+
+```ts
+css_shake = false;
+css_flip = false;
+```
+
+```html
+<div [class.shake]="css_shake" [class.flip]="css_flip"></div>
+```
+
+```css
+.shake{
+  // Voir les exemples d'animations
+}
+
+.flip{
+  // Voir les exemples d'animations
+}
+```
+
+
+
 ### setTimeout les uns dans les autres
 
 #### Avec les animations Angular
