@@ -1,8 +1,13 @@
 # Rencontre 19
 
-- Exercice Git (Merge, conflits et pull request)
-- Gestion des erreurs de cookies
-- Keep Alive et Invoke de serveur vers client avec SignalR
-- Travail sur TP2
+- Animations (2e partie)
 
-🚧 Détails à venir
+## Info
+
+[Animations et délais](/info/AnimationsEtDélais)
+
+### Exercices
+
+[Exercice Animations (2e partie)](/exercices/Animations2)
+
+

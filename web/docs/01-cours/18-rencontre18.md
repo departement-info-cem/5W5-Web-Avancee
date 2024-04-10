@@ -16,5 +16,5 @@
 
 ### Exercices
 
-- [Exercice Animations](/exercices/Animations1)
+[Exercice Animations](/exercices/Animations1)
 

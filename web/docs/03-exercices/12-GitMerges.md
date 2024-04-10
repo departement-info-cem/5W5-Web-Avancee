@@ -1,4 +1,4 @@
-# GIT
+# Git Branches et Merges
 ## Branches
 ### Jouer avec des branches!
 - Créer un nouveau repo sur GitHub appelé branches_de_chats
@@ -116,3 +116,5 @@ Vous avez 3 options:
 Garder la version du code qui n'est pas encore enregistré sur le repo
 
 Voilà!
+
+
