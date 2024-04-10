@@ -13,4 +13,3 @@
 
 [Git tests et Pull Requests](/exercices/GitTestsEtPRs)
 
-[Git Merges](/exercices/GitMerges)
