@@ -1,5 +1,5 @@
 # Rencontre 25
 
-- Changement de base de données
+- BackgroundService
 
 🚧 Détails à venir
