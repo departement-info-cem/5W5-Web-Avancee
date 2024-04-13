@@ -8,7 +8,6 @@
 
 [Ordre des éléments d'une liste avec EF](/info/DataOrder)
 
-
 ### TP
 
 [Page du TP3](/tps/tp3)

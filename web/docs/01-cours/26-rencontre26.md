@@ -1,5 +1,5 @@
 # Rencontre 26
 
-- Déploiement
+- Mocks (Partie 2)
 
 🚧 Détails à venir

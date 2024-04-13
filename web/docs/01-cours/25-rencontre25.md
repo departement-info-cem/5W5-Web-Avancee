@@ -1,5 +1,8 @@
 # Rencontre 25
 
-- BackgroundService
+- Évaluation première partie du TP3
 
-🚧 Détails à venir
+
+
+
+
