@@ -1,5 +1,9 @@
 # Rencontre 27
 
-- Travail sur TP3
+- Déploiement
+- Comment importer un repository GitHub dans un autre compte
+- Comment mettre les données de la page à jour dans la version déployée
 
 🚧 Détails à venir
+
+

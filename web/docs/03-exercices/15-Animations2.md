@@ -13,7 +13,8 @@ Continuez avec le projet de l'exercice précédent
 
 Ajoutez deux boutons qui vont déclencher 2 séquences d'animations (**Bounce/Shake/Flip** et **Infinite Triple Spin**)
 
-![alt text](image-3.png)
+|![alt text](/img/exercices/animations/image-3.png)|
+|-|
 
 ### Ajoutez la logique pour Bounce/Shake/Flip
 
@@ -33,7 +34,8 @@ Pour les durées d'animation:
 
 - Utilisez encore le site Animista. Dans la section basic il y a Rotate.
 
-![alt text](image-2.png)
+|![alt text](/img/exercices/animations/image-2.png)|
+|-|
 
 - Ajoutez à votre projet les 2 animations CSS suivantes
 

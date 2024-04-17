@@ -1,5 +1,8 @@
 # Rencontre 25
 
-- Changement de base de données
+- Évaluation première partie du TP3
 
-🚧 Détails à venir
+
+
+
+

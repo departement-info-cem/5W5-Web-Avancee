@@ -1,5 +1,6 @@
 # Rencontre 23
 
-- Mocks (Partie 1)
+- BackgroundService
+- Utilisation de Scope à l'intérieur d'un service Singleton
 
 🚧 Détails à venir
