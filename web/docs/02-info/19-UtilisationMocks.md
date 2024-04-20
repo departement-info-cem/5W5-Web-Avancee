@@ -51,7 +51,8 @@ Mock : initialisation \-\> configuration des attentes \-\> exécution \-\> véri
 
 ## Moq se retrouve dans NuGet
 
-![alt text](image.png)
+|![alt text](/img/infos/Mocks/librairieMoq.png)|
+|-|
 
 ## Moq - Création
 
