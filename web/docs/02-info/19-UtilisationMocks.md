@@ -2,17 +2,16 @@
 
 ## Tests unitaires
 
-- On a déjà vu au Sprint 1 comment tester nos Services
+- On a déjà vu au Sprint 2 comment tester nos Services
 - Maintenant, on complète nos test en testant nos contrôleurs
 - Il sera particulièrement important de tester l’API, 
     - L’API aura beaucoup plus de trafic que l’app MVC
     - Il est plus probable qu’un méchant « hacker » armé d’outils tel que Postman tente de brisé l’API
 
-
 ## Tester un ActionResult
 
 Se fier au projet exemple disponible sur GitHub
-https://github.com/CEM-420-5W5/action.result
+[Projet GitHub de tests de résultat de contrôleur](https://github.com/CEM-420-5W5/action.result)
 
 ## Les Mocks
 

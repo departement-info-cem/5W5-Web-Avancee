@@ -115,5 +115,7 @@ public class SequenceStockMarketMockedObject : IStockMarket
 
 ## Pour clarifier
 
+:::warning
 Pour clarifier, les différents objets qui ont été présenté dans les 3 dernières diapos sont uniquement des représentations simplifiées de ce que le mock fait lorsque l’on utilise les méthodes de Setup. Vous n’avez PAS à créer ces classes!
+:::
 
