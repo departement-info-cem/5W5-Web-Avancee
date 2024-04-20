@@ -1,6 +1,8 @@
 # Rencontre 25
 
-- Changement de base de données
-- Lier DevOps et GitHub
+- Évaluation première partie du TP3
 
-🚧 Détails à venir
+
+
+
+

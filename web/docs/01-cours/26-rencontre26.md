@@ -1,6 +1,6 @@
 # Rencontre 26
 
-- Dans ce cours nous apprenons comment déployer des projets Angular et ASP .NET sur Azure
+- Mocks (Partie 2)
 
 - En plus de déployer, nous allons également utiliser le concept de CICD (Continuous Integration/Continuous Delivery (deployment))
 
