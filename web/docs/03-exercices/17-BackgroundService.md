@@ -2,6 +2,7 @@
 
 ## Objectifs
 - Comprendre l'exemple qui utilise un BackgroundService [voir info](/info/BackgroundService)
+- Modifier un projet qui utilise un BackgroundService qui utilise une BD et un Hub.
 
 ## Étapes
 
