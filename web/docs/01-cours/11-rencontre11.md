@@ -7,7 +7,7 @@
 
 ### Exercices
 
-[Git](/exercices/Git)
+[Git](/exercices/GitMerges)
 
 
 ### Liens

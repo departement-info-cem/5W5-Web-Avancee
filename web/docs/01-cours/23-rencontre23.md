@@ -1,20 +1,12 @@
 # Rencontre 23
 
-- Mocks (Partie 1)
+- .NET BackgroundService avec un Hub
+- Utilisation de Scope à l'intérieur d'un service Singleton
 
 ## Info
 
-[Mocks](/info/Mocks)
-
-[Utilisation des Mocks](/info/UtilisationMocks)
+[BackgroundService](/info/BackgroundService)
 
 ### Exercices
 
-**Modifier en exercice**
-
-https://github.com/CEM-420-5W5/Mock-Controller
-
-https://github.com/CEM-420-5W5/action.result
-
-
-🚧 Détails à venir
+[Exercice BackgroundService](/exercices/BackgroundService)

@@ -1,7 +1,7 @@
 # Animations
 
 ## Objectifs
-Modifier les déalis d'animations et créer des séquences et des boucles
+Faire jouer des animations avec CSS et Angular Animations
 
 [Projet GitHub](https://github.com/CEM-420-5W5/ngRPGAnimations)
 
@@ -121,4 +121,4 @@ Il faut mettre la classe sur le parent (div) de l'image, sinon l'animation ne jo
 
 ## Solution
 
-La solution est dans la branche **solution** du repo
+La solution est dans la branche **solution1** du repo
