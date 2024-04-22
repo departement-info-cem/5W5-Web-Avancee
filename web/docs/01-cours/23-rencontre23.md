@@ -4,8 +4,9 @@
 - Utilisation de Scope à l'intérieur d'un service Singleton
 - MAUVAIS JsonIgnore...
 
-- Pour obtenir un élément et faire jouer une animation CSS
+## Faire jouer une animation sur une carte
 
+### CSS
 ```ts
 var element = document.getElementById("PC" + event.PlayableCardId);
 element?.classList.add("attack");
@@ -18,8 +19,17 @@ var element = document.getElementById("PC" + event.PlayableCardId + "_Heal");
 element?.classList.add("powerAnimation");
 ```
 
-- Pour faire jouer une animation angular
+Ou
 
+```ts
+var element = document.getElementById("PC" + event.PlayableCardId)
+                         .querySelector('[name="' + powerId + '"]');
+element?.classList.add("powerAnimation");
+```
+
+### Angular
+
+- Pour faire jouer une animation angular, on peut ajouter des variables directement sur PlayableCard et déclencher les animations sur la carte avec un trigger sur ces variables
 
 
 ## Info
