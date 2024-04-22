@@ -2,7 +2,10 @@
 
 - .NET BackgroundService avec un Hub
 - Utilisation de Scope à l'intérieur d'un service Singleton
-- MAUVAIS JsonIgnore...
+- Erreur de **JsonIgnore...** Il faut faire attention de ne **JAMAIS utiliser** celui de **Newtonsoft**
+
+|![Alt text](image.png)|
+|-|
 
 ## Faire jouer une animation sur une carte
 
