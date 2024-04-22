@@ -3,7 +3,7 @@
 ## Tests unitaires
 
 - On a déjà vu au Sprint 2 comment tester nos Services
-- Maintenant, on complète nos test en testant nos contrôleurs
+- Maintenant, on apprendre à tester nos contrôleurs
 - Il sera particulièrement important de tester l’API, 
     - L’API aura beaucoup plus de trafic que l’app MVC
     - Il est plus probable qu’un méchant « hacker » armé d’outils tel que Postman tente de brisé l’API
@@ -12,42 +12,6 @@
 
 Se fier au projet exemple disponible sur GitHub
 [Projet GitHub de tests de résultat de contrôleur](https://github.com/CEM-420-5W5/action.result)
-
-## Les Mocks
-
-- Objets simulés qui simulent le comportement de vrais objets
-    - Les mocks sont habituellement utilisés pour faire des tests unitaires
-    - Les mocks sont utilisés pour tester le comportement d’un autre objet
-- “Mocké” c’est imiter l’objet réel et faire des opérations de façon contrôlée pour qu’on obtienne toujours le résultat attendu
-
-## Les Mocks
-
-Pourquoi utiliser les objets mock?
-- Pour simuler des résultats non déterministes
-    - L’heure, la température, etc.
-- Pour simuler des objets avec des états difficiles à  reproduire
-    - Erreur réseau
-- Pour simuler des objets qui sont lents
-    - Base de données
-- Pour simuler des objets qui n’existent pas encore ou qui vont changer
-- Parce qu’il y a des trucs qu’on ne veut pas avoir à tester
-    - HttpContext
-        - Qui inclus User
-    - Les services lorsqu’on test un contrôleur
-
-## Mock vs Stubs
-
-### Stub 
-- Un objet écrit avec un comportement prédéterminé
-- Particulièrement utile lors du développement en parallèle d’un API et d’une (ou plusieurs) application qui l’utilise
-
-### Mock
-- Un objet que l’on configure avec nos attentes
-- Un mock n’a pas de configuration prédéterminée, on doit avoir du code qui  le configure dans nos tests
-
-### Déroulement d'un test
-Stub : initialisation \-\> exécution \-\> vérification
-Mock : initialisation \-\> configuration des attentes \-\> exécution \-\> vérification
 
 ## Moq se retrouve dans NuGet
 
@@ -60,12 +24,16 @@ Mock : initialisation \-\> configuration des attentes \-\> exécution \-\> véri
 ```csharp
 Mock<UsersService> usersServiceMock = new Mock<UsersService>();
 ```
-- Nous aurons donc un faux service qu’on pourra configurer
-- L’option Callbase permet de mocker seulement une partie une partie de l’objet et d’utiliser le code original pour tout le temps
+- Nous aurons donc un faux service que l’on pourra configurer
+- L’option Callbase permet de mocker seulement une partie une partie de l’objet et d’utiliser le code original dans les autres cas
 ```csharp
 Mock<TripsController> tripsControllerMock = new Mock<TripsController>() { CallBase = true };
 ```
-- Nous pourrons ainsi utiliser des mocks avec les services du contrôleur, mais appel les vrai actions de l’objet
+- Nous pourrons ainsi utiliser des mocks avec les services du contrôleur, mais appeler les vrai actions de l’objet
+
+:::warning
+On **ÉVITE GÉNÉRALEMENT de mocker l'objet que l'on test!** On veut mocker ses dépendances! Mais le contrôleur est un cas spécial car il contient un User qui est difficile à configurer!
+:::
 
 ## Moq - Configuration
 

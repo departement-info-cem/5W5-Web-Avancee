@@ -1,5 +1,26 @@
 # Mocks
 
+## Les Mocks
+
+- Objets simulés qui simulent le comportement de vrais objets
+    - Les mocks sont habituellement utilisés pour faire des tests unitaires
+    - Les mocks sont utilisés pour tester le comportement d’un autre objet
+- “Mocké” c’est imiter l’objet réel et faire des opérations de façon contrôlée pour qu’on obtienne toujours le résultat attendu
+
+## Pourquoi?
+
+- Pour simuler des résultats non déterministes
+    - L’heure, la température, etc.
+- Pour simuler des objets avec des états difficiles à  reproduire
+    - Erreur réseau
+- Pour simuler des objets qui sont lents
+    - Base de données
+- Pour simuler des objets qui n’existent pas encore ou qui vont changer
+- Parce qu’il y a des trucs qu’on ne veut pas avoir à tester
+    - HttpContext
+        - Qui inclus User
+    - Les services lorsqu’on test un contrôleur
+
 ## Comprendre les MOCKS
 
 Un mock contient un objet que l’on programme en appelant des méthodes sur le mock.
@@ -53,7 +74,7 @@ Il compte le nombre d’appels pour pouvoir répondre aux appels aux fonctions *
 :::
 
 
-## L’OBJET Mocké avec setup
+## L’Objet Mocké avec Setup
 
 Si on utilise la méthode Setup
 
@@ -83,7 +104,7 @@ public class ConfiguredStockMarketMockedObject : IStockMarket
 }
 ```
 
-## L’OBJET Mocké avec setupsequence
+## L’Objet Mocké avec SetupSequence
 
 Si on utilise la méthode SetupSequence (sur un AUTRE mock)
 
@@ -116,6 +137,6 @@ public class SequenceStockMarketMockedObject : IStockMarket
 ## Pour clarifier
 
 :::warning
-Pour clarifier, les différents objets qui ont été présenté dans les 3 dernières diapos sont uniquement des représentations simplifiées de ce que le mock fait lorsque l’on utilise les méthodes de Setup. Vous n’avez PAS à créer ces classes!
+Pour clarifier, les différents objets qui ont été présenté sont uniquement des **représentations simplifiées** de ce que le mock fait lorsque l’on utilise les méthodes de Setup. Vous n’avez PAS à créer ces classes et la véritable implémentation est probablement plus complexe!
 :::
 
