@@ -2,6 +2,8 @@
 
 Mocks et tests pour contrôleurs
 
+Explication sur les tests de pouvoirs Random
+
 ## Info
 
 [Mocks](/info/Mocks)
