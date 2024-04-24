@@ -65,6 +65,18 @@ mock.Setup(foo => foo.DoSomething(It.IsAny<string>())).Returns(true);
 mock.Setup(foo => foo.Add(It.Is<int>(i => i % 2 == 0))).Returns(true);
 ```
 
+### Pour une fonction qui retourne null
+
+Pour retrourner null, on peut généralement simplement RIEN FAIRE, car le comportement par défaut d'un Mock est de retourné default, donc null pour un objet. Mais si vous voulez le faire pour être clair, pour une utilisation de CallBase=true ou encore dans une séquence, il est nécessaire de faire un cast. 
+```csharp
+tripsServiceMock.Setup(s => s.Get(It.IsAny<int>())).Returns((Trip?)null);
+```
+Ou encore
+```csharp
+tripsServiceMock.Setup(s => s.Get(It.IsAny<int>())).Returns(value: null);
+```
+
+
 ### Pour une fonction qui retourne void
 
 Comme que le comportement par défaut est de rien faire lorsqu’un méthode de notre mock n’est pas configure, il n’est pas souvent nécessairement de configurer une méthode qui retourne void toutefois, c’est possible en utilisant .Verifiable
