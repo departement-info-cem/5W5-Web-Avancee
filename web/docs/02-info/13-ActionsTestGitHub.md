@@ -44,3 +44,28 @@ Chaque fois qu'une tâche roule, elle laisse derrière un **artefact**. Ça pren
 
 |![alt text](/img/infos/GitHub/DeleteWorkflow.png)|
 |-|
+
+## Forcer le succès
+
+Pour rendre le succès du test obligatoire, on va ajouter l'option "Require status checks to pass before merging".
+
+On va également vouloir activer l'option "Require branches to be up to date before merging"
+
+Par défaut, le menu n'affiche aucun status check, mais si on tape "build" dans la recherche on peut l'ajouter
+
+|![alt text](/img/infos/GitHub/searchStatusCheck.png)|
+|-|
+
+On a maintenant ajouté le status check pour "build".
+
+|![alt text](/img/infos/GitHub/foundStatusCheck.png)|
+|-|
+
+:::warning
+N'oubliez pas de cliquer sur "Save Changes" au bas de la page!
+:::
+
+Maintenant On peut seulement accepter le Pull Request si l'action de build (qui roule également les tests) est un succès
+
+|![alt text](/img/infos/GitHub/PullRequestBlockedByStatus.png)|
+|-|
