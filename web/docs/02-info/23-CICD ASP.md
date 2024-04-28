@@ -31,6 +31,21 @@ Il faut également refaire les **migrations!**
 Comme ce n'est pas trop intéressant de travailler avec SQLite, c'est probablement une bonne idée de vous créer une branche pour le déploiement, disons "prod". Et de faire le changement de BD dans cette branche là et continuer d'utiliser MS SQL dans vos autres branches.
 :::
 
+### Outil de debug EntityFramework
+
+En ajoutant cette configuration dans Program.cs, on va pouvoir obtenir des erreurs plus claires sur nos pages lorsqu'il y a un problème avec EntityFramework.
+On va également pouvoir appliquer les migrations sur le serveur facilement.
+
+```csharp
+// Permet d'obtenir des erreurs de BD plus claires et même d'appliquer des migrations manquantes
+builder.Services.AddDatabaseDeveloperPageExceptionFilter();
+```
+
+Il faut également ajouter cette libraire:
+
+|![alt text](image-2.png)|
+|-|
+
 ### Ajuster les Cookies
 - Nous devrons modifier les cookies pour ajuster l'option SameSite et permettre l'échange de cookies entre domaine
 
@@ -80,7 +95,6 @@ builder.Services.ConfigureApplicationCookie(options =>
 ### Activer les messages d'erreurs
 - Nous allons activer le mode développement pour être en mesure de voir les problème qui surviennent
 - Cela nous permettra aussi d'appliquer les migrations
-- Ne vous inquiétez pas, nous ferons quelque chose de mieux éventuellement
 - Aller dans Configuration et ajouter un nouveau paramètre d'application
 
 | ![image](/img/infos/CICD/ASP/5W5-s3-az14.jpg) |
