@@ -110,7 +110,8 @@ builder.Services.ConfigureApplicationCookie(options =>
 ### Appliquer les migrations
 - Avec ASPNETCORE_ENVIRONMENT à development on pourra appliquer les migration lors de notre première connexion
 
-TODO: Ajouter une image
+|![alt text](image-3.png)|
+|-|
 
 ### Configurer les CORS
 - Activer Access-Control-Allow-Credentials
