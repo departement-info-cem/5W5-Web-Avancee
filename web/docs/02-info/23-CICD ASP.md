@@ -22,6 +22,14 @@ builder.Services.AddDbContext<ApplicationDbContext>(options =>
   "DefaultConnection": "DataSource=app.db;Cache=Shared"
 },
 ```
+- Comme c'est une technologie de BD différente, la syntaxe n'est pas exactement la même et les migrations ne sont pas compatibles entre les deux!
+:::warning
+Il faut également refaire les **migrations!**
+:::
+
+:::info
+Comme ce n'est pas trop intéressant de travailler avec SQLite, c'est probablement une bonne idée de vous créer une branche pour le déploiement, disons "prod". Et de faire le changement de BD dans cette branche là et continuer d'utiliser MS SQL dans vos autres branches.
+:::
 
 ### Ajuster les Cookies
 - Nous devrons modifier les cookies pour ajuster l'option SameSite et permettre l'échange de cookies entre domaine
