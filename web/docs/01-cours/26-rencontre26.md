@@ -11,9 +11,9 @@ Il faut également refaire les **migrations!**
 
 [CICD](/info/CICD)
 
-[CICD Angular](/info/CICDAngular)
+[CICD Angular](/info/CICD%20Angular)
 
-[CICD ASP](/info/CICDASP)
+[CICD ASP](/info/CICD%20ASP)
 
 
 

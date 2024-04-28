@@ -31,6 +31,7 @@ Il faut également refaire les **migrations!**
 Comme ce n'est pas trop intéressant de travailler avec SQLite, c'est probablement une bonne idée de vous créer une branche pour le déploiement, disons "prod". Et de faire le changement de BD dans cette branche là et continuer d'utiliser MS SQL dans vos autres branches.
 :::
 
+<!--
 ### Outil de debug EntityFramework
 
 En ajoutant cette configuration dans Program.cs, on va pouvoir obtenir des erreurs plus claires sur nos pages lorsqu'il y a un problème avec EntityFramework.
@@ -45,6 +46,7 @@ Il faut également ajouter cette libraire:
 
 |![alt text](image-2.png)|
 |-|
+-->
 
 ### Ajuster les Cookies
 - Nous devrons modifier les cookies pour ajuster l'option SameSite et permettre l'échange de cookies entre domaine
@@ -92,6 +94,7 @@ builder.Services.ConfigureApplicationCookie(options =>
 | ![image](/img/infos/CICD/ASP/5W5-s3-az13.jpg) |
 |-|
 
+<!--
 ### Activer les messages d'erreurs
 - Nous allons activer le mode développement pour être en mesure de voir les problème qui surviennent
 - Cela nous permettra aussi d'appliquer les migrations
@@ -112,6 +115,32 @@ builder.Services.ConfigureApplicationCookie(options =>
 
 |![alt text](image-3.png)|
 |-|
+
+-->
+
+### Appliquer les migrations
+
+Pour des raisons de sécurité, le fichier de BD que l'on a dans notre projet n'est pas directement utilisable sur le serveur déployé. Pour régler le problème, on va s'ajouter une page MVC pour **l'admin** qui va nous permettre d'appliquer les migrations.
+
+Note: Il y a déjà un exemple (**ToolsController**) dans le projet [BackgroundService](/info/BackgroundService), dans la branche **solutionSQLite**
+
+```csharp
+public async Task<IActionResult> Index()
+{
+    List<string> result = (await _context.Database.GetPendingMigrationsAsync()).ToList();
+    this.ViewData["pendingmigrations"] = result;
+
+    return View();
+}
+
+[HttpGet]
+public IActionResult ApplyMigrations()
+{
+    _context.Database.Migrate();
+
+    return RedirectToAction(nameof(Index));
+}
+```
 
 ### Configurer les CORS
 - Activer Access-Control-Allow-Credentials
