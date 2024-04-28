@@ -110,7 +110,7 @@ public async Task DoSomething(CancellationToken stoppingToken){
 ```
 
 :::danger
-On peut accéder à un **Hub**, MAIS, le hub n'a **pas de Context!** C'est normal, on ne l'appel pas à partir d'un contrôleur. Donc pas possible d'obtenir l'utilisateur du Hub, car **ce concept ne fait pas de sens ici!**
+On peut accéder à un **IHubContext**, mais pas au **Hub** lui même. On peut utiliser le **IHubContext** pour envoyer des messages aux clients et aux groupes, mais on ne peut pas appeler les méthodes du Hub. Il n'y a pas de "User", ni de "connection" dans notre BackgroundService. Donc pas possible d'utiliser ConnectionId, Caller, Others ou l'utilisateur comme dans une action du Hub!
 :::
 
 ### Utilisation du BackgroundService à partir du Hub
