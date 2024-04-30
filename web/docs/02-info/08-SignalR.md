@@ -193,26 +193,28 @@ La librairie "@microsoft/signalr" permet de communiquer facilement avec un hub.
 
 ```ts
 connectToHub() {
-  // On doit commencer par créer la connexion vers le Hub
-  this.hubConnection = new signalR.HubConnectionBuilder()
+    // On doit commencer par créer la connexion vers le Hub
+    this.hubConnection = new signalR.HubConnectionBuilder()
                               .withUrl('https://localhost:7060/chat')
                               .build();
-  // On se connecte au Hub  
-  this.hubConnection
-    .start()
-    .then(() => {
-        console.log('La connexion est active!');
-        // TODO Une fois connectée, on peut commencer à écouter pour les évènements qui vont déclencher des callbacks
-        this.hubConnection!.on('UneFonction', (data) => {
-            // data a le même type que ce qui a été envoyé par le serveur
-            console.log(data);
-        })
+
+    // On peut commencer à écouter pour les évènements qui vont déclencher des callbacks
+    this.hubConnection!.on('UneFonction', (data) => {
+        // data a le même type que ce qui a été envoyé par le serveur
+        console.log(data);
+    });
     
-        this.hubConnection!.on('UneAutreFonction', (data) => {
-            console.log(data);
-        })
-      })
-      .catch(err => console.log('Error while starting connection: ' + err))
+    this.hubConnection!.on('UneAutreFonction', (data) => {
+        console.log(data);
+    });
+
+    // On se connecte au Hub  
+    this.hubConnection
+        .start()
+        .then(() => {
+            console.log('La connexion est active!');
+          })
+        .catch(err => console.log('Error while starting connection: ' + err));
 }
 ```
 
