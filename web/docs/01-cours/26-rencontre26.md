@@ -7,6 +7,8 @@ Il faut également refaire les **migrations!**
 :::
 - Comment mettre les données de la page à jour dans la version déployée
 
+- Comment déboger notre serveur à distance
+
 ## Info
 
 [CICD](/info/CICD)
@@ -14,6 +16,8 @@ Il faut également refaire les **migrations!**
 [CICD Angular](/info/CICD%20Angular)
 
 [CICD ASP](/info/CICD%20ASP)
+
+[Débogage à distance du serveur](/info/DebugAzureDevOps)
 
 
 
