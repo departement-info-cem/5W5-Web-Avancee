@@ -5,9 +5,10 @@
 :::warning
 Il faut également refaire les **migrations!**
 :::
-- Comment mettre les données de la page à jour dans la version déployée
 
 - Comment déboger notre serveur à distance
+
+- Comment mettre les données de la page à jour dans la version déployée
 
 ## Info
 
@@ -18,6 +19,8 @@ Il faut également refaire les **migrations!**
 [CICD ASP](/info/CICD%20ASP)
 
 [Débogage à distance du serveur](/info/DebugAzureDevOps)
+
+[Mise à jour des données avec NgZone pour SignalR/Angular](/info/NgZone)
 
 
 
