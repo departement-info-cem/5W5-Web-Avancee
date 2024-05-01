@@ -10,6 +10,6 @@ CI/CD (Continuous integration, continuous delivery) permet de relier les activit
 
 ### Ce que nous ferons
 
-| ![image](/img/infos/CICD/5W5-s3-cicd2.png) |
+| ![image](/img/infos/CICD/5W5-s3-cicd3.png) |
 |-|
 
