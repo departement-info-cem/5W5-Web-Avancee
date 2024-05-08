@@ -76,6 +76,20 @@ Ou encore
 tripsServiceMock.Setup(s => s.Get(It.IsAny<int>())).Returns(value: null);
 ```
 
+### Pour forcer le Mock à lancer une exception
+
+Si l'on veut lancer une exception avec notre Mock, on peut simplement utiliser Throws à la place de Returns
+
+Dans ce cas, un appel à DoSomething du service mocké va toujours lancer une exception de type MyException
+```csharp
+serviceMock.Setup(s => s.DoSomething(It.IsAny<string>())).Throws(new MyException());
+```
+
+Dans ce cas, c'est seulement lorsque l'on appel la méthode DoSomething avec 42 que l'exception se produit et elle contient un message.
+```csharp
+serviceMock.Setup(s => s.DoSomething(42)).Throws(new MyException("Mon Message"));
+```
+
 
 ### Pour une fonction qui retourne void
 
@@ -132,11 +146,27 @@ tripsControllerMock.Setup(t => t.UserId).Returns("2");
 ```
 
 ### Étape 4
-Utiliser notre mock
+Utiliser notre mock (Dans cet exemple, le contrôleur a retourné un **Ok** sans paramètre et le type de retour de l'action est donc **OkResult**)
 ```csharp
-RedirectToRouteResult result = tripsControllerMock.Object.Delete(1)
+OkResult result = tripsControllerMock.Object.Delete(1)
 ```
 
+
+## ActionResult
+
+Lorsque l'on appel une action, le type retourné est un ActionResult\<T\> et l'on construit l'objet retourné en appelant une méthode comme **return Ok(value)** ou **return BadRequest()**
+
+Si on porte attention, on voit qu'il n'y a **PAS de new**, on ne retourne pas un objet Ok ou BadRequest, mais on appel la méthode Ok ou BadRequest qui va créer un objet.
+
+Si on regarde le type d'objet qui est retourné par la méthode Ok, on voit que c'est un OkObjectResult dans le cas où Ok prend une valeur.
+
+|![Alt text](image-5.png)|
+|-|
+
+Et un objet OkResult lorsqu'il n'y en a pas.
+
+|![Alt text](image-6.png)|
+|-|
 
 
 
