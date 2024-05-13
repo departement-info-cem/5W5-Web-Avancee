@@ -138,3 +138,33 @@ ng build
 |-|
 
 
+### Problème de budget
+
+Si vous avez une erreur de ce genre au moment de faire votre build:
+
+|![alt text](image-7.png)|
+|-|
+
+Il faut augmenter le budget dans le fichier **angular.json**
+:::info
+initiallement, le **"maximumError"** du budget **"initial"** était de **1mb** (On peut voir l'erreur qui mentionne 1.00 MB).
+En le modifiant pour **2mb**, le build est maintenant un succès.
+:::
+
+``` powershell
+    "configurations": {
+      "production": {
+        "budgets": [
+          {
+            "type": "initial",
+            "maximumWarning": "500kb",
+            "maximumError": "2mb"
+          },
+          {
+            "type": "anyComponentStyle",
+            "maximumWarning": "2kb",
+            "maximumError": "4kb"
+          }
+```
+
+

@@ -146,9 +146,11 @@ tripsControllerMock.Setup(t => t.UserId).Returns("2");
 ```
 
 ### Étape 4
-Utiliser notre mock (Dans cet exemple, le contrôleur a retourné un **Ok** sans paramètre et le type de retour de l'action est donc **OkResult**)
+Utiliser notre mock (Dans cet exemple, le contrôleur a retourné un **Ok** sans paramètre et le type de retour du résultat de l'action est **OkResult**)
 ```csharp
-OkResult result = tripsControllerMock.Object.Delete(1)
+var actionresult = tripsControllerMock.Object.Delete(1)
+var result = actionresult.Result as OkResult;
+Assert.IsNotNull(result);
 ```
 
 
