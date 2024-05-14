@@ -94,21 +94,22 @@ builder.Services.ConfigureApplicationCookie(options =>
 | ![image](/img/infos/CICD/ASP/5W5-s3-az13.jpg) |
 |-|
 
-<!--
+
 ### Activer les messages d'erreurs
 - Nous allons activer le mode développement pour être en mesure de voir les problème qui surviennent
-- Cela nous permettra aussi d'appliquer les migrations
-- Aller dans Configuration et ajouter un nouveau paramètre d'application
+- Aller dans Variables d'environment et faites "Ajouter"
 
-| ![image](/img/infos/CICD/ASP/5W5-s3-az14.jpg) |
+| ![image](image-8.png) |
 |-|
 
 - Inscrire ASPNETCORE_ENVIRONMENT comme nom de paramètre
 - Inscrire Development comme valeur
-- Enregistrer les changements
+- Valider les changements
 
-| ![image](/img/infos/CICD/ASP/5W5-s3-az15.jpg) |
+| ![image]((image-9.png) |
 |-|
+
+<!--
 
 ### Appliquer les migrations
 - Avec ASPNETCORE_ENVIRONMENT à development on pourra appliquer les migration lors de notre première connexion
