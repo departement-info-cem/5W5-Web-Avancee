@@ -1,8 +1,11 @@
 # CI/CD avec Angular
 
 ### Ajouter un # au routage
-- Pour s'enlever des maux de têtes de configuration, nous allons ajouter un # au début de nos routes
-- Sans le hashtag, nous no pourrons pas avoir accès directement à une url de l'application
+- Pour s'enlever des maux de têtes de configuration, nous allons ajouter un **#** au début de nos routes
+
+:::warning
+Sans le **hashtag**, nous ne pourrons pas avoir accès directement à une url de l'application
+:::
 
 ```ts
 @NgModule({
