@@ -78,6 +78,16 @@ Faites attention d'effacer le " \} à la fin et le \{   "token": " au début
 
 C'est le moment de réviser Angular! Les prochaines étapes sont moins détaillées, sauf pour ce qui est nouveau!
 
+- Lorsque vous aurez terminé, votre application devrait ressembler à ceci (Les détails ne sont pas important)
+
+Après avoir fait un appel publique sans être connecté:
+
+![alt text](image-26.png)
+
+Après s'être connecté et avoir fait un appel privé:
+
+![alt text](image-27.png)
+
 ### Tester un appel de base
 - Créer un client Angular
 
@@ -104,9 +114,7 @@ Pourquoi --ssl? C'est une option pour rouler le serveur avec https, c'est néces
 
 - Faites une page très simple avec simplement 2 boutons "TestPublic" et "TestPrivate"
 - Créer des méthodes pour vous permettre d'appeler votre serveur web API en cliquant sur les boutons.
-
-Note: Vous pouvez simplement faire un alert() pour afficher le résultat de l'appel.
-
+- Vous pouvez simplement ajoutez un section résultat sur la page et afficher le résultat du dernier appel au serveur.
 - L'appel à la fonction publique ne fonctionne probablement pas avec une **exception** à propos des **CORS**. Pourquoi? Vous faites un appel à partir d'un autre site!
 - Modifiez Program.cs pour ajouter le droit d'accès **CORS à localhost:4200**
 
@@ -129,14 +137,13 @@ app.UseCors("CorsPolicy");
 - Vérifier que la publique fonctionne maintenant
 - Vérifier que la privée donne une erreur 401
 
-
 ### Ajouter l'authentification
 - Ajouter un bouton pour s'enregistrer
 - Ajouter un bouton pour se connecter
-- Pour les appels au serveur vous pouvez utiliser un username, email et password hardcodés pour garder ça simple
+- Pour les appels au serveur vous pouvez utiliser un username, email et password hardcodés pour garder ça simple (ou permettre de modifier le username comme dans l'exemple...)
 
-- Lorsque vous obtenez le résultat de votre appel à Login, il faut sauvegarder la valeur dans votre session.
-- Utiliser le sessionStorage pour sauvegarder le token
+- Lorsque vous obtenez le résultat de votre appel à Login, il faut sauvegarder la valeur dans votre session!
+- Utiliser le sessionStorage pour sauvegarder le token:
 
 ```ts
 sessionStorage.setItem("token", result.token);
@@ -164,7 +171,4 @@ sessionStorage.removeItem("token");
 - Pour éviter de compliquer chacun des appels au serveur, utilisez un interceptor comme vous aviez déjà vu en 4W6. Vous pouvez simplement vérifier si il y a un token dans le sessionStorage et l'inclure si il n'est pas null!
 
 - Oui, oui, prenez vraiment le temps d'ajouter un interceptor, ça vaut la peine et vous allez l'utiliser toute la session!
-
-- Lorsque vous avez terminé, votre application devrait ressembler à ceci: (Les détails ne sont pas important)
-
 
