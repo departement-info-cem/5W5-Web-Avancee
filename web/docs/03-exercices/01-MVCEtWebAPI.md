@@ -229,15 +229,140 @@ using MVCEtWebAPI.Data;
 
 ### Ajout des méthodes Register et Login 
 
-- Ajout d'une action Register avec Token
-- Tester avec Swagger (doit recevoir un token)
+- Créer un répertoire DTOs dans le projet WebAPI (Les DTOs ne sont pas utiles pour le projet MVC, alors on ne va pas les mettre dans le project Models). 
+- Ajoutez une classe **RegisterDTO** au projet WebAPI.
 
-- Ajout d'une action Login avec Token
-- Tester avec Swagger (doit recevoir un token)
+```csharp
+public class RegisterDTO
+{
+    public string PasswordConfirm { get; set; }
+    public string Password { get; set; }
+    public string Username { get; set; }
+    public string Email { get; set; }
+}
+```
 
-- Tester la méthode private après un Login.
+- Ajout d'une action **Register** token à **AccountController**
+- Attention, il faut également ajouter une injection de la dépendance **UserManager\<IdentiyUser\>**
 
-Ça ne fonctionne toujours pas, mais c'est normal, il faut fournir le token lorsqu'on fait l'appel!
+```csharp
 
-C'est terminé pour aujourd'hui! Au prochain cours, vous allez continuer à travailler avec la **MÊME solution**, alors assurrez-vous de la **conserver quelque pars**!
+private readonly UserManager<IdentityUser> _userManager;
 
+public AccountController(UserManager<IdentityUser> userManager)
+{
+    _userManager = userManager;
+}
+
+[HttpPost]
+public async Task<ActionResult> Register(RegisterDTO registerDTO)
+{
+
+    if (registerDTO.Password != registerDTO.PasswordConfirm)
+    {
+        return StatusCode(StatusCodes.Status500InternalServerError, new { Error = "Le mot de passe et la confirmation ne sont pas identique" });
+    }
+
+    IdentityUser user = new IdentityUser()
+    {
+        UserName = registerDTO.Username,
+        Email = registerDTO.Email
+    };
+    IdentityResult identityResult = await _userManager.CreateAsync(user, registerDTO.Password);
+
+    if (!identityResult.Succeeded)
+    {
+        return StatusCode(StatusCodes.Status500InternalServerError, new { Error = identityResult.Errors });
+    }
+
+    return Ok();
+}
+
+```
+
+- Testez en créant un nouvel utilisateur avec Swagger (Vérifier que la réponse est bien un code 200)
+
+- Ajoutez les classes **LoginDTO** et **LoginSuccessDTO** au projet WebAPI.
+
+```csharp
+public class LoginDTO
+{
+    [Required]
+    public string UserName { get; set; } = "";
+    [Required] 
+    public string Password { get; set; } = "";
+}
+
+public class LoginSuccessDTO
+{
+    [Required]
+    public string Token { get; set; } = "";
+}
+```
+
+- Injectez un **SignInManager**
+```csharp
+private readonly UserManager<IdentityUser> _userManager;
+private readonly SignInManager<IdentityUser> _signInManager;
+
+public AccountController(UserManager<IdentityUser> userManager, SignInManager<IdentityUser> signInManager)
+{
+    _userManager = userManager;
+    _signInManager = signInManager;
+}
+```
+
+- Ajout d'une action **Login** token à **AccountController**
+
+```csharp
+[HttpPost]
+public async Task<ActionResult> Login(LoginDTO loginDTO)
+{
+    var result = await _signInManager.PasswordSignInAsync(loginDTO.Username, loginDTO.Password, true, lockoutOnFailure: false);
+
+    if (result.Succeeded)
+    {
+        Claim? nameIdentifierClaim = User.Claims?.FirstOrDefault(x => x.Type == ClaimTypes.NameIdentifier);
+        
+        // Note: On ajoute simplement le NameIdentifier dans les claims. Il n'y aura pas de rôle pour les utilisateurs du WebAPI.
+        List<Claim> authClaims = new List<Claim>();
+        authClaims.Add(nameIdentifierClaim);
+
+        SymmetricSecurityKey signingKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes("C'est tellement la meilleure cle qui a jamais ete cree dans l'histoire de l'humanite (doit etre longue)"));
+
+        string issuer = this.Request.Scheme + "://" + this.Request.Host;
+
+        DateTime expirationTime = DateTime.Now.AddMinutes(30);
+
+        JwtSecurityToken token = new JwtSecurityToken(
+            issuer: issuer,
+            audience: null,
+            claims: authClaims,
+            expires: expirationTime,
+            signingCredentials: new SigningCredentials(signingKey, SecurityAlgorithms.HmacSha256Signature)
+        );
+
+        string tokenString = new JwtSecurityTokenHandler().WriteToken(token);
+
+        // On ne veut JAMAIS retouner une string directement lorsque l'on utilise Angular.
+        // Angular assume que l'on retourne un objet et donne une erreur lorsque le résultat obtenu est une simple string!
+        return Ok(new LoginSuccessDTO() { Token = tokenString });
+    }
+
+    return NotFound(new { Error = "L'utilisateur est introuvable ou le mot de passe ne concorde pas" });
+}
+```
+
+:::warning
+Chaque année, de pauvres étudiants perdent beaucoup de temps en retournant une simple string dans un contrôleur WebAPI. Ça fonctionne bien dans Swagger ou Postman et ce n'est pas une erreur en soi, mais Angular assume que la valeur retourné est du JSON (donc un objet ou un array) et donne une erreur de parsing JSON. Essayez de ne pas être la victime de ce problème, retournez toujours un DTO, un array ou une string JSON. 
+:::
+
+
+- Testez la méthode **Register** avec **Swagger**
+![alt text](image-22.png)
+
+Même si vous testez la méthode private **APRÈS** un **Login**, ça ne va pas fonctionner...
+
+C'est "normal", il faudra fournir le token lors de l'appel! (Vu au prochain cours)
+
+Mais c'est terminé pour aujourd'hui! Au prochain cours, vous allez continuer à travailler avec la **MÊME solution**, alors assurrez-vous de la **conserver quelque pars**!
