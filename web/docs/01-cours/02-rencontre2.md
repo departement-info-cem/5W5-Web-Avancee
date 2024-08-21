@@ -10,7 +10,7 @@
 
 ### Exercices
 
-[Authentification par cookie avec MVC et Angular](/exercices/AuthentificationParCookie)
+[Authentification par cookie avec MVC et Angular](/exercices/AuthentificationParToken)
 
 ### Liens
 
