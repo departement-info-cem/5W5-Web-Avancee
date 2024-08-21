@@ -4,8 +4,6 @@
 
 Mettre en place une solution .Net qui contient 3 projets, donc 1 MVC et un Web API.
 
-Créer un projet angular qui permet de se connecter à l'API Web en utilisant une authentification par token.
-
 ## La partie .NET
 
 ### Création d'un projet MVC

@@ -1,76 +1,170 @@
 # Authentification par token
 
-## Objectif
+:::warning
 
-Mettre en place une solution .Net qui contient 3 projets, donc 1 MVC et un Web API.
+Suite de l'exercice précédent: MVCEtWebAPI
 
-Créer un projet angular qui permet de se connecter à l'API Web en utilisant une authentification par token.
+:::
+
+## Objectifs
+
+- Ajouter la possibilité d'utiliser un token avec Swagger
+
+- Créer un projet angular qui permet de se connecter à l'API Web en utilisant une authentification par token
+
+## .Net
+
+### Ajouter l'utilisation de token avec Swagger
+
+Cette partie est seulement pour **vous aider à tester** vos applications.
+
+:::info
+C'est possible d'utiliser un outil comme **Postman** à la place de Swagger et de spécifier les tokens pour faire nos tests.
+:::
+
+Dans **Program.cs**, modifier l'appel à la méthode **AddSwaggerGen**
+
+```csharp
+// Ajout d'un support pour les tokens dans Swagger
+builder.Services.AddSwaggerGen(opt =>
+{
+    opt.SwaggerDoc("v1", new OpenApiInfo { Title = "MyAPI", Version = "v1" });
+    opt.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
+    {
+        In = ParameterLocation.Header,
+        Description = "Please enter token",
+        Name = "Authorization",
+        Type = SecuritySchemeType.Http,
+        BearerFormat = "JWT",
+        Scheme = "bearer"
+    });
+
+    opt.AddSecurityRequirement(new OpenApiSecurityRequirement
+    {
+        {
+            new OpenApiSecurityScheme
+            {
+                Reference = new OpenApiReference
+                {
+                    Type=ReferenceType.SecurityScheme,
+                    Id="Bearer"
+                }
+            },
+            new string[]{}
+        }
+    });
+});
+```
+
+- Faites un register et un login avec un utilisateur en utilisant Swagger
+- Copiez le token qui a été reçu par l'appel au login (Copiez tout le contenu de la réponse, mais faites attention de garder seulement le token à la prochaine étape!)
+
+![alt text](image-23.png)
+
+- Cliquez sur le cadenas ouvert pour spécifier le token
+
+![alt text](image-24.png)
+
+:::warning
+Faites attention d'effacer le " \} à la fin et le \{   "token": " au début
+:::
+
+- Testez maintenant PrivateTest, vous devriez normalement obtenir un code 200
+
+![alt text](image-25.png)
 
 
+## Angular
 
+C'est le moment de réviser Angular! Les prochaines étapes sont moins détaillées, sauf pour ce qui est nouveau!
 
+### Tester un appel de base
+- Créer un client Angular
 
-
-Partie 1:
-
-Ajouter le code pour s'authentifier avec Swagger
-Tester la méthode Private
-
-
-## La partie Angular
-
-
-
-
-
-
-
-
-Partie 2:
-
-- Ajouter un client Angular
-- Ajouter 2 méthodes, une public et l'autre private
-- Ajouter un bouton pour tester les fonctions
-- Vérifier que la public fonctionne et l'autre pas
-
-- CORS?
-
-- Ajouter un bouton pour s'enregistrer
-- Ajouter un bouton pour se connecter
-    - Utiliser le localStorage pour le token
-- Tester la fonction privée
-- Faire le logout et affiche si on est connecté ou pas (les boutons register et login ou le bouton logout)
-- Ajouter un interceptor (être certain de retirer le bout de code de token de l'appel Angular)
-    - Tester
-
-
-- Ajout d'un Admin pour le projet MVC (le seul utilisateur qui va être utilisé dans notre cas)
-
-
-Partie Angular:
-<!--
-Créer avec --no-standalone
-
-Ajouter Material
-ng add @angular/material
-
-Ajouter Modules
-import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-
-Ajouter le service (Fournir le code sans gestion du token)
-
-Modifier l'app et son template
-
-Ajouter le code pour la gestion du token
-
-Faire ajouter les CORS
+```powershell
+ng new ngMVCEtWebAPI --no-standalone
+```
 
 A FAIRE: Image de la création de projet Angular
 ![alt text](image-3.png)
 
+:::info
+Pourquoi --no-standalone? C'est une option pour continuer d'utiliser l'import pars Module avec laquelle vous êtes déjà familliés.
+:::
 
-![image](/img/exercices/areas/path.jpg)
--->
+- Après utiliser cette commande pour démarrer le serveur Angular
+
+```powershell
+ng serve --ssl -o
+```
+
+:::info
+Pourquoi --ssl? C'est une option pour rouler le serveur avec https, c'est nécessaire pour avoir une authentification sécuritaire.
+:::
+
+- Faites une page très simple avec simplement 2 boutons "TestPublic" et "TestPrivate"
+- Créer des méthodes pour vous permettre d'appeler votre serveur web API en cliquant sur les boutons.
+
+Note: Vous pouvez simplement faire un alert() pour afficher le résultat de l'appel.
+
+- L'appel à la fonction publique ne fonctionne probablement pas avec une **exception** à propos des **CORS**. Pourquoi? Vous faites un appel à partir d'un autre site!
+- Modifiez Program.cs pour ajouter le droit d'accès **CORS à localhost:4200**
+
+La modification **AVANT builder.Build()**
+```csharp
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("CorsPolicy", builder => builder
+        .WithOrigins("https://localhost:4200")
+        .AllowAnyMethod()
+        .AllowAnyHeader());
+});
+```
+
+La modification **AVANT app.UseHttpsRedirection()**
+```csharp
+app.UseCors("CorsPolicy");
+```
+
+- Vérifier que la publique fonctionne maintenant
+- Vérifier que la privée donne une erreur 401
+
+
+### Ajouter l'authentification
+- Ajouter un bouton pour s'enregistrer
+- Ajouter un bouton pour se connecter
+- Pour les appels au serveur vous pouvez utiliser un username, email et password hardcodés pour garder ça simple
+
+- Lorsque vous obtenez le résultat de votre appel à Login, il faut sauvegarder la valeur dans votre session.
+- Utiliser le sessionStorage pour sauvegarder le token
+
+```ts
+sessionStorage.setItem("token", result.token);
+```
+
+:::info
+Pour nous permettre de facilement ouvrir plusieurs fenêtre pour des joueurs différents lorsque l'on va tester notre jeu, on va préférez utiliser sessionStorage pour stocker nos tokens!
+:::
+
+- Tester la fonction privée, faites attention d'inclure le token qui est maintenant dans sessionStorage en utilisant sessionStorage.getItem("token")
+
+```ts
+let token = sessionStorage.getItem("token");
+```
+
+- Ajoutez un bouton logout qui fait simplement
+
+```ts
+sessionStorage.removeItem("token");
+```
+
+- Testez que l'appel à la fonctionne privée ne fonctionne plus
+- Tester que l'appel fonctionne après un nouveau login!
+
+- Pour éviter de compliquer chacun des appels au serveur, utilisez un interceptor comme vous aviez déjà vu en 4W6. Vous pouvez simplement vérifier si il y a un token dans le sessionStorage et l'inclure si il n'est pas null!
+
+- Oui, oui, prenez vraiment le temps d'ajouter un interceptor, ça vaut la peine et vous allez l'utiliser toute la session!
+
+- Lorsque vous avez terminé, votre application devrait ressembler à ceci: (Les détails ne sont pas important)
+
+

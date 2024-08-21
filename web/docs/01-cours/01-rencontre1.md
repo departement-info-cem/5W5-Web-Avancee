@@ -23,7 +23,7 @@ Quand on génére du code avec **ChatGPT** que l'on ne comprend pas: ça prend *
 
 ### Exercice
 
-<!--[Areas](/exercices/Areas)-->
+[Solution avec MVC et Web API](/exercices/MVCEtWebAPI)
 
 ### Liens
 
