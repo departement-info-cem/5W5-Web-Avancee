@@ -114,15 +114,18 @@ C'est **possible** de rouler à la fois des contrôleurs de **WebAPI** et **MVC*
 - Nommez-le simplement "WebAPI"
 - Ne choisissez **PAS** de type d'authentification (il faut malheureusement faire la configuration de l'authentification par token nous même...)
 
-![alt text](image-14.png)
+|![alt text](image-14.png)|
+|-|
 
 - Regardez le menu en haut, il y a maintenant une nouvelle option pour choisir le projet que vous voulez lancer
 
-![alt text](image-15.png)
+|![alt text](image-15.png)|
+|-|
 
 - Choisissez WebAPI et vérifiez que ça se lance bien et que vous avez maintenant 
 
-![alt text](image-16.png)
+|![alt text](image-16.png)|
+|-|
 
 - Créer un nouveau contrôleur nommé **AccountController** et ajoutez une méthode **PublicTest**
 
@@ -157,7 +160,8 @@ public ActionResult PrivateTest()
 
 - Testez la méthode **PrivateTest** en utilisant **Swagger**
 
-![alt text](image-18.png)
+|![alt text](image-18.png)|
+|-|
 
 - Le message est assez claire, on a mis un [Authorize], mais on n'a aucune méthode d'authentification!
 
@@ -168,7 +172,8 @@ Comme c'est déjà vu en 4W6, voici simplement le code **Program.cs** et pour aj
 - Ajoutez une dépendance entre **WebAPI** et le projet **Models** comme vous avez fait pour le projet **MVC**
 - Ajoutez également une dépendance vers le package de **JwtBearer** (Utilisé par l'authentification par Token)
 
-![alt text](image-19.png)
+|![alt text](image-19.png)|
+|-|
 
 - Ajoutez dans **Program.cs**
 
@@ -217,12 +222,14 @@ using MVCEtWebAPI.Data;
 
 - Copiez la ConnectionString du fichier appsettings.json du projet MVC vers celui du projet WebAPI
 
-![alt text](image-20.png)
+|![alt text](image-20.png)|
+|-|
 
 - Lancez l'application pour vérifier que tout fonctionne encore
 - Testez encore la méthode **PrivateTest**, on veut maintenant voir: (C'est normal de ne pas avoir accès, on n'est toujours pas authentifié!)
 
-![alt text](image-21.png)
+|![alt text](image-21.png)|
+|-#
 
 
 ### Ajout des méthodes Register et Login 
@@ -355,9 +362,9 @@ public async Task<ActionResult> Login(LoginDTO loginDTO)
 Chaque année, de pauvres étudiants perdent beaucoup de temps en retournant une simple string dans un contrôleur WebAPI. Ça fonctionne bien dans Swagger ou Postman et ce n'est pas une erreur en soi, mais Angular assume que la valeur retourné est du JSON (donc un objet ou un array) et donne une erreur de parsing JSON. Essayez de ne pas être la victime de ce problème, retournez toujours un DTO, un array ou une string JSON. 
 :::
 
-
 - Testez la méthode **Register** avec **Swagger**
-![alt text](image-22.png)
+|![alt text](image-22.png)|
+|-|
 
 Même si vous testez la méthode private **APRÈS** un **Login**, ça ne va pas fonctionner...
 

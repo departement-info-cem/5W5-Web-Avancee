@@ -59,11 +59,13 @@ builder.Services.AddSwaggerGen(opt =>
 - Faites un register et un login avec un utilisateur en utilisant Swagger
 - Copiez le token qui a été reçu par l'appel au login (Copiez tout le contenu de la réponse, mais faites attention de garder seulement le token à la prochaine étape!)
 
-![alt text](image-23.png)
+|![alt text](image-23.png)|
+|-|
 
 - Cliquez sur le cadenas ouvert pour spécifier le token
 
-![alt text](image-24.png)
+|![alt text](image-24.png)|
+|-|
 
 :::warning
 Faites attention d'effacer le " \} à la fin et le \{   "token": " au début
@@ -71,7 +73,8 @@ Faites attention d'effacer le " \} à la fin et le \{   "token": " au début
 
 - Testez maintenant PrivateTest, vous devriez normalement obtenir un code 200
 
-![alt text](image-25.png)
+|![alt text](image-25.png)|
+|-|
 
 
 ## Angular
@@ -82,11 +85,13 @@ C'est le moment de réviser Angular! Les prochaines étapes sont moins détaill�
 
 Après avoir fait un appel publique sans être connecté:
 
-![alt text](image-26.png)
+|![alt text](image-26.png)|
+|-|
 
 Après s'être connecté et avoir fait un appel privé:
 
-![alt text](image-27.png)
+|![alt text](image-27.png)|
+|-|
 
 ### Tester un appel de base
 - Créer un client Angular
@@ -96,7 +101,8 @@ ng new ngMVCEtWebAPI --no-standalone
 ```
 
 A FAIRE: Image de la création de projet Angular
-![alt text](image-3.png)
+|![alt text](image-3.png)|
+|-|
 
 :::info
 Pourquoi --no-standalone? C'est une option pour continuer d'utiliser l'import pars Module avec laquelle vous êtes déjà familliés.

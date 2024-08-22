@@ -31,18 +31,22 @@ Un seul membre de votre équipe doit créer l'organisation. On va ajouter les au
 
 - Une organisation pourra avoir plusieurs projets.
 
-![image](/img/infos/DevOps/Configuration/5W5-s2-org.jpg)
+|![image](/img/infos/DevOps/Configuration/5W5-s2-org.jpg)|
+|-|
 
-![image](/img/infos/DevOps/Configuration/5W5-s2-org2.jpg)
+|![image](/img/infos/DevOps/Configuration/5W5-s2-org2.jpg)|
+|-|
 
 ### Dark Mode
 - Se mettre en Dark Mode
 
-![image](/img/infos/DevOps/Configuration/5W5-s2-dark1.jpg)
+|![image](/img/infos/DevOps/Configuration/5W5-s2-dark1.jpg)|
+|-|
 
 - Oh que ça fait du bien!
 
-![image](/img/infos/DevOps/Configuration/5W5-s2-dark2.jpg)
+|![image](/img/infos/DevOps/Configuration/5W5-s2-dark2.jpg)|
+|-|
 
 
 ### Créer le projet
@@ -51,11 +55,13 @@ Un seul membre de votre équipe doit créer l'organisation. On va ajouter les au
 Cliquer sur "Advanced"
 :::
 
-![image](/img/infos/DevOps/Configuration/5W5-s2-proj1.jpg)
+|![image](/img/infos/DevOps/Configuration/5W5-s2-proj1.jpg)|
+|-|
 
 - Choisir "Agile" comme type de processus
 
-![image](/img/infos/DevOps/Configuration/5W5-s2-proj2.jpg)
+|![image](/img/infos/DevOps/Configuration/5W5-s2-proj2.jpg)|
+|-|
 
 - Compléter la création du projet!
 
@@ -63,8 +69,8 @@ Cliquer sur "Advanced"
 
 - Aller dans les paramètres de l'organisation
 
-
-![image](/img/infos/DevOps/Equipe/5W5-s2-invite1.jpg)
+|![image](/img/infos/DevOps/Equipe/5W5-s2-invite1.jpg)|
+|-|
 
 - Aller dans l'onglet Users
 
@@ -72,25 +78,29 @@ Cliquer sur "Advanced"
 Le menu semble différent? Êtes-vous dans la configuration du projet ou de l'**organization**?
 :::
 
-![image](/img/infos/DevOps/Equipe/5W5-s2-invite2.jpg)
+|![image](/img/infos/DevOps/Equipe/5W5-s2-invite2.jpg)|
+|-|
 
 ### Ajouter à l'organisation
 - Cliquer sur Add users
 
-![image](/img/infos/DevOps/Equipe/5W5-s2-invite3.jpg)
+|![image](/img/infos/DevOps/Equipe/5W5-s2-invite3.jpg)|
+|-|
 
 - Inscrire le courriel d'un coéquipier
 - Laisser le Access Level à **Basic**
 - Ajouter l'utilisateur au projet
 - Mettre l'utilisateur administrateur du projet
 
-![image](/img/infos/DevOps/Equipe/5W5-s2-invite4.jpg)
+|![image](/img/infos/DevOps/Equipe/5W5-s2-invite4.jpg)|
+|-|
 
 Votre équipe s'agrandit!!!
 
 - sexybeast69@hotmail.com recevra une demande par courriel
 
-![image](/img/infos/DevOps/Equipe/5W5-s2-invite5.jpg)
+|![image](/img/infos/DevOps/Equipe/5W5-s2-invite5.jpg)|
+|-|
 
 - Pour finir, **ajouter votre enseignant à votre projet**. mathieu.briau@cegepmontpetit.ca
 
