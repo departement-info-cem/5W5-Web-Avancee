@@ -293,7 +293,7 @@ public async Task<ActionResult> Register(RegisterDTO registerDTO)
 public class LoginDTO
 {
     [Required]
-    public string UserName { get; set; } = "";
+    public string Username { get; set; } = "";
     [Required] 
     public string Password { get; set; } = "";
 }
@@ -362,7 +362,7 @@ public async Task<ActionResult> Login(LoginDTO loginDTO)
 Chaque année, de pauvres étudiants perdent beaucoup de temps en retournant une simple string dans un contrôleur WebAPI. Ça fonctionne bien dans Swagger ou Postman et ce n'est pas une erreur en soi, mais Angular assume que la valeur retourné est du JSON (donc un objet ou un array) et donne une erreur de parsing JSON. Essayez de ne pas être la victime de ce problème, retournez toujours un DTO, un array ou une string JSON. 
 :::
 
-- Testez la méthode **Register** avec **Swagger**
+- Testez la méthode **Login** avec **Swagger**
 
 |![alt text](image-22.png)|
 |-|
