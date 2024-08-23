@@ -229,7 +229,7 @@ using MVCEtWebAPI.Data;
 - Testez encore la méthode **PrivateTest**, on veut maintenant voir: (C'est normal de ne pas avoir accès, on n'est toujours pas authentifié!)
 
 |![alt text](image-21.png)|
-|-#
+|-|
 
 
 ### Ajout des méthodes Register et Login 
@@ -363,6 +363,7 @@ Chaque année, de pauvres étudiants perdent beaucoup de temps en retournant une
 :::
 
 - Testez la méthode **Register** avec **Swagger**
+
 |![alt text](image-22.png)|
 |-|
 
