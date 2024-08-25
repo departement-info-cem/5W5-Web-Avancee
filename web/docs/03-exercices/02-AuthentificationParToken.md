@@ -239,3 +239,9 @@ Pour l'instant, on ne fait aucune vérification de la validité de durée de vie
 
 ![alt text](image-31.png)
 
+### Solution
+- 🔗[Solution .NET](https://github.com/CEM-420-5W5/MVCEtWebAPI)
+- 🔗[Solution Angular](https://github.com/CEM-420-5W5/ngMVCEtWebAPI)
+
+
+
