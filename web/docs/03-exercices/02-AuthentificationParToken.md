@@ -232,7 +232,7 @@ Si vous avez bien fait la partie sur l'authentification avec l'intercepteur, l'a
 :::
 
 :::warning
-Pour l'instant, on ne fait aucune vérification de la validité de durée de vie de notre Token! Si ça ne fonctionne pas, essayez de faire un Logout et un Login!
+Pour l'instant, on ne fait aucune vérification de la validité de durée de vie de notre Token qui expire après 30 minutes! Si ça ne fonctionne pas et que vous avez fait votre login il y a assez longtemps, essayez de faire un Logout et un Login!
 :::
 
 - Finalement, utilisez la page MVC pour vérifier que le data que vous ajoutez avec Angular est bien présent dans la BD!
