@@ -178,3 +178,64 @@ sessionStorage.removeItem("token");
 
 - Oui, oui, prenez vraiment le temps d'ajouter un interceptor, ça vaut la peine et vous allez l'utiliser toute la session!
 
+### Ajouter un modèle et un contrôleur MVC
+
+- Ajoutez un nouveau modèle et nommez le **TestData**. On va continuez d'utiliser Entity Framework, alors il faut que le modèle est un **Id**
+- Ajoutez également une propriété **Name**
+- ATTENTION: Comme c'est un modèle, ajoutez la classe dans le projet **Models**. Il va être utilisé par les 2 autres projets.
+
+- Ajoutez un contrôleur pour faire les actions CRUD sur **TestData**
+
+![alt text](image-28.png)
+
+![alt text](image-29.png)
+
+- Assurez-vous de pouvoir ajouter une entrée **TestData** avec les pages générés. (L'image affiche le résultat après avoir ajouté une entrée)
+
+![alt text](image-30.png)
+
+:::info
+N'oubliez pas de faire une migration et de mettre la BD à jour. Il y a les détails sur comment faire dans l'exercice précédent!
+:::
+
+- Ajoutez un \[Authorize\] au contrôleur que vous avez créé. 
+
+```csharp
+[Authorize]
+public class TestDatasController : Controller
+```
+
+- Vérifiez que vous devez maintenant être connecté avec un utilisateur pour utiliser le contrôleur
+
+### Ajouter une action Web API et l'utiliser dans Angular
+
+- Ajoutez un contrôleur **TestDataController** Web API à votre projet WebAPI
+- Ajoutez une action CreateData et un CreateTestDataDTO avec simplement une propriété Name. Protégez la avec **\[Authorize\]**
+
+```csharp
+public class CreateTestDataDTO
+{
+    public string Name { get; set; }
+}
+```
+
+- Dans l'action, créez une nouvelle instance de TestData avec le bon nom et sauvegardez la dans la BD
+
+- Testez l'action dans Swagger (Il va falloir utiliser un token après un login si vous avez bien mis un **\[Authorize\]**)
+
+- Ajoutez un formulaire à votre page Angular qui vous permet d'ajouter une nouvelle entrée TestData. Quelque chose d'assez simple comme ceci:
+
+![alt text](image-32.png)
+
+:::info
+Si vous avez bien fait la partie sur l'authentification avec l'intercepteur, l'appel devrait fonctionner après avoir fait un login.
+:::
+
+:::warning
+Pour l'instant, on ne fait aucune vérification de la validité de durée de vie de notre Token! Si ça ne fonctionne pas, essayez de faire un Logout et un Login!
+:::
+
+- Finalement, utilisez la page MVC pour vérifier que le data que vous ajoutez avec Angular est bien présent dans la BD!
+
+![alt text](image-31.png)
+
