@@ -1,6 +1,6 @@
 # Rencontre 2
 
-## Authentification par cookie et débogage
+## Authentification par token et débogage
 
 ## Info
 
@@ -8,9 +8,11 @@
 
 [Comment déboguer avec Angular](/info/DebogageAngular)
 
+Voir la différence lors d'une authentification par Token vs Cookie dans la vue Network des outils de débogage d'un navigateur
+
 ### Exercices
 
-[Authentification par cookie avec MVC et Angular](/exercices/AuthentificationParToken)
+[Authentification par token avec MVC et Angular](/exercices/AuthentificationParToken)
 
 ### Liens
 
