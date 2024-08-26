@@ -4,6 +4,18 @@
 
 Pour bien se préparer pour la prochaine rencontre, nous allons créer les équipes et les comptes pour utiliser Azure DevOps pendant cettre recontre.
 
+:::tip[Conseil de la séance]
+
+La détermination est le facteur le plus important pour prédire la réussite.
+
+Une profession, ça s'apprend sur plusieurs années et le talent initiale est éventuellement dépassé par une amélioration continue. 
+
+En travaillant chez Unity comme consultant, j'ai recroisé plusieurs directeurs de département pour de grandes compagnies de jeux vidéos.
+
+Des gens qui avaient été mes collègues dans la vingtaine et qui avaient tous en commun leur passion et leur détermination pour leur travail.
+
+:::
+
 ### Exercices
 
 Créer une **organization** avec le **nom de votre choix** et un **projet** avec le nom **MusiquePlus**
