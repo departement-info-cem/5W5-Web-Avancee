@@ -559,7 +559,7 @@ namespace RelationsNaN.Controllers
 
 - Vérifier le résultat en allant sur **/purchases**
 
-| ![image](/img/exercices/relations/GamesV1.png) |
+| ![image](/img/exercices/relations/Purchases.png) |
 |-|
 
 ## Autres possibilités
