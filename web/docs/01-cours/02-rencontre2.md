@@ -8,8 +8,6 @@
 
 [Comment déboguer avec Angular](/info/DebogageAngular)
 
-Voir la différence lors d'une authentification par Token vs Cookie dans la vue Network des outils de débogage d'un navigateur
-
 :::tip[Conseil de la séance]
 
 Un des avantages les plus intéressants de l'informatique, c'est qu'on peut essayer des milliers de choses sans avoir à rien dépenser!
