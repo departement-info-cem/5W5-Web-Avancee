@@ -6,6 +6,8 @@ Voir la différence lors d'une authentification par Token vs Cookie dans la vue 
 
 Pour bien se préparer pour la prochaine rencontre, nous allons créer les équipes et les comptes pour utiliser Azure DevOps pendant cettre recontre.
 
+🛠️ Démo sur les relations avec Entity Framework
+
 :::tip[Conseil de la séance]
 
 La détermination est le facteur le plus important pour prédire la réussite.
