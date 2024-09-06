@@ -2,6 +2,8 @@
 
 ## Relations et révision MVC
 
+Voir la différence lors d'une authentification par Token vs Cookie dans la vue Network des outils de débogage d'un navigateur
+
 Pour bien se préparer pour la prochaine rencontre, nous allons créer les équipes et les comptes pour utiliser Azure DevOps pendant cettre recontre.
 
 🛠️ Démo sur les relations avec Entity Framework

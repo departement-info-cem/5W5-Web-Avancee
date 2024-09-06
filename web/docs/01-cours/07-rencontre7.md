@@ -1,5 +1,9 @@
 # Rencontre 7
 
+:::warning
+Remise du diagramme de classe pour le TP1
+:::
+
 ## Polling et Signal R (première partie)
 
 ## Info

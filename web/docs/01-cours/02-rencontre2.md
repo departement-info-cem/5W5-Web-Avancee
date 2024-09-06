@@ -18,7 +18,6 @@ N'hésitez pas à modifier les exemples fournient, à suivre des tutoriels, à e
 
 :::
 
-
 ### Exercices
 
 [Authentification par token avec MVC et Angular](/exercices/AuthentificationParToken)
