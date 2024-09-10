@@ -4,7 +4,7 @@
 - Créer un nouveau projet Angular en utilisant le mode **--no-standalone**
 
 ```powershell
-ng new --no-standalone ngReactiveForms
+ng new --no-standalone guards
 ```
 
 - Créer une page **parent**
