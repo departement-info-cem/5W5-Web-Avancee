@@ -1,7 +1,12 @@
 # Routage et Guards
 
 ### Créer un nouveau projet
-- Créer un nouveau projet Angular.
+- Créer un nouveau projet Angular en utilisant le mode **--no-standalone**
+
+```powershell
+ng new --no-standalone ngReactiveForms
+```
+
 - Créer une page **parent**
 - Créer 4 pages enfant:
     - /verreDEau qui affiche l'image d'un verre d'eau
