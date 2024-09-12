@@ -96,6 +96,10 @@ public async Task EnvoyerAUneConnection(int value, string connectionId)
 }
 ```
 
+### C'est quoi un connectionId?
+
+Comme son nom l'indique, c'est l'Id de la connection établie entre le serveur et le client. Il n'est **PAS** unique par utilisateur et si la même page ouvre 2 connections différentes, il y aura 2 connectionIds **différents**.
+
 ### Envoyer des données à un usager
 
 ```csharp
@@ -105,6 +109,10 @@ public async Task EnvoyerAUnUsager(int value, string userId)
     await Clients.User(userId).SendAsync("UneFonctionClient", value);
 }
 ```
+
+:::info
+Comme un User peut se connecter plusieurs fois au même Hub, il est possible que ce code envoit l'information à plusieurs instances différentes (Par exemple, deux fenêtres d'un navigateur connecté à ce serveur).
+:::
 
 ### Appeler un usager
 
@@ -127,7 +135,7 @@ public async Task FairePlusieursChoses(int value, string userId)
     int result = await Clients.User(userId)
 				.InvokeAsync<int>("Calcul", value, CancellationToken.None);
     // Appeler la méthode UneFonctionClient sur tous les clients connectés à ce Hub
-    int result = await Clients.All.SendAsync("UneFonctionClient", result);
+    await Clients.All.SendAsync("UneFonctionClient", result);
 }
 ```
 
