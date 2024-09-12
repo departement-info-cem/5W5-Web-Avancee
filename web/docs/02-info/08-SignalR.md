@@ -226,6 +226,29 @@ connectToHub() {
 }
 ```
 
+:::warning
+Le moment est important!
+:::
+```ts
+    this.hubConnection = new signalR.HubConnectionBuilder()
+        .withUrl(environment.apiUrl + 'monHub')
+        .build();
+
+    // Il faut écouter les messages avant de faire start() sur la connection. On ne risque pas d'avoir un problème où le message est reçu avant même d'avoir exécuté le .on
+    // ATTENTION: Ce problème risque d'arriver beaucoup plus souvent dans une version DÉPLOYÉE de l'application
+    this.hubConnection?.on("DoSomething", (data:number) => {
+        // Faire quelque chose
+    });
+
+    this.hubConnection
+        .start()
+        .then(() => {
+            this.isConnected = true;
+            // Ne PAS faire de .on() ICI
+        });
+
+```
+
 ### Appel d'une action sur le Hub
 
 Une fois la connexion établit, on peut appeler les méthodes que l’on veut sur notre Hub.

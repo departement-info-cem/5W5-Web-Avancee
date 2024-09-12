@@ -4,29 +4,6 @@
 
 ## Choses en vracs 
 
-### Utilisation de SignalR
-
-Il est préférable de faire ceci pour éviter les **bugs** avec **SignalR**:
-
-```ts
-    this.hubConnection = new signalR.HubConnectionBuilder()
-        .withUrl(environment.apiUrl + 'monHub')
-        .build();
-
-    // C'est mieux d'écouter pour le message avant de faire start() sur la connection. On ne risque pas d'avoir un problème où le message est reçu avant même d'avoir obtenu la connection
-    // ATTENTION: Ce problème risque d'arriver beaucoup plus souvent dans une version DÉPLOYÉE de l'application
-    this.hubConnection?.on("DoSomething", (data:number) => {
-        // Faire quelque chose
-    });
-
-    this.hubConnection
-        .start()
-        .then(() => {
-            this.isConnected = true;
-        });
-
-```
-          
 ### Aide avec la mise à jour des données statistiques
 
 Utilisation de ngOnChanges:
