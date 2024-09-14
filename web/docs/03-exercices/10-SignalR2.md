@@ -10,6 +10,62 @@ Compléter l'implémentation d'une application de chat en utilisant SignalR
 - Le projet de base permet déjà de s'enregistrer et de s'authentifier
 - Il permet également de se connecter au Hub et d'envoyer un message à tous ceux qui sont connectés
 
+### Tokens et SignalR
+
+- Le projet est déjà configuré pour supporter l'authentification par Token avec SignalR
+- Voici les éléments qui ont été ajoutés pour y arriver
+
+```csharp
+AddJwtBearer(options =>
+  {
+      options.SaveToken = true;
+      // TODO: Seulement lors du developement
+      options.RequireHttpsMetadata = false;
+      options.TokenValidationParameters = new TokenValidationParameters()
+      {
+          ValidateAudience = false,
+          ValidateIssuer = true,
+          ValidIssuers = serverAdresses,
+          ValidAudience = null,
+          IssuerSigningKey = signingKey
+      };
+
+      // DÉBUT DU CODE À AJOUTER
+      // Va lire le token de la requête et mettre le Token du context à jour pour les requêtes vers le Hub
+      options.Events = new JwtBearerEvents
+      {
+          OnMessageReceived = context =>
+          {
+              var accessToken = context.Request.Query["access_token"];
+
+              // If the request is for our hub...
+              var path = context.HttpContext.Request.Path;
+              if (!string.IsNullOrEmpty(accessToken) &&
+                  (path.StartsWithSegments("/chat")))
+              {
+                  // Read the token out of the query string
+                  context.Token = accessToken;
+              }
+              return Task.CompletedTask;
+          }
+      };
+      // FIN DU CODE À AJOUTER
+  }
+```
+
+```ts
+this.hubConnection = new signalR.HubConnectionBuilder()
+                              .withUrl('http://localhost:5106/chat',
+                                // Ajout du code pour joindre le token aux requêtes SignalR (l'équivalent de l'interceptor pour les autres requêtes)
+                                { accessTokenFactory: () => localStorage.getItem("token")! }
+                              )
+                              .build();
+```
+
+:::info
+Si j'avais à faire un TP avec SignalR et une authentification par token, je me dirais: "Hum, ça va vraiment être utile à savoir une fois que je vais intégrer les changements de mon équipe"
+:::
+
 ### Complétez les tâches suivantes côté serveur
 
 :::warning
@@ -17,7 +73,7 @@ C'est normal que les messages ne soient pas dans la BD. Vous pouvez simplement a
 :::
 
 :::warning
-Il faut également ajouter 2 invokes sur le client pour faire fonctionner les tâches suivantes: Voir les TODOs
+Il faut également ajouter 2 invokes sur le client pour faire fonctionner les tâches suivantes: Voir les **TODOs**
 :::
 
 - Il faut mettre les clients à jour avec la liste des utilisateurs connectés après chaque connexion/déconnexion
