@@ -2,8 +2,10 @@
 
 ## Évaluation individuelle du TP1 (Sauf pour la tâche Hub)
 
-- Évaluation des tâches individuelles:
-    - MVC
-    - Enregistrement et connexion
-    - Angular
+:::warning
+Évaluation des tâches individuelles du TP1 (Sauf Hub)
+:::
+- MVC
+- Enregistrement et connexion
+- Angular
 

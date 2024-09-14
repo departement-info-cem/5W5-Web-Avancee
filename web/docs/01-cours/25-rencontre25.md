@@ -1,6 +1,8 @@
 # Rencontre 25
 
-- Évaluation première partie du TP3
+:::warning
+Évaluation première partie du TP3
+:::
 
 - Explications sur le status check
 
