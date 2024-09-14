@@ -10,8 +10,6 @@ Commencer par mettre en place le projet.
 
 [Projet GitHub](https://github.com/CEM-420-5W5/BackgroundService)
 
-**ATTENTION:** Le client doit être roulé avec **ng serve --ssl**, car on utilise l'authentification par cookie!
-
 Une fois que vous avez fait fonctionner l'exemple et que vous avez bien compris comment il fonctionne, on veut ajouter les 2 fonctionnalités suivantes:
 
 ### Ajout d'un NbWins pour les joueurs

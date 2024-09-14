@@ -48,17 +48,6 @@ Il faut également ajouter cette libraire:
 |-|
 -->
 
-### Ajuster les Cookies
-- Nous devrons modifier les cookies pour ajuster l'option SameSite et permettre l'échange de cookies entre domaine
-
-```csharp
-builder.Services.ConfigureApplicationCookie(options =>
-{
-    options.Cookie.HttpOnly = false;
-    options.Cookie.SameSite = SameSiteMode.None;
-});
-```
-
 ### Déployer sur Azure
 
 - Aller sur le portail Azure: https://portal.azure.com/#home

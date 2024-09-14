@@ -17,7 +17,7 @@ Chaque click va faire un appel vers le serveur et augmenter le score du joueur.
 
 À chaque 30 secondes, le serveur va regarder quel(s) joueur(s) a le plus grand score et envoyer à TOUT les clients un message de fin de round avec le(s) joueur(s) gagnant(s) et le nombre de clicks gagnant.
 
-Chaque joueur doit se créer un compte et être connecté à l'aide de son cookie pour pouvoir jouer.
+Chaque joueur doit se créer un compte et être connecté à l'aide de son token pour pouvoir jouer.
 
 ## Les nouveaux concepts
 
