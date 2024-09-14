@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.1.0">
 <title data-rh="true">BackgroundService | 5W5 - Programmation Web Avancée</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://info.cegepmontpetit.ca/5W5-Web-Avancee/info/BackgroundService"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="keywords" content="5W5 - Programmation Web Avancée, Site de référence du cours 5W5, informatique, technique, cégep, cegep, édouard-montpetit, edouard-montpetit, édouard montpetit, edouard montpetit"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="BackgroundService | 5W5 - Programmation Web Avancée"><meta data-rh="true" name="description" content="Résumé"><meta data-rh="true" property="og:description" content="Résumé"><link data-rh="true" rel="icon" href="/5W5-Web-Avancee/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/info/BackgroundService"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/info/BackgroundService" hreflang="fr"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/info/BackgroundService" hreflang="x-default"><link rel="stylesheet" href="/5W5-Web-Avancee/assets/css/styles.69ad63b2.css">
-<script src="/5W5-Web-Avancee/assets/js/runtime~main.804fc3bb.js" defer="defer"></script>
+<script src="/5W5-Web-Avancee/assets/js/runtime~main.d88fa12e.js" defer="defer"></script>
 <script src="/5W5-Web-Avancee/assets/js/main.acaca6af.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -21,7 +21,7 @@
 <p>Par défaut, un round dure 30 secondes.</p>
 <p>Chaque click va faire un appel vers le serveur et augmenter le score du joueur.</p>
 <p>À chaque 30 secondes, le serveur va regarder quel(s) joueur(s) a le plus grand score et envoyer à TOUT les clients un message de fin de round avec le(s) joueur(s) gagnant(s) et le nombre de clicks gagnant.</p>
-<p>Chaque joueur doit se créer un compte et être connecté à l&#x27;aide de son cookie pour pouvoir jouer.</p>
+<p>Chaque joueur doit se créer un compte et être connecté à l&#x27;aide de son token pour pouvoir jouer.</p>
 <h2 class="anchor anchorWithStickyNavbar_LWe7" id="les-nouveaux-concepts">Les nouveaux concepts<a href="#les-nouveaux-concepts" class="hash-link" aria-label="Lien direct vers Les nouveaux concepts" title="Lien direct vers Les nouveaux concepts">​</a></h2>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="backgroundservice-1">BackgroundService<a href="#backgroundservice-1" class="hash-link" aria-label="Lien direct vers BackgroundService" title="Lien direct vers BackgroundService">​</a></h3>
 <p>Dans notre exemple, on a besoin d&#x27;une tâche qui roule sur le serveur à chaque fin de round (chaque 30 secondes).
