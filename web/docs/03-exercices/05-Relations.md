@@ -71,7 +71,9 @@ protected override void Up(MigrationBuilder migrationBuilder)
 ```
 
 ## Relation 1 à N entre Game et Genre
+
 - Ajouter une relation optionnelle entre **Game** et **Genre**. Pour l'instant, ne faites que modifier la classe **Game**. Chaque **Game** n'a qu'un seul **Genre**.
+
 ```csharp
 public class Game
 {
@@ -80,9 +82,11 @@ public class Game
     public string Image { get; set; }
     public int ReleaseYear { get; set; }
     
+    // highlight-start
     public int? GenreId { get; set; }
     [ValidateNever]
     public Genre? Genre { get; set; }
+    // highlight-end
 }
 ```
 - Générer une migration
@@ -112,16 +116,21 @@ protected override void Up(MigrationBuilder migrationBuilder)
         principalColumn: "Id");
 }
 ```
+
 - Ajouter la liste de Games au Genre
+
 ```csharp
 public class Genre
 {
     public int Id { get; set; }
     public string Name { get; set; }
+    // highlight-start
     [ValidateNever]
     public List<Game> Games { get; set; }
+    // highlight-end
 }
 ```
+
 - Générer une nouvelle migration (peu importe le nom)
 - Regarder le contenu de la migration. Elle devrait être vide! Par défaut, ce genre de relation est de type 1 à N, alors le fait d'ajouter la liste au Genre ne change **RIEN** au modèle de données!
 ```csharp
@@ -208,8 +217,10 @@ public class Game
     [ValidateNever]
     public Genre? Genre { get; set; }
 
+    // highlight-start
     [ValidateNever]
     public List<Platform> Platforms { get; set; }
+    // highlight-end
 }
 ```
 
@@ -375,8 +386,10 @@ public class Game
     [ValidateNever]
     public List<Platform> Platforms { get; set; }
 
+    // highlight-start
     [ValidateNever]
     public List<GamePurchase> GamePurchases { get; set; }
+    // highlight-end
 }
 ```
 - Faire une migration et regarder son contenu. On peut remarquer qu'il y a des colonnes GameId et PurchasedId, c'est le nom par défaut d'une clé étrangère (Nom de la propriété + Id)
@@ -576,7 +589,9 @@ public class GamePurchase
     [ValidateNever]
     public Purchase Purchase { get; set; }
 
+    // highlight-start
     public int Count { get; set; }
+    // highlight-end
 }
 ```
 
@@ -590,6 +605,8 @@ public class GamePurchase
     [ValidateNever]
     public Purchase Purchase { get; set; }
 
+    // highlight-start
     public Owner Owner { get; set; }
+    // highlight-end
 }
 ```
