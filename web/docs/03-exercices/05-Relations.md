@@ -157,7 +157,7 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 
 - Générer un contrôleur avec une vue pour **Game**
 - Ajouter un lien dans la barre de navigation
-- La vue générez a probablement un problème avec le champ optionel Genre. On peut simplement modifier pour afficher le nom lorsque le genre n'est pas null:
+- La vue générée a probablement un problème avec le champ optionel Genre. On peut simplement modifier pour afficher le nom lorsque le genre n'est pas null:
 ```html
 <td>
     @if(item.Genre != null)
