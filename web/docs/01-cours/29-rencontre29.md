@@ -1,3 +1,8 @@
 # Rencontre 29
 
-- Évaluation du TP3
+## Examen final
+
+- SignalR (Hub avec BackgroundService)
+- Animations CSS et Angular
+- Tests unitaires avec Mock
+
