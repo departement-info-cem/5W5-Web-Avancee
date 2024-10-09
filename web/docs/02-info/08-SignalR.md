@@ -114,31 +114,6 @@ public async Task EnvoyerAUnUsager(int value, string userId)
 Comme un User peut se connecter plusieurs fois au même Hub, il est possible que ce code envoit l'information à plusieurs instances différentes (Par exemple, deux fenêtres d'un navigateur connecté à ce serveur).
 :::
 
-### Appeler un usager
-
-```csharp
-// Appeler un usager
-public async Task AppelerAUnUsager(int value, string userId)
-{
-    var result = await Clients.User(userId)
-                          .InvokeAsync("UneFonctionClient", value, CancellationToken.None);
-    // Faire quelque chose avec le résultat!
-}
-```
-### Possible de faire de nombreux appels!
-
-```csharp
-public async Task FairePlusieursChoses(int value, string userId)
-{
-    // Appeler la méthode Calcul sur le client d’un user
-    // Attendre la réponse
-    int result = await Clients.User(userId)
-				.InvokeAsync<int>("Calcul", value, CancellationToken.None);
-    // Appeler la méthode UneFonctionClient sur tous les clients connectés à ce Hub
-    await Clients.All.SendAsync("UneFonctionClient", result);
-}
-```
-
 ### Gérer des groupes
 
 ```csharp
@@ -153,6 +128,32 @@ await Groups.AddToGroupAsync(Context.ConnectionId, "nouveauGroupe");
 public async Task EnvoyerAUnUsager(int value, string groupName)
 {
     await Clients.Group(groupName).SendAsync("UneFonctionClient", value);
+}
+```
+
+### Possible de faire de nombreux appels!
+
+```csharp
+public async Task FairePlusieursChoses(int valueA, int valueB, string groupName)
+{
+    // Appeler la méthode UneFonctionClient sur les clients qui font partie du groupe nommé groupName
+    await Clients.Group(groupName).SendAsync("UneFonctionClient", valueA);
+    // Appeler la méthode UneAutreFonctionClient sur tous les clients connectés à ce Hub
+    await Clients.All.SendAsync("UneAutreFonctionClient", resultB);
+}
+```
+
+### Possible d'envoyer plusieurs paramètres
+(Voir la section [Écouter plusieurs paramètres](/info/SignalR#écouter-plusieurs-paramètres))
+
+```csharp
+public async Task EnvoyerPlusieursParametres()
+{
+    int a = 42;
+    int b = 33;
+    string c = "test";
+    // Appeler la méthode UneAutreFonctionClient sur tous les clients connectés à ce Hub
+    await Clients.All.SendAsync("PlusieursParametres", a, b, c);
 }
 ```
 
@@ -247,6 +248,15 @@ Le moment est important!
             // Ne PAS faire de .on() ICI
         });
 
+```
+
+### Écouter plusieurs paramètres
+(Voir la section [Possible d'envoyer plusieurs paramètres](/info/SignalR#possible-denvoyer-plusieurs-paramètres))
+
+```ts
+this.hubConnection?.on("PlusieursParametres", (a:number, b:number, c:string) => {
+    // Faire quelque chose
+});
 ```
 
 ### Appel d'une action sur le Hub
