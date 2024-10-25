@@ -18,7 +18,7 @@ Ajouter des tests unitaires pour tester une méthode de service en utilisant une
     - Au moins un chat sans maison
     - Au moins un chat avec maison
 
-::: info
+:::info
 Utilisez des constantes pour les IDs de vos tests, on veut éviter d'utiliser des **chiffres magiques**
 :::
 
