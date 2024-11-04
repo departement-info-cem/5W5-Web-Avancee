@@ -36,5 +36,5 @@
 - Séance 27: Mardi, 3 décembre
 - Séance 28: Vendredi, 6 décembre
 - Séance 29: Mardi, 10 décembre (Examen Final)
-- Séance 30: Vendredi, 20 décembre (TP3 Évalution des fonctionnalités)
+- Séance 30: Vendredi, 20 décembre (TP3 Évaluation des fonctionnalités)
 
