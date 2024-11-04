@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="generator" content="Docusaurus v3.1.0">
 <title data-rh="true">TP2 (Suite de Super Cartes Infinies) | 5W5 - Programmation Web Avancée</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:url" content="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp2"><meta data-rh="true" property="og:locale" content="fr"><meta data-rh="true" name="docusaurus_locale" content="fr"><meta data-rh="true" name="docsearch:language" content="fr"><meta data-rh="true" name="keywords" content="5W5 - Programmation Web Avancée, Site de référence du cours 5W5, informatique, technique, cégep, cegep, édouard-montpetit, edouard-montpetit, édouard montpetit, edouard montpetit"><meta data-rh="true" name="docusaurus_version" content="current"><meta data-rh="true" name="docusaurus_tag" content="docs-default-current"><meta data-rh="true" name="docsearch:version" content="current"><meta data-rh="true" name="docsearch:docusaurus_tag" content="docs-default-current"><meta data-rh="true" property="og:title" content="TP2 (Suite de Super Cartes Infinies) | 5W5 - Programmation Web Avancée"><meta data-rh="true" name="description" content="Le projet"><meta data-rh="true" property="og:description" content="Le projet"><link data-rh="true" rel="icon" href="/5W5-Web-Avancee/img/favicon.ico"><link data-rh="true" rel="canonical" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp2"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp2" hreflang="fr"><link data-rh="true" rel="alternate" href="https://info.cegepmontpetit.ca/5W5-Web-Avancee/tps/tp2" hreflang="x-default"><link rel="stylesheet" href="/5W5-Web-Avancee/assets/css/styles.69ad63b2.css">
-<script src="/5W5-Web-Avancee/assets/js/runtime~main.cb13cb07.js" defer="defer"></script>
+<script src="/5W5-Web-Avancee/assets/js/runtime~main.3d4ca6eb.js" defer="defer"></script>
 <script src="/5W5-Web-Avancee/assets/js/main.ab3fc92d.js" defer="defer"></script>
 </head>
 <body class="navigation-with-keyboard">
@@ -167,9 +167,16 @@
 <li>Reçue après une défaite (plus petit montant)</li>
 </ul>
 </li>
+<li>Sur le serveur<!-- -->
+<ul>
+<li>Modifier l&#x27;event EndMatchEvent pour qu&#x27;il modifie la quantité de monnaie des deux joueurs (le gagnant et le perdant)</li>
+<li>EndMatchEvent devrait également avoir 2 nouvelles propriétés (WinningMoney et LosingMoney) pour que le client sache combien d&#x27;arent son joueur a reçu</li>
+</ul>
+</li>
 <li>Sur le client<!-- -->
 <ul>
 <li>Afficher la monnaie virtuelle du joueur dans la barre de menu au haut de l&#x27;écran.</li>
+<li>Modifier applyEvent dans MatchService pour traiter la nouvelle information à propos de l&#x27;argent reçu par EndMatchEvent. (N&#x27;oubliez pas que currentPlayerId vous permet de savoir si le joueur est le gagnant ou le perdant)</li>
 <li>Afficher la monnaie gagné dans le menu de victoire/défaite.</li>
 <li>Afficher les différents paquets que le joueur peut acheter.</li>
 <li>Afficher l&#x27;ouverture de paquet sur le client avec un dialogue (qui affiche les cartes reçues)</li>
@@ -226,7 +233,7 @@
 </li>
 <li>Lorsqu&#x27;une carte est activé et qu&#x27;il n&#x27;y a pas de carte devant elle, elle blesse l&#x27;adversaire. Le Player adverse perd du health de la valeur de l&#x27;attaque.</li>
 <li>Les pouvoirs des cartes affectent les combats</li>
-<li>Lorsque les cartes sont activées, il faut commencer par la dernière qui a  été joué et terminer avec celle qui est en jeu depuis le plus longtemps. On active donc les cartes de droite à gauche. Ce qui veut également dire que l&#x27;on commence par la carte avec l&#x27;index le plus élevé et que l&#x27;on termine avec l&#x27;index 0.</li>
+<li>Lorsque les cartes sont activées, il faut commencer par la dernière qui a été joué et terminer avec celle qui est en jeu depuis le plus longtemps. On active donc les cartes de droite à gauche. Ce qui veut également dire que l&#x27;on commence par la carte avec l&#x27;index le plus élevé et que l&#x27;on termine avec l&#x27;index 0.</li>
 </ul><div><p>Pour l&#x27;activation des cartes, c&#x27;est plus facile d&#x27;utiliser une boucle <strong>for</strong>. Comme c&#x27;est possible qu&#x27;une carte meurt, la liste de cartes du BattleField risque d&#x27;être modifié et on ne peut pas modifier la liste pendant une itération avec un <strong>foreach</strong>.</p></div></div></div></details>
 <h3 class="anchor anchorWithStickyNavbar_LWe7" id="pouvoirs">Pouvoirs<a href="#pouvoirs" class="hash-link" aria-label="Lien direct vers Pouvoirs" title="Lien direct vers Pouvoirs">​</a></h3>
 <details class="details_lb9f alert alert--info details_b_Ee" data-collapsed="true"><summary>Les pouvoirs</summary><div><div class="collapsibleContent_i85q"><ul>
