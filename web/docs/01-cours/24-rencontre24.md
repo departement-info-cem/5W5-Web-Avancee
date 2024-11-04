@@ -12,10 +12,4 @@ Explication sur les tests de pouvoirs Random
 
 ### Exercices
 
-**Modifier en exercice**
-
-https://github.com/CEM-420-5W5/Mock-Controller
-
-https://github.com/CEM-420-5W5/action.result
-
-
+[Exercice sur les Mocks](/exercices/Mocks)
