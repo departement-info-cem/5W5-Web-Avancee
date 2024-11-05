@@ -23,7 +23,7 @@ Ici, on peut voir que l'action est en train d'être exécutée
 L'action passe présentement, mais notre projet n'a pas encore de tests! (On va en ajouter bientôt)
 ![alt text](/img/exercices/github/image-6.png)
 
-- Configurer une règle de protection pour la branche **main**, comme c'est expliqué dans [ici](/info/PullRequests#prot%C3%A9ger-une-branche)
+- Configurer une règle de protection pour la branche **main**, comme c'est expliqué [ici](/info/PullRequests#prot%C3%A9ger-une-branche)
     - Il faut demander un Pull Request, avec un moin 1 approval (valeur par défaut)
     - Il faut également mettre l'option **Do not allow bypassing the above settings**
 
