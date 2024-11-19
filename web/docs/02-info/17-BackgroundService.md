@@ -123,3 +123,12 @@ public MonHub(MonBackgroundService backgroundService)
     _backgroundService = backgroundService;
 }
 ```
+
+### Références
+
+L'exemple qui est discutté ici fait référence à l'exercice que vous pouvez trouver ici:
+[Exercice BackgroundService](/exercices/BackgroundService)
+
+Voici également un projet de référence plus simple qui est utile pour comprendre les Background Services:
+[Projet GitHub Simple](https://github.com/CEM-420-5W5/SimpleBackgroundService.git)
+
