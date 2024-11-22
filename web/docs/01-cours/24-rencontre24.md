@@ -2,7 +2,7 @@
 
 Mocks et tests pour contrôleurs
 
-Explication sur les tests de pouvoirs Random
+Explication sur les tests de pouvoirs Random [Projet GitHub DemoMockNumberGenerator](https://github.com/CEM-420-5W5/DemoMockNumberGenerator)
 
 ## Info
 

@@ -160,7 +160,7 @@ Lorsque l'on appel une action, le type retourné est un ActionResult\<T\> et l'o
 
 Si on porte attention, on voit qu'il n'y a **PAS de new**, on ne retourne pas un objet Ok ou BadRequest, mais on appel la méthode Ok ou BadRequest qui va créer un objet.
 
-Si on regarde le type d'objet qui est retourné par la méthode Ok, on voit que c'est un OkObjectResult dans le cas où Ok prend une valeur.
+Si on regarde le type d'objet qui est retourné par la méthode Ok, on voit que c'est un **OkObjectResult** dans le cas où Ok prend une valeur.
 
 |![Alt text](image-5.png)|
 |-|
@@ -170,7 +170,9 @@ Et un objet OkResult lorsqu'il n'y en a pas.
 |![Alt text](image-6.png)|
 |-|
 
+Voici un petit projet qui contient un contrôleur et des tests qui vérifient différents types de retour, incluant un **OkObjectResult**
 
+[Projet GitHub action.result](https://github.com/CEM-420-5W5/action.result)
 
 
 
