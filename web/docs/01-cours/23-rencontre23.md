@@ -16,4 +16,6 @@ Voici également un projet de référence plus simple qui est utile pour compren
 
 ### Exercices
 
-[Exercice BackgroundService](/exercices/BackgroundService)
+[Exercice BackgroundService #1](/exercices/BackgroundService)
+
+[Exercice BackgroundService #2](/exercices/BackgroundService2)
