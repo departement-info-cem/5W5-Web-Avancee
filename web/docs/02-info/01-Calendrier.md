@@ -31,7 +31,7 @@
 - Séance 22: Vendredi, 15 novembre
 - Séance 23: Mardi, 19 novembre
 - Séance 24: Vendredi, 22 novembre
-- Séance 25: Mardi, 26 novembre (TP3 Évaluation de groupe #1 et DevOps)
+- Séance 25: Mardi, 26 novembre (TP3 Évaluation de groupe #1)
 - Séance 26: Vendredi, 29 novembre
 - Séance 27: Mardi, 3 décembre (TP3 Évaluation DevOps)
 - Séance 28: Vendredi, 6 décembre
