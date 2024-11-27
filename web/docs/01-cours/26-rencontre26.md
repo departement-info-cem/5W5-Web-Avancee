@@ -1,16 +1,13 @@
 # Rencontre 26
 
+- Changement de BD pour SQLite
 - Déploiement
-- Changement de BD [DB Browser for SQLite](https://sqlitebrowser.org/)
-:::warning
-Il faut également refaire les **migrations!**
-:::
-
 - Comment déboger notre serveur à distance
-
-- Comment mettre les données de la page à jour dans la version déployée
+- Comment mettre les données de la page à jour dans la version déployée (NgZone)
 
 ## Info
+
+[SQLite](/info/SQLite)
 
 [CICD](/info/CICD)
 

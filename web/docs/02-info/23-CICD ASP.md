@@ -1,5 +1,6 @@
 # CI/CD ASP .NET
 
+<!--
 ### Changer la BD
 - Nous utiliserons SQLite pour le déploiement
 - C'est n'est pas particulièrement bon, mais ça nous permet de garder l'hébergement gratuit!
@@ -30,7 +31,7 @@ Il faut également refaire les **migrations!**
 :::info
 Comme ce n'est pas trop intéressant de travailler avec SQLite, c'est probablement une bonne idée de vous créer une branche pour le déploiement, disons "prod". Et de faire le changement de BD dans cette branche là et continuer d'utiliser MS SQL dans vos autres branches.
 :::
-
+-->
 <!--
 ### Outil de debug EntityFramework
 
