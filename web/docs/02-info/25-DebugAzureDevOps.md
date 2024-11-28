@@ -26,7 +26,7 @@ On veut déboger en s'attachant à un processus déjà existant **(Notre serveur
 |![alt text](AttachToProcess.png)|
 |-|
 
-On choisit ensuite l'option Azure DevOps et on trouve notre serveur déployé.
+On choisit ensuite l'option Azure DevOps, on clique sur chercher et on trouve notre serveur déployé.
 
 |![alt text](AttachToDevOpsProcess.png)|
 |-|
@@ -36,6 +36,9 @@ Il ne reste plus qu'à cliquer sur **Attacher** et **ajouter vos points d'arrêt
 |![alt text](image-4.png)|
 |-|
 
+:::warning
+Ça risque de prendre une petite minute avant que tout se réveille la première fois que vous allez arrêter à un breakpoint, mais c'est un outil ridiculement puissant et utile de pouvoir débugger directement ce qui se produit sur votre serveur!
+:::
 
 
 ### Références
