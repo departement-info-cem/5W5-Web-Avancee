@@ -20,7 +20,7 @@ export class AppRoutingModule { }
 ng generate environments
 ```
 
-### Créer une variable pour l'url serveur
+### Creer une variable pour l'url serveur
 - Ajouter une variable dans tous les fichiers d'environnement
 - Dans le fichier de developpement, nous aurons une url vers localhost
 ```ts
@@ -38,6 +38,10 @@ export const environment = {
     apiUrl: "https://apisupercartesinfinies.azurewebsites.net/"
 };
 ```
+
+:::warning
+Comme on n'a pas encore déployé notre WebAPI, on n'a pas encore cette adresse, alors vous allez devoir revenir et remplir ce champ après l'avoir déployé. NOTE: La configuration WebAPI doit également connaître le URL du serveur Angular, alors c'est l'oeuf ou la poule...
+:::
 
 ### Utiliser la variable d'environnement
 - Maintenant, il suffit d'utiliser environment.apiUrl dans l'adresse de nos requêtes Http
@@ -73,17 +77,21 @@ export class ApiService {
 | ![image](/img/infos/CICD/Angular/5W5-s3-az2.jpg) |
 |-|
 
-- Utiliser son repo sur Github et garder l'app gratuite!
+- Utiliser son repo sur Github et garder l'app **gratuite!**
 
-| ![image](/img/infos/CICD/Angular/5W5-s3-az3.jpg) |
+| ![alt text](image-15.png) |
 |-|
 
-### Utiliser votre branche main pour le déploiement
-- Dès qu'il y aura un commit sur la branche main, votre application sera automatiquement redéployée
-- Il sera donc important de me pas travailler sur la branche main (1 branche par US)
+### Utiliser votre branche release pour le déploiement
+- Dès qu'il y aura un commit sur la branche **Release**, votre application sera automatiquement redéployée
+- Il sera donc important de me pas travailler sur la branche **Release**
 
-| ![image](/img/infos/CICD/Angular/5W5-s3-az4.jpg) |
+| ![alt text](image-14.png) |
 |-|
+
+:::info
+Dans votre cas, l'organisation est probablement le compte personnel d'un des étudiants de votre équipe
+:::
 
 ### Détail du build
 - Avant de faire cette partie, essayer de faire un premier build de votre application Angular
@@ -101,8 +109,10 @@ ng build
 |-|
 
 ### Valider et créer
-- La configuration est terminée, on peut créer notre application
+- La configuration est terminée, on peut créer notre application en cliquant sur **"Vérifier et créer"**
+- Cliquez ensuite sur "Créer"
 
+<!--
 ### Mettre à jour Git
 - Aller chercher les changements qu'Azure à ajouté à votre Git
 - Vous devriez avoir les dossiers .github/workflows
@@ -134,6 +144,9 @@ ng build
 ### Commit
 - Faire un commit des changements
 - Le build devrait se déclancher
+
+-->
+
 ### Pour suivre le build
 - Suivre le build sur Github avec l'onglet Actions
 
@@ -170,4 +183,16 @@ En le modifiant pour **2mb**, le build est maintenant un succès.
           }
 ```
 
+### Lien de l'application
+- Retourner à l'accueil
+- Cliquer sur votre application web statique (ClientSCI dans l'exemple)
 
+| ![alt text](image-21.png) |
+|-|
+
+- L'URL est affiché à droite (oui, le votre va avoir un nom weird aussi)
+- Copiez le URL quelque pars! Vous allez en avoir besoin pour configurer les CORS du serveur!
+- Cliquez également dessus pour vérifier si votre page d'accueil Angular s'affiche bien. Si c'est le cas, on va s'occuper du serveur WebAPI.
+
+| ![alt text](image-22.png) |
+|-|

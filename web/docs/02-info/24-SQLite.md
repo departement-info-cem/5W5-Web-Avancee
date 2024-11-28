@@ -21,9 +21,9 @@
 
 Il y a plusieurs bonnes raisons de **ne pas déployer** votre branche **Dev** directement. Comme vous allez utiliser SQLite, c'est encore plus important d'utiliser une autre branche.
 
-Pour commencer, créez une nouvelle branche que vous pouvez nommer **release** ou un autre nom similaire à partir de votre branche **Dev** (Ou d'une autre branche/commit où votre application fonctionnait bien)
+Pour commencer, créez une nouvelle branche nommer **Release** à partir de votre branche **Dev** (Ou d'une autre branche/commit où votre application fonctionnait bien)
 
-C'est une bonne idée de faire la même chose pour votre client.
+Faites également une branche **Release** sur votre client avec à partir d'un commit compatible avec votre serveur.
 
 ### Ajouter la librairie SQLite
 

@@ -61,30 +61,86 @@ Il faut également ajouter cette libraire:
 - Créer une application web
 
 ### Configuration de base
-- S'assurer de choisir la bonne pile d'exécution (.net 7 probablement)
+- S'assurer de choisir la bonne pile d'exécution (.net 8)
+
+
+| ![alt text](image-16.png) |
+|-|
+
 - S'assurer de garder le plan de tarification gratuit!
 
-| ![image](/img/infos/CICD/ASP/5W5-s3-az11.jpg) |
+| ![alt text](image-17.png) |
 |-|
+
+- **Cliquez sur "Suivant: Déploiement >"**
 
 ### Configuration du déploiement
 - Cliquer pour activer le déploiement continu
 - Choisir le repo du projet asp.net
 
-| ![image](/img/infos/CICD/ASP/5W5-s3-az12.jpg) |
+| ![alt text](image-18.png) |
 |-|
 
 ### Valider et créer
-- La configuration est terminée, on peut créer notre application
+- La configuration est terminée, on peut créer notre application en cliquant sur **"Vérifier et créer"**
+- Cliquez ensuite sur "Créer"
+
+### Modification du projet déployé!
+- Si on s'arrête là, c'est le projet par défaut (et donc MVC) qui est déployé!
+- On va faire une petite modification manuelle au fichier .yml qui a été créé : /.github/workflows/quelqueChose.yml
+- Remplacer
+```
+"${{env.DOTNET_ROOT}}/myapp"
+```
+par
+```
+"${{env.GITHUB_WORKSPACE}}\myapp" "WebApi\WebApi.csproj"
+```
+- Remplacer
+```
+path: ${{env.DOTNET_ROOT}}/myapp
+```
+par
+```
+path: ${{env.GITHUB_WORKSPACE}}\myapp
+```
+
 
 ### Paramètres de l'app
 - Retourner à l'accueil
-- Cliquer sur votre application web
+- Cliquer sur votre application web (ServeurSCI dans l'exemple)
 
-| ![image](/img/infos/CICD/ASP/5W5-s3-az13.jpg) |
+| ![alt text](image-19.png) |
 |-|
 
+:::danger
+Peut-être que votre serveur semble ne pas fonctionner et qu'il fonctionne!!! Présentement votre serveur n'est pas en mode development, alors il n'affichera pas de Swagger!
+Essayer d'accéder à l'URL où vous avez mis votre action pour mettre à jour vos migrations!
+:::
 
+### Appliquer les migrations
+
+Pour des raisons de sécurité, le fichier de BD que l'on a dans notre projet n'est pas directement utilisable sur le serveur déployé. Pour régler le problème, on a ajouté une action pour permettre d'appliquer les migrations. (Voir la partie sur SQLite)
+
+![alt text](image-23.png)
+
+### Configurer les CORS
+- Activer Access-Control-Allow-Credentials
+- Ajouter l'adresse de votre application Angular (Que vous auriez dû copier pendant que vous avez configuré le serveur Angular)
+- **Enregistrer le tout** (C'est important de cliquer sur le bouton)
+
+| ![alt text](image-20.png) |
+|-|
+
+### Aller mettre la bonne adresse dans la configuration du client!
+
+- Bon, c'est le moment de retourner du côté Angular et de copier l'adresse du serveur dans l'environement!
+
+[Configuration de l'environment Angular](/info/CICD%20Angular#utiliser-la-variable-denvironnement)
+
+- Une fois que le client a finalement été mis à jour avec la nouvelle adresse, vous devriez pouvoir enregistrer un joueur!
+
+<!--
 ### Activer les messages d'erreurs
 - Nous allons activer le mode développement pour être en mesure de voir les problème qui surviennent
 - Aller dans Variables d'environment et faites "Ajouter"
@@ -98,7 +154,7 @@ Il faut également ajouter cette libraire:
 
 | ![image]((image-9.png) |
 |-|
-
+-->
 <!--
 
 ### Appliquer les migrations
@@ -109,10 +165,9 @@ Il faut également ajouter cette libraire:
 
 -->
 
-### Appliquer les migrations
 
-Pour des raisons de sécurité, le fichier de BD que l'on a dans notre projet n'est pas directement utilisable sur le serveur déployé. Pour régler le problème, on va s'ajouter une page MVC pour **l'admin** qui va nous permettre d'appliquer les migrations.
 
+<!--
 Note: Il y a déjà un exemple (**ToolsController**) dans le projet [BackgroundService](/info/BackgroundService), dans la branche **solutionSQLite**
 
 ```csharp
@@ -132,11 +187,5 @@ public IActionResult ApplyMigrations()
     return RedirectToAction(nameof(Index));
 }
 ```
+-->
 
-### Configurer les CORS
-- Activer Access-Control-Allow-Credentials
-- Ajouter l'adresse de votre application Angular
-- Enregistrer le tout
-
-| ![image](/img/infos/CICD/ASP/5W5-s3-az16.jpg) |
-|-|
