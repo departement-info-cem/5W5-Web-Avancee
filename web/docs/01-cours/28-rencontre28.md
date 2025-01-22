@@ -1,6 +1,9 @@
-# Rencontre 28
+---
+title: 14.2 - Formatif
+hide_table_of_contents: true
+---
 
-## Pratique examen final
+# Pratique examen final
 
 - SignalR (Hub avec BackgroundService)
 - Animations CSS et Angular

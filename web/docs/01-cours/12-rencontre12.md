@@ -1,6 +1,9 @@
-# Rencontre 12
+---
+title: 6.2 - Formatif
+hide_table_of_contents: true
+---
 
-## TP1
+# TP1
 
 - Évaluation individuelle de DevOps au prochain cours
 - [JsonIgnore] ou comment éviter des boucles infinies.
@@ -13,9 +16,9 @@
 
 - Il est **très fortement** recommandé de le faire **avant OU pendant** la période. Sinon, vous risquez de vous rendre compte trop tard que vous ne maitrisez pas la matière.
 - Pour le réussir, il faut bien comprendre:
-    - Guards
-    - ReactiveForms
-    - SignalR/Hub
+  - Guards
+  - ReactiveForms
+  - SignalR/Hub
 - L'intra vaut 20% de la note total. C'est la moitié de la la note théorique du cours qui a un double seuil!
 
 [🔗ExamenIntraFormatif.zip](https://cegepedouardmontpetit.sharepoint.com/:u:/s/CMT420InformatiqueComitesCours-5W5/EQjNp14YDZtEnEFe9msxLUMBZTfPqx78pHdGwiopwsQsUQ?e=iJZnMv)

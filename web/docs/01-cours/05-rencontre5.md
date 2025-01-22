@@ -1,8 +1,11 @@
-# Rencontre 5
+---
+title: 3.1 - TP1, Github, stubs 🗂️
+hide_table_of_contents: true
+---
 
-## Présentation du TP1, GitHub par feature et stubs
+# Présentation du TP1, GitHub par feature et stubs 🗂️
 
-### TP
+## TP
 
 [Page du TP1](/tps/tp1)
 
@@ -14,6 +17,6 @@ On évite d'avoir une mauvaise surprise et d'avoir a changé le travail que l'on
 On peut également mieux planifier notre temps lorsque l'on comprend bien le travail qui reste à faire.
 :::
 
-### Liens
+## Liens
 
 [🔗Cours5.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EbLvWcA-wGFGkczyWIp7t_0BfPgRkTGc9mq1Tq89zIm1Kw?e=Qk1Am4)

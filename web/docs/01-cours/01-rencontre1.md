@@ -1,8 +1,14 @@
-# Rencontre 1
+---
+title: 1.1 - MVC et WebAPI 🏠
+hide_table_of_contents: true
+---
+
+# MVC et WebAPI 🏠
 
 ## Plan de cours, révision et solution avec MVC et WebAPI
 
 ### MVC, Services et Areas
+
 - Avoir Web API et MVC dans une même solution
 - Utilisation de 2 types d'authentification à la fois (Cookies + Token)
 
@@ -30,4 +36,3 @@ Quand on génère du code avec **ChatGPT** que l'on ne comprend pas: ça prend *
 [🔗Cours1.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EXgLsnAyZVdKtNnYRXcSoaQBEB2PNCwTP2-aVgGvotjmPQ?e=L8J3AS)
 
 [🔗Répertoire qui contient les présentations](https://cegepedouardmontpetit.sharepoint.com/:f:/s/CMT420InformatiqueComitesCours-5W5/Esn6iJzfe9NIlXvuctJhRxwBdztZkK84Ww9uWTvQwTHS7g?e=OxVKEz)
-

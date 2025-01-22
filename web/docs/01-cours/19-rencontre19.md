@@ -1,6 +1,9 @@
-# Rencontre 19
+---
+title: 10.1 - Animations (Partie 2) 💫
+hide_table_of_contents: true
+---
 
-- Animations (2e partie)
+# Animations (Partie 2) 💫
 
 ## Info
 
@@ -9,5 +12,3 @@
 ### Exercices
 
 [Exercice Animations (2e partie)](/exercices/Animations2)
-
-

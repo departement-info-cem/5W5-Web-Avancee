@@ -1,4 +1,9 @@
-# Rencontre 20
+---
+title: 10.2 - Github & TP2 ⛙
+hide_table_of_contents: true
+---
+
+# Github & TP2 ⛙
 
 - Exercice Git (Merge, conflits et pull request)
 - Explication sur le problème avec l'ordre des PlayableCard du BattleField
@@ -15,6 +20,7 @@
 ## Faire jouer une animation sur une carte
 
 ### CSS
+
 ```ts
 var element = document.getElementById("PC" + event.PlayableCardId);
 element?.classList.add("attack");
@@ -30,8 +36,9 @@ element?.classList.add("powerAnimation");
 Ou
 
 ```ts
-var element = document.getElementById("PC" + event.PlayableCardId)
-                         .querySelector('[name="' + powerId + '"]');
+var element = document
+  .getElementById("PC" + event.PlayableCardId)
+  .querySelector('[name="' + powerId + '"]');
 element?.classList.add("powerAnimation");
 ```
 
@@ -41,7 +48,6 @@ Il y a présentement une class **fadeIn** sur les cartes du BattleField. C'est i
 
 :::
 
-
 ### Angular
 
 - Pour faire jouer une animation angular, on peut ajouter des variables directement sur PlayableCard et déclencher les animations sur la carte avec un trigger sur ces variables
@@ -49,4 +55,3 @@ Il y a présentement une class **fadeIn** sur les cartes du BattleField. C'est i
 ### Exercices
 
 [Git tests et Pull Requests](/exercices/GitTestsEtPRs)
-

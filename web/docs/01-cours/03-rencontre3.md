@@ -1,6 +1,9 @@
-# Rencontre 3
+---
+title: 2.1 - Relations et révision ↔️
+hide_table_of_contents: true
+---
 
-## Relations et révision MVC
+# Relations et révision MVC ↔️
 
 Voir la différence lors d'une authentification par Token vs Cookie dans la vue Network des outils de débogage d'un navigateur
 
@@ -12,7 +15,7 @@ Pour bien se préparer pour la prochaine rencontre, nous allons créer les équi
 
 La détermination est le facteur le plus important pour prédire la réussite.
 
-Une profession, ça s'apprend sur plusieurs années et le talent initiale est éventuellement dépassé par une amélioration continue. 
+Une profession, ça s'apprend sur plusieurs années et le talent initiale est éventuellement dépassé par une amélioration continue.
 
 En travaillant chez Unity comme consultant, j'ai recroisé plusieurs directeurs de département pour de grandes compagnies de jeux vidéos.
 

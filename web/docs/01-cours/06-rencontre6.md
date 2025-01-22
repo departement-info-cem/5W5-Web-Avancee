@@ -1,6 +1,9 @@
-# Rencontre 6
+---
+title: 3.2 - Forms, guards, routes 💂
+hide_table_of_contents: true
+---
 
-## Reactive Forms, guards et routes enfants
+## Reactive Forms, guards et routes enfants 💂
 
 ## Info
 
@@ -8,14 +11,12 @@
 
 [ReactiveForms](/info/ReactiveForms)
 
-### Exercices
+## Exercices
 
 [Guards](/exercices/Guards)
 
 [ReactiveForms](/exercices/ReactiveForms)
 
-
-### Liens
+## Liens
 
 [🔗Cours6.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/Ec0BrFx0KElDtqjGZl0cirEBvoIDq3PhwiudBrVoFh5pcg?e=LhNl6m)
-

@@ -1,6 +1,9 @@
-# Rencontre 14
+---
+title: 7.2 - Examen Intra
+hide_table_of_contents: true
+---
 
-## Examen Intra
+# Examen Intra
 
 - Guards
 - Reactive Forms

@@ -1,7 +1,8 @@
-# Rencontre 13
+---
+title: 7.1 - Évaluation de groupe TP1 💯
+hide_table_of_contents: true
+---
 
-:::warning
-Évaluation de groupe du TP1
-:::
+# Évaluation de groupe du TP1 💯
 
 - Réponses aux questions avant l'examen

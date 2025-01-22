@@ -1,4 +1,9 @@
-# Rencontre 4
+---
+title: 2.2 - Azure Devops Boards 📌
+hide_table_of_contents: true
+---
+
+# Gestion de projet avec User Stories et Azure Devops Boards 📌
 
 ## Gestion de projet avec User Stories et Azure Devops Boards
 
@@ -8,11 +13,11 @@
 
 [Exemples utilisations DevOps Boards](/info/AzureDevOpsUtilisation)
 
-### Exercices
+## Exercices
 
 Exercice en équipe: [Azure Devops Boards](/exercices/AzureDevOpsBoards)
 
-### Liens
+## Liens
 
 [🔗BacklogEpicUS.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/ESVZnzHf635PhX7Ehcgk_WYBTmnuUicVcDGepqagJ_Y35w?e=rQyobN)
 
