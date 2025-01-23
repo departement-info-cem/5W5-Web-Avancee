@@ -2,7 +2,7 @@
 
 :::warning
 
-Suite de l'exercice précédent: MVCEtWebAPI
+Suite de l'exercice précédent: [MVCEtWebAPI](MVCEtWebAPI)
 
 :::
 
@@ -150,7 +150,7 @@ sessionStorage.setItem("token", result.token);
 Pour nous permettre de facilement ouvrir plusieurs fenêtre pour des joueurs différents lorsque l'on va tester notre jeu, on va préférez utiliser sessionStorage pour stocker nos tokens!
 :::
 
-- Tester la fonction privée, faites attention d'inclure le token qui est maintenant dans sessionStorage en utilisant sessionStorage.getItem("token")
+- Tester la fonction privée, faites attention d'inclure le token qui est maintenant dans sessionStorage en utilisant `sessionStorage.getItem("token")`.
 
 ```ts
 let token = sessionStorage.getItem("token");

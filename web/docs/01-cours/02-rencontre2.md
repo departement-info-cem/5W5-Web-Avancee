@@ -1,9 +1,9 @@
 ---
-title: 1.2 - Auth. et débogage 🪙
+title: 1.2 - Auth. et débogage ⚇
 hide_table_of_contents: true
 ---
 
-# 1.2 - Authentification par token et débogage 🪙
+# 1.2 - Authentification par token et débogage ⚇
 
 ## Info
 
