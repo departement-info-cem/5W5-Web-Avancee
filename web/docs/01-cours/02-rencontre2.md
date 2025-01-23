@@ -11,13 +11,13 @@ hide_table_of_contents: true
 
 [Comment déboguer avec Angular](/info/DebogageAngular)
 
-:::tip[Conseil de la séance]
+:::tip Conseil de la séance
 
-Un des avantages les plus intéressants de l'informatique, c'est qu'on peut essayer des milliers de choses sans avoir à rien dépenser!
+Un des avantages les plus intéressants de l'informatique, c'est qu'on peut essayer des milliers de choses sans avoir à ne rien dépenser!
 
 Quand on compare à la mécanique, la chimie, l'électronique, etc. On peut simplement télécharger des librairies et les essayer!
 
-N'hésitez pas à modifier les exemples fournient, à suivre des tutoriels, à essayer des choses. C'est la meilleures façon **d'apprendre à apprendre!**
+N'hésitez pas à modifier les exemples fournis, à suivre des tutoriels, à essayer des choses. C'est la meilleure façon **d'apprendre à apprendre!**
 
 :::
 
