@@ -11,8 +11,7 @@ Mettre en place une solution .NET qui contient 3 projets, donc 1 MVC et un Web A
 - Créez une nouvelle solution et nommez la "MVCEtWebAPI"
 - Choisissez l'option qui contient le texte (modèle-vue-contrôleur). C'est la même que vous avez utilisé en 3W6.
 
-| ![alt text](image-4.png) |
-| ------------------------ |
+![alt text](image-4.png)
 
 - Gardez la version 8
 - Choisissez l'option "Comptes individuels" pour le Type d'authentification
@@ -23,42 +22,36 @@ Mettre en place une solution .NET qui contient 3 projets, donc 1 MVC et un Web A
 
 Comme on va avoir 2 projets dans notre solution qui utilise les mêmes données, on met les données dans un projet séparé qui va être référé par ces projets.
 
-- Créer un nouveau projet, mais à l'intérieur de la même solution!
+- Créez un nouveau projet, mais à l'intérieur de la même solution!
 
-| ![alt text](image-5.png) |
-| ------------------------ |
+![alt text](image-5.png)
 
 - Choisissez un projet de de type "Bibliothèque de classe" et donnez lui le nom "Models"
 
-| ![alt text](image-6.png) |
-| ------------------------ |
+![alt text](image-6.png)
 
-- Effacez le fichier Class1 généré par défaut...
-- Effacez également le répertoire Data/Migrations du projet MVC
-- Faites un Cut + Paste des répertoires Data et Models du projet MVC vers le projet Models
+- Effacez le fichier `Class1` généré par défaut.
+- Effacez également le répertoire Data/Migrations du projet MVC.
+- Faites un Cut + Paste des répertoires Data et Models du projet MVC vers le projet Models.
 - Votre solution devrait maintenant ressembler à ça:
 
-| ![alt text](image-7.png) |
-| ------------------------ |
+![alt text](image-7.png)
 
 - On va également déplacer les dépendances et comme c'est assez long et péniblre à faire avec le UI de gestion de package, on va simplement modifier les fichiers de projet
   - Ouvrez les fichiers de projet Models et MVCEtWebAPI et déplacer toutes les dépendances SAUF celle de **Microsoft.EntityFrameworkCore.Tools**
   - Le résultat doit ressemble à ceci:
 
-| ![alt text](image-8.png) |
-| ------------------------ |
+![alt text](image-8.png)
 
 - Lancez le projet et regardez si tout se passe bien...
-- Non?? Quelle surprise?
+- PACKLOW 💥 Ça ne fonctionne pas!!!
 - Il faut également ajouter la dépendance entre les deux projets.
 
-| ![alt text](image-9.png) |
-| ------------------------ |
+![alt text](image-9.png)
 
 - Il faut simplement cocher le projet et faire OK.
 
-| ![alt text](image-10.png) |
-| ------------------------- |
+![alt text](image-10.png)
 
 - Lancez le projet et regardez si tout se passe bien... Il devrait maintenant démarrer
 
@@ -70,13 +63,11 @@ Voici comment le faire en utilisant un projet séparé pour les données:
 
 - Ouvrez la console du Gestionnaire de package
 
-| !![alt text](image-11.png) |
-| -------------------------- |
+!![alt text](image-11.png)
 
 - IMPORTANT: Il faut modifier le projet par défaut de la console pour celui où se trouve ApplicationDbContext!
 
-| ![alt text](image-12.png) |
-| ------------------------- |
+![alt text](image-12.png)
 
 - Créez la migration
 
@@ -94,8 +85,7 @@ PM> update-database
 
 - Il faut simplement cliquer ici pour compléter la création de l'utilisateur.
 
-| ![alt text](image-13.png) |
-| ------------------------- |
+![alt text](image-13.png)
 
 :::info
 On a maintenant une application MVC fonctionnelle avec une authentification par **Cookie**. Dans ce cours, vous allez utiliser cette application pour gérer **les données** de votre jeu.
@@ -106,25 +96,24 @@ On a maintenant une application MVC fonctionnelle avec une authentification par 
 Votre jeu va être fait avec Angular et va se connecter à un serveur WebAPI et s'authentifier par tokens. Il y aura donc 2 serveurs différents, mais pour simplifier la gestion du projet, les deux projets vont être dans la même solution. (C'est également une bonne excuse pour vous faire apprendre comment gérer plusieurs projets dans une même solution!)
 
 :::info
+
 C'est **possible** de rouler à la fois des contrôleurs de **WebAPI** et **MVC** sur un **même serveur**, mais ce n'est **pas possible** d'avoir **2 types d'authentification différents sur le même serveur**!
+
 :::
 
 - Ajoutez projet **WebAPI** à l'intérieur de la **même solution**
 - Nommez-le simplement "WebAPI"
 - Ne choisissez **PAS** de type d'authentification (il faut malheureusement faire la configuration de l'authentification par token nous-même...)
 
-| ![alt text](image-14.png) |
-| ------------------------- |
+![alt text](image-14.png)
 
 - Regardez le menu en haut, il y a maintenant une nouvelle option pour choisir le projet que vous voulez lancer
 
-| ![alt text](image-15.png) |
-| ------------------------- |
+![alt text](image-15.png)
 
 - Choisissez WebAPI et vérifiez que ça se lance bien et que vous avez maintenant
 
-| ![alt text](image-16.png) |
-| ------------------------- |
+![alt text](image-16.png)
 
 - Créez un nouveau contrôleur nommé **AccountController** et ajoutez une méthode **PublicTest**
 
@@ -144,6 +133,7 @@ public class AccountController : ControllerBase
 - Testez la méthode **PublicTest** en utilisant **Swagger** (Simplement lancer votre application)
 
 <details>
+  <summary>Détails</summary>
 
 ![alt text](image-17.png)
 
@@ -162,8 +152,7 @@ public ActionResult PrivateTest()
 
 - Testez la méthode **PrivateTest** en utilisant **Swagger**
 
-| ![alt text](image-18.png) |
-| ------------------------- |
+![alt text](image-18.png)
 
 - Le message est assez clair, on a mis un [Authorize], mais on n'a aucune méthode d'authentification!
 
@@ -174,8 +163,7 @@ Comme c'est déjà vu en 4W6, voici simplement le code **Program.cs** et pour aj
 - Ajoutez une dépendance entre **WebAPI** et le projet **Models** comme vous avez fait pour le projet **MVC**
 - Ajoutez également une dépendance vers le package de **JwtBearer** (Utilisé par l'authentification par Token)
 
-| ![alt text](image-19.png) |
-| ------------------------- |
+![alt text](image-19.png)
 
 - Ajoutez dans **Program.cs**
 
@@ -225,14 +213,12 @@ using MVCEtWebAPI.Data;
 
 - Copiez la ConnectionString du fichier appsettings.json du projet MVC vers celui du projet WebAPI
 
-| ![alt text](image-20.png) |
-| ------------------------- |
+![alt text](image-20.png)
 
 - Lancez l'application pour vérifier que tout fonctionne encore
 - Testez encore la méthode **PrivateTest**, on veut maintenant voir: (C'est normal de ne pas avoir accès, on n'est toujours pas authentifié!)
 
-| ![alt text](image-21.png) |
-| ------------------------- |
+![alt text](image-21.png)
 
 ### Ajout des méthodes Register et Login
 
