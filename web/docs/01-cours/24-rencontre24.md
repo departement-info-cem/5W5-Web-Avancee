@@ -1,6 +1,7 @@
 ---
 title: 12.2 - Mocks et tests 🤡
 hide_table_of_contents: true
+sidebar_class_name: remise-tp3-groupe
 ---
 
 # Mocks et tests pour contrôleurs 🤡

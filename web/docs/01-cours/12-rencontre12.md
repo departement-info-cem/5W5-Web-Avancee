@@ -1,6 +1,7 @@
 ---
 title: 6.2 - Formatif
 hide_table_of_contents: true
+sidebar_class_name: remise-tp1-groupe
 ---
 
 # TP1

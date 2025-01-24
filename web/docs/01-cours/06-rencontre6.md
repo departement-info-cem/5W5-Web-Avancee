@@ -1,6 +1,7 @@
 ---
 title: 3.2 - Forms, guards, routes 💂
 hide_table_of_contents: true
+sidebar_class_name: remise-tp1-uml
 ---
 
 ## Reactive Forms, guards et routes enfants 💂

@@ -1,6 +1,7 @@
 ---
 title: 5.1 - SignalR (Partie 2) 👉👈🥺
 hide_table_of_contents: true
+sidebar_class_name: remise-tp1-code
 ---
 
 # SignalR (Partie 2) 👉👈🥺

@@ -1,6 +1,7 @@
 ---
 title: 9.1 - Tests unitaires 🧪
 hide_table_of_contents: true
+sidebar_class_name: remise-tp2-groupe-devops
 ---
 
 # Tests unitaires 🧪

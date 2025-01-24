@@ -14,12 +14,12 @@
   --ifm-color-primary-lighter: #359962;
   --ifm-color-primary-lightest: #3cad6e;
   --ifm-code-font-size: 95%;
-  --ifm-menu-link-padding-horizontal:1.5em;
+  --ifm-menu-link-padding-horizontal: 1.5em;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-[data-theme='dark'] {
+[data-theme="dark"] {
   --ifm-color-primary: #25c2a0;
   --ifm-color-primary-dark: #21af90;
   --ifm-color-primary-darker: #1fa588;
@@ -68,4 +68,60 @@
   display: block;
   background: #8787ff;
   font-size: 0.75em;
+}
+
+.examen {
+  background-color: #ff6e75;
+}
+
+.remise-tp1-uml::after,
+.remise-tp1-code::after,
+.remise-tp1-signalr::after,
+.remise-tp1-groupe::after,
+.remise-tp2-groupe-devops::after,
+.remise-tp2-fonctionnalites::after,
+.remise-tp3-groupe::after,
+.remise-tp3-devops::after,
+.remise-tp3-fonctionnalites::after {
+  text-align: center;
+  width: 100%;
+  display: block;
+  background: #8787ff;
+  font-size: 0.75em;
+}
+
+.remise-tp1-uml::after {
+  content: "Remise TP1 UML (3%)";
+}
+
+.remise-tp1-code::after {
+  content: "Remise TP1 Code (10%)";
+}
+
+.remise-tp1-signalr::after {
+  content: "Remise TP1 SignalR (10%)";
+}
+
+.remise-tp1-groupe::after {
+  content: "Remise TP1 Groupe (5% + 2%)";
+}
+
+.remise-tp2-groupe-devops::after {
+  content: "Remise TP2 Groupe & DevOps (2% + 3%)";
+}
+
+.remise-tp2-fonctionnalites::after {
+  content: "Remise TP2 Fonctionnalités (10% + 5%)";
+}
+
+.remise-tp3-groupe::after {
+  content: "Remise TP3 Groupe (4%)";
+}
+
+.remise-tp3-devops::after {
+  content: "Remise TP3 DevOps (4%)";
+}
+
+.remise-tp3-fonctionnalites::after {
+  content: "Remise TP3 Fonctionnalités (10% + 4% + 2%)";
 }
