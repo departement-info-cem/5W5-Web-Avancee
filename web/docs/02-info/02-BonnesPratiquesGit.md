@@ -39,7 +39,7 @@ dotnet new gitignore
 
 ### Les bonnes pratiques avec Git
 
-- 1 branche 👉 1 feature
+- 1 branche 👉 1 fonctionnalité
 - Faire une nouvelle branche pour chaque User Story (US)
 - Créer des sous-branches pour la tâche est longue et/ou si plusieurs personnes travaillent sur la même US en même temps
 - Fusionner (Merge) la branche une fois la US terminée (Nous allons revenir sur ce sujet)

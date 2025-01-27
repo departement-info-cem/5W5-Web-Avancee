@@ -1,9 +1,7 @@
 # Authentification par token
 
 :::warning
-
 Suite de l'exercice précédent: [MVCEtWebAPI](MVCEtWebAPI)
-
 :::
 
 ## Objectifs
@@ -109,7 +107,7 @@ Pourquoi --ssl? C'est une option pour rouler le serveur avec https, c'est néces
 
 - Faites une page très simple avec simplement 2 boutons "TestPublic" et "TestPrivate"
 - Créer des méthodes pour vous permettre d'appeler votre serveur web API en cliquant sur les boutons.
-- Vous pouvez simplement ajoutez une section résultat sur la page et afficher le résultat du dernier appel au serveur.
+- Vous pouvez simplement ajouter une section résultat sur la page et afficher le résultat du dernier appel au serveur.
 - L'appel à la fonction publique ne fonctionne probablement pas avec une **exception** à propos des **CORS**. Pourquoi? Vous faites un appel à partir d'un autre site!
 - Modifiez Program.cs pour ajouter le droit d'accès **CORS à localhost:4200**
 
@@ -147,7 +145,7 @@ sessionStorage.setItem("token", result.token);
 ```
 
 :::info
-Pour nous permettre de facilement ouvrir plusieurs fenêtre pour des joueurs différents lorsque l'on va tester notre jeu, on va préférez utiliser sessionStorage pour stocker nos tokens!
+Pour nous permettre de facilement ouvrir plusieurs fenêtres pour des joueurs différents lorsque l'on va tester notre jeu, on va préférez utiliser sessionStorage pour stocker nos tokens!
 :::
 
 - Tester la fonction privée, faites attention d'inclure le token qui est maintenant dans sessionStorage en utilisant `sessionStorage.getItem("token")`.
@@ -164,7 +162,7 @@ sessionStorage.removeItem("token");
 
 - Testez que l'appel à la fonctionne privée ne fonctionne plus
 - Tester que l'appel fonctionne après un nouveau login!
-- Pour éviter de compliquer chacun des appels au serveur, utilisez un interceptor comme vous aviez déjà vu en 4W6. Vous pouvez simplement vérifier si il y a un token dans le sessionStorage et l'inclure si il n'est pas null!
+- Pour éviter de compliquer chacun des appels au serveur, utilisez un interceptor comme vous aviez déjà vu en 4W6. Vous pouvez simplement vérifier s'il y a un token dans le sessionStorage et l'inclure s'il n'est pas null!
 - Oui, oui, prenez vraiment le temps d'ajouter un interceptor, ça vaut la peine et vous allez l'utiliser toute la session!
 
 ### Ajouter un modèle et un contrôleur MVC
