@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # Relations
 
 ## Objectif
@@ -9,12 +12,11 @@ Les relations révisées sont:
 - N à N (sans doublon) 
 - N à N (avec doublon) 
 
-## Pour commencer l'exercice, il y a un projet de base que vous pouvez forker
+## Fork
 
-- Le projet sur GitHub:
+Pour commencer l'exercice, il y a un projet de base que vous pouvez forker :
 
-[Projet GitHub](https://github.com/CEM-420-5W5/RelationsNaN)
-
+- [Le projet GitHub](https://github.com/CEM-420-5W5/RelationsNaN)
 - En créant un fork, vous allez pouvoir créer votre propre copie du projet
 
 ![image](/img/exercices/relations/fork.png)
@@ -37,13 +39,18 @@ On peut également utiliser un fork pour faire une demande d'intégration vers l
 
 ## Comprendre les migrations
 
-- Générer une première migration
+### Première migration
+
+- Générer une première migration :
 
 ```powershell
 add-migration initiale
 ```
 
-- Regarder le contenu du fichier de migration. Il n'y a pas encore de relations entre les 2 classes Game et Genre, le fichier de migration est donc assez simple.
+- Regardez le contenu du fichier de migration. Il n'y a pas encore de relations entre les 2 classes `Game` et `Genre`, le fichier de migration est donc assez simple.
+
+<Tabs>
+  <TabItem value="migration" label="Code de la migration" default>
 
 ```csharp
 protected override void Up(MigrationBuilder migrationBuilder)
@@ -77,10 +84,39 @@ protected override void Up(MigrationBuilder migrationBuilder)
         });
 }
 ```
+</TabItem>
+  <TabItem value="diagrammes" label="Diagrammes">
+  <Row>
+<Column>
+```mermaid
+---
+title: Diagramme de classe
+config:
+  class:
+    hideEmptyMembersBox: true
+---
+classDiagram
+    class Game
+    class Genre
+```
+</Column>
+<Column>
+```mermaid
+---
+title: Diagramme d'entités BD
+---
+erDiagram
+    Game
+    Genre
+```
+</Column>
+        </Row>
+    </TabItem>
+</Tabs>
 
-## Relation 1 à N entre Game et Genre
+### Relation 1 à N entre `Game` et `Genre`
 
-- Ajouter une relation optionnelle entre **Game** et **Genre**. Pour l'instant, ne faites que modifier la classe **Game**. Chaque **Game** n'a qu'un seul **Genre**.
+- Ajouter une relation optionnelle entre `Game` et `Genre`. Pour l'instant, ne faites que modifier la classe `Game`. Chaque `Game` n'a qu'un seul `Genre`.
 
 ```csharp
 public class Game
@@ -89,10 +125,12 @@ public class Game
     public string Name { get; set; }
     public string Image { get; set; }
     public int ReleaseYear { get; set; }
-    
+
+    // highlight-start
     public int? GenreId { get; set; }
     [ValidateNever]
     public Genre? Genre { get; set; }
+    // highlight-end
 }
 ```
 
@@ -104,28 +142,64 @@ add-migration relationGameGenre
 
 - Regarder la migration. Si on prend le temps de lire, c'est relativement simple. On a une nouvelle colonne qui contient un Index pour améliorer la performance et qui est une clé étrangère vers la table Genre. Nullable: true nous indique que la relation est **optionnelle**.
 
-```csharp
-protected override void Up(MigrationBuilder migrationBuilder)
-{
-    migrationBuilder.AddColumn<int>(
-        name: "GenreId",
-        table: "Game",
-        type: "int",
-        nullable: true);
+<Tabs>
+    <TabItem value="migration" label="Code de la migration">
+        ```csharp
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.AddColumn<int>(
+                name: "GenreId",
+                table: "Game",
+                type: "int",
+                nullable: true);
 
-    migrationBuilder.CreateIndex(
-        name: "IX_Game_GenreId",
-        table: "Game",
-        column: "GenreId");
+            migrationBuilder.CreateIndex(
+                name: "IX_Game_GenreId",
+                table: "Game",
+                column: "GenreId");
 
-    migrationBuilder.AddForeignKey(
-        name: "FK_Game_Genre_GenreId",
-        table: "Game",
-        column: "GenreId",
-        principalTable: "Genre",
-        principalColumn: "Id");
-}
-```
+            migrationBuilder.AddForeignKey(
+                name: "FK_Game_Genre_GenreId",
+                table: "Game",
+                column: "GenreId",
+                principalTable: "Genre",
+                principalColumn: "Id");
+        }
+        ```
+    </TabItem>
+    <TabItem value="diagrammes" label="Diagrammes">
+        <Row>
+        <Column>
+            ```mermaid
+            ---
+            title: Diagramme de classe
+            config:
+              class:
+                hideEmptyMembersBox: true
+            ---
+            classDiagram
+                Genre <|-- Game
+                class Game
+                class Genre
+            ```
+        </Column>
+        <Column>
+            ```mermaid
+            ---
+            title: Diagramme d'entités BD
+            config:
+              class:
+                hideEmptyMembersBox: true
+            ---
+            erDiagram
+                Genre <|-- Game
+                class Game
+                class Genre
+            ```
+        </Column>
+        </Row>
+    </TabItem>
+</Tabs>
 
 - Ajouter la liste de Games au Genre
 
@@ -210,7 +284,7 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 
 - Vérifier qu'il est possible de choisir un nouveau genre pour un jeu existant
 
-## Relation N à N sans doublon entre Game et Platform
+### Relation N à N sans doublon entre Game et Platform
 
 Un même jeu peut avoir plusieurs Platform différentes!
 
@@ -373,7 +447,7 @@ if (_context.Platform.Count() == 0)
 Faites attention, il y a plusieurs endroits où l'on génère une SelectList pour les plateformes. Pour l'exercice, ce n'est **pas** nécessaire de s'occuper des actions **Create**, seulement **Edit**.
 :::
 
-## Relation N à N avec doublon entre Game et Purchase
+### Relation N à N avec doublon entre Game et Purchase
 
 En créant une relation qui utilise une classe de relation, on a plus de contrôle sur notre façon de gérer la relation. On peut entre autres avoir plusieurs copies de la même relation.
 
@@ -607,7 +681,7 @@ namespace RelationsNaN.Controllers
 | ![image](/img/exercices/relations/Purchases.png) |
 |-|
 
-## Autres possibilités
+### Autres possibilités
 
 Une fois que l'on a une classe de relation, on a la flexibilité de gérer notre problème comme on le veut.
 On peut par exemple:
