@@ -5,17 +5,17 @@ hide_table_of_contents: true
 
 # Relations et révision MVC ↔️
 
-Voir la différence lors d'une authentification par Token vs Cookie dans la vue Network des outils de débogage d'un navigateur
+Voir la différence lors d'une authentification par Token vs Cookie dans la vue Network des outils de débogage d'un navigateur.
 
-Pour bien se préparer pour la prochaine rencontre, nous allons créer les équipes et les comptes pour utiliser Azure DevOps pendant cettre recontre.
+Pour bien se préparer pour la prochaine rencontre, nous allons créer les équipes et les comptes pour utiliser Azure DevOps pendant cette rencontre.
 
-🛠️ Démo sur les relations avec Entity Framework
+🛠️ Démo sur les relations avec Entity Framework.
 
 :::tip[Conseil de la séance]
 
 La détermination est le facteur le plus important pour prédire la réussite.
 
-Une profession, ça s'apprend sur plusieurs années et le talent initiale est éventuellement dépassé par une amélioration continue.
+Une profession, ça s'apprend sur plusieurs années et le talent initial est éventuellement dépassé par une amélioration continue.
 
 En travaillant chez Unity comme consultant, j'ai recroisé plusieurs directeurs de département pour de grandes compagnies de jeux vidéos.
 
