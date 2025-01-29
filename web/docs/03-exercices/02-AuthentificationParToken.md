@@ -56,11 +56,11 @@ builder.Services.AddSwaggerGen(opt =>
 - Faites un register et un login avec un utilisateur en utilisant Swagger
 - Copiez le token qui a été reçu par l'appel au login (Copiez tout le contenu de la réponse, mais faites attention de garder seulement le token à la prochaine étape!)
 
-![alt text](image-23.png)
+![alt text](_02-AuthentificationParToken/image-23.png)
 
 - Cliquez sur le cadenas ouvert pour spécifier le token
 
-![alt text](image-24.png)
+![alt text](_02-AuthentificationParToken/image-24.png)
 
 :::warning
 Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
@@ -68,7 +68,7 @@ Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
 
 - Testez maintenant PrivateTest, vous devriez normalement obtenir un code 200
 
-![alt text](image-25.png)
+![alt text](_02-AuthentificationParToken/image-25.png)
 
 ## Angular
 
@@ -76,12 +76,12 @@ Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
 - Lorsque vous aurez terminé, votre application devrait ressembler à ceci (Les détails ne sont pas importants)
 - Après avoir fait un appel public sans être connecté:
 
-| ![alt text](image-26.png) |
+| ![alt text](_02-AuthentificationParToken/image-26.png) |
 | ------------------------- |
 
 Après s'être connecté et avoir fait un appel privé:
 
-| ![alt text](image-27.png) |
+| ![alt text](_02-AuthentificationParToken/image-27.png) |
 | ------------------------- |
 
 ### Tester un appel de base
@@ -92,7 +92,7 @@ Créer un client Angular
 ng new ngMVCEtWebAPI
 ```
 
-| ![alt text](image-3.png) |
+| ![alt text](_02-AuthentificationParToken/image-3.png) |
 | ------------------------ |
 
 Après utiliser cette commande pour démarrer le serveur Angular
@@ -173,13 +173,13 @@ sessionStorage.removeItem("token");
 
 - Ajoutez un contrôleur pour faire les actions CRUD sur **TestData**
 
-![alt text](image-28.png)
+![alt text](_02-AuthentificationParToken/image-28.png)
 
-![alt text](image-29.png)
+![alt text](_02-AuthentificationParToken/image-29.png)
 
 - Assurez-vous de pouvoir ajouter une entrée **TestData** avec les pages générées. (L'image affiche le résultat après avoir ajouté une entrée)
 
-![alt text](image-30.png)
+![alt text](_02-AuthentificationParToken/image-30.png)
 
 :::info
 N'oubliez pas de faire une migration et de mettre la BD à jour. Il y a les détails sur comment faire dans l'exercice précédent!
@@ -210,7 +210,7 @@ public class CreateTestDataDTO
 - Testez l'action dans Swagger (Il va falloir utiliser un token après un login si vous avez bien mis un **\[Authorize\]**)
 - Ajoutez un formulaire à votre page Angular qui vous permet d'ajouter une nouvelle entrée TestData. Quelque chose d'assez simple comme ceci:
 
-![alt text](image-32.png)
+![alt text](_02-AuthentificationParToken/image-32.png)
 
 :::info
 Si vous avez bien fait la partie sur l'authentification avec l'intercepteur, l'appel devrait fonctionner après avoir fait un login.
@@ -222,7 +222,7 @@ Pour l'instant, on ne fait aucune vérification de la validité de durée de vie
 
 - Finalement, utilisez la page MVC pour vérifier que le data que vous ajoutez avec Angular est bien présent dans la BD!
 
-![alt text](image-31.png)
+![alt text](_02-AuthentificationParToken/image-31.png)
 
 ### Solution
 

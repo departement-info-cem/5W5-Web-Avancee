@@ -39,7 +39,7 @@ Il faut donc utiliser un **scope** pour obtenir le **DbContext** et un **IHubCon
 
 Sur le client, une alert du genre devrait s'afficher lorsqu'un utilisateur est connecté au canal le plus populaire:
 
-|![alt text](image-2.png)|
+|![alt text](_17-BackgroundService/image-2.png)|
 |-|
 
 ### Solution

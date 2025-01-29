@@ -7,7 +7,7 @@ Commencer par mettre en place le projet.
 [Projet GitHub](https://github.com/CEM-420-5W5/Mock-Controller)
 
 - Générer des tests unitaires pour ce projet
-- Ajouter des tests à fin d'avoir une **couverture de code complète** (Voir la section sur le [couverture de code](/info/testsUnitaires#la-couverture-de-code) )
+- Ajouter des tests à fin d'avoir une **couverture de code complète** (Voir la section sur le [couverture de code](/info/TestsUnitaires#la-couverture-de-code) )
 - Vous allez devoir utiliser un Mock pour le service ET le contrôleur (Pour pouvoir mocker la propriété UserId du contrôleur)
 
 ```csharp

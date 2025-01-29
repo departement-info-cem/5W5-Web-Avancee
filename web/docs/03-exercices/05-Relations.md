@@ -1,14 +1,18 @@
 # Relations
 
 ## Objectif
+
 L'objectif de cet exercice est de réviser les types de relations et de mieux comprendre comment elles fonctionnent.
 Les relations révisées sont:
+
 - 1 à N
 - N à N (sans doublon) 
 - N à N (avec doublon) 
 
 ## Pour commencer l'exercice, il y a un projet de base que vous pouvez forker
+
 - Le projet sur GitHub:
+
 [Projet GitHub](https://github.com/CEM-420-5W5/RelationsNaN)
 
 - En créant un fork, vous allez pouvoir créer votre propre copie du projet
@@ -32,11 +36,15 @@ On peut également utiliser un fork pour faire une demande d'intégration vers l
 :::
 
 ## Comprendre les migrations
+
 - Générer une première migration
+
 ```powershell
 add-migration initiale
 ```
+
 - Regarder le contenu du fichier de migration. Il n'y a pas encore de relations entre les 2 classes Game et Genre, le fichier de migration est donc assez simple.
+
 ```csharp
 protected override void Up(MigrationBuilder migrationBuilder)
 {
@@ -71,7 +79,9 @@ protected override void Up(MigrationBuilder migrationBuilder)
 ```
 
 ## Relation 1 à N entre Game et Genre
+
 - Ajouter une relation optionnelle entre **Game** et **Genre**. Pour l'instant, ne faites que modifier la classe **Game**. Chaque **Game** n'a qu'un seul **Genre**.
+
 ```csharp
 public class Game
 {
@@ -85,11 +95,15 @@ public class Game
     public Genre? Genre { get; set; }
 }
 ```
+
 - Générer une migration
+
 ```powershell
 add-migration relationGameGenre
 ```
+
 - Regarder la migration. Si on prend le temps de lire, c'est relativement simple. On a une nouvelle colonne qui contient un Index pour améliorer la performance et qui est une clé étrangère vers la table Genre. Nullable: true nous indique que la relation est **optionnelle**.
+
 ```csharp
 protected override void Up(MigrationBuilder migrationBuilder)
 {
@@ -112,7 +126,9 @@ protected override void Up(MigrationBuilder migrationBuilder)
         principalColumn: "Id");
 }
 ```
+
 - Ajouter la liste de Games au Genre
+
 ```csharp
 public class Genre
 {
@@ -122,26 +138,35 @@ public class Genre
     public List<Game> Games { get; set; }
 }
 ```
+
 - Générer une nouvelle migration (peu importe le nom)
 - Regarder le contenu de la migration. Elle devrait être vide! Par défaut, ce genre de relation est de type 1 à N, alors le fait d'ajouter la liste au Genre ne change **RIEN** au modèle de données!
+
 ```csharp
 protected override void Up(MigrationBuilder migrationBuilder)
 {
 
 }
 ```
+
 - On peut simplement retirer la migration vide
+
 ```powershell
 remove-migration
 ```
+
 - Et maintenant mettre notre BD à jour
+
 ```powershell
 update-database
 ```
+
 - Générer un contrôleur avec une vue pour **Genre**
+
 :::danger
 Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas en créer un nouveau!
 :::
+
 ![image](/img/exercices/relations/GenerationController.png)
 
 - Ajouter un lien dans la barre de navigation
@@ -150,14 +175,15 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 |-|
 
 - Vérifier que ça fonctionne correctement en ajoutant les genres suivants:
-    - shooter
-    - fighting
+  - shooter
+  - fighting
 
 ![image](/img/exercices/relations/Genres.png)
 
 - Générer un contrôleur avec une vue pour **Game**
 - Ajouter un lien dans la barre de navigation
 - La vue générée a probablement un problème avec le champ optionel Genre. On peut simplement modifier pour afficher le nom lorsque le genre n'est pas null:
+
 ```html
 <td>
     @if(item.Genre != null)
@@ -166,6 +192,7 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
     }
 </td>
 ```
+
 - Vous devriez avoir quelque chose qui ressemble à ça maintenant:
 
 | ![image](/img/exercices/relations/GamesV1.png) |
@@ -174,14 +201,17 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 - Afficher les images avec un height de 200
 - Corriger le Contrôleur **GamesController** pour afficher le **Name** des **Genre**. Il y a 4 endroits où un SelectList est créé. Il faut simplement utiliser le champ "Name" à la place du champ "Id"
 - Corriger **les** vues **Edit** et **Create** pour bien supporter la possibilité d'avoir aucun genre
+
 ```html
 <select asp-for="GenreId" class="form-control" asp-items="ViewBag.GenreId">
     <option selected value="">--- NONE ---</option>
 </select>
 ```
+
 - Vérifier qu'il est possible de choisir un nouveau genre pour un jeux existant
 
 ## Relation N à N sans doublon entre Game et Platform
+
 Un même jeu peut avoir plusieurs Platform différentes!
 
 - Ajouter une classe Platform avec une relation N à N avec Game
@@ -196,6 +226,7 @@ public class Platform
     public List<Game> Games { get; set; }
 }
 ```
+
 ```csharp
 public class Game
 {
@@ -263,6 +294,7 @@ protected override void Up(MigrationBuilder migrationBuilder)
 ```
 
 - Ajouter des plateformes avec votre DbInitializer
+
 ```csharp
 if (_context.Platform.Count() == 0)
 {
@@ -295,6 +327,7 @@ if (_context.Platform.Count() == 0)
 ```
 
 - Utiliser le code suivant pour afficher les Plateform d'un Game en utilisant des badges
+
 ```html
 <td>
     @foreach (var platform in item.Platforms)
@@ -303,7 +336,9 @@ if (_context.Platform.Count() == 0)
     }
 </td>
 ```
+
 - Pour l'ajout et la suppression de Platforms, vous pouvez ajouter ceci à la vue Edit **(Au dessus du formulaire existant)**:
+
 ```html
 @foreach (var platform in Model.Platforms)
 {
@@ -329,6 +364,7 @@ if (_context.Platform.Count() == 0)
     </div>
 </form>
 ```
+
 - Vous allez devoir ajouter les actions AddPlatform et RemovePlatform qui vont recevoir les Ids et modifier le **Game**
 - Essayer d'ajouter 2 fois la même Platform. Essayer d'ajouter une autre Platform en double. Comme vu en classe, c'est problématique!
 - Comme on ne veut pas vraiment avoir des doublons pour les plateformes, on va améliorer notre logique pour que la liste affiche uniquement les plateformes qui ne sont pas déjà ajouté à ce Game. Modifiez le contrôleur pour y arriver.
@@ -338,8 +374,11 @@ Faites attention, il y a plusieurs endroits où l'on génère une SelectList pou
 :::
 
 ## Relation N à N avec doublon entre Game et Purchase
+
 En créant une relation qui utilise une classe de relation, on a plus de contrôle sur notre façon de gérer la relation. On peut entre autres avoir plusieurs copies de la même relation.
+
 - Ajouter une classe **Purchase** très simple
+
 ```csharp
  public class Purchase
 {
@@ -348,7 +387,9 @@ En créant une relation qui utilise une classe de relation, on a plus de contrô
     public List<GamePurchase> GamePurchases { get; set; }
 }
 ```
+
 - Ajouter une classe **GamePurchase**. Comme elle contient son propre Id, on va pouvoir ajouter plusieurs fois la même relation Game/Purchase
+
 ```csharp
 public class GamePurchase
 {
@@ -359,7 +400,9 @@ public class GamePurchase
     public Purchase Purchase { get; set; }
 }
 ```
+
 - Ajouter également une liste de **GamePurchases** à la classe **Game**
+
 ```csharp
 public class Game
 {
@@ -379,7 +422,9 @@ public class Game
     public List<GamePurchase> GamePurchases { get; set; }
 }
 ```
+
 - Faire une migration et regarder son contenu. On peut remarquer qu'il y a des colonnes GameId et PurchasedId, c'est le nom par défaut d'une clé étrangère (Nom de la propriété + Id)
+
 ```csharp
 protected override void Up(MigrationBuilder migrationBuilder)
 {
@@ -563,8 +608,10 @@ namespace RelationsNaN.Controllers
 |-|
 
 ## Autres possibilités
+
 Une fois que l'on a une classe de relation, on a la flexibilité de gérer notre problème comme on le veut.
 On peut par exemple:
+
 - Ajouter une propriété Count à la relation au lieu d'avoir un Id, comme ceci:
 
 ```csharp
@@ -581,6 +628,7 @@ public class GamePurchase
 ```
 
 - Ou encore en ayant un "Owner" pour pouvoir faire des cadeaux
+
 ```csharp
 public class GamePurchase
 {

@@ -24,7 +24,7 @@ Il y a de nombreux TODOs dans le code pour vous aider à faire cette tâche.
 
 Une fois que c'est fonctionnel, on veut voir quelque chose comme ça:
 
-![alt text](image.png)
+![alt text](_17-BackgroundService/image.png)
 
 ### Ajout d'un mutliplicateur (multiplier)
 
@@ -44,7 +44,7 @@ Encore une fois, il y a de nombreux TODOs dans le code pour vous aider à faire 
 
 Une fois que c'est fonctionnel, on veut voir quelque chose comme ça:
 
-![alt text](image-1.png)
+![alt text](_17-BackgroundService/image-1.png)
 
 :::info
 Si vous jouez bien, vous devriez être capable d'atteindre plus de 50,000 points en 30 secondes!
