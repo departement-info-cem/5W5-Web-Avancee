@@ -19,8 +19,8 @@ Les relations révisées sont:
 
 ![image](/img/exercices/relations/fork.png)
 
-- Vous allez pouvoir choisir pour quel utilisateur ou organisation vous créez la copie (fork).
-- C'est préférable de copier toutes les branches dans ce cas ci. Mais ce n'est pas très grave si vous avez uniquement copié seulement la branche main.
+- Vous allez pouvoir choisir pour quels utilisateur ou organisation vous créez la copie (fork).
+- C'est préférable de copier toutes les branches dans ce cas-ci. Mais ce n'est pas très grave si vous avez uniquement copié seulement la branche main.
 
 ![image](/img/exercices/relations/fork2.png)
 
@@ -182,7 +182,7 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 
 - Générer un contrôleur avec une vue pour **Game**
 - Ajouter un lien dans la barre de navigation
-- La vue générée a probablement un problème avec le champ optionel Genre. On peut simplement modifier pour afficher le nom lorsque le genre n'est pas null:
+- La vue générée a probablement un problème avec le champ optionnel Genre. On peut simplement modifier pour afficher le nom lorsque le genre n'est pas null:
 
 ```html
 <td>
@@ -200,7 +200,7 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 
 - Afficher les images avec un height de 200
 - Corriger le Contrôleur **GamesController** pour afficher le **Name** des **Genre**. Il y a 4 endroits où un SelectList est créé. Il faut simplement utiliser le champ "Name" à la place du champ "Id"
-- Corriger **les** vues **Edit** et **Create** pour bien supporter la possibilité d'avoir aucun genre
+- Corriger **les** vues **Edit** et **Create** pour bien supporter la possibilité de n'avoir aucun genre.
 
 ```html
 <select asp-for="GenreId" class="form-control" asp-items="ViewBag.GenreId">
@@ -208,7 +208,7 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 </select>
 ```
 
-- Vérifier qu'il est possible de choisir un nouveau genre pour un jeux existant
+- Vérifier qu'il est possible de choisir un nouveau genre pour un jeu existant
 
 ## Relation N à N sans doublon entre Game et Platform
 
@@ -244,7 +244,7 @@ public class Game
 }
 ```
 
-- Faites une migration. Cette fois-ci c'est un peu plus complexe. Il y a une table en plus qui est créé pour stocker l'information des relations multiples entre **Game** et **Platform**. Cette classe contient 2 champs pour l'Id de Game et de Platform.
+- Faites une migration. Cette fois-ci c'est un peu plus complexe. Il y a une table en plus qui est créée pour stocker l'information des relations multiples entre **Game** et **Platform**. Cette classe contient 2 champs pour l'Id de Game et de Platform.
 
 ```csharp
 protected override void Up(MigrationBuilder migrationBuilder)
@@ -367,7 +367,7 @@ if (_context.Platform.Count() == 0)
 
 - Vous allez devoir ajouter les actions AddPlatform et RemovePlatform qui vont recevoir les Ids et modifier le **Game**
 - Essayer d'ajouter 2 fois la même Platform. Essayer d'ajouter une autre Platform en double. Comme vu en classe, c'est problématique!
-- Comme on ne veut pas vraiment avoir des doublons pour les plateformes, on va améliorer notre logique pour que la liste affiche uniquement les plateformes qui ne sont pas déjà ajouté à ce Game. Modifiez le contrôleur pour y arriver.
+- Comme on ne veut pas vraiment avoir des doublons pour les plateformes, on va améliorer notre logique pour que la liste affiche uniquement les plateformes qui ne sont pas déjà ajoutées à ce Game. Modifiez le contrôleur pour y arriver.
 
 :::warning
 Faites attention, il y a plusieurs endroits où l'on génère une SelectList pour les plateformes. Pour l'exercice, ce n'est **pas** nécessaire de s'occuper des actions **Create**, seulement **Edit**.
@@ -557,7 +557,7 @@ namespace RelationsNaN.Controllers
 }
 ```
 
-- Ajouter une vue pour visualizer les données de Purchase
+- Ajouter une vue pour visualiser les données de Purchase
 
 ```html
 @model IEnumerable<RelationsNaN.Models.Purchase>

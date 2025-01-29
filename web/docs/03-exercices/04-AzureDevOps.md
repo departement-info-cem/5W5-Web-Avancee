@@ -5,7 +5,7 @@
 https://aex.dev.azure.com
 
 :::info
-Doit être fait par chaque membre de l'équipe
+Dois être fait par chaque membre de l'équipe
 :::
 
 <!-- Pas un problème pour l'utilisation d'Azure DevOps, seulement pour le déploiement et l'intégration continue!
@@ -26,7 +26,7 @@ S'inscrire avec un compte qui n'est pas celui du cégep!
 - Pour débuter, il faut créer une organisation. 
 
 :::warning
-Un seul membre de votre équipe doit créer l'organisation. On va ajouter les autres membres plus tard
+Un seul membre de votre équipe doit créer l'organisation. On va ajouter les autres membres plus tard.
 :::
 
 - Une organisation pourra avoir plusieurs projets.
