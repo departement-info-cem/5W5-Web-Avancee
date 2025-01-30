@@ -537,65 +537,105 @@ public class Game
     [ValidateNever]
     public List<Platform> Platforms { get; set; }
 
+    // highlight-start
     [ValidateNever]
     public List<GamePurchase> GamePurchases { get; set; }
+    // highlight-end
 }
 ```
 
 - Faire une migration et regarder son contenu. On peut remarquer qu'il y a des colonnes GameId et PurchasedId, c'est le nom par défaut d'une clé étrangère (Nom de la propriété + Id)
 
-```csharp
-protected override void Up(MigrationBuilder migrationBuilder)
-{
-    migrationBuilder.CreateTable(
-        name: "Purchase",
-        columns: table => new
+<Tabs>
+    <TabItem value="migration" label="Code de la migration">
+        ```csharp
+        protected override void Up(MigrationBuilder migrationBuilder)
         {
-            Id = table.Column<int>(type: "int", nullable: false)
-                .Annotation("SqlServer:Identity", "1, 1")
-        },
-        constraints: table =>
-        {
-            table.PrimaryKey("PK_Purchase", x => x.Id);
-        });
+            migrationBuilder.CreateTable(
+                name: "Purchase",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1")
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Purchase", x => x.Id);
+                });
 
-    migrationBuilder.CreateTable(
-        name: "GamePurchase",
-        columns: table => new
-        {
-            Id = table.Column<int>(type: "int", nullable: false)
-                .Annotation("SqlServer:Identity", "1, 1"),
-            GameId = table.Column<int>(type: "int", nullable: false),
-            PurchaseId = table.Column<int>(type: "int", nullable: false)
-        },
-        constraints: table =>
-        {
-            table.PrimaryKey("PK_GamePurchase", x => x.Id);
-            table.ForeignKey(
-                name: "FK_GamePurchase_Game_GameId",
-                column: x => x.GameId,
-                principalTable: "Game",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
-            table.ForeignKey(
-                name: "FK_GamePurchase_Purchase_PurchaseId",
-                column: x => x.PurchaseId,
-                principalTable: "Purchase",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
-        });
+            migrationBuilder.CreateTable(
+                name: "GamePurchase",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    GameId = table.Column<int>(type: "int", nullable: false),
+                    PurchaseId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GamePurchase", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_GamePurchase_Game_GameId",
+                        column: x => x.GameId,
+                        principalTable: "Game",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_GamePurchase_Purchase_PurchaseId",
+                        column: x => x.PurchaseId,
+                        principalTable: "Purchase",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
-    migrationBuilder.CreateIndex(
-        name: "IX_GamePurchase_GameId",
-        table: "GamePurchase",
-        column: "GameId");
+            migrationBuilder.CreateIndex(
+                name: "IX_GamePurchase_GameId",
+                table: "GamePurchase",
+                column: "GameId");
 
-    migrationBuilder.CreateIndex(
-        name: "IX_GamePurchase_PurchaseId",
-        table: "GamePurchase",
-        column: "PurchaseId");
-}
-```
+            migrationBuilder.CreateIndex(
+                name: "IX_GamePurchase_PurchaseId",
+                table: "GamePurchase",
+                column: "PurchaseId");
+        }
+        ```
+    </TabItem>
+    <TabItem value="diagrammes" label="Diagrammes">
+        <Row>
+        <Column>
+            ```mermaid
+            ---
+            title: Diagramme de classe
+            config:
+              class:
+                hideEmptyMembersBox: true
+            ---
+            classDiagram
+                Genre "0..*" -- "1..*" Game
+                Game "*..*" -- "*..*" Platform
+                Game "*..*" -- "*..*" Purchases
+            ```
+        </Column>
+        <Column>
+            ```mermaid
+            ---
+            title: Diagramme d'entités BD
+            config:
+              class:
+                hideEmptyMembersBox: true
+            ---
+            classDiagram
+                Genre "0..*" -- "1..*" Game
+                Game "0..*" -- "0..*" GamePlatform
+                GamePlatform "0..*" -- "0..*" Platform
+                Game "0..*" -- "0..*" GamePurchases
+                Purchases "0..*" -- "0..*" GamePurchases
+            ```
+        </Column>
+        </Row>
+    </TabItem>
+</Tabs>
 
 - Ajouter 1 vente dans le DbInitializer
 
