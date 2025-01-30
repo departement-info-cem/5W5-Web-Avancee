@@ -50,66 +50,68 @@ add-migration initiale
 - Regardez le contenu du fichier de migration. Il n'y a pas encore de relations entre les 2 classes `Game` et `Genre`, le fichier de migration est donc assez simple.
 
 <Tabs>
-  <TabItem value="migration" label="Code de la migration" default>
+    <TabItem value="migration" label="Code de la migration" default>
+        ```csharp
+        protected override void Up(MigrationBuilder migrationBuilder)
+        {
+            migrationBuilder.CreateTable(
+                name: "Game",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ReleaseYear = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Game", x => x.Id);
+                });
 
-```csharp
-protected override void Up(MigrationBuilder migrationBuilder)
-{
-    migrationBuilder.CreateTable(
-        name: "Game",
-        columns: table => new
-        {
-            Id = table.Column<int>(type: "int", nullable: false)
-                .Annotation("SqlServer:Identity", "1, 1"),
-            Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
-            Image = table.Column<string>(type: "nvarchar(max)", nullable: false),
-            ReleaseYear = table.Column<int>(type: "int", nullable: false)
-        },
-        constraints: table =>
-        {
-            table.PrimaryKey("PK_Game", x => x.Id);
-        });
-
-    migrationBuilder.CreateTable(
-        name: "Genre",
-        columns: table => new
-        {
-            Id = table.Column<int>(type: "int", nullable: false)
-                .Annotation("SqlServer:Identity", "1, 1"),
-            Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
-        },
-        constraints: table =>
-        {
-            table.PrimaryKey("PK_Genre", x => x.Id);
-        });
-}
-```
-</TabItem>
-  <TabItem value="diagrammes" label="Diagrammes">
-  <Row>
-<Column>
-```mermaid
----
-title: Diagramme de classe
-config:
-  class:
-    hideEmptyMembersBox: true
----
-classDiagram
-    class Game
-    class Genre
-```
-</Column>
-<Column>
-```mermaid
----
-title: Diagramme d'entités BD
----
-erDiagram
-    Game
-    Genre
-```
-</Column>
+            migrationBuilder.CreateTable(
+                name: "Genre",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Genre", x => x.Id);
+                });
+        }
+        ```
+    </TabItem>
+    <TabItem value="diagrammes" label="Diagrammes">
+        <Row>
+            <Column>
+                ```mermaid
+                ---
+                title: Diagramme de classe
+                config:
+                    class:
+                        hideEmptyMembersBox: true
+                ---
+                classDiagram
+                    class Game
+                    class Genre
+                ```
+            </Column>
+            <Column>
+                ```mermaid
+                ---
+                title: Diagramme d'entités BD
+                config:
+                    class:
+                        hideEmptyMembersBox: true
+                ---
+                classDiagram
+                    class Genre
+                    class Game
+                ```
+            </Column>
         </Row>
     </TabItem>
 </Tabs>
@@ -178,9 +180,7 @@ add-migration relationGameGenre
                 hideEmptyMembersBox: true
             ---
             classDiagram
-                Genre <|-- Game
-                class Game
-                class Genre
+                Genre "0..*" --* "1..*" Game
             ```
         </Column>
         <Column>
@@ -191,10 +191,8 @@ add-migration relationGameGenre
               class:
                 hideEmptyMembersBox: true
             ---
-            erDiagram
-                Genre <|-- Game
-                class Game
-                class Genre
+            classDiagram
+                Genre "0..*" -- "1..*" Game
             ```
         </Column>
         </Row>
@@ -208,8 +206,11 @@ public class Genre
 {
     public int Id { get; set; }
     public string Name { get; set; }
+
+    // highlight-start
     [ValidateNever]
     public List<Game> Games { get; set; }
+    // highlight-end
 }
 ```
 
@@ -274,6 +275,11 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 
 - Afficher les images avec un height de 200
 - Corriger le Contrôleur **GamesController** pour afficher le **Name** des **Genre**. Il y a 4 endroits où un SelectList est créé. Il faut simplement utiliser le champ "Name" à la place du champ "Id"
+
+:::info Conseil
+Si vous avez oublié comment faire, vous pouvez aller voir comment vous aviez fait dans le cours de [3W6 - Programmation Web Transactionnelle](https://info.cegepmontpetit.ca/3W6-Web-Transactionelle/).
+:::
+
 - Corriger **les** vues **Edit** et **Create** pour bien supporter la possibilité de n'avoir aucun genre.
 
 ```html
@@ -313,61 +319,100 @@ public class Game
     [ValidateNever]
     public Genre? Genre { get; set; }
 
+    // highlight-start
     [ValidateNever]
     public List<Platform> Platforms { get; set; }
+    // highlight-end
 }
 ```
 
-- Faites une migration. Cette fois-ci c'est un peu plus complexe. Il y a une table en plus qui est créée pour stocker l'information des relations multiples entre **Game** et **Platform**. Cette classe contient 2 champs pour l'Id de Game et de Platform.
+- Faites une migration. 
+- Cette fois-ci c'est un peu plus complexe. Il y a une table en plus qui est créée pour stocker l'information des relations multiples entre `Game` et `Platform`. 
+- Cette classe contient 2 champs pour l'Id de `Game` et de `Platform`.
 
-```csharp
-protected override void Up(MigrationBuilder migrationBuilder)
-{
-    migrationBuilder.CreateTable(
-        name: "Platform",
-        columns: table => new
+<Tabs>
+    <TabItem value="migration" label="Code de la migration">
+        ```csharp
+        protected override void Up(MigrationBuilder migrationBuilder)
         {
-            Id = table.Column<int>(type: "int", nullable: false)
-                .Annotation("SqlServer:Identity", "1, 1"),
-            Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
-        },
-        constraints: table =>
-        {
-            table.PrimaryKey("PK_Platform", x => x.Id);
-        });
+            migrationBuilder.CreateTable(
+                name: "Platform",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Platform", x => x.Id);
+                });
 
-    migrationBuilder.CreateTable(
-        name: "GamePlatform",
-        columns: table => new
-        {
-            GamesId = table.Column<int>(type: "int", nullable: false),
-            PlatformsId = table.Column<int>(type: "int", nullable: false)
-        },
-        constraints: table =>
-        {
-            table.PrimaryKey("PK_GamePlatform", x => new { x.GamesId, x.PlatformsId });
-            table.ForeignKey(
-                name: "FK_GamePlatform_Game_GamesId",
-                column: x => x.GamesId,
-                principalTable: "Game",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
-            table.ForeignKey(
-                name: "FK_GamePlatform_Platform_PlatformsId",
-                column: x => x.PlatformsId,
-                principalTable: "Platform",
-                principalColumn: "Id",
-                onDelete: ReferentialAction.Cascade);
-        });
+            migrationBuilder.CreateTable(
+                name: "GamePlatform",
+                columns: table => new
+                {
+                    GamesId = table.Column<int>(type: "int", nullable: false),
+                    PlatformsId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_GamePlatform", x => new { x.GamesId, x.PlatformsId });
+                    table.ForeignKey(
+                        name: "FK_GamePlatform_Game_GamesId",
+                        column: x => x.GamesId,
+                        principalTable: "Game",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_GamePlatform_Platform_PlatformsId",
+                        column: x => x.PlatformsId,
+                        principalTable: "Platform",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
 
-    migrationBuilder.CreateIndex(
-        name: "IX_GamePlatform_PlatformsId",
-        table: "GamePlatform",
-        column: "PlatformsId");
-}
-```
+            migrationBuilder.CreateIndex(
+                name: "IX_GamePlatform_PlatformsId",
+                table: "GamePlatform",
+                column: "PlatformsId");
+        }
+        ```
+    </TabItem>
+    <TabItem value="diagrammes" label="Diagrammes">
+        <Row>
+        <Column>
+            ```mermaid
+            ---
+            title: Diagramme de classe
+            config:
+              class:
+                hideEmptyMembersBox: true
+            ---
+            classDiagram
+                Genre "0..*" -- "1..*" Game
+                Game "*..*" -- "*..*" Platform
+            ```
+        </Column>
+        <Column>
+            ```mermaid
+            ---
+            title: Diagramme d'entités BD
+            config:
+              class:
+                hideEmptyMembersBox: true
+            ---
+            classDiagram
+                Genre "0..*" -- "1..*" Game
+                Game "0..*" -- "0..*" GamePlatform
+                GamePlatform "0..*" -- "0..*" Platform
+            ```
+        </Column>
+        </Row>
+    </TabItem>
+</Tabs>
 
-- Ajouter des plateformes avec votre DbInitializer
+- Ajouter des plateformes avec votre `DbInitializer`.
 
 ```csharp
 if (_context.Platform.Count() == 0)
@@ -400,7 +445,7 @@ if (_context.Platform.Count() == 0)
 }
 ```
 
-- Utiliser le code suivant pour afficher les Plateform d'un Game en utilisant des badges
+- Utiliser le code suivant pour afficher les `Plateform` d'un `Game` en utilisant des badges
 
 ```html
 <td>
