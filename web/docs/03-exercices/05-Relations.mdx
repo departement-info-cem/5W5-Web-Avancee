@@ -484,12 +484,13 @@ if (_context.Platform.Count() == 0)
 </form>
 ```
 
-- Vous allez devoir ajouter les actions AddPlatform et RemovePlatform qui vont recevoir les Ids et modifier le **Game**
+- Vous allez devoir ajouter les actions `AddPlatform` et `RemovePlatform` qui vont recevoir les Ids et modifier le `Game`
 - Essayer d'ajouter 2 fois la même Platform. Essayer d'ajouter une autre Platform en double. Comme vu en classe, c'est problématique!
-- Comme on ne veut pas vraiment avoir des doublons pour les plateformes, on va améliorer notre logique pour que la liste affiche uniquement les plateformes qui ne sont pas déjà ajoutées à ce Game. Modifiez le contrôleur pour y arriver.
+- Comme on ne veut pas vraiment avoir des doublons pour les plateformes, on va améliorer notre logique pour que la liste affiche uniquement les plateformes qui ne sont pas déjà ajoutées à ce Game. 
+- Modifiez le contrôleur pour y arriver.
 
 :::warning
-Faites attention, il y a plusieurs endroits où l'on génère une SelectList pour les plateformes. Pour l'exercice, ce n'est **pas** nécessaire de s'occuper des actions **Create**, seulement **Edit**.
+Faites attention, il y a plusieurs endroits où l'on génère une `SelectList` pour les plateformes. Pour l'exercice, ce n'est **pas** nécessaire de s'occuper des actions **Create**, seulement **Edit**.
 :::
 
 ### Relation N à N avec doublon entre Game et Purchase
@@ -507,7 +508,7 @@ En créant une relation qui utilise une classe de relation, on a plus de contrô
 }
 ```
 
-- Ajouter une classe **GamePurchase**. Comme elle contient son propre Id, on va pouvoir ajouter plusieurs fois la même relation Game/Purchase
+- Ajouter une classe `GamePurchase`. Comme elle contient son propre Id, on va pouvoir ajouter plusieurs fois la même relation `Game`/`Purchase`
 
 ```csharp
 public class GamePurchase
@@ -520,7 +521,7 @@ public class GamePurchase
 }
 ```
 
-- Ajouter également une liste de **GamePurchases** à la classe **Game**
+- Ajouter également une liste de `GamePurchases` à la classe `Game`
 
 ```csharp
 public class Game
@@ -544,7 +545,7 @@ public class Game
 }
 ```
 
-- Faire une migration et regarder son contenu. On peut remarquer qu'il y a des colonnes GameId et PurchasedId, c'est le nom par défaut d'une clé étrangère (Nom de la propriété + Id)
+- Faire une migration et regarder son contenu. On peut remarquer qu'il y a des colonnes `GameId` et `PurchasedId`, c'est le nom par défaut d'une clé étrangère (Nom de la propriété + Id)
 
 <Tabs>
     <TabItem value="migration" label="Code de la migration">
@@ -637,7 +638,7 @@ public class Game
     </TabItem>
 </Tabs>
 
-- Ajouter 1 vente dans le DbInitializer
+- Ajouter 1 vente dans le `DbInitializer`.
 
 ```csharp
  if (_context.Purchase.Count() == 0)
@@ -688,7 +689,7 @@ public class Game
 }
 ```
 
-- Ajouter ce contrôleur pour visualiser les données de Purchase
+- Ajouter ce contrôleur pour visualiser les données de `Purchase`.
 
 ```csharp
 using Microsoft.AspNetCore.Mvc;
@@ -716,7 +717,7 @@ namespace RelationsNaN.Controllers
 }
 ```
 
-- Ajouter une vue pour visualiser les données de Purchase
+- Ajouter une vue pour visualiser les données de `Purchase`.
 
 ```html
 @model IEnumerable<RelationsNaN.Models.Purchase>
@@ -771,7 +772,7 @@ namespace RelationsNaN.Controllers
 Une fois que l'on a une classe de relation, on a la flexibilité de gérer notre problème comme on le veut.
 On peut par exemple:
 
-- Ajouter une propriété Count à la relation au lieu d'avoir un Id, comme ceci:
+- Ajouter une propriété `Count` à la relation au lieu d'avoir un Id, comme ceci:
 
 ```csharp
 public class GamePurchase
@@ -786,7 +787,7 @@ public class GamePurchase
 }
 ```
 
-- Ou encore en ayant un "Owner" pour pouvoir faire des cadeaux
+- Ou encore en ayant un "Owner" pour pouvoir faire des cadeaux.
 
 ```csharp
 public class GamePurchase
