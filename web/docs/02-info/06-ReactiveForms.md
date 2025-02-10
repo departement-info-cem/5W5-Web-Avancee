@@ -1,10 +1,10 @@
 # Reactive Forms
 
 ### Créer un nouveau projet
-- Créer un nouveau projet Angular en utilisant le mode **--no-standalone**
+- Créer un nouveau projet Angular
 
 ```powershell
-ng new --no-standalone ngReactiveForms
+ng new ngReactiveForms
 ```
 
 - Les autres options ne sont pas importantes.
@@ -19,33 +19,27 @@ ng new --no-standalone ngReactiveForms
 ### Configuration
 
 ```ts title=app.modules.ts
-import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { AppComponent } from './app.component';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { LoginComponent } from './authentification/login/login.component';
-import { RegisterComponent } from './authentification/register/register.component';
-import { MatInputModule } from '@angular/material/input';
-@NgModule({
-  declarations: [		
-    AppComponent,
-    LoginComponent,
-    RegisterComponent,
-    ],
-  imports: [
-    BrowserModule,
-    FormsModule,
-    ReactiveFormsModule,
-    MatInputModule,
-  ],
-  providers: [],
-  bootstrap: [AppComponent]
+import { CommonModule } from '@angular/common';
+import { Component, OnInit } from '@angular/core';
+import { AbstractControl, FormBuilder, FormControlOptions, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
+import { MatCard } from '@angular/material/card';
+import { MatError, MatFormField } from '@angular/material/form-field';
+import { MatInput } from '@angular/material/input';
+import { MatTabsModule } from '@angular/material/tabs';
+
+
+
+@Component({
+  selector: 'app-exercice',
+  standalone: true,
+  imports: [ReactiveFormsModule, MatTabsModule, CommonModule, MatError, MatFormField, MatCard, MatInput],
+  templateUrl: './exercice.component.html',
+  styleUrls: ['./exercice.component.css']
 })
-export class AppModule { }
 ```
 
 - **ReactiveFormsModule** nous permet de faire de la validation dynamique sur les champs d'un formulaire
-- **MatInputModule et Material** Nous permet d'afficher facilement les messages d'erreurs sous les champs du formulaire
+- **MatError de Material** Nous permet d'afficher facilement les messages d'erreurs sous les champs du formulaire
 
 :::warning
 Il faut installer Material pour utiliser MatInput
