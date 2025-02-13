@@ -2,10 +2,10 @@
 
 ### Créer un nouveau projet
 
-- Créer un nouveau projet Angular en utilisant le mode **--no-standalone**
+- Créer un nouveau projet Angular
 
 ```powershell
-ng new --no-standalone ngReactiveForms
+ng new ngReactiveForms
 ```
 
 - Les autres options ne sont pas importantes.
