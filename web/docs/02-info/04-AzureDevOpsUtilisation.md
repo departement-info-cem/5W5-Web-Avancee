@@ -2,10 +2,10 @@
 
 ### Objectif
 
-Ce document est un complément d'information au power point:
+Ce document est un complément d'information au PowerPoint :
 [🔗AzureDevops.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EdO0yiL8VHtNqFJRuIjpqc0BcwfAADJGKR33Iwv81O5Oyw?e=at23T4)
 
-**Azure DevOps Boards** est un outil complexe où il de nombreuses façon de faire les mêmes actions. Voici donc quelques façons de l'utiliser.
+**Azure DevOps Boards** est un outil complexe où il y a de nombreuses façon de faire les mêmes actions. Voici donc quelques façons de l'utiliser.
 
 [Azure Devops](https://dev.azure.com)
 
@@ -50,7 +50,7 @@ Ce document est un complément d'information au power point:
 ### Créer un nouveau sprint
 
 Une fois que le premier sprint est terminé, on va vouloir en créer d'autres.
-Par défaut, les projets ont "généralement" déjà 3 sprints de créer, mais voici comment changer de sprint et en créer de nouveaux.
+Par défaut, les projets ont "généralement" déjà 3 sprints de créés, mais voici comment changer de sprint et en créer de nouveaux.
 
 | ![Alt text](/img/infos/DevOps/Utilisation/nouveauSprint1.png) |
 |-|
@@ -63,11 +63,10 @@ On peut voir quel sprint est le sprint courant et on peut également en créer d
 | ![Alt text](/img/infos/DevOps/Utilisation/nouveauSprint3B.png) |
 |-|
 
-En changeant les dates de notre sprint, les Iteration sont correctement affiché et l'itération courante est en fonction de la date
+En changeant les dates de notre sprint, les Iteration sont correctement affichés et l'itération courante est en fonction de la date
 
 | ![Alt text](/img/infos/DevOps/Utilisation/nouveauSprint5.png) |
 |-|
 
 | ![Alt text](/img/infos/DevOps/Utilisation/nouveauSprint4.png) |
 |-|
-
