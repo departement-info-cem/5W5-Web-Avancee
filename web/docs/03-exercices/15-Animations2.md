@@ -33,7 +33,7 @@ Pour les durées d'animation:
 
 ### Ajoutez la logique pour Infinite Triple Spin
 
-- Utilisez encore le site Animista. Dans la section _basic_ il y a _Rotate_.
+- Utilisez encore le site [Animista](https://animista.net). Dans la section _basic_ il y a _Rotate_.
 
 | ![alt text](/img/exercices/animations/image-2.png) |
 | -------------------------------------------------- |
