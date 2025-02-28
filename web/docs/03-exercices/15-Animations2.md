@@ -29,7 +29,7 @@ Pour les durées d'animation:
 - **Shake** : 0.75 seconde
 - **Flip** : 0.75 seconde
 
-- Utilisez une méthode **async** avec des **await** pour faire jouer la séquence suivante d'animation: _Bounce/Shake/Flip_
+- Utilisez une méthode **async** avec des **await** pour faire jouer la séquence suivante d'animation: **Bounce/Shake/Flip**.
 
 ### Ajoutez la logique pour Infinite Triple Spin
 
