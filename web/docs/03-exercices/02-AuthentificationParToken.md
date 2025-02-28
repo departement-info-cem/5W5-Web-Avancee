@@ -7,7 +7,7 @@ Suite de l'exercice précédent: [MVCEtWebAPI](MVCEtWebAPI)
 ## Objectifs
 
 - Ajouter la possibilité d'utiliser un token avec Swagger
-- Créer un projet angular qui permet de se connecter à l'API Web en utilisant une authentification par token
+- Créer un projet Angular qui permet de se connecter à l'API Web en utilisant une authentification par token
 
 ## .NET
 
@@ -77,12 +77,12 @@ Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
 - Après avoir fait un appel public sans être connecté:
 
 | ![alt text](_02-AuthentificationParToken/image-26.png) |
-| ------------------------- |
+| ------------------------------------------------------ |
 
 Après s'être connecté et avoir fait un appel privé:
 
 | ![alt text](_02-AuthentificationParToken/image-27.png) |
-| ------------------------- |
+| ------------------------------------------------------ |
 
 ### Tester un appel de base
 
@@ -93,7 +93,7 @@ ng new ngMVCEtWebAPI
 ```
 
 | ![alt text](_02-AuthentificationParToken/image-3.png) |
-| ------------------------ |
+| ----------------------------------------------------- |
 
 Après utiliser cette commande pour démarrer le serveur Angular
 

@@ -1,6 +1,7 @@
 # Animations
 
 ## Objectifs
+
 Faire jouer des animations avec CSS et Angular Animations
 
 [Projet GitHub](https://github.com/CEM-420-5W5/ngRPGAnimations)
@@ -53,10 +54,10 @@ showSlime(){
 #### Utilisation de forwards
 
 :::warning
-Présentement, Slimey redevient invisible une fois que l'animation est terminé!
+Présentement, Slimey redevient invisible une fois que l'animation est terminée!
 :::
 
-- Il faut ajouter un forwards à l'animation pour que les valeurs modifiées soient conversées!
+- Il faut ajouter un forwards à l'animation pour que les valeurs modifiées soient conversé!
 
 ```ts
 .slime.fadeIn
@@ -68,8 +69,8 @@ Présentement, Slimey redevient invisible une fois que l'animation est terminé!
 
 ### Tuer Slimey
 
-- Faire une méthode **hideSlime()** qui fait le contaire de **showSlime()** et appelez-la
-    - Il faut également ajouter un fadeOut dans app.component.css pour définir le css pour fadeOut et ses @keyframes
+- Faire une méthode **hideSlime()** qui fait le contraire de **showSlime()** et appelez-la
+  - Il faut également ajouter un fadeOut dans app.component.css pour définir le css pour fadeOut et ses @keyframes
 
 :::info
 Si tout fonctionne bien, on voit Slimey qui prend 0.5 pour disparaître
@@ -77,15 +78,20 @@ Si tout fonctionne bien, on voit Slimey qui prend 0.5 pour disparaître
 
 ```ts
 animations: [
-    trigger('death', [transition(':increment', useAnimation(shakeX, {params: {timing: DEATH_DURATION_SECONDS}}))]),
-]
+  trigger("death", [
+    transition(
+      ":increment",
+      useAnimation(shakeX, { params: { timing: DEATH_DURATION_SECONDS } })
+    ),
+  ]),
+];
 ```
 
 - Faire jouer l'animation **shakeX** de ng-animate lors de la mort. (Angular animation)
-    - Ajoutez l'animation **shakeX** avec un params de timing de **0.5 seconde**
-     - Utilisez une variable **ng_death** pour déclencher l'animation
-    - n'oubliez pas de mettre le [@death]="ng_death" sur l'img de Slimey
-    - Et de modifier ng_death dans la méthode **death()** pour déclencher l'animation
+  - Ajoutez l'animation **shakeX** avec un params de timing de **0.5 seconde**
+  - Utilisez une variable **ng_death** pour déclencher l'animation
+  - n'oubliez pas de mettre le [@death]="ng_death" sur l'img de Slimey
+  - Et de modifier ng_death dans la méthode **death()** pour déclencher l'animation
 
 :::info
 Si ça fonctionne bien, Slimey va se déplacer rapidement de gauche à droite pendant qu'il disparaît!
@@ -94,19 +100,20 @@ Si ça fonctionne bien, Slimey va se déplacer rapidement de gauche à droite pe
 ### Faire attaquer Slimey
 
 - Faire jouer l'animation **pulse** de ng-animate lors de l'attaque. (Angular animation)
-    - Utiliser un timing de 0.3 et un scale de 4.5 (L'image devrait devenir beaucoup plus grande!)
-    - Il faut faire les mêmes choses que pour death pour déclencher l'animation
+
+  - Utiliser un timing de 0.3 et un scale de 4.5 (L'image devrait devenir beaucoup plus grande!)
+  - Il faut faire les mêmes choses que pour death pour déclencher l'animation
 
 - On veut faire joueur une autre animation avant de faire l'attaque, pour nous montrer qu'il prend son élan!
 
-- Faites ce qu'il faut pour jouer une animation 
+- Faites ce qu'il faut pour jouer une animation
 
 ### Faire MAL à Slimey!
 
 - En utilisant le site [https://animista.net](https://animista.net) pour générer un animation wobble
 
-|![alt text](/img/exercices/animations/animistaWobble.png)|
-|-|
+| ![alt text](/img/exercices/animations/animistaWobble.png) |
+| --------------------------------------------------------- |
 
 - Ajoutez le css généré par animista au css de votre projet
 - Faites jouer cette animation lorsque Slimey est attaqué, méthode **hit()**

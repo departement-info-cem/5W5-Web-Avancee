@@ -1,6 +1,7 @@
 # Animations (2e partie)
 
 ## Objectifs
+
 Créer des séquences et des boucles d'animations
 
 ## État initial
@@ -13,14 +14,14 @@ Continuez avec le projet de l'exercice précédent
 
 Ajoutez deux boutons qui vont déclencher 2 séquences d'animations (**Bounce/Shake/Flip** et **Infinite Triple Spin**)
 
-|![alt text](/img/exercices/animations/image-3.png)|
-|-|
+| ![alt text](/img/exercices/animations/image-3.png) |
+| -------------------------------------------------- |
 
 ### Ajoutez la logique pour Bounce/Shake/Flip
 
-- Utilisez les animations angular de la libraire ng-animate.
-- Pour shake, réutilisé l'animation **shakeX**.
-- Ajoutez les animations bounce et flip.
+- Utilisez les animations Angular de la libraire ng-animate.
+- Pour _shake_, réutilisez l'animation **shakeX**.
+- Ajoutez les animations **bounce** et **flip**.
 
 Pour les durées d'animation:
 
@@ -28,14 +29,14 @@ Pour les durées d'animation:
 - **Shake** : 0.75 seconde
 - **Flip** : 0.75 seconde
 
-- Utilisez une méthode **async** avec des **await** pour faire jouer la séquence suivante d'animation: Bounce/Shake/Flip
+- Utilisez une méthode **async** avec des **await** pour faire jouer la séquence suivante d'animation: _Bounce/Shake/Flip_
 
 ### Ajoutez la logique pour Infinite Triple Spin
 
-- Utilisez encore le site Animista. Dans la section basic il y a Rotate.
+- Utilisez encore le site Animista. Dans la section _basic_ il y a _Rotate_.
 
-|![alt text](/img/exercices/animations/image-2.png)|
-|-|
+| ![alt text](/img/exercices/animations/image-2.png) |
+| -------------------------------------------------- |
 
 - Ajoutez à votre projet les 2 animations CSS suivantes
 
@@ -48,10 +49,10 @@ Avec l'option iteration-count, l'animation va jouer 2 fois chaque fois que le CS
 **rotate-hor-top** (duration: 0.7 seconde, timing-function: easeInOut)
 
 :::warning
-Il faut ajouter les trigger css sur le div qui contient l'image, comme pour le wobble du hit dans la première partie de l'exercie
+Il faut ajouter les _trigger_ css sur le div qui contient l'image, comme pour le _wobble_ du hit dans la première partie de l'exercice.
 :::
 
-- Utilisez setTimeout et 2 méthodes qui s'appelent l'une, l'autre pour faire une **boucle infinie** qui jouent la double rotation autour du centre et ensutie la rotation horizontale.
+- Utilisez `setTimeout` et 2 méthodes qui s'appellent l'une, l'autre pour faire une **boucle infinie** qui jouent la double rotation autour du centre et ensuite la rotation horizontale.
 
 ## Solution
 

@@ -51,7 +51,7 @@ Il y a présentement une class **fadeIn** sur les cartes du BattleField. C'est i
 
 ### Angular
 
-- Pour faire jouer une animation angular, on peut ajouter des variables directement sur PlayableCard et déclencher les animations sur la carte avec un trigger sur ces variables
+- Pour faire jouer une animation Angular, on peut ajouter des variables directement sur PlayableCard et déclencher les animations sur la carte avec un trigger sur ces variables
 
 ### Exercices
 
