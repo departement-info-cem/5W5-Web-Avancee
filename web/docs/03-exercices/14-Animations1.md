@@ -96,10 +96,25 @@ Si ça fonctionne bien, Slimey va se déplacer rapidement de gauche à droite pe
 - Faire jouer l'animation **pulse** de ng-animate lors de l'attaque. (Angular animation)
     - Utiliser un timing de 0.3 et un scale de 4.5 (L'image devrait devenir beaucoup plus grande!)
     - Il faut faire les mêmes choses que pour death pour déclencher l'animation
-
 - On veut faire joueur une autre animation avant de faire l'attaque, pour nous montrer qu'il prend son élan!
+- Faites ce qu'il faut pour jouer une animation
 
-- Faites ce qu'il faut pour jouer une animation 
+:::info Coup de pouce
+Le 2ième paramètre de `transition` prend soit une animation, ou un tableau d'animation.
+
+Si on lui donne un tableau, les applications vont s'exécuter l'une après l'autre.
+
+```typescript
+animations: [
+    trigger('monTrigger', [
+      transition(':increment', [
+        useAnimation( /* Code de la première animation */),
+        useAnimation( /* Code de la deuxième animation */ ),
+      ]),
+    ]),
+  ],
+```
+:::
 
 ### Faire MAL à Slimey!
 
