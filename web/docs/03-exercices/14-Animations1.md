@@ -106,12 +106,13 @@ Si ça fonctionne bien, Slimey va se déplacer rapidement de gauche à droite pe
 - Faites ce qu'il faut pour jouer une animation
 
 - Faites ce qu'il faut pour jouer une animation
-  :::info Coup de pouce
-  Le 2ième paramètre de `transition` prend soit une animation, ou un tableau d'animation.
+
+:::info Coup de pouce
+Le 2ième paramètre de `transition` prend soit une animation, ou un tableau d'animation.
 
 Si on lui donne un tableau, les applications vont s'exécuter l'une après l'autre.
 
-```typescript
+```ts
 animations: [
     trigger('monTrigger', [
       transition(':increment', [
@@ -134,7 +135,7 @@ animations: [
 - Ajoutez le css généré par animista au css de votre projet
 - Faites jouer cette animation lorsque Slimey est attaqué, méthode **hit()**
 - Cette fois-ci, utilisez directement la classe css que vous pouvez activer avec une variable css_hit
-- Dans le fichier html, vous pouvez utiliser cette technique pour activer la classe wobble_hor-bottom \[class.wobble-hor-bottom\]="css_hit"
+- Dans le fichier html, vous pouvez utiliser cette technique pour activer la classe wobble_hor-bottom `\[class.wobble-hor-bottom\]="css_hit"`.
 
 :::warning
 Il faut mettre la classe sur le parent (div) de l'image, sinon l'animation ne joue pas correctement!
