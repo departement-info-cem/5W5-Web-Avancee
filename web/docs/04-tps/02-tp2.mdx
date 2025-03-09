@@ -1,3 +1,6 @@
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
 # TP2 (Suite de Super Cartes Infinies)
 
 ## Le projet
@@ -129,7 +132,7 @@ Pour l'évaluation, le projet de tests doit compiler et les tests que vous avez 
 
 </details>
 
-<details>
+<details open>
     <summary>Logique de jeu</summary>
     - Faire passer les tests de TDD (Voir les [règles de jeu](#les-règles-de-jeu))
 
@@ -152,17 +155,198 @@ public class PlayCardEvent : MatchEvent
     - Conseil: Ajoutez également un **CardActivationEvent**, ce sera un bon endroit pour gérer le combat et vérifier les pouvoirs d'une carte et les déclencher
     - Conseil: Utilisez les méthodes **HasPower** et **GetPowerValue** que vous avez ajouté à PlayableCard pour écrire la logique de jeu.
 
-    <!-- :::warning
-    La gestion des événements sur le client est la responsabilité de toute l'équipe une fois que les parties individuelles ont été regroupées
-    ::: -->
-
     - Le diagramme suivant donne une façon de faire pour gérer les events lors d'un combat. Le CardActivationEvent est un bon event pour inclure la logique de plusieurs pouvoirs, comme Heal. - Dans le diagramme, on peut voir que les CardDamageEvent des attaques sont directement sous l'event CardActivationEvent. Si vous préférez ajouter un AttackEvent qui s'occupe de gérer les dégâts d'attaque que se font les deux cartes, c'est une bonne idée.
 
-    |![Alt text](/img/tps/tp2/image.png)|
-    |-|
-
-    |![alt text](image-4.png)|
-    |-|
+    <Tabs queryString="cas-courant">
+        <TabItem value="cas-simple" label="Cas simple" default>
+            ```mermaid
+            ---
+            config:
+                class:
+                    hideEmptyMembersBox: true
+            ---
+            classDiagram
+                class PlayerEndTurnEvent["PlayerEndTurnEvent"]:::dotted {
+                    PlayerId: 2
+                }
+                class CombatEvent["CombatEvent"]
+                class CardActivationEvent1["CardActivationEvent"]:::dotted {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                }
+                class CardActivationEvent2["CardActivationEvent"] {
+                    PlayerId: 2
+                    PlayableCardId: 42
+                }
+                class CardDamageEvent1["CardDamageEvent"] {
+                    PlayerId: 1
+                    PlayableCardId: 33
+                    Damage: 2
+                }
+                class CardDamageEvent2["CardDamageEvent"]:::dotted {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                    Damage: 5
+                }
+                class PlayerDamageEvent["PlayerDamageEvent"]:::dotted {
+                    PlayerId: 1
+                    Damage: 2
+                }
+                class CardDeathEvent1["CardDeathEvent"] {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                }
+                class PlayerDeathEvent["PlayerDeathEvent"]:::dotted {
+                    WinningPlayerId: 2
+                    LosingPlayerId: 1
+                }
+                class PlayerStartTurnEvent["PlayerStartTurnEvent"] {
+                    PlayerId: 1
+                }
+                class GainManaEvent["GainManaEvent"] {
+                    PlayerId: 1
+                    Mana: 3
+                }
+                class PlayerDrawCard["PlayerDrawCard"] {
+                    PlayerId: 1
+                    PlayableCardId:38
+                }
+                PlayerEndTurnEvent -- CombatEvent
+                CombatEvent -- CardActivationEvent1
+                CardActivationEvent1 -- CardDamageEvent1
+                CardActivationEvent1 -- CardDamageEvent2
+                CombatEvent -- CardActivationEvent2
+                CardDamageEvent2 -- CardDeathEvent1
+                CardActivationEvent2 -- PlayerDamageEvent
+                PlayerDamageEvent -- PlayerDeathEvent
+                PlayerEndTurnEvent -- PlayerStartTurnEvent
+                PlayerStartTurnEvent -- GainManaEvent
+                PlayerStartTurnEvent -- PlayerDrawCard
+                click PlayerEndTurnEvent call eval('') "La carte 42 a été mise en jeu.</br>C'est la 2ième carte pour le joueur 2 qui avait déjà mis la carte 44 en jeu.</br>La carte 33 est déjà en jeu pour l'adversaire."
+                click CardActivationEvent1 call eval('') "La carte 44 était en jeu et attaque la carte 33,</br>mais n'arrive pas à la vaincre."
+                click CardDamageEvent2 call eval('') "La carte 33 se défend</br>et tue la carte 44."
+                click PlayerDamageEvent call eval('') "La carte 42 attaque directement le joueur 1</br>car il n'a pas de 2ième carte en jeu."
+                click PlayerDeathEvent call eval('') "Le joueur 1 n'avait plus qu'un point de vie</br>et perd la partie!"
+                classDef dotted stroke:#333,stroke-width:4px;
+            ```
+    </TabItem>
+    <TabItem value="cas-complexe" label="Cas complexe">
+            ```mermaid
+            ---
+            config:
+                class:
+                    hideEmptyMembersBox: true
+            ---
+            classDiagram
+                class PlayerEndTurnEvent["PlayerEndTurnEvent"]:::dotted {
+                    PlayerId: 2
+                }
+                class CombatEvent["CombatEvent"]
+                class CardActivationEvent1["CardActivationEvent"]:::dotted {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                }
+                class CardActivationEvent2["CardActivationEvent"] {
+                    PlayerId: 2
+                    PlayableCardId: 42
+                }
+                class HealEvent["HealEvent"]:::dotted {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                    Value: 3
+                }
+                class ThornsEvent["ThornsEvent"] {
+                    PlayerId: 1
+                    PlayableCardId: 33
+                    Value: 2
+                }
+                class AttackEvent1["AttackEvent"]:::dotted {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                }
+                class AttackEvent2["AttackEvent"] {
+                    PlayerId: 2
+                    PlayableCardId: 42
+                }
+                class CardHealEvent1["CardHealEvent"]:::dotted {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                    Value: 2
+                }
+                class CardHealEvent2["CardHealEvent"]:::dotted {
+                    PlayerId: 2
+                    PlayableCardId: 42
+                    Value: 1
+                }
+                class CardDamageEvent1["CardDamageEvent"] {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                    Damage: 2
+                }
+                class CardDamageEvent2["CardDamageEvent"] {
+                    PlayerId: 1
+                    PlayableCardId: 33
+                    Damage: 2
+                }
+                class FirstStrikeEvent["FirstStrikeEvent"]:::dotted {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                }
+                class PlayerDamageEvent["PlayerDamageEvent"]:::dotted {
+                    PlayerId: 1
+                    Damage: 2
+                }
+                class CardDeathEvent["CardDeathEvent"] {
+                    PlayerId: 1
+                    PlayableCardId: 33
+                }
+                class PlayerDeathEvent["PlayerDeathEvent"]:::dotted {
+                    WinningPlayerId: 2
+                    LosingPlayerId: 1
+                }
+                class PlayerStartTurnEvent["PlayerStartTurnEvent"]:::dotted {
+                    PlayerId: 1
+                }
+                class GainManaEvent["GainManaEvent"] {
+                    PlayerId: 1
+                    Mana: 3
+                }
+                class PlayerDrawCard["PlayerDrawCard"] {
+                    PlayerId: 1
+                    PlayableCardId:38
+                }
+                PlayerEndTurnEvent -- CombatEvent
+                CombatEvent -- CardActivationEvent1
+                CardActivationEvent1 -- HealEvent
+                CardActivationEvent1 -- ThornsEvent
+                CardActivationEvent1 -- AttackEvent1
+                HealEvent -- CardHealEvent1
+                HealEvent -- CardHealEvent2
+                ThornsEvent -- CardDamageEvent1
+                AttackEvent1 -- CardDamageEvent2
+                CardDamageEvent2 -- CardDeathEvent
+                AttackEvent1 -- FirstStrikeEvent
+                CombatEvent -- CardActivationEvent2
+                CardActivationEvent2 -- AttackEvent2
+                AttackEvent2 -- PlayerDamageEvent
+                PlayerDamageEvent -- PlayerDeathEvent
+                PlayerEndTurnEvent -- PlayerStartTurnEvent
+                PlayerStartTurnEvent -- GainManaEvent
+                PlayerStartTurnEvent -- PlayerDrawCard
+                click PlayerEndTurnEvent call eval('') "La carte 42 a été mise en jeu.</br>C'est la 2ième carte pour le joueur 2 qui avait déjà mis la carte 44 en jeu.</br>La carte 33 est déjà en jeu pour l'adversaire."
+                click CardActivationEvent1 call eval('') "La carte 42 a le pouvoir Heal 3 et le pouvoir First Strike.</br>Son adversaire a la carte 33 qui a le pouvoir Thorns 2."
+                click HealEvent call eval('') "Guérit jusqu'à 3 de Health sur toutes les cartes du joueur."
+                click CardHealEvent1 call eval('') "Il manquait seulement 2 de Health sur cette carte."
+                click CardHealEvent2 call eval('') "Il manquait seulement 1 de Health sur cette carte."
+                click AttackEvent1 call eval('') "C'est conseillé de créer un AttackEvent pour garder CardActivationEvent le plus simple que possible."
+                click FirstStrikeEvent call eval('') "Comme la carte 33 a été tuée par la carte 42 qui a First Strike, on génère cet event pour que le client puisse afficher l'icône et la carte 44 ne reçoit pas de dégâts."
+                click PlayerDamageEvent call eval('') "La carte 42 attaque directement le joueur 1 car il n'a pas de 2ième carte en jeu."
+                click PlayerDeathEvent call eval('') "Le joueur 1 n'avait plus que 1 point de vie et perd la partie."
+                click PlayerStartTurnEvent call eval('') "Pour garder le code simple, on ne va pas vérifier si la partie est terminée avant de faire chaque événement pour l'instant."
+                classDef dotted stroke:#333,stroke-width:4px;
+            ```
+        </TabItem>
+    </Tabs>
 
 </details>
 
@@ -198,7 +382,7 @@ public class PlayCardEvent : MatchEvent
 
 <details>
     <summary>Achat de paquets de cartes (Pour les équipes de 4)</summary>
-    
+
     **Résumé:** Les joueurs peuvent acheter des paquets de cartes (Pack) avec une monnaie virtuelle dans le jeu.
     - Ajouter une rareté aux cartes. Il doit y avoir 4 niveaux: (Utilisé un enum)
         - Commune (Gris)
@@ -219,7 +403,7 @@ public class PlayCardEvent : MatchEvent
         - Afficher la monnaie virtuelle du joueur dans la barre de menu au haut de l'écran.
         - Modifier applyEvent dans MatchService pour traiter la nouvelle information à propos de l'argent reçu par EndMatchEvent. (N'oubliez pas que currentPlayerId vous permet de savoir si le joueur est le gagnant ou le perdant)
         - Afficher la monnaie gagné dans le menu de victoire/défaite.
-        - Afficher les différents paquets que le joueur peut acheter. 
+        - Afficher les différents paquets que le joueur peut acheter.
         - Afficher l'ouverture de paquet sur le client avec un dialogue (qui affiche les cartes reçues)
     - Voir la [section sur les paquets de cartes](#détails-sur-les-paquets-de-cartes)
     - Le code serveur doit être mis dans un service que vous devez créer.
@@ -325,11 +509,12 @@ public class PlayCardEvent : MatchEvent
 <summary>Pseudo code pour la rareté des cartes d'un paquet</summary>
 
 ```
+
 // Une Probability possède : une value décimale (entre 0 et 1), une "rarity" et un "baseQty"
 
 // Faire une liste de rareté de carte à obtenir
 List<Rarity> GenerateRarities(int nbCards, int defaultRarity, List<Probability> probabilities)
-    rarities = new List<Rarity>
+rarities = new List<Rarity>
 
     // Ajouter la quantité de base pour chaque probability à la liste
     foreach(probability of probabilities)
@@ -373,3 +558,7 @@ Une fois que l’on a une liste de rareté, on peut prendre une carte au hasard 
 - 8% de la note pour l’évaluation de groupe
   - 3% pour la première remise
   - 5% pour la remise finale
+
+```
+
+```
