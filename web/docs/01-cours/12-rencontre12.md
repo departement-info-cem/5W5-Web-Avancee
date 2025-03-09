@@ -22,4 +22,4 @@ sidebar_class_name: remise-tp1-groupe
   - SignalR/Hub
 - L'intra vaut 20% de la note total. C'est la moitié de la la note théorique du cours qui a un double seuil!
 
-[🔗ExamenIntraFormatif.zip](https://cegepedouardmontpetit.sharepoint.com/:u:/r/sites/CMT420InformatiqueComitesCours-5W5/Documents%20partages/5W5/H24/Intra_Formatif_H24-main.zip?csf=1&web=1&e=hK27tl)
+[🔗Formatif A24](https://github.com/CEM-420-5W5/Intra_Formatif_A24)
