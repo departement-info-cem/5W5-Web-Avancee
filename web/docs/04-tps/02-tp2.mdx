@@ -514,7 +514,7 @@ public class PlayCardEvent : MatchEvent
 
 // Faire une liste de rareté de carte à obtenir
 List<Rarity> GenerateRarities(int nbCards, int defaultRarity, List<Probability> probabilities)
-rarities = new List<Rarity>
+    rarities = new List<Rarity>
 
     // Ajouter la quantité de base pour chaque probability à la liste
     foreach(probability of probabilities)
@@ -534,7 +534,7 @@ rarities = new List<Rarity>
 
 // Cette méthode permet d'obtenir une rareté au hasard
 Rarity? GetRandomRarity(List<Probability> probabilities)
-X = Random Number Between 0 and 1
+    X = Random Number Between 0 and 1
 
     for each rarity of probabilities:
         if probability.value < X:
@@ -558,7 +558,3 @@ Une fois que l’on a une liste de rareté, on peut prendre une carte au hasard 
 - 8% de la note pour l’évaluation de groupe
   - 3% pour la première remise
   - 5% pour la remise finale
-
-```
-
-```
