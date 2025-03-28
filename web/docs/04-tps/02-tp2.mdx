@@ -344,7 +344,7 @@ public class PlayCardEvent : MatchEvent
                 PlayerStartTurnEvent -- GainManaEvent
                 PlayerStartTurnEvent -- PlayerDrawCard
                 click PlayerEndTurnEvent call eval('') "La carte 42 a été mise en jeu.</br>C'est la 2ième carte pour le joueur 2 qui avait déjà mis la carte 44 en jeu.</br>La carte 33 est déjà en jeu pour l'adversaire."
-                click CardActivationEvent1 call eval('') "La carte 42 a le pouvoir Heal 3 et le pouvoir First Strike.</br>Son adversaire a la carte 33 qui a le pouvoir Thorns 2."
+                click AttackEvent1 call eval('') "La carte 42 a le pouvoir Heal 3 et le pouvoir First Strike.</br>Son adversaire a la carte 33 qui a le pouvoir Thorns 2."
                 click HealEvent call eval('') "Guérit jusqu'à 3 de Health sur toutes les cartes du joueur."
                 click CardHealEvent1 call eval('') "Il manquait seulement 2 de Health sur cette carte."
                 click CardHealEvent2 call eval('') "Il manquait seulement 1 de Health sur cette carte."
