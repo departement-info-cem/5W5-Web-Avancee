@@ -211,17 +211,27 @@ public class PlayCardEvent : MatchEvent
                     PlayerId: 1
                     PlayableCardId:38
                 }
+                class AttackEvent1["AttackEvent"] {
+                    PlayerId: 2
+                    PlayableCardId: 44
+                }
+                class AttackEvent2["AttackEvent"] {
+                    PlayerId: 2
+                    PlayableCardId: 42
+                }
                 PlayerEndTurnEvent -- CombatEvent
                 CombatEvent -- CardActivationEvent1
-                CardActivationEvent1 -- CardDamageEvent1
-                CardActivationEvent1 -- CardDamageEvent2
+                AttackEvent1 -- CardDamageEvent1
+                AttackEvent1 -- CardDamageEvent2
                 CombatEvent -- CardActivationEvent2
                 CardDamageEvent2 -- CardDeathEvent1
-                CardActivationEvent2 -- PlayerDamageEvent
+                AttackEvent2 -- PlayerDamageEvent
                 PlayerDamageEvent -- PlayerDeathEvent
                 PlayerEndTurnEvent -- PlayerStartTurnEvent
                 PlayerStartTurnEvent -- GainManaEvent
                 PlayerStartTurnEvent -- PlayerDrawCard
+                CardActivationEvent1 -- AttackEvent1
+                CardActivationEvent2 -- AttackEvent2
                 click PlayerEndTurnEvent call eval('') "La carte 42 a été mise en jeu.</br>C'est la 2ième carte pour le joueur 2 qui avait déjà mis la carte 44 en jeu.</br>La carte 33 est déjà en jeu pour l'adversaire."
                 click CardActivationEvent1 call eval('') "La carte 44 était en jeu et attaque la carte 33,</br>mais n'arrive pas à la vaincre."
                 click CardDamageEvent2 call eval('') "La carte 33 se défend</br>et tue la carte 44."
