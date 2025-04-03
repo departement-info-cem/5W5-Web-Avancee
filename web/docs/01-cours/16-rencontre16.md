@@ -3,7 +3,7 @@ title: 8.2 - Événement (Partie 2) ⚡
 hide_table_of_contents: true
 ---
 
-# Gestion des événement (Partie 2)
+# Gestion des événements (Partie 2)
 
 ## Info (révision)
 

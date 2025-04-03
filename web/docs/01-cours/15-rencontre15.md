@@ -20,10 +20,10 @@ Sans s'en rendre compte, on procrastine souvent pour se donner une raison d'avoi
 Au final, la quantité de travail est la même et si on fait notre travail à temps on:
 
 - Évite les pertes de temps en pouvant poser des questions en classe
-- Réduit notre stress
+- Réduis notre stress
 - Peut valider que notre travail est bien fait
 - Augmente la valeur qu'on donne à notre travail (et donc à nous même)
 
-Note personnel, j'étais le roi de la procrastination jusqu'à l'université et je peux vous assurrer que plus personne ne trouve ça "cool" une fois qu'on est adulte!
+Note personnelle, j'étais le roi de la procrastination jusqu'à l'université et je peux vous assurer que plus personne ne trouve ça "cool" une fois qu'on est adulte!
 
 :::

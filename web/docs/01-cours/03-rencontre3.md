@@ -5,7 +5,7 @@ hide_table_of_contents: true
 
 # Relations et révision MVC ↔️
 
-Voir la différence lors d'une authentification par Token vs Cookie dans la vue Network des outils de débogage d'un navigateur.
+Voir la différence lors d'une authentification par Token vs Cookie dans la vue Network des outils de déboguage d'un navigateur.
 
 Pour bien se préparer pour la prochaine rencontre, nous allons créer les équipes et les comptes pour utiliser Azure DevOps pendant cette rencontre.
 

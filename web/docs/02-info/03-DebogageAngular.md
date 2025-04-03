@@ -1,8 +1,8 @@
-# Débogage Angular
+# Déboguage Angular
 
 ### Créer une nouvelle configuration
 
-- On clique sur le bouton de débogage à la gauche
+- On clique sur le bouton de déboguage à la gauche
 - Et on ajoute une configuration
 
 | ![image](/img/infos/nouvelleConfiguration.png) |

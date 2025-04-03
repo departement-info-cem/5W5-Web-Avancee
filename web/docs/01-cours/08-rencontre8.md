@@ -26,7 +26,7 @@ Les compétences de déduction peuvent s'améliorer, mais ça prend beaucoup de 
 
 Les connaissances techniques, vous êtes déjà en train de les apprendre de façon assez rapide!
 
-**Alors comment on devient meilleure plus rapidement?** On apprendre à accumuler plus d'informations! Votre compétence à utiliser les outils de débogage vont faire une immense différence! C'est comme faire une devinette, mais avec de plus en plus d'indices. À un moment, ça devient beaucoup plus simple de trouver la réponse.
+**Alors comment on devient meilleure plus rapidement?** On apprendre à accumuler plus d'informations! Votre compétence à utiliser les outils de déboguage vont faire une immense différence! C'est comme faire une devinette, mais avec de plus en plus d'indices. À un moment, ça devient beaucoup plus simple de trouver la réponse.
 
 Il faut pouvoir progresse rapidement les étapes:
 

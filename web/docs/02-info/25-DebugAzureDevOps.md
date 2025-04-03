@@ -1,18 +1,18 @@
-# Débogage Azure DevOps App service
+# Déboguage Azure DevOps App service
 
 ## Objectif
 
-- Apprendre comment utiliser le débogage de Visual Studio 2022 sur un serveur déployé sur Azure DevOps App Services
+- Apprendre comment utiliser le déboguage de Visual Studio 2022 sur un serveur déployé sur Azure DevOps App Services
 
 ## Étapes
 
-- Configurer le projet pour supporter une connection de débogage
+- Configurer le projet pour supporter une connection de déboguage
 - Connecter Visual Studio au processus
 - Ajouter des points d'arrêts
 
 ### Configurer DevOps
 
-Dans la configuration de notre application web (Serveur), on doit activé le débogage
+Dans la configuration de notre application web (Serveur), on doit activé le déboguage
 
 |![alt text](ConfiguringRemoteDebugging.png)|
 |-|
@@ -21,7 +21,7 @@ N'oubliez pas d'**Enregistrer les changements**
 
 ### Connecter Visual Studio
 
-On veut déboger en s'attachant à un processus déjà existant **(Notre serveur qui roule déjà sur le serveur d'Azure DevOps)**
+On veut déboguer en s'attachant à un processus déjà existant **(Notre serveur qui roule déjà sur le serveur d'Azure DevOps)**
 
 |![alt text](AttachToProcess.png)|
 |-|
