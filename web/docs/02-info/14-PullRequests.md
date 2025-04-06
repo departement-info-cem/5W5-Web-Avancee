@@ -13,7 +13,7 @@
     - Pas de conflit (Ça devient très utile de commencer par faire un merge de la destination dans la branche source)
     - Tests unitaires réussis
     - Review par d'autres membres de l'équipe et/ou le propriétaire du code
-- Exiger un pull request, c'est une façon de protéger le code en s'assurant que les procesus sont bien mis en place
+- Exiger un pull request, c'est une façon de protéger le code en s'assurant que les processus sont bien mis en place
 - Un projet collaboratif (OpenSource) va TOUJOURS demander des pull requests pour accepter des changements du public, sinon ça serait l'ANARCHIE!      
 
 #### Menu Pull Requests
@@ -63,7 +63,7 @@ Cette option empêche aux administrateurs de pouvoir forcer un PullRequest et/ou
 
 ### Ajout d'un test qui ne passe pas
 
-Ici on peut voir de quoi à l'aire une Pull Request qui contient une action de test qui ne passe pas!
+Ici on peut voir de quoi à l'air une Pull Request qui contient une action de test qui ne passe pas!
 
 |![alt text](/img/infos/GitHub/PRWithFailingTest.png)|
 |-|
@@ -92,12 +92,10 @@ Un commit dans la branche du pull request va déclencher l'exécution des action
 |-|
 
 :::info
-Dans cet exemple, l'option d'un administrateur d'accepter une Pull Request même si les conditions ne sont pas rempli, n'a pas été désactivée.
+Dans cet exemple, l'option d'un administrateur d'accepter une Pull Request même si les conditions ne sont pas remplies, n'a pas été désactivée.
 :::
 
 |![alt text](/img/infos/GitHub/PassingTestAction.png)|
 |-|
 
 Il ne reste plus qu'à faire au moins un review positif pour pouvoir exécuter le Pull Request et merger la branche
-
-

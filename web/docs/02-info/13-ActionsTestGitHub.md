@@ -3,7 +3,7 @@
 ## Objectif
 
 - Apprendre à ajouter une action sur GitHub. 
-- Les actions permettent de faire des tâches intéressantes et de les **automatisées**
+- Les actions permettent de faire des tâches intéressantes et de les **automatiser**
 
 :::info
 L'exemple est une action qui roule les tests unitaires, mais il y a de très nombreuses options d'actions! 
@@ -29,9 +29,10 @@ Les options par défaut font bien ce que l'on veut. On peut simplement cliquer s
 
 ## Résultat
 
-Maintenant, chaque fois qu'un push est fait vers la branche main (ou chaque fois qu'un commit est fait dans une branche qui fait un pull request vers main), l'action va être effecté et faire ce que le script indique.
+Maintenant, chaque fois qu'un push est fait vers la branche main (ou chaque fois qu'un commit est fait dans une branche qui fait un pull request vers main), l'action va être effectuée et faire ce que le script indique.
 
 Donc:
+
 - Faire un checkout
 - Faire un setup de dotnet
 - Mettre à jour les dépendances

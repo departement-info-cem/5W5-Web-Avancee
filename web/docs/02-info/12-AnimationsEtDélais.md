@@ -14,10 +14,11 @@ Pour les explications suivantes, on assume qu'il y a une configuration comme cel
 trigger("shake", [
   transition(":increment", useAnimation(shakeX, { params: { timing: 1000 } })),
 ]),
-  trigger("flip", [
-    transition(":increment", useAnimation(flip, { params: { timing: 2000 } })),
-  ]),
-  (ng_shake = 0);
+trigger("flip", [
+  transition(":increment", useAnimation(flip, { params: { timing: 2000 } })),
+]),
+// ...
+ng_shake = 0;
 ng_flip = 0;
 ```
 
@@ -50,7 +51,7 @@ css_flip = false;
 
 #### Avec les animations Angular
 
-```csharp
+```ts
 shakeFlipAndBounce_Angular_1() {
   this.ng_shake++;
   setTimeout(() => {
@@ -80,7 +81,7 @@ shakeFlipAndBounce_CSS_1() {
 ```
 
 :::info
-On avait déjà vu que les animations Angular peuvent être déclenchées chaque fois qu'une valeur change ou encore qu'elle est incrémentée ou décrémentée. Alors que pour les animations CSS, il faut s'assurer de retirer la class lorsque l'animation est terminée (et donc de mettre la valeur à false)
+On avait déjà vu que les animations Angular peuvent être déclenchées chaque fois qu'une valeur change ou encore qu'elle est incrémentée ou décrémentée. Alors que pour les animations CSS, il faut s'assurer de retirer la class lorsque l'animation est terminée (et donc de mettre la valeur à false).
 :::
 
 ### setTimeout un à la suite de l'autre
@@ -89,7 +90,7 @@ On peut également démarrer tous les setTimeout d'un même coup, mais avec dél
 
 #### CSS
 
-```csharp
+```ts
 shakeFlipAndBounce_CSS_2() {
   this.css_shake = true;
 
@@ -113,7 +114,7 @@ On peut également utiliser un mélange de await et de async et un timer
 
 #### CSS
 
-```csharp
+```ts
 async shakeFlipAndBounce_CSS_3() {
   this.css_shake = true;
 
@@ -130,7 +131,7 @@ async shakeFlipAndBounce_CSS_3() {
 
 On peut se créer une méthode pour faire nos délais. On peut l'appeler waitFor
 
-```csharp
+```ts
 async waitFor(delayInSeconds:number) {
   await lastValueFrom(timer(delayInSeconds * 1000));
 }
@@ -140,7 +141,7 @@ Et ensuite, l'utiliser dans une méthode async:
 
 #### CSS avec waitFor
 
-```csharp
+```ts
 async shakeFlipAndBounce_CSS_4() {
   this.css_shake = true;
 
@@ -157,7 +158,7 @@ async shakeFlipAndBounce_CSS_4() {
 
 #### Angular avec waitFor
 
-```csharp
+```ts
 async shakeFlipAndBounce_Angular_4() {
   this.ng_shake++;
 
@@ -171,26 +172,26 @@ async shakeFlipAndBounce_Angular_4() {
 Comme on peut voir, en utilisant une méthode async et des animations Angular, on arrive à une écriture qui est très facile à lire!
 :::
 
-### Boucle infini
+### Boucle infinie
 
 Si on veut joueur la même animation, tant qu'une valeur est vraie, on peut le faire avec de la récursion
 
-```csharp
+```ts
 playLoop_Angular_1() {
-    this.ng_shake++;
+  this.ng_shake++;
 
-    setTimeout(() => {
-      // Après 1 seconde
-      if(this.keepPlayingAnimation)
-        this.playLoop_Angular_1();
-    },1000);
-    // Après 0 seconde
-  }
+  setTimeout(() => {
+    // Après 1 seconde
+    if(this.keepPlayingAnimation)
+      this.playLoop_Angular_1();
+  },1000);
+  // Après 0 seconde
+}
 ```
 
 Mais on peut également le faire dans une boucle avec une méthode async
 
-```csharp
+```ts
 async playLoop_Angular_2() {
   while(this.keepPlayingAnimation){
     this.ng_shake++;
@@ -203,7 +204,7 @@ async playLoop_Angular_2() {
 
 Si on veut joueur 2 animations (shake et bounce), une après l'autre, à l'infini
 
-```csharp
+```ts
 playLoop_Angular_3() {
   this.playShake();
 }

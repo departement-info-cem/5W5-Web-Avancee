@@ -14,7 +14,7 @@ Ce problème arrive assez **rarement**
 
 - La vérité, c'est qu'il n'y a pas de garantie avec SQL.
     - Si on fait une requête de BD **sans** OrderBy, on ne peut pas être certain de l'ordre des éléments reçus.
-    - C'est "très souvent" l'ordre d'Id, **surtout** si la requête est simple et/ou qu'il y a peu de data dans la BD (Disons, moins d'un million).
+    - C'est "très souvent" l'ordre d'Id, **surtout** si la requête est simple et/ou qu'il y a peu de data dans la BD (disons, moins d'un million).
 
 ## Ordre des éléments d'une liste avec EntityFramework
 
@@ -22,7 +22,7 @@ Ce problème arrive assez **rarement**
 Ce problème arrive **fréquemment**
 :::
 
-Si vous avec une liste (Ou un IEnumerable) dans un modèle, par exemple une liste de **PlayableCard** dans **MatchPlayerData** (Et plus précisément, le BattleField).
+Si vous avec une liste (Ou un IEnumerable) dans un modèle, par exemple une liste de **PlayableCard** dans **MatchPlayerData** (et plus précisément, le BattleField).
 
 Dans quel ordre les éléments vont être lorsque je les obtiens de la BD?
 
@@ -45,11 +45,11 @@ var matchPlayerData = dbContext.MatchPlayerData.Find(idDuMatchPlayerData);
 
 // Pour exécuter cette ligne de code et obtenir les cartes du BattleField, Entity Framework fait une requête dans la BD.
 // À ce moment là, on ne CONNAIT PAS l'ordre des éléments dans la liste. C'est peut-être (A,B) ou peut-être (B,A).
-// Le plus **probable** c'est que l'ordre soit l'ordre d'Id des 2 éléments (mais dans le cas d'une partie, ça nous aide absolument pas! Ça peut encore être A,B ou B,A)
+// Le plus **probable** c'est que l'ordre soit l'ordre d'Id des 2 éléments (mais dans le cas d'une partie, ça ne nous aide absolument pas! Ça peut encore être A,B ou B,A)
 Console.log(matchPlayerData.BattleField);
 ```
 
-## Gérer l'ordes d'une Liste avec Entity Framework
+## Gérer l'ordres d'une Liste avec Entity Framework
 
 Comme on veut être **certain** de l'ordre dans notre jeu, on va devoir faire un **OrderBy** et on va donc avoir besoin d'un **propriété Index** pour **PlayableCard**.
 
@@ -65,6 +65,7 @@ public void AddCardToBattleField(PlayableCard playableCard)
 {
     // Ajouter la carte au BattleField et lui donner le bon index (En fonction du nombre de cartes déjà sur le BattleField)
 }
+
 public void RemoveCardFromBattleField(PlayableCard playableCard)
 {
     // Retirer la carte du BattleField
