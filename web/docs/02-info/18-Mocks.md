@@ -25,7 +25,7 @@
 
 Un mock contient un objet que l’on programme en appelant des méthodes sur le mock.
 Un objet mocké n’est PAS intelligent, il retourne uniquement ce que les méthodes Setup lui disent de retourner.
-Si il n’y a pas de Setup pour une méthode, il retourne default.
+S'il n’y a pas de Setup pour une méthode, il retourne default.
 
 ## L’interface
 
@@ -137,6 +137,5 @@ public class SequenceStockMarketMockedObject : IStockMarket
 ## Pour clarifier
 
 :::warning
-Pour clarifier, les différents objets qui ont été présenté sont uniquement des **représentations simplifiées** de ce que le mock fait lorsque l’on utilise les méthodes de Setup. Vous n’avez PAS à créer ces classes et la véritable implémentation est probablement plus complexe!
+Pour clarifier, les différents objets qui ont été présentés sont uniquement des **représentations simplifiées** de ce que le mock fait lorsque l’on utilise les méthodes de Setup. Vous n’avez PAS à créer ces classes et la véritable implémentation est probablement plus complexe!
 :::
-

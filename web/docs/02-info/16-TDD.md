@@ -19,12 +19,12 @@ Créer du code simple et bien tester.
 
 ### Liste des étapes
 
-- Analyzer le problème
+- Analyser le problème
 - Écrire les tests
 - Coder la solution
 - Maintenance
 
-### Analyzer le problème
+### Analyser le problème
 
 Avant d’écrire les tests, il faut d’abord analyzer le problème et créer nos « use cases » et « user stories ». On met alors toute l’attention sur les besoins de notre application.
 
@@ -32,7 +32,7 @@ Dans le cas de notre jeu de cartes, on veut premièrement bien établir les diff
 
 ### Écrire les tests
 
-Les tests doivent couvrir de la façon la plus simple possible, l’ensemble des besoins de notre application qui sont couvert par nos user stories.
+Les tests doivent couvrir de la façon la plus simple possible, l’ensemble des besoins de notre application qui sont couverts par nos user stories.
 
 On veut:
 1. Écrire les tests en se basant sur les use cases et user stories
@@ -78,10 +78,10 @@ Joe: « Tu as raison Bob. T’ai-je mentionné que j’apprécie vraiment trava
 
 ## Les choses à ne pas faire
 
-- Des tests trop longs et complexes. Séparer les en plus petit tets.
+- Des tests trop longs et complexes. Séparez-les en plus petits tests.
 - Des tests qui dépendent de l’exécution d’un autre test. Par contre, utiliser un set up et clean up commun est une excellente pratique.
 - Tester les librairies que l’on utilise. Il faut tester ce que l’on a ajouté, pas ce qui est fourni par nos librairies ou notre framework.
-- Écrire trop de tests trop pointus. Parfois le nombre de combinaisons de paramètre à une fonction peu devenir très intense. Il faut parfois se concentrer sur les cas qui représentent bien l’utilisation et ne pas créer des centaines de tests sous prétexte de vouloir être exhaustif.
+- Écrire trop de tests trop pointus. Parfois le nombre de combinaisons de paramètre à une fonction peut devenir très intense. Il faut parfois se concentrer sur les cas qui représentent bien l’utilisation et ne pas créer des centaines de tests sous prétexte de vouloir être exhaustif.
 
 ## Pour le projet
 Requis pour la logique de combat du jeu
