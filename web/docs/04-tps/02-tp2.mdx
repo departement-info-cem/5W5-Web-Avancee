@@ -151,17 +151,17 @@ Pour l'évaluation, le projet de tests doit compiler et les tests que vous avez 
     <summary>Logique de jeu</summary>
     - Faire passer les tests de TDD (Voir les [règles de jeu](#les-règles-de-jeu))
 
-L'event **PlayCardEvent**
-
-```csharp
-public class PlayCardEvent : MatchEvent
-{
-    // TODO: Ajouter tout ce qui manque
-    public PlayCardEvent(MatchPlayerData currentPlayerData, int playableCardId)
+    L'event **PlayCardEvent**
+    
+    ```csharp
+    public class PlayCardEvent : MatchEvent
     {
+        // TODO: Ajouter tout ce qui manque
+        public PlayCardEvent(MatchPlayerData currentPlayerData, int playableCardId)
+        {
+        }
     }
-}
-```
+    ```
 
     - IMPORTANT: Il faut ajouter un pouvoir de votre choix. Si vous n'êtes pas certain ou si vous manquez d'inspiration, demandez à votre enseignant!
     - Il faut écrire des tests pour **le pouvoir au choix** et ils doivent également passer avec succès
@@ -170,7 +170,8 @@ public class PlayCardEvent : MatchEvent
     - Conseil: Ajoutez également un **CardActivationEvent**, ce sera un bon endroit pour gérer le combat et vérifier les pouvoirs d'une carte et les déclencher
     - Conseil: Utilisez les méthodes **HasPower** et **GetPowerValue** que vous avez ajouté à PlayableCard pour écrire la logique de jeu.
 
-    - Le diagramme suivant donne une façon de faire pour gérer les events lors d'un combat. Le CardActivationEvent est un bon event pour inclure la logique de plusieurs pouvoirs, comme Heal. - Dans le diagramme, on peut voir que les CardDamageEvent des attaques sont directement sous l'event CardActivationEvent. Si vous préférez ajouter un AttackEvent qui s'occupe de gérer les dégâts d'attaque que se font les deux cartes, c'est une bonne idée.
+    - Le diagramme suivant donne une façon de faire pour gérer les events lors d'un combat. Le CardActivationEvent est un bon event pour inclure la logique de plusieurs pouvoirs, comme Heal. 
+    - Dans le diagramme, on peut voir que les CardDamageEvent des attaques sont directement sous l'event CardActivationEvent. Si vous préférez ajouter un AttackEvent qui s'occupe de gérer les dégâts d'attaque que se font les deux cartes, c'est une bonne idée.
 
     <Tabs queryString="cas-courant">
         <TabItem value="cas-simple" label="Cas simple" default>
