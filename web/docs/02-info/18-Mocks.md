@@ -51,7 +51,7 @@ var stockMarketMock = new Mock<IStockMarketService>();
 // Notre controlleur prend normalement une implémentation de l'interface du service.
 // Dans le cas normal, ce sera une implémentation qui effectue le bon comportement.
 // Dans le cas de nos tests, ce sera un service Mocké, qui émule le comportement d'une implémentation de service. 
-var analyzer = new StonksAnalyzerController(stockMarketMock.Object);
+var analyzerController = new StonksAnalyzerController(stockMarketMock.Object);
 ```
 
 Le service ressemble à ceci:
