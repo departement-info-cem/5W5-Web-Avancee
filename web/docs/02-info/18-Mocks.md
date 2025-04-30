@@ -29,10 +29,10 @@ S'il n’y a pas de Setup pour une méthode, il retourne default.
 
 ## L’interface
 
-Prenons une interface pour obtenir de l’information de la bourse.
+Prenons une interface d'un service pour obtenir de l’information de la bourse.
 
 ```csharp
-public interface IStockMarket
+public interface IStockMarketService
 {
     decimal GetStockValue(string stockTicker, DateTime date);
 
@@ -40,19 +40,24 @@ public interface IStockMarket
 }
 ```
 
-## L’OBJET Mocké
+## Le service Mocké
 
 Au moment où l’on a créé le Mock
 
 ```csharp
-var stock_Mock = new Mock<IStockMarket>();
-var analyzer = new StonksAnalyzer(stock_Mock.Object);
+// Créer 
+var stock_Mock = new Mock<IStockMarketService>();
+
+// Notre controlleur prend normalement une implémentation de l'interface du service.
+// Dans le cas normal, ce sera une implémentation qui effectue le bon comportement.
+// Dans le cas de nos tests, ce sera un service Mocké, qui émule le comportement d'une implémentation de service. 
+var analyzer = new StonksAnalyzerController(stock_Mock.Object);
 ```
 
-L’objet ressemble à ceci:
+Le service ressemble à ceci:
 
 ```csharp
-public class StockMarketMockedObject : IStockMarket
+public class StockMarketMocked : IStockMarketService
 {
     public int NbGetStockValueCalls { get; set; }
     public int NbGetNbStocksCalls { get; set; }
@@ -69,12 +74,7 @@ public class StockMarketMockedObject : IStockMarket
 }
 ```
 
-:::info
-Il compte le nombre d’appels pour pouvoir répondre aux appels aux fonctions **Verify**
-:::
-
-
-## L’Objet Mocké avec Setup
+## Le service Mocké avec Setup
 
 Si on utilise la méthode Setup
 
@@ -86,7 +86,7 @@ Setup(x => x.GetStockValue("XYZ", It.IsAny<Date>()).Returns(33.33M);
 L’objet ressemble à ceci:
 
 ```csharp
-public class ConfiguredStockMarketMockedObject : IStockMarket
+public class ConfiguredStockMarketMockedObject : IStockMarketService
 {
     public int NbGetStockValueCalls { get; set; }
     public decimal GetStockValue(string stockTicker, DateTime date)
@@ -104,7 +104,7 @@ public class ConfiguredStockMarketMockedObject : IStockMarket
 }
 ```
 
-## L’Objet Mocké avec SetupSequence
+## Le service Mocké avec SetupSequence
 
 Si on utilise la méthode SetupSequence (sur un AUTRE mock)
 
@@ -114,10 +114,10 @@ stock_Mock.SetupSequence(x => x.GetStockValue(It.IsAny<string>(), It.IsAny<DateT
     .Returns(42.00M);
 ```
 
-L’objet ressemble à ceci:
+Le service ressemble à ceci:
 
 ```csharp
-public class SequenceStockMarketMockedObject : IStockMarket
+public class SequenceStockMarketMockedObject : IStockMarketService
 {
     public int NbGetStockValueCalls { get; set; }
     public int NbGetNbStocksCalls { get; set; }
@@ -137,5 +137,5 @@ public class SequenceStockMarketMockedObject : IStockMarket
 ## Pour clarifier
 
 :::warning
-Pour clarifier, les différents objets qui ont été présentés sont uniquement des **représentations simplifiées** de ce que le mock fait lorsque l’on utilise les méthodes de Setup. Vous n’avez PAS à créer ces classes et la véritable implémentation est probablement plus complexe!
+Pour clarifier, les différents services qui ont été présentés sont uniquement des **représentations simplifiées** de ce que le mock fait lorsque l’on utilise les méthodes de Setup. Vous n’avez PAS à créer ces classes et la véritable implémentation est probablement plus complexe!
 :::
