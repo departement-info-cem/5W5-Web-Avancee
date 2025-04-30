@@ -14,6 +14,7 @@ Commencer par mettre en place le projet.
 Mock<CatsService> serviceMock = new Mock<CatsService>();
 // Notez l'utilisation de CallBase = true
 // On veut un véritable objet CatsController et changer son comportement seulement pour la propriété UserId!
+// L'option CallBase = true nous permet de garder le comportement normal des méthode de la classe. 
 Mock<CatsController> controller = new Mock<CatsController>(serviceMock.Object) { CallBase = true };
 ```
 
