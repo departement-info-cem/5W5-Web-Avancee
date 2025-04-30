@@ -85,7 +85,7 @@ stockMarketMock.Setup(x => x.GetStockValue("ABC", It.IsAny<Date>()).Returns(42.4
 stockMarketMock.Setup(x => x.GetStockValue("XYZ", It.IsAny<Date>()).Returns(33.33M);
 ```
 
-Le mock du service (qu'on ne voit pas) ressemblerait maintenant à ceci:
+Le mock du service (qu'on ne voit pas) ressemblerait maintenant à ceci :
 
 ```csharp
 public class ConfiguredStockMarketMockedObject : IStockMarketService
@@ -116,7 +116,7 @@ stockMarketMock.SetupSequence(x => x.GetStockValue(It.IsAny<string>(), It.IsAny<
     .Returns(42.00M);
 ```
 
-Le service ressemble à ceci:
+Le mock du service (qu'on ne voit pas) ressemblerait maintenant à ceci:
 
 ```csharp
 public class SequenceStockMarketMockedObject : IStockMarketService
@@ -126,8 +126,10 @@ public class SequenceStockMarketMockedObject : IStockMarketService
     public decimal GetStockValue(string stockTicker, DateTime date)
     {
         NbGetStockValueCalls++;
+        // Au premier appel de la méthode, on retourne cette valeur.
         if (NbGetStockValueCalls == 1)
             return 33.33M;
+        // Au deuxième appel de la méthode, on retourne cette valeur.
         if (NbGetStockValueCalls == 2)
             return 42.42M;
         return default;
@@ -136,7 +138,7 @@ public class SequenceStockMarketMockedObject : IStockMarketService
 }
 ```
 
-## Pour clarifier
+## Rappel
 
 :::warning
 Pour clarifier, les différents services qui ont été présentés sont uniquement des **représentations simplifiées** de ce que le mock fait lorsque l’on utilise les méthodes de Setup. Vous n’avez PAS à créer ces classes et la véritable implémentation est probablement plus complexe!
