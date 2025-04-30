@@ -54,7 +54,7 @@ var stockMarketMock = new Mock<IStockMarketService>();
 var analyzerController = new StonksAnalyzerController(stockMarketMock.Object);
 ```
 
-Le service ressemble à ceci:
+Le mock du service (qu'on ne voit pas) ressemblerait à ceci :
 
 ```csharp
 public class StockMarketMocked : IStockMarketService
@@ -85,7 +85,7 @@ stockMarketMock.Setup(x => x.GetStockValue("ABC", It.IsAny<Date>()).Returns(42.4
 stockMarketMock.Setup(x => x.GetStockValue("XYZ", It.IsAny<Date>()).Returns(33.33M);
 ```
 
-L’objet ressemble à ceci:
+Le mock du service (qu'on ne voit pas) ressemblerait maintenant à ceci:
 
 ```csharp
 public class ConfiguredStockMarketMockedObject : IStockMarketService
