@@ -46,12 +46,12 @@ Au moment où l’on a créé le Mock
 
 ```csharp
 // Créer 
-var stock_Mock = new Mock<IStockMarketService>();
+var stockMarketMock = new Mock<IStockMarketService>();
 
 // Notre controlleur prend normalement une implémentation de l'interface du service.
 // Dans le cas normal, ce sera une implémentation qui effectue le bon comportement.
 // Dans le cas de nos tests, ce sera un service Mocké, qui émule le comportement d'une implémentation de service. 
-var analyzer = new StonksAnalyzerController(stock_Mock.Object);
+var analyzer = new StonksAnalyzerController(stockMarketMock.Object);
 ```
 
 Le service ressemble à ceci:
@@ -79,8 +79,10 @@ public class StockMarketMocked : IStockMarketService
 Si on utilise la méthode Setup
 
 ```csharp
-Setup(x => x.GetStockValue("ABC", It.IsAny<Date>()).Returns(42.42M);
-Setup(x => x.GetStockValue("XYZ", It.IsAny<Date>()).Returns(33.33M);
+// En français : la méthode (string stockTicker, DateTime date) prend en paramètre "ABC" et n'importe quelle date, et retourne 42.42.
+stockMarketMock.Setup(x => x.GetStockValue("ABC", It.IsAny<Date>()).Returns(42.42M);
+// En français : la méthode (string stockTicker, DateTime date) prend en paramètre "XYZ" et n'importe quelle date, et retourne 33.33.
+stockMarketMock.Setup(x => x.GetStockValue("XYZ", It.IsAny<Date>()).Returns(33.33M);
 ```
 
 L’objet ressemble à ceci:
@@ -109,7 +111,7 @@ public class ConfiguredStockMarketMockedObject : IStockMarketService
 Si on utilise la méthode SetupSequence (sur un AUTRE mock)
 
 ```csharp
-stock_Mock.SetupSequence(x => x.GetStockValue(It.IsAny<string>(), It.IsAny<DateTime>()))
+stockMarketMock.SetupSequence(x => x.GetStockValue(It.IsAny<string>(), It.IsAny<DateTime>()))
     .Returns(33.33M)
     .Returns(42.00M);
 ```
