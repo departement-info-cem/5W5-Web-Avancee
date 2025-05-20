@@ -9,4 +9,4 @@ hide_table_of_contents: true
 - Animations CSS et Angular
 - Tests unitaires avec Mock
 
-[🔗ExamenFinalFormatif.zip](https://github.com/CEM-420-5W5/Final_Formatif_A24)
+[🔗Formatif](https://github.com/CEM-420-5W5/Final_Formatif_A24)
