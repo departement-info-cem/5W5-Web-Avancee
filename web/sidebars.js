@@ -19,7 +19,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "1.2 - Auth. et déboguage ⚇",
+      label: "1.2 - Auth. et déboguage 🪙",
       id: "cours/rencontre1.2",
       customProps: {
         calendrier: {
@@ -43,8 +43,6 @@ const sidebars = {
             { 1030: "2025-08-29" },
           ],
         },
-        avancementLabel: "TP1 - Créé",
-        avancement: 0.0,
       },
     },
     {
@@ -59,8 +57,6 @@ const sidebars = {
             { 1030: "2025-09-04" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.1,
       },
     },
     {
@@ -75,8 +71,8 @@ const sidebars = {
             { 1030: "2025-09-08" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.25,
+        avancementLabel: "TP1 Créé, ",
+        avancement: 0,
       },
     },
     {
@@ -93,7 +89,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP1",
-        avancement: 0.5,
+        avancement: 0.13,
       },
     },
     {
@@ -109,7 +105,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP1",
-        avancement: 0.75,
+        avancement: 0.26,
       },
     },
     {
@@ -125,7 +121,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP1",
-        avancement: 1,
+        avancement: 0.39,
       },
     },
     {
@@ -141,8 +137,8 @@ const sidebars = {
             { 1030: "2025-09-22" },
           ],
         },
-        avancementLabel: "TP2 - Créé",
-        avancement: 0.0,
+        avancementLabel: "TP1",
+        avancement: 0.5,
       },
     },
     {
@@ -158,8 +154,8 @@ const sidebars = {
             { 1030: "2025-09-25" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP1",
+        avancement: 0.63,
       },
     },
     {
@@ -174,8 +170,8 @@ const sidebars = {
             { 1030: "2025-09-29" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.3,
+        avancementLabel: "TP1",
+        avancement: 0.76,
       },
     },
     {
@@ -191,8 +187,8 @@ const sidebars = {
             { 1030: "2025-10-02" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.4,
+        avancementLabel: "TP1",
+        avancement: 0.9,
       },
     },
     {
@@ -207,8 +203,8 @@ const sidebars = {
             { 1030: "2025-10-06" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.4,
+        avancementLabel: "TP1",
+        avancement: 1,
       },
     },
     {
@@ -239,7 +235,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP2",
-        avancement: 0.6,
+        avancement: 0.0,
       },
     },
     {
@@ -255,7 +251,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP2",
-        avancement: 0.7,
+        avancement: 0.17,
       },
     },
     {
@@ -272,7 +268,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP2",
-        avancement: 0.9,
+        avancement: 0.36,
       },
     },
     {
@@ -288,7 +284,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP2",
-        avancement: 1,
+        avancement: 0.51,
       },
     },
     {
@@ -304,7 +300,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP3 - Créé",
-        avancement: 0.0,
+        avancement: 0.68,
       },
     },
     {
@@ -321,7 +317,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.1,
+        avancement: 0.85,
       },
     },
     {
@@ -336,8 +332,8 @@ const sidebars = {
             { 1030: "2025-11-13" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 0.2,
+        avancementLabel: "TP2",
+        avancement: 1,
       },
     },
     {
@@ -353,7 +349,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.3,
+        avancement: 0.0,
       },
     },
     {
@@ -369,7 +365,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.4,
+        avancement: 0.13,
       },
     },
     {
@@ -386,7 +382,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.5,
+        avancement: 0.26,
       },
     },
     {
@@ -402,7 +398,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.6,
+        avancement: 0.4,
       },
     },
     {
@@ -419,7 +415,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.7,
+        avancement: 0.53,
       },
     },
     {
@@ -435,7 +431,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.8,
+        avancement: 0.66,
       },
     },
     {
@@ -451,7 +447,7 @@ const sidebars = {
           ],
         },
         avancementLabel: "TP3",
-        avancement: 1,
+        avancement: 0.8,
       },
     },
     {
@@ -467,6 +463,8 @@ const sidebars = {
             { 1030: "2025-12-11" },
           ],
         },
+        avancementLabel: "TP3",
+        avancement: 0.93,
       },
     },
     {
@@ -482,6 +480,8 @@ const sidebars = {
             { 1030: "2025-12-22" },
           ],
         },
+        avancementLabel: "TP3",
+        avancement: 1,
       },
     },
   ],
