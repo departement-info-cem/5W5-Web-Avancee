@@ -1,10 +1,10 @@
 ---
-title: 10.2 - GitHub & TP2 ⛙
+title: 10.2 - GitHub & TP2 😾
 hide_table_of_contents: true
 sidebar_class_name: remise-tp2-fonctionnalites
 ---
 
-# Github & TP2 ⛙
+# Github & TP2 😾
 
 - Exercice Git (Merge, conflits et pull request)
 - Explication sur le problème avec l'ordre des PlayableCard du BattleField
