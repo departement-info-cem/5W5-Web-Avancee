@@ -6,6 +6,58 @@ hide_table_of_contents: true
 
 # Accueil
 
+<Row>
+
+<Column>
+
+Bienvenue au cours de 5W5 - Programmation Web avancées! Dans ce cours, tu n'apprendras (presque) pas de nouveau language ou framework. 
+
+L'objectif est de consolider ce que tu as appris dans tes cours de **3W5 - Programmation Web Transactionnel** et **4W6 - Programmation Web Orientée Services**, en y ajoutant des nouveaux concepts. C'est donc très important de d'assurer de bien maitriser ce qui a été vu dans ces 2 cours dès le début de la session.
+
+Attention, c'est un cours très exigeant, qui demande une bonne autonomie et une capacité à résoudre des problèmes de manière indépendante.
+
+Le contenu des cours ainsi que les énoncés de TP sont disponibles dans les onglets **[Cours](cours/rencontre1.1)** et **[Travaux Pratiques](tps/tp1)**.
+
+Tu peux déjà commencer à regarder le contenu du cours 1 et prendre connaissance des informations.
+
+À chaque cours, exécute ce **[script](https://github.com/departement-info-cem/scripts-mobile/releases/download/Script/ScriptSharp.exe)** d'installation ([repo](https://github.com/departement-info-cem/scripts-mobile)). Pour le moment, le script est fait pour être uniquement exécuté sur les postes du CÉGEP.
+
+</Column>
+
+<Column>
+
+:::danger Plagiat
+
+Les exercices peuvent être réalisés à plusieurs. Par contre, tous les travaux **évalués** sont **INDIVIDUELS**.
+
+Lis les règles concernant le plagiat et les sanctions **[ici](https://info.cegepmontpetit.ca/plagiat)**
+
+:::
+
+:::tip Déroulement d'une semaine type
+
+Tu as du travail préparatoire pour découvrir la matière par toi-même (page Web à lire, vidéo, exercices) pour environ 1 heure de travail.
+
+Pendant la séance, tu dois compléter et valider tes exercices, poser des questions et compléter ton TP.
+
+:::
+
+:::info Installation à la maison
+
+- [.NET Core 8](https://dotnet.microsoft.com/fr-fr/download)
+- [Angular](https://angular.dev/installation)
+- [Jetbrains Rider](https://www.jetbrains.com/rider/) OU ][Visual Studio 2022](https://visualstudio.microsoft.com/fr/vs/)
+- [Visual Studio Code](https://code.visualstudio.com/)
+
+Problèmes courants et solutions [ici](https://info.cegepmontpetit.ca/5W5-Web-Avancee/info/Trucs)
+Le repo du site du cours [ici](https://github.com/departement-info-cem/5W5-Web-Avancee)
+L'organisation qui contient les exercices et les solutions [ici](https://github.com/CEM-420-5W5)
+:::
+
+</Column>
+
+</Row>
+w
 <DocsViewer
     tabs={[
     {
@@ -13,21 +65,13 @@ hide_table_of_contents: true
         label: "Cours",
         icon: "📋",
         component: <MainDocsGrid />,
-        // Les titres et les sous-titres sont définis dans les attributs "title" et "description" de chaque document des cours.
     }, 
     {
-        id: "calendar-prof1",
-        label: "Prof 1", // Modifier pour le nom de l'enseignant
+        id: "pob",
+        label: "Pierre-Olivier Brillant", // Modifier pour le nom de l'enseignant
         icon: "📅",
-        component: <MainDocsCalendar professorName="Prof 1" />, // Doit matcher le nom du professeur qui est dans l'attribut "calendrier" des cours qui sont dans sidebar.js
+        component: <MainDocsCalendar professorName="Pierre-Olivier" />, // Doit matcher le nom du professeur qui est dans l'attribut "calendrier" des cours qui sont dans sidebar.js
     },
-    {
-        id: "calendar-prof2",
-        label: "Prof 2",  // Modifier pour le nom de l'enseignant
-        icon: "📅",
-        component: <MainDocsCalendar professorName="Prof 2" />, // Doit matcher le nom du professeur qui est dans l'attribut "calendrier" des cours qui sont dans sidebar.js
-    },
-    //* Ajouter d'autres enseignants ici. Voir sidebar.js pour configurer les calendriers.
     ]}
     defaultTabId="grid"
 />

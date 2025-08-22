@@ -1,6 +1,14 @@
 ---
-title: Rencontre 11.2
-description: Cours Rencontre 11.2
+title: 11.2 - Présentation TP3 🗣️
+hide_table_of_contents: true
 ---
 
-# Rencontre 11.2
+# Présentation du TP3 🗣️
+
+## Info
+
+[Test Driven Development](/info/TDD)
+
+## TP
+
+[Page du TP3](/tps/tp3)

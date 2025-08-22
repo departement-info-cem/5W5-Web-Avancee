@@ -88,7 +88,6 @@ const config = {
             type: "docSidebar",
             position: "left",
             sidebarId: "tps",
-            sidebarId: "tp",
             label: "Travaux Pratiques",
           },
         ],

@@ -1,6 +1,12 @@
 ---
-title: Rencontre 14.2
-description: Cours Rencontre 14.2
+title: 14.2 - Formatif
+hide_table_of_contents: true
 ---
 
-# Rencontre 14.2
+# Pratique examen final
+
+- SignalR (Hub avec BackgroundService)
+- Animations CSS et Angular
+- Tests unitaires avec Mock
+
+[🔗Formatif](https://github.com/CEM-420-5W5/Final_Formatif_A24)

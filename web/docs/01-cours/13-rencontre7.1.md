@@ -1,6 +1,8 @@
 ---
-title: Rencontre 7.1
-description: Cours Rencontre 7.1
+title: 7.1 - Évaluation de groupe TP1 💯
+hide_table_of_contents: true
 ---
 
-# Rencontre 7.1
+# Évaluation de groupe du TP1 💯
+
+- Réponse aux questions avant l'examen

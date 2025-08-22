@@ -43,42 +43,54 @@
   color: var(--examen-font-color);
 }
 
-.remise-tp1::after {
-  content: "Remise TP1";
+.remise-tp1-uml::after,
+.remise-tp1-code::after,
+.remise-tp1-signalr::after,
+.remise-tp1-groupe::after,
+.remise-tp2-groupe-devops::after,
+.remise-tp2-fonctionnalites::after,
+.remise-tp3-groupe::after,
+.remise-tp3-devops::after,
+.remise-tp3-fonctionnalites::after {
   text-align: center;
   width: 100%;
   display: block;
-  background: var(--remise-tp-bg);
+  background: #8787ff;
   font-size: 0.75em;
-  color: var(--remise-tp-font-color);
 }
 
-.remise-tp2::after {
-  content: "Remise TP2";
-  text-align: center;
-  width: 100%;
-  display: block;
-  background: var(--remise-tp-bg);
-  font-size: 0.75em;
-  color: var(--remise-tp-font-color);
+.remise-tp1-uml::after {
+  content: "Remise TP1 UML (3%)";
 }
 
-.remise-tp3::after {
-  content: "Remise TP3";
-  text-align: center;
-  width: 100%;
-  display: block;
-  background: var(--remise-tp-bg);
-  font-size: 0.75em;
-  color: var(--remise-tp-font-color);
+.remise-tp1-code::after {
+  content: "Remise TP1 Code (10%)";
 }
 
-.remise-tp4::after {
-  content: "Remise TP4";
-  text-align: center;
-  width: 100%;
-  display: block;
-  background: var(--remise-tp-bg);
-  font-size: 0.75em;
-  color: var(--remise-tp-font-color);
+.remise-tp1-signalr::after {
+  content: "Remise TP1 SignalR (10%)";
+}
+
+.remise-tp1-groupe::after {
+  content: "Remise TP1 Groupe (5% + 2%)";
+}
+
+.remise-tp2-groupe-devops::after {
+  content: "Remise TP2 Groupe & DevOps (2% + 3%)";
+}
+
+.remise-tp2-fonctionnalites::after {
+  content: "Remise TP2 Fonctionnalités (10% + 5%)";
+}
+
+.remise-tp3-groupe::after {
+  content: "Remise TP3 Groupe (4%)";
+}
+
+.remise-tp3-devops::after {
+  content: "Remise TP3 DevOps (4%)";
+}
+
+.remise-tp3-fonctionnalites::after {
+  content: "Remise TP3 Fonctionnalités (10% + 4% + 2%)";
 }

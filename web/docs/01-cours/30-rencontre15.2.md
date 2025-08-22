@@ -1,6 +1,7 @@
 ---
-title: Rencontre 15.2
-description: Cours Rencontre 15.2
+title: 15.2 - Évaluation Finale TP3 💯
+hide_table_of_contents: true
+sidebar_class_name: remise-tp3-fonctionnalites
 ---
 
-# Rencontre 15.2
+# Évaluation finale du TP3 💯
