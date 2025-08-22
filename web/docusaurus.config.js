@@ -49,6 +49,8 @@ const config = {
     ],
   ],
 
+  plugins: [require.resolve("./plugins/docs-metadata")],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -66,7 +68,7 @@ const config = {
         items: [
           {
             type: "doc",
-            docId: "cours/rencontre1",
+            docId: "cours/rencontre1.1",
             position: "left",
             label: "Cours",
           },
@@ -86,12 +88,24 @@ const config = {
             type: "docSidebar",
             position: "left",
             sidebarId: "tps",
+            sidebarId: "tp",
             label: "Travaux Pratiques",
           },
         ],
       },
       footer: {
         style: "dark",
+        links: [
+          {
+            title: "Sources",
+            items: [
+              {
+                label: "GitHub",
+                href: `https://github.com/departement-info-cem/${siteConfig.nomUrl}`,
+              },
+            ],
+          },
+        ],
         copyright: `Copyright © ${new Date().getFullYear()}. ${
           siteConfig.nom
         }. CÉGEP Édouard-Montpetit.`,

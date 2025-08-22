@@ -16,6 +16,10 @@
   --ifm-code-font-size: 95%;
   --ifm-menu-link-padding-horizontal: 1.5em;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --examen-bg: #ffebec;
+  --examen-font-color: #003100;
+  --remise-tp-bg: #e6f6e6;
+  --remise-tp-font-color: #003100;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -28,18 +32,15 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
-.mermaidTooltip {
-  position: absolute;
-  background-color: #fff5ad;
-  line-height: 1;
-  padding: 0.5rem;
-  border: solid black 1px;
+  --examen-bg: #4b1113;
+  --examen-font-color: #f4e7ec;
+  --remise-tp-bg: #003100;
+  --remise-tp-font-color: #d3f0e6;
 }
 
 .examen {
-  background-color: #ff6e75;
+  background-color: var(--examen-bg);
+  color: var(--examen-font-color);
 }
 
 .remise-tp1::after {
@@ -47,8 +48,9 @@
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
+  background: var(--remise-tp-bg);
   font-size: 0.75em;
+  color: var(--remise-tp-font-color);
 }
 
 .remise-tp2::after {
@@ -56,8 +58,9 @@
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
+  background: var(--remise-tp-bg);
   font-size: 0.75em;
+  color: var(--remise-tp-font-color);
 }
 
 .remise-tp3::after {
@@ -65,8 +68,9 @@
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
+  background: var(--remise-tp-bg);
   font-size: 0.75em;
+  color: var(--remise-tp-font-color);
 }
 
 .remise-tp4::after {
@@ -74,62 +78,7 @@
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
+  background: var(--remise-tp-bg);
   font-size: 0.75em;
-}
-
-.examen {
-  background-color: #ff6e75;
-}
-
-.remise-tp1-uml::after,
-.remise-tp1-code::after,
-.remise-tp1-signalr::after,
-.remise-tp1-groupe::after,
-.remise-tp2-groupe-devops::after,
-.remise-tp2-fonctionnalites::after,
-.remise-tp3-groupe::after,
-.remise-tp3-devops::after,
-.remise-tp3-fonctionnalites::after {
-  text-align: center;
-  width: 100%;
-  display: block;
-  background: #8787ff;
-  font-size: 0.75em;
-}
-
-.remise-tp1-uml::after {
-  content: "Remise TP1 UML (3%)";
-}
-
-.remise-tp1-code::after {
-  content: "Remise TP1 Code (10%)";
-}
-
-.remise-tp1-signalr::after {
-  content: "Remise TP1 SignalR (10%)";
-}
-
-.remise-tp1-groupe::after {
-  content: "Remise TP1 Groupe (5% + 2%)";
-}
-
-.remise-tp2-groupe-devops::after {
-  content: "Remise TP2 Groupe & DevOps (2% + 3%)";
-}
-
-.remise-tp2-fonctionnalites::after {
-  content: "Remise TP2 Fonctionnalités (10% + 5%)";
-}
-
-.remise-tp3-groupe::after {
-  content: "Remise TP3 Groupe (4%)";
-}
-
-.remise-tp3-devops::after {
-  content: "Remise TP3 DevOps (4%)";
-}
-
-.remise-tp3-fonctionnalites::after {
-  content: "Remise TP3 Fonctionnalités (10% + 4% + 2%)";
+  color: var(--remise-tp-font-color);
 }
