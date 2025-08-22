@@ -3,7 +3,7 @@ title: 1.2 - Auth. et déboguage 🪙
 hide_table_of_contents: true
 ---
 
-# 1.2 - Authentification par token et déboguage ⚇
+# 1.2 - Authentification par token et déboguage 🪙
 
 ## Info
 
