@@ -362,3 +362,9 @@ Même si vous testez la méthode private **APRÈS** un **Login**, ça ne va pas 
 C'est "normal", il faudra fournir le token lors de l'appel! (Vu au prochain cours)
 
 Mais c'est terminé pour aujourd'hui! Au prochain cours, vous allez continuer à travailler avec la **MÊME solution**, alors assurez-vous de la **conserver quelque pars**!
+
+:::danger Sauvegarde ton projet!
+
+N'oublie pas de sauvagarder ton projet sur ton github personnel. [Bonnes pratiques avec Git/GitHub](/info/BonnesPratiquesGit)
+
+:::
