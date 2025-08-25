@@ -19,7 +19,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "1.2 - Auth. et déboguage ⚇",
+      label: "1.2 - Auth. et déboguage 🪙",
       id: "cours/rencontre1.2",
       customProps: {
         calendrier: {
@@ -43,8 +43,6 @@ const sidebars = {
             { 1030: "2025-08-29" },
           ],
         },
-        avancementLabel: "TP1 - Créé",
-        avancement: 0.0,
       },
     },
     {
@@ -54,13 +52,11 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-09-04" },
-            { 1020: "2025-09-04" },
+            { 1010: "2025-09-05" },
+            { 1020: "2025-09-05" },
             { 1030: "2025-09-04" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.1,
       },
     },
     {
@@ -72,11 +68,11 @@ const sidebars = {
           "Pierre-Olivier": [
             { 1010: "2025-09-09" },
             { 1020: "2025-09-09" },
-            { 1030: "2025-09-11" },
+            { 1030: "2025-09-08" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.25,
+        avancementLabel: "TP1 créé, ",
+        avancement: 0,
       },
     },
     {
@@ -87,13 +83,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-09-16" },
-            { 1020: "2025-09-16" },
-            { 1030: "2025-09-15" },
+            { 1010: "2025-09-12" },
+            { 1020: "2025-09-12" },
+            { 1030: "2025-09-11" },
           ],
         },
         avancementLabel: "TP1",
-        avancement: 0.5,
+        avancement: 0.13,
       },
     },
     {
@@ -103,13 +99,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-09-19" },
-            { 1020: "2025-09-19" },
-            { 1030: "2025-09-18" },
+            { 1010: "2025-09-16" },
+            { 1020: "2025-09-16" },
+            { 1030: "2025-09-15" },
           ],
         },
         avancementLabel: "TP1",
-        avancement: 0.75,
+        avancement: 0.26,
       },
     },
     {
@@ -119,13 +115,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-09-23" },
-            { 1020: "2025-09-23" },
-            { 1030: "2025-09-22" },
+            { 1010: "2025-09-19" },
+            { 1020: "2025-09-19" },
+            { 1030: "2025-09-18" },
           ],
         },
         avancementLabel: "TP1",
-        avancement: 1,
+        avancement: 0.39,
       },
     },
     {
@@ -136,13 +132,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-10-17" },
-            { 1020: "2025-10-17" },
-            { 1030: "2025-10-06" },
+            { 1010: "2025-09-23" },
+            { 1020: "2025-09-23" },
+            { 1030: "2025-09-22" },
           ],
         },
-        avancementLabel: "TP2 - Créé",
-        avancement: 0.0,
+        avancementLabel: "TP1",
+        avancement: 0.5,
       },
     },
     {
@@ -153,13 +149,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-10-21" },
-            { 1020: "2025-10-21" },
-            { 1030: "2025-10-09" },
+            { 1010: "2025-09-26" },
+            { 1020: "2025-09-26" },
+            { 1030: "2025-09-25" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.1,
+        avancementLabel: "TP1",
+        avancement: 0.63,
       },
     },
     {
@@ -169,13 +165,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-10-31" },
-            { 1020: "2025-10-31" },
-            { 1030: "2025-10-13" },
+            { 1010: "2025-09-30" },
+            { 1020: "2025-09-30" },
+            { 1030: "2025-09-29" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.3,
+        avancementLabel: "TP1",
+        avancement: 0.76,
       },
     },
     {
@@ -186,13 +182,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-11-04" },
-            { 1020: "2025-11-04" },
-            { 1030: "2025-10-16" },
+            { 1010: "2025-10-03" },
+            { 1020: "2025-10-03" },
+            { 1030: "2025-10-02" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.4,
+        avancementLabel: "TP1",
+        avancement: 0.9,
       },
     },
     {
@@ -202,13 +198,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-11-14" },
-            { 1020: "2025-11-14" },
-            { 1030: "2025-10-20" },
+            { 1010: "2025-10-07" },
+            { 1020: "2025-10-07" },
+            { 1030: "2025-10-06" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.4,
+        avancementLabel: "TP1",
+        avancement: 1,
       },
     },
     {
@@ -219,9 +215,9 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-11-18" },
-            { 1020: "2025-11-18" },
-            { 1030: "2025-10-23" },
+            { 1010: "2025-10-10" },
+            { 1020: "2025-10-10" },
+            { 1030: "2025-10-09" },
           ],
         },
       },
@@ -233,13 +229,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-11-28" },
-            { 1020: "2025-11-28" },
-            { 1030: "2025-10-27" },
+            { 1010: "2025-10-21" },
+            { 1020: "2025-10-21" },
+            { 1030: "2025-10-20" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.6,
+        avancementLabel: "TP2 créé,",
+        avancement: 0.0,
       },
     },
     {
@@ -249,13 +245,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-12-02" },
-            { 1020: "2025-12-02" },
-            { 1030: "2025-10-30" },
+            { 1010: "2025-10-24" },
+            { 1020: "2025-10-24" },
+            { 1030: "2025-10-23" },
           ],
         },
         avancementLabel: "TP2",
-        avancement: 0.7,
+        avancement: 0.17,
       },
     },
     {
@@ -266,13 +262,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-12-12" },
-            { 1020: "2025-12-12" },
-            { 1030: "2025-11-03" },
+            { 1010: "2025-10-28" },
+            { 1020: "2025-10-28" },
+            { 1030: "2025-10-27" },
           ],
         },
         avancementLabel: "TP2",
-        avancement: 0.9,
+        avancement: 0.36,
       },
     },
     {
@@ -282,13 +278,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-12-16" },
-            { 1020: "2025-12-16" },
-            { 1030: "2025-11-06" },
+            { 1010: "2025-10-31" },
+            { 1020: "2025-10-31" },
+            { 1030: "2025-10-30" },
           ],
         },
         avancementLabel: "TP2",
-        avancement: 1,
+        avancement: 0.51,
       },
     },
     {
@@ -298,13 +294,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-01-09" },
-            { 1020: "2026-01-09" },
-            { 1030: "2025-11-10" },
+            { 1010: "2025-11-04" },
+            { 1020: "2025-11-04" },
+            { 1030: "2025-11-03" },
           ],
         },
-        avancementLabel: "TP3 - Créé",
-        avancement: 0.0,
+        avancementLabel: "TP2",
+        avancement: 0.68,
       },
     },
     {
@@ -315,13 +311,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-01-13" },
-            { 1020: "2026-01-13" },
-            { 1030: "2025-11-13" },
+            { 1010: "2025-11-07" },
+            { 1020: "2025-11-07" },
+            { 1030: "2025-11-06" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 0.1,
+        avancementLabel: "TP2",
+        avancement: 0.85,
       },
     },
     {
@@ -331,13 +327,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-01-23" },
-            { 1020: "2026-01-23" },
-            { 1030: "2025-11-17" },
+            { 1010: "2025-11-11" },
+            { 1020: "2025-11-11" },
+            { 1030: "2025-11-13" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 0.2,
+        avancementLabel: "TP2",
+        avancement: 1,
       },
     },
     {
@@ -347,13 +343,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-01-27" },
-            { 1020: "2026-01-27" },
-            { 1030: "2025-11-20" },
+            { 1010: "2025-11-14" },
+            { 1020: "2025-11-14" },
+            { 1030: "2025-11-17" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 0.3,
+        avancementLabel: "TP3 créé, ",
+        avancement: 0.0,
       },
     },
     {
@@ -363,13 +359,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-02-06" },
-            { 1020: "2026-02-06" },
-            { 1030: "2025-11-24" },
+            { 1010: "2025-11-18" },
+            { 1020: "2025-11-18" },
+            { 1030: "2025-11-20" },
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.4,
+        avancement: 0.13,
       },
     },
     {
@@ -380,13 +376,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-02-10" },
-            { 1020: "2026-02-10" },
-            { 1030: "2025-11-27" },
+            { 1010: "2025-11-21" },
+            { 1020: "2025-11-21" },
+            { 1030: "2025-11-24" },
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.5,
+        avancement: 0.26,
       },
     },
     {
@@ -396,13 +392,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-02-20" },
-            { 1020: "2026-02-20" },
-            { 1030: "2025-12-01" },
+            { 1010: "2025-11-25" },
+            { 1020: "2025-11-25" },
+            { 1030: "2025-11-27" },
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.6,
+        avancement: 0.4,
       },
     },
     {
@@ -413,13 +409,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-02-24" },
-            { 1020: "2026-02-24" },
-            { 1030: "2025-12-04" },
+            { 1010: "2025-11-28" },
+            { 1020: "2025-11-28" },
+            { 1030: "2025-12-01" },
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.7,
+        avancement: 0.53,
       },
     },
     {
@@ -429,13 +425,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-03-06" },
-            { 1020: "2026-03-06" },
-            { 1030: "2025-12-08" },
+            { 1010: "2025-12-02" },
+            { 1020: "2025-12-02" },
+            { 1030: "2025-12-04" },
           ],
         },
         avancementLabel: "TP3",
-        avancement: 0.8,
+        avancement: 0.66,
       },
     },
     {
@@ -445,13 +441,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-03-10" },
-            { 1020: "2026-03-10" },
-            { 1030: "2025-12-11" },
+            { 1010: "2025-12-05" },
+            { 1020: "2025-12-05" },
+            { 1030: "2025-12-08" },
           ],
         },
         avancementLabel: "TP3",
-        avancement: 1,
+        avancement: 0.8,
       },
     },
     {
@@ -462,11 +458,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-03-20" },
-            { 1020: "2026-03-20" },
-            { 1030: "2025-12-15" },
+            { 1010: "2025-12-16" },
+            { 1020: "2025-12-16" },
+            { 1030: "2025-12-11" },
           ],
         },
+        avancementLabel: "TP3",
+        avancement: 0.93,
       },
     },
     {
@@ -477,11 +475,13 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2026-03-24" },
-            { 1020: "2026-03-24" },
-            { 1030: "2025-12-18" },
+            { 1010: "2025-12-19" },
+            { 1020: "2025-12-19" },
+            { 1030: "2025-12-22" },
           ],
         },
+        avancementLabel: "TP3",
+        avancement: 1,
       },
     },
   ],

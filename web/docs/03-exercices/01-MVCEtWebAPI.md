@@ -165,7 +165,7 @@ Comme c'est déjà vu en 4W6, voici simplement le code **Program.cs** et pour aj
 
 ![alt text](_01-MVCEtWebAPI/image-19.png)
 
-- Ajoutez dans **Program.cs**
+- Ajoutez dans **Program.cs**, juste avant la ligne `var app = builder.Build();`
 
 ```csharp
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection") ?? throw new InvalidOperationException("Connection string 'DefaultConnection' not found.");
