@@ -98,12 +98,8 @@ ng new ngMVCEtWebAPI
 Après utiliser cette commande pour démarrer le serveur Angular
 
 ```powershell
-ng serve --ssl -o
+ng serve -o
 ```
-
-:::info
-Pourquoi --ssl? C'est une option pour rouler le serveur avec https, c'est nécessaire pour avoir une authentification sécuritaire.
-:::
 
 - Faites une page très simple avec simplement 2 boutons "TestPublic" et "TestPrivate"
 - Créer des méthodes pour vous permettre d'appeler votre serveur web API en cliquant sur les boutons.
@@ -117,7 +113,7 @@ La modification **AVANT builder.Build()**
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder => builder
-        .WithOrigins("https://localhost:4200")
+        .WithOrigins("http://localhost:4200")
         .AllowAnyMethod()
         .AllowAnyHeader());
 });
