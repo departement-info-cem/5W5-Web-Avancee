@@ -163,7 +163,7 @@ sessionStorage.removeItem("token");
 
 ### Ajouter un modèle et un contrôleur MVC
 
-- Ajoutez un nouveau modèle et nommez le **TestData**. On va continuez d'utiliser Entity Framework, alors il faut que le modèle est un **Id**
+- Ajoutez un nouveau modèle et nommez le **TestData**. On va continuez d'utiliser Entity Framework, alors il faut que le modèle ait un **Id**
 - Ajoutez également une propriété **Name**
 - ATTENTION: Comme c'est un modèle, ajoutez la classe dans le projet **Models**. Il va être utilisé par les 2 autres projets.
 
