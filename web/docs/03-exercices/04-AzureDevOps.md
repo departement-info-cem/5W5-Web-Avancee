@@ -104,6 +104,5 @@ Votre équipe s'agrandit!!!
 
 - Pour finir, **ajouter votre enseignant à votre projet**.
   - po.brillant@cegepmontpetit.ca
-  - jamil.gammoudi@cegepmontpetit.ca
 
 - C'est fini pour l'instant, on va utiliser Azure DevOps au prochain cours et pour les TPs!
