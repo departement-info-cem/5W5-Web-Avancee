@@ -77,15 +77,15 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "3.2 - Forms, guards, routes 💂",
+      label: "3.2 - Polling / SignalR 👉👈🥺",
       id: "cours/rencontre3.2",
-      className: "remise-tp1-uml",
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
             { 1010: "2025-09-12" },
             { 1020: "2025-09-12" },
             { 1030: "2025-09-15" },
+
           ],
         },
         avancementLabel: "TP1",
@@ -94,8 +94,9 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "4.1 - Polling / SignalR 👉👈🥺",
+      label: "4.1 - Forms, guards, routes 💂",
       id: "cours/rencontre4.1",
+      className: "remise-tp1-uml",
       customProps: {
         calendrier: {
           "Pierre-Olivier": [

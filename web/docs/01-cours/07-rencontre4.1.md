@@ -1,26 +1,23 @@
 ---
-title: 4.1 - Polling / SignalR 👉👈🥺
+title: 3.2 - Forms, guards, routes 💂
 hide_table_of_contents: true
+sidebar_class_name: remise-tp1-uml
 ---
 
-# Polling et Signal R (première partie) 👉👈🥺
-
-:::warning
-
-Remise du diagramme de classe pour le TP1
-
-:::
+## Reactive Forms, guards et routes enfants 💂
 
 ## Info
 
-[Polling](/info/Polling)
+[Guards](/info/Guards)
 
-[SignalR](/info/SignalR)
+[ReactiveForms](/info/ReactiveForms)
 
 ## Exercices
 
-[Exercice Polling et SignalR](/exercices/Polling)
+[Guards](/exercices/Guards)
+
+[ReactiveForms](/exercices/ReactiveForms)
 
 ## Liens
 
-[🔗Cours7.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EYkZPNdGGy9EgFc4uX04Z9wBFZLJctpNa6yEE7WNsP29oA?e=igqioC)
+[🔗Cours6.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/Ec0BrFx0KElDtqjGZl0cirEBvoIDq3PhwiudBrVoFh5pcg?e=LhNl6m)
