@@ -20,7 +20,7 @@ ng new ngReactiveForms
 
 ### Configuration
 
-```ts title=app.modules.ts
+```ts title=app.component.ts
 import { CommonModule } from '@angular/common';
 import { Component, OnInit } from '@angular/core';
 import { AbstractControl, FormBuilder, FormControlOptions, FormGroup, ReactiveFormsModule, ValidationErrors, Validators } from '@angular/forms';
@@ -276,12 +276,16 @@ interface Data {
     formControlName="name"
     name="name"
   />
-  <mat-error *ngIf="form.get('name')?.hasError('required')">
-    Votre nom est <strong>requis</strong>
-  </mat-error>
-  <mat-error *ngIf="form.hasError('nameInEmail')">
-    Le nom doit être dans l'adresse courriel
-  </mat-error>
+  @if(form.get('name')?.hasError('required')) {
+    <mat-error>
+      Votre nom est <strong>requis</strong>
+    </mat-error>
+  }
+  @if(form.hasError('nameInEmail')) {
+    <mat-error>
+      Le nom doit être dans l'adresse courriel
+    </mat-error>
+  }
 </mat-form-field>
 ```
 
@@ -302,9 +306,11 @@ interface Data {
 - On affiche un message d'erreur sous le champ texte
 
 ```html
-<mat-error *ngIf="form.hasError('nameInEmail')">
-  Le nom doit être dans l'adresse courriel
-</mat-error>
+@if(form.hasError('nameInEmail')) {
+  <mat-error>
+    Le nom doit être dans l'adresse courriel
+  </mat-error>
+}
 ```
 
 Version finale
@@ -323,19 +329,21 @@ Version finale
           formControlName="email"
           name="email"
         />
-        <mat-error
-          *ngIf="form.get('email')?.errors?.['email'] && !form.get('email')?.hasError('required')"
-        >
-          Entrer une adresse courriel valide
-        </mat-error>
-        <mat-error
-          *ngIf="form.get('email')?.hasError('gmail') && !loginForm.get('email')?.errors?.['email']"
-        >
-          Le courriel doit venir de <strong>Google</strong>
-        </mat-error>
-        <mat-error *ngIf="form.get('email')?.hasError('required')">
-          Le courriel est <strong>requis</strong>
-        </mat-error>
+        @if(form.get('email')?.errors?.['email'] && !form.get('email')?.hasError('required')) {
+          <mat-error>
+            Entrer une adresse courriel valide
+          </mat-error>
+        }
+        @if (form.get('email')?.hasError('gmail') && !loginForm.get('email')?.errors?.['email']) {
+          <mat-error>
+            Le courriel doit venir de <strong>Google</strong>
+          </mat-error>
+        }
+        @if (form.get('email')?.hasError('required')) {
+          <mat-error>
+            Le courriel est <strong>requis</strong>
+          </mat-error>
+        }
       </mat-form-field>
       <mat-form-field style="width: 100%">
         <input
@@ -345,12 +353,16 @@ Version finale
           formControlName="name"
           name="name"
         />
-        <mat-error *ngIf="form.get('name')?.hasError('required')">
-          Votre nom est <strong>requis</strong>
-        </mat-error>
-        <mat-error *ngIf="form.hasError('nameInEmail')">
-          Le nom doit être dans l'adresse courriel
-        </mat-error>
+        @if (ngIf="form.get('name')?.hasError('required')) {
+          <mat-error>
+            Votre nom est <strong>requis</strong>
+          </mat-error>
+        }
+        @if(form.hasError('nameInEmail')) {
+          <mat-error>
+            Le nom doit être dans l'adresse courriel
+          </mat-error>
+        }
       </mat-form-field>
       <button mat-raised-button color="primary" [disabled]="!form.valid">
         Enregistrer
@@ -361,7 +373,7 @@ Version finale
 ```
 
 :::danger
-Un \<mat-error\> s'affiche uniquement si'il est sur un control (ou formulaire) avec au moins une erreur. Si ce n'est pas le cas, il ne s'affiche pas, même si le \*ngIf est vrai!
+Un \<mat-error\> s'affiche uniquement s'il est sur un control (ou formulaire) avec au moins une erreur. Si ce n'est pas le cas, il ne s'affiche pas, même si le @if est vrai!
 :::
 
 - 🔗[Solution](https://github.com/CEM-420-5W5/ngReactiveForms)
