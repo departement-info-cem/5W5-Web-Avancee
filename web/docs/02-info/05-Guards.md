@@ -78,7 +78,7 @@ ng generate guard
 
 - Regarde si un utilisateur peut visiter une route enfant
 
-#### CanDeactivate
+### CanDeactivate
 
 - Regarde si un utilisateur peut quitter une route (changements non sauvegardés)
 
