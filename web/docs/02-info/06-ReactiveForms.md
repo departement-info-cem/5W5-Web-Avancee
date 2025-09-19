@@ -353,7 +353,7 @@ Version finale
           formControlName="name"
           name="name"
         />
-        @if (ngIf="form.get('name')?.hasError('required')) {
+        @if (form.get('name')?.hasError('required')) {
           <mat-error>
             Votre nom est <strong>requis</strong>
           </mat-error>
