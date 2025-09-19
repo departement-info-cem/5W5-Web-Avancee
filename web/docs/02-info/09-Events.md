@@ -4,7 +4,7 @@
 
 On se souvient que pour la communication entre notre client et notre serveur, les données sont sérialisées en utilisant le format JSON.
 
-## Exemple du JSon avec un event simple
+## Exemple du JSON avec un event simple
 
 Voici un exemple d’évènement et sa sérialisation. On peut voir qu’il contient toute l’information à propos de qui pige quelle carte.
 

@@ -61,24 +61,17 @@ Il faut maintenant créer notre migration et mettre la BD à jour.
 
 Voici comment le faire en utilisant un projet séparé pour les données:
 
-- Ouvrez la console du Gestionnaire de package
-
-!![alt text](_01-MVCEtWebAPI/image-11.png)
-
-- IMPORTANT: Il faut modifier le projet par défaut de la console pour celui où se trouve ApplicationDbContext!
-
-![alt text](_01-MVCEtWebAPI/image-12.png)
-
+- Ouvrez un terminal au niveau de la solution
 - Créez la migration
 
 ```powershell
-PM> add-migration initiale
+dotnet ef migrations add Initiale --project Models --startup-project WebAPI
 ```
 
 - Créer la BD
 
 ```powershell
-PM> update-database
+dotnet ef database update
 ```
 
 - Lancez maintenant l'application est vérifiez que c'est possible de **créer un utilisateur** et de faire un **login** en utilisant les pages générées par défaut.
