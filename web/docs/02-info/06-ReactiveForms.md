@@ -1,14 +1,16 @@
 # Reactive Forms
 
-### Créer un nouveau projet
+## Objectifs
 
-- Créer un nouveau projet Angular
-
-```powershell
-ng new ngReactiveForms
-```
-
-- Les autres options ne sont pas importantes.
+<Row>
+  <Column vCenter>
+    - Faire de la validation sur un ou plusieurs champs à la fois
+    - Communiquer à l'utilisateur comment corriger les erreurs sur les champs
+  </Column>
+  <Column>
+    ![image](_06-ReactiveForms/objectif.png)
+  </Column>
+</Row>
 
 ## Création d'un premier formulaire
 
@@ -16,107 +18,78 @@ ng new ngReactiveForms
 
 - On peut afficher des messages d'erreurs directement sur les champs
 
-![image](/img/exercices/reactiveForms/5W5-s2-f1.jpg)
-
 ### Configuration
 
-```ts title=app.component.ts
-import { CommonModule } from "@angular/common";
-import { Component } from "@angular/core";
-import {
-  AbstractControl,
-  FormBuilder,
-  FormGroup,
-  ReactiveFormsModule,
-  ValidationErrors,
-  Validators,
-} from "@angular/forms";
-import { MatCardModule } from "@angular/material/card";
-import { MatFormFieldModule } from "@angular/material/form-field";
-import { MatInputModule } from "@angular/material/input";
-import { MatTabsModule } from "@angular/material/tabs";
-
-@Component({
-  selector: "app-exercice",
-  standalone: true,
-  imports: [ReactiveFormsModule, MatTabsModule, CommonModule, MatError, MatFormField, MatCard, MatInput],
-  templateUrl: './exercice.component.html',
-  styleUrls: ['./exercice.component.css']
-})
-```
-
-- **ReactiveFormsModule** permet la création de formulaires pilotés par le code (validation dynamique, écoute des changements, etc.)
-- **MatError (via MatFormFieldModule)** permet d'afficher facilement les messages d'erreurs sous les champs.
-
 :::warning
-Il faut installer Material pour utiliser MatInput
+Il faut installer Material pour utiliser `MatInput` et `MatFormFieldModule`
 :::
 
 ```powershell
 ng add @angular/material
 ```
 
+Les librairies suivantes vont être utilisées dans le html. Elles doivent donc être importées.
+
+<GHCode 
+  repo="5W5-Web-Avancee" 
+  filePath="code/reactive-forms/src/app/app.ts" 
+  language="ts" 
+  startLine="14" 
+  endLine="24"
+/>
+
 ### Injecter FormBuilder
 
 Il faut injecter `FormBuilder` dans le composant où l'on veut ajouter notre formulaire.
 
-```ts
-@Component({
-  selector: "app-register",
-  templateUrl: "./register.component.html",
-  styleUrls: ["./register.component.css"],
-})
-export class RegisterComponent {
-  constructor(private fb: FormBuilder) {}
-  //...
-}
-```
+<GHCode 
+  repo="5W5-Web-Avancee" 
+  filePath="code/reactive-forms/src/app/app.ts" 
+  language="ts" 
+  startLine="24"
+  ignore="25-27,29-37,41-44"
+/>
 
 ### Utiliser le FormBuilder
 
 - Créer un groupe de validation à partir du `FormBuilder`.
 - Chaque champ du formulaire peut avoir un ou plusieurs validateurs.
 
-```ts
-form = this.fb.group({
-  email: ["", [Validators.required, Validators.email]],
-  name: ["", [Validators.required]],
-});
-```
+<GHCode 
+  repo="5W5-Web-Avancee" 
+  filePath="code/reactive-forms/src/app/app.ts" 
+  language="ts" 
+  startLine="28"
+  endLine="38"
+  ignore="31:61-31:74,34-34,36-37"
+/>
 
 ### Les Validators
 
+- Un Validator est une fonction qui s'exécute **à chaque frappe de clavier** pour s'assurer que la valeur dans le champ est valide.
 - Il existe plusieurs Validators par défaut
 - Vous retrouverez les mêmes Validations que l'on peut mettre sur un modèle en C#
-
-![image](/img/exercices/reactiveForms/5W5-s2-f1.jpg)
+- Vous trouverez une documentation exhaustive des Validators offerts par Angular [ici](https://angular.dev/api/forms/Validators)
 
 ### Créer un Validator (personnalisé)
 
-On peut créer des "custom" validator et les affecter à un champ du groupe
-
-```ts
-form = this.fb.group({
-  email: ["", [Validators.required, Validators.email]],
-  name: ["", [Validators.required, this.myCustomValidator]],
-});
-```
+- Parfois nos besoins de validation dépassent l'offre d'Angular
+- On peut créer des Validator personnalisés et les affecter à un champ du groupe
 
 ### Exemple sur un contrôle
 
-```ts
-myCustomValidator(control: AbstractControl): ValidationErrors | null {
-  // On récupère la valeur du champ texte
-  const email = control.value;
-  // On regarde si le champ est rempli avant de faire la validation
-  if (!email) {
-    return null;
-  }
-  // On fait notre validation
-  const isValid = email.includes('@gmail.com');
-  return isValid ? null : { gmailValidator: true };
-}
-```
+On veut valider que le courriel entré par l'utilisateur utilise gmail.
+
+- Créer un fichier nommé `est-gmail.ts`
+- Dans le fichier, ajouter le contenu suivant
+- Prenenz le temps de bien lire les commentaires
+
+<GHCode 
+  repo="5W5-Web-Avancee" 
+  filePath="code/reactive-forms/src/app/validators/est-gmail.ts" 
+  language="ts"
+  startLine="3"
+/>
 
 ### Validator sur plusieurs champs
 
