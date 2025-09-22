@@ -47,7 +47,7 @@ Il faut injecter `FormBuilder` dans le composant où l'on veut ajouter notre for
   filePath="code/reactive-forms/src/app/app.ts" 
   language="ts" 
   startLine="24"
-  ignore="25-27,29-37,41-44"
+  ignore="26-27,29-37,41-44"
 />
 
 ### Utiliser le FormBuilder
@@ -156,213 +156,62 @@ Et ajouter les erreurs dans le HTML
   startLine="3"
 />
 
-### Exemple sur un formulaire
+On Peut ajouter le validateur au groupe de champs
+
+<GHCode
+  repo="5W5-Web-Avancee"
+  filePath="code/reactive-forms/src/app/app.ts"
+  language="ts"
+  startLine="28"
+  endLine="38"
+  ignore="36-37"
+/>
+
+Et ajouter les erreurs dans le HTML
+
+<GHCode
+  repo="5W5-Web-Avancee"
+  filePath="code/reactive-forms/src/app/app.html"
+  language="html"
+  startLine="11"
+  endLine="32"
+/>
+
+## Bouton
+
+- C'est possible de lier la validité d'un bouton au formulaire
+- Par exemple, si certains champs du formulaire sont invalides, ce ne sera pas possible de cliquer sur le bouton
+- À ajouter dans le formulaire, sous les autres champs.
+
+<GHCode
+  repo="5W5-Web-Avancee"
+  filePath="code/reactive-forms/src/app/app.html"
+  language="html"
+  startLine="33"
+  endLine="35"
+/>
+
+## Accéder aux valeurs dans le groupe
+
+Pratique pour se préparer à envoyer une requête HTTP!
 
 ```ts
-myCustomValidator(form: AbstractControl): ValidationErrors | null {
-  // On récupère les valeurs de nos champs textes
-  const email = form.get('email')?.value;
-  const name = form.get('name')?.value;
-  // On regarde si les champs sont remplis avant de faire la validation
-  if (!email || !name) {
-    return null;
-  }
-  // On fait notre validation
-  const isValid = email.includes(name);
-  return isValid ? null : { nameInEmail: true };
-}
+this.formGroup.get("nom")?.value;
 ```
 
-### form.valueChanges
+## S'abonner aux changements sur le formulaire
 
-- Pour récupérer les données du formulaire, nous utiliserons un Observable sur l'évènement valueChanges
+- Être notifié des changements dans le formulaire, nous utiliserons un Observable sur l'évènement valueChanges
 - Il faudra aussi avoir créé une classe (ou une interface) du même type que le formulaire
 - Il faudra finalement créer une variable du type du formulaire
 
-```ts
-// Interface qui décrit le type du formulaire
-interface Data {
-  email?: string | null;
-  name?: string | null;
-}
-export class RegisterComponent implements OnInit {
-  // Le component contient une variable du même type que les champs du formulaire
-  formData?: Data;
-  ngOnInit(): void {
-    // À chaque fois que les valeurs changent, notre propriété formData sera mise à jour
-    this.form.valueChanges.subscribe(() => {
-      this.formData = this.form.value;
-    });
-  }
-  //...
-}
-```
+<GHCode
+  repo="5W5-Web-Avancee"
+  filePath="code/reactive-forms/src/app/app.ts"
+  language="ts"
+  startLine="24"
+/>
 
-### setErrors
+## Version complète
 
-C'est également possible de mettre une erreur directement sur un control à l'intérieur d'une validation
-
-```ts
-if (error) {
-  form.get("email")?.setErrors({ nameInEmail: true });
-} else {
-  form.get("email")?.setErrors(null);
-}
-```
-
-:::danger
-Prudence : `setErrors(null)` écrase toutes les erreurs existantes sur le contrôle.
-:::
-
-### Version complète
-
-```ts
-@Component({
-  selector: "app-register",
-  templateUrl: "./register.component.html",
-  styleUrls: ["./register.component.css"],
-})
-export class RegisterComponent {
-  form: FormGroup;
-  formData?: Data;
-
-  constructor(private fb: FormBuilder) {
-    this.form = this.fb.group(
-      {
-        email: [
-          "",
-          [Validators.required, Validators.email, this.gmailValidator],
-        ],
-        name: ["", [Validators.required]],
-      },
-      { validators: this.nameInEmailValidator }
-    );
-
-    this.form.valueChanges.subscribe((v) => (this.formData = v));
-  }
-
-  gmailValidator(control: AbstractControl): ValidationErrors | null {
-    const email = control.value as string | null;
-    if (!email) return null;
-    return email.includes("@gmail.com") ? null : { gmailValidator: true };
-  }
-
-  nameInEmailValidator(form: AbstractControl): ValidationErrors | null {
-    const email = form.get("email")?.value as string | null;
-    const name = form.get("name")?.value as string | null;
-    if (!email || !name) return null;
-    return email.includes(name) ? null : { nameInEmail: true };
-  }
-}
-
-interface Data {
-  email?: string | null;
-  name?: string | null;
-}
-```
-
-### L'utilisation de ReactiveForms dans la vue
-
-- Ajouter le groupe de validation au formulaire HTML
-
-```html
-<form [formGroup]="form">...</form>
-```
-
-- Ajouter les champs textes
-
-```html
-<mat-form-field style="width: 100%">
-  <input
-    matInput
-    type="text"
-    placeholder="Votre nom"
-    formControlName="name"
-    name="name"
-  />
-  @if(form.get('name')?.hasError('required')) {
-  <mat-error> Votre nom est <strong>requis</strong> </mat-error>
-  } @if(form.hasError('nameInEmail')) {
-  <mat-error> Le nom doit être dans l'adresse courriel </mat-error>
-  }
-</mat-form-field>
-```
-
-### formControlName="name"
-
-- On lie le champ texte au contrôle "name" dans le groupe du formulaire (groupe de validation)
-
-### form.get('name')?.hasError('required')
-
-- On vérifie s'il y a une erreur de type required sur le champ
-
-### form.hasError('nameInEmail')
-
-- On regarde s'il y a notre erreur "custom" sur l'ensemble du formulaire
-
-### mat-error
-
-- On affiche un message d'erreur sous le champ texte
-
-```html
-@if(form.hasError('nameInEmail')) {
-<mat-error> Le nom doit être dans l'adresse courriel </mat-error>
-}
-```
-
-Version finale
-
-```html
-<div
-  style="width: 100%;height: 100%; display: flex; justify-content: center; align-items: center; flex-direction: column"
->
-  <mat-card class="artist-card" style="margin: 16px; padding: 16px;">
-    <form [formGroup]="form">
-      <mat-form-field style="width: 100%">
-        <input
-          matInput
-          type="email"
-          placeholder="Courriel"
-          formControlName="email"
-          name="email"
-        />
-        @if(form.get('email')?.hasError('email') &&
-        !form.get('email')?.hasError('required')) {
-        <mat-error> Entrez une adresse courriel valide </mat-error>
-        } @if (form.get('email')?.hasError('gmailValidator') &&
-        !form.get('email')?.hasError('email') &&
-        !form.get('email')?.hasError('required')) {
-        <mat-error>
-          Le courriel doit venir de <strong>Google</strong>
-        </mat-error>
-        } @if (form.get('email')?.hasError('required')) {
-        <mat-error> Le courriel est <strong>requis</strong> </mat-error>
-        }
-      </mat-form-field>
-      <mat-form-field style="width: 100%">
-        <input
-          matInput
-          type="text"
-          placeholder="Votre nom"
-          formControlName="name"
-          name="name"
-        />
-        @if (form.get('name')?.hasError('required')) {
-        <mat-error> Votre nom est <strong>requis</strong> </mat-error>
-        } @if(form.hasError('nameInEmail')) {
-        <mat-error> Le nom doit être dans l'adresse courriel </mat-error>
-        }
-      </mat-form-field>
-      <button mat-raised-button color="primary" [disabled]="!form.valid">
-        Enregistrer
-      </button>
-    </form>
-  </mat-card>
-</div>
-```
-
-:::danger
-Un `<mat-error>` s'affiche uniquement s'il est sur un contrôle (ou formulaire) qui possède au moins une erreur. Sinon il ne sera pas rendu même si la condition `@if` est vraie.
-:::
-
-- 🔗[Solution](https://github.com/CEM-420-5W5/ngReactiveForms)
+Référez vous à [ce projet](https://github.com/departement-info-cem/5W5-Web-Avancee/tree/main/code/reactive-forms) pour votre la version complète du code.
