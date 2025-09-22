@@ -1,0 +1,33 @@
+<form [formGroup]="formGroup">
+  <mat-form-field>
+    <input matInput type="text" placeholder="Votre nom" formControlName="nom" />
+    @if(formGroup.get('nom')?.hasError('required')) {
+    <mat-error> Votre nom est <strong>requis</strong> </mat-error>
+    } @if(formGroup.hasError('nomDansCourriel')) {
+    <mat-error> Le nom doit être dans l'adresse courriel </mat-error>
+    }
+  </mat-form-field>
+  <mat-form-field>
+    <input
+      matInput
+      type="email"
+      placeholder="Courriel"
+      formControlName="courriel"
+    />
+    @if(formGroup.get('courriel')?.hasError('email') &&
+    !formGroup.get('courriel')?.hasError('required')) {
+    <mat-error> Entrez une adresse courriel valide </mat-error>
+    } @if (formGroup.get('courriel')?.hasError('estGmail') &&
+    !formGroup.get('courriel')?.hasError('email') &&
+    !formGroup.get('courriel')?.hasError('required')) {
+    <mat-error> Le courriel doit venir de <strong>Google</strong> </mat-error>
+    } @if (formGroup.get('courriel')?.hasError('required')) {
+    <mat-error> Le courriel est <strong>requis</strong> </mat-error>
+    } @if (formGroup.hasError('nomDansCourriel')) {
+    <mat-error> Le nom doit être dans l'adresse courriel </mat-error>
+    }
+  </mat-form-field>
+  <button mat-raised-button color="primary" [disabled]="!formGroup.valid">
+    Enregistrer
+  </button>
+</form>
