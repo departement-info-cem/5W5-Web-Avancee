@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import {
-  Form,
   FormBuilder,
   FormGroup,
   ReactiveFormsModule,
@@ -15,10 +14,9 @@ import { MatButtonModule } from '@angular/material/button';
 @Component({
   selector: 'app-root',
   imports: [
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    MatButtonModule,
+    ReactiveFormsModule, // Pour lier le formulaire du code typescript à celui dans le html ↔️
+    MatInputModule, // Pour intéragir avec les champs de texte ✍️
+    MatButtonModule, // Pour avoir un beau bouton 👉🔘
   ],
   templateUrl: './app.html',
   styleUrl: './app.css',
