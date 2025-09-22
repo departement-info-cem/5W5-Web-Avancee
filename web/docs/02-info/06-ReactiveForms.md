@@ -72,7 +72,7 @@ Nous allons ajouter deux champ texte qui seront liés aux éléments du formulai
   repo="5W5-Web-Avancee" 
   filePath="code/reactive-forms/src/app/app.html" 
   language="html"
-  ignore="7-11,20-31,33-35"
+  ignore="7-9,18-31,33-35"
 />
 
 ### CSS (pour faire jolie)
@@ -92,6 +92,17 @@ Si vous suivez en même temps, vous pouvez ajouter ce CSS pour que les champs so
 - Vous retrouverez les mêmes Validations que l'on peut mettre sur un modèle en C#
 - Vous trouverez une documentation exhaustive des Validators offerts par Angular [ici](https://angular.dev/api/forms/Validators)
 
+Pour être capable de tester nos validations, il faut ajouter ces conditions dans notre code HTML
+
+<GHCode
+  repo="5W5-Web-Avancee"
+  filePath="code/reactive-forms/src/app/app.html"
+  language="html"
+  ignore="22-27:6,29:6-31,33-35"
+/>
+
+Jouez avec les champs textes. Des erreurs devraient apparaître.
+
 ## Créer un Validator (personnalisé)
 
 - Parfois nos besoins de validation dépassent l'offre d'Angular
@@ -110,7 +121,7 @@ On veut valider que le courriel entré par l'utilisateur utilise gmail.
   startLine="3"
 />
 
-On peut finalement ajouter la validation sur votre formulaire
+On peut finalement ajouter la validation sur le formulaire
 
 <GHCode
   repo="5W5-Web-Avancee"
@@ -121,13 +132,13 @@ On peut finalement ajouter la validation sur votre formulaire
   ignore="34-34"
 />
 
-Pour être capable de tester nos validation, il faut ajouter ces conditions dans notre code HTML
+Et ajouter les erreurs dans le HTML
 
 <GHCode
   repo="5W5-Web-Avancee"
   filePath="code/reactive-forms/src/app/app.html"
   language="html"
-  ignore="29:7-31,33-35"
+  ignore="  29:6-31,33-35"
 />
 
 ## Validator sur plusieurs champs
