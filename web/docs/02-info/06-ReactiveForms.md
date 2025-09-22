@@ -72,7 +72,7 @@ Nous allons ajouter deux champ texte qui seront liés aux éléments du formulai
   repo="5W5-Web-Avancee" 
   filePath="code/reactive-forms/src/app/app.html" 
   language="html"
-  ignore="4-8,17-32"
+  ignore="7-11,20-31,33-35"
 />
 
 ### CSS (pour faire jolie)
@@ -97,15 +97,13 @@ Si vous suivez en même temps, vous pouvez ajouter ce CSS pour que les champs so
 - Parfois nos besoins de validation dépassent l'offre d'Angular
 - On peut créer des Validator personnalisés et les affecter à un champ du groupe
 
-### Exemple sur un contrôle
-
 On veut valider que le courriel entré par l'utilisateur utilise gmail.
 
 - Créer un fichier nommé `est-gmail.ts`
 - Dans le fichier, ajouter le contenu suivant
 - Prenenz le temps de bien lire les commentaires
 
-<GHCode 
+<GHCode
   repo="5W5-Web-Avancee" 
   filePath="code/reactive-forms/src/app/validators/est-gmail.ts" 
   language="ts"
@@ -123,20 +121,29 @@ On peut finalement ajouter la validation sur votre formulaire
   ignore="34-34"
 />
 
-### Validator sur plusieurs champs
+Pour être capable de tester nos validation, il faut ajouter ces conditions dans notre code HTML
+
+<GHCode
+  repo="5W5-Web-Avancee"
+  filePath="code/reactive-forms/src/app/app.html"
+  language="html"
+  ignore="29:7-31,33-35"
+/>
+
+## Validator sur plusieurs champs
 
 - On peut également utiliser un Validator personnalisé sur le formulaire pour faire une validation sur plusieurs champs
 - Le cas le plus fréquent est de valider qu'un mot de passe et sa confirmation sont identiques
+- Créer un fichier nommé `nom-dans-courriel.ts`
+- Dans le fichier, ajouter le contenu suivant
+- Prenenz le temps de bien lire les commentaires
 
-```ts
-form = this.fb.group(
-  {
-    email: ["", [Validators.required, Validators.email]],
-    name: ["", [Validators.required]],
-  },
-  { validators: this.myCustomValidator }
-);
-```
+<GHCode
+  repo="5W5-Web-Avancee"
+  filePath="code/reactive-forms/src/app/validators/nom-dans-courriel.ts"
+  language="ts"
+  startLine="3"
+/>
 
 ### Exemple sur un formulaire
 
