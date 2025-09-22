@@ -64,14 +64,35 @@ Il faut injecter `FormBuilder` dans le composant où l'on veut ajouter notre for
   ignore="31:61-31:74,34-34,36-37"
 />
 
-### Les Validators
+### HTML
+
+Nous allons ajouter deux champ texte qui seront liés aux éléments du formulaire que nous venons d'ajouter.
+
+<GHCode 
+  repo="5W5-Web-Avancee" 
+  filePath="code/reactive-forms/src/app/app.html" 
+  language="html"
+  ignore="4-8,17-32"
+/>
+
+### CSS (pour faire jolie)
+
+Si vous suivez en même temps, vous pouvez ajouter ce CSS pour que les champs soient bien alignés et centrés.
+
+<GHCode 
+  repo="5W5-Web-Avancee" 
+  filePath="code/reactive-forms/src/app/app.css" 
+  language="css" 
+/>
+
+## Les Validators
 
 - Un Validator est une fonction qui s'exécute **à chaque frappe de clavier** pour s'assurer que la valeur dans le champ est valide.
 - Il existe plusieurs Validators par défaut
 - Vous retrouverez les mêmes Validations que l'on peut mettre sur un modèle en C#
 - Vous trouverez une documentation exhaustive des Validators offerts par Angular [ici](https://angular.dev/api/forms/Validators)
 
-### Créer un Validator (personnalisé)
+## Créer un Validator (personnalisé)
 
 - Parfois nos besoins de validation dépassent l'offre d'Angular
 - On peut créer des Validator personnalisés et les affecter à un champ du groupe
@@ -91,9 +112,21 @@ On veut valider que le courriel entré par l'utilisateur utilise gmail.
   startLine="3"
 />
 
+On peut finalement ajouter la validation sur votre formulaire
+
+<GHCode
+  repo="5W5-Web-Avancee"
+  filePath="code/reactive-forms/src/app/app.ts"
+  language="ts"
+  startLine="29"
+  endLine="35"
+  ignore="34-34"
+/>
+
 ### Validator sur plusieurs champs
 
-On peut également utiliser un Validator custom sur le formulaire pour faire une validation sur plusieurs champs (ex. Mot de passe et confirmation)
+- On peut également utiliser un Validator personnalisé sur le formulaire pour faire une validation sur plusieurs champs
+- Le cas le plus fréquent est de valider qu'un mot de passe et sa confirmation sont identiques
 
 ```ts
 form = this.fb.group(

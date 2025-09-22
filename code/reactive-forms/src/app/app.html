@@ -1,5 +1,8 @@
+<!-- On lie le formulaire du code typescript à celui dans le html avec l'attribut formGroup ↔️ -->
 <form [formGroup]="formGroup">
+  <!-- Mat form field est founis par Angular Material, pour faire des jolis champs -->
   <mat-form-field>
+    <!-- On lie le champ nom du code typescript à celui dans le html avec l'attribut formControlName -->
     <input matInput type="text" placeholder="Votre nom" formControlName="nom" />
     @if(formGroup.get('nom')?.hasError('required')) {
     <mat-error> Votre nom est <strong>requis</strong> </mat-error>
