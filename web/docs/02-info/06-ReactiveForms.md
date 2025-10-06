@@ -112,7 +112,7 @@ On veut valider que le courriel entré par l'utilisateur utilise gmail.
 
 - Créer un fichier nommé `est-gmail.ts`
 - Dans le fichier, ajouter le contenu suivant
-- Prenenz le temps de bien lire les commentaires
+- Prenez le temps de bien lire les commentaires
 
 <GHCode
   repo="5W5-Web-Avancee" 
