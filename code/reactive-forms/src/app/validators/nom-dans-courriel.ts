@@ -6,7 +6,7 @@ export function nomDansCourriel(): ValidatorFn {
     const courriel = control.get('courriel');
     const nom = control.get('nom');
     // On regarde si les champs sont remplis avant de faire la validation
-    if (!courriel.value || !nom.value) {
+    if (!courriel?.value || !nom?.value) {
       return null;
     }
     // On fait notre validation
