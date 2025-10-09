@@ -61,7 +61,7 @@ Il faut injecter `FormBuilder` dans le composant où l'on veut ajouter notre for
   language="ts" 
   startLine="28"
   endLine="38"
-  ignore="31:61-31:74,34-34,36-37"
+  ignore="31:61-31:73,34-34,36-37"
 />
 
 ### HTML
