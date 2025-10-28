@@ -1,33 +1,32 @@
 # Tests Unitaires
 
-## Les différents types de tests (liste incomplète):
+## Les différents types de tests (liste incomplète) :
 
-- Tests **unitaires** : vérifient le bon fonctionnement des composants individuels du logiciel.
-    - Pour nos services et éventuellements nos contrôleurs.
-- Tests **fonctionnels** : vérifient la conformité du logiciel aux exigences fonctionnelles.
-    - Pour tester la fonctionnalité du jeu.
-- Tests **de performance** : vérifient la capacité du logiciel à supporter des charges ou des contraintes.
-    - Pour vérifier que l'on peut gérer un grand nombre de parties en même temps.
+- Tests **unitaires** : vérifient le bon fonctionnement des composants individuels du logiciel.  
+    - Pour nos services et éventuellement nos contrôleurs.  
+- Tests **fonctionnels** : vérifient la conformité du logiciel aux exigences fonctionnelles.  
+    - Pour tester la fonctionnalité du jeu.  
+- Tests **de performance** : vérifient la capacité du logiciel à supporter des charges ou des contraintes.  
+    - Pour vérifier que l’on peut gérer un grand nombre de parties en même temps.  
 
 ## Responsabilités des **contrôleurs** vs responsabilités des **services**
 
-### Un contrôleur ça fait quoi?
+### Un contrôleur, ça fait quoi ?
 
-- La sécurité à travers les **\[Authorize\]**
-- Obtient les **données de l'utilisateur qui a fait la requête**
-- Modifie les paramètres reçus pour faire les appels de services (Si nécessaire)
+- La sécurité à travers les **[Authorize]**
+- Obtient les **données de l’utilisateur qui a fait la requête**
+- Modifie les paramètres reçus pour faire les appels de services (si nécessaire)
 - Retourne les données
-- Gère les exceptions et renvoi les erreurs
+- Gère les exceptions et renvoie les erreurs
 
-### Un service ça fait quoi?
+### Un service, ça fait quoi ?
 
 - La validation des paramètres
 - Les requêtes dans la BD
-- La logique de l'application
-- Vérification des droits d'accès aux données
-    - À ne pas confondre avec \[Authorize\]. Ici on parle, par exemple, de vérifier qu'un usager n'efface pas les données d'un autre usager!
-- Lance une exception lorsqu'il y a un problème
-
+- La logique de l’application
+- Vérification des droits d’accès aux données  
+    - À ne pas confondre avec [Authorize]. Ici, on parle, par exemple, de vérifier qu’un usager n’efface pas les données d’un autre usager !
+- Lance une exception lorsqu’il y a un problème
 
 ## Génération de tests
 
@@ -35,83 +34,84 @@
 |-|
 
 :::info
-On peut utiliser cette fonctionnalité même si il n'y a pas encore de projet de tests dans la solution!
+On peut utiliser cette fonctionnalité même s’il n’y a pas encore de projet de tests dans la solution !
 :::
 
-## Test unitaires avec MSTest
+## Tests unitaires avec MSTest
 
-- **\[TestClass\]** Permet d'identifier la classe comme un classe de Test
-- Le **constructeur** est appelé une fois pour l'ensemble des tests de la classe
-- **\[TestInitialize\]** Marque une méthode pour qu'elle soit appelée **avant** chaque test
-- **\[TestCleanup\]** Marque une méthode pour qu'elle soit appelée **après** chaque test
-- **\[TestMethod\]** Marque une méthode pour indiquer que c'est un **test à exécuté**
+- **[TestClass]** : permet d’identifier la classe comme une classe de test  
+- Le **constructeur** est appelé une fois pour l’ensemble des tests de la classe  
+- **[TestInitialize]** : marque une méthode pour qu’elle soit appelée **avant** chaque test  
+- **[TestCleanup]** : marque une méthode pour qu’elle soit appelée **après** chaque test  
+- **[TestMethod]** : marque une méthode pour indiquer que c’est un **test à exécuter**
 
 ```csharp
 [TestClass]
 public class ServiceTests
 {
-    // Étape: 1
+    // Étape 1
     public ServiceTests()
     {
-        // Exécuter une fois pour l'ensemble des tests de la classe
+        // Exécuté une fois pour l’ensemble des tests de la classe
     }
 
-    // Étapes: 2 et 5
+    // Étapes 2 et 5
     [TestInitialize]
     public void Init()
     {
-        // Exécuter AVANT chaque test
+        // Exécuté AVANT chaque test
     }
     
-    // Étapes: 4 et 7
+    // Étapes 4 et 7
     [TestCleanup]
     public void Dispose()
     {
-        // Exécuter APRÈS chaque test
+        // Exécuté APRÈS chaque test
     }
 
-    // Étape: 3
+    // Étape 3
     [TestMethod]
     public void Test1()
     {
         // Exécution du test avec des Asserts
     }
     
-    // Étape: 6
+    // Étape 6
     [TestMethod]
     public void Test2()
     {
-        // Exécution d'un autre test avec des Asserts
+        // Exécution d’un autre test avec des Asserts
     }
 }
 ```
 
 :::info
-Les **étapes** indiqués dans l'exemple, montre dans quel ordre les méthodes sont appelées
+Les **étapes** indiquées dans l’exemple montrent dans quel ordre les méthodes sont appelées.
 :::
 
-### Comment tester une exception?
+### Comment tester une exception ?
 
 ```csharp
 Exception e = Assert.ThrowsException<SomeException>(() => service.DoSomething());
 Assert.AreEqual("ExpectedMessage", e.Message);
-```            
-Il y a plusieurs façon de tester qu'un méthode lance bien une exception. En utilisant celle-ci, on peut également **valider le message de l'exception**.
+```
 
-## Comment tester du code qui utilise une BD?
+Il y a plusieurs façons de tester qu’une méthode lance bien une exception. En utilisant celle-ci, on peut également **valider le message de l’exception**.
 
-- Pour faire nos tests facilement, nous utiliserons une BD de tests de type **InMemoryDatabase**
-- Il est **IMPORTANT** que la BD est la **plus petit durée de vie possible** pour éviter des problèmes avec **Entity**
-- Il est **IMPORTANT** d'effacer les données dans notre BD de tests entre 2 tests
-- Il est **IMPORTANT** que la BD utilise **UseLazyLoadingProxies(true)** si c'est également le cas dans notre projet!
+## Comment tester du code qui utilise une BD ?
 
-Il faut ajouter une libraire (Utiliser la même version que pour les librairies d'EntityFramework utilisées dans votre projet)
+- Pour faire nos tests facilement, nous utiliserons une BD de tests de type **InMemoryDatabase**  
+- Il est **IMPORTANT** que la BD ait la **plus petite durée de vie possible** pour éviter des problèmes avec **Entity**  
+- Il est **IMPORTANT** d’effacer les données dans notre BD de tests entre deux tests  
+- Il est **IMPORTANT** que la BD utilise **UseLazyLoadingProxies(true)** si c’est également le cas dans notre projet !
+
+Il faut ajouter une librairie (utiliser la même version que pour les librairies d’EntityFramework utilisées dans votre projet).
 
 | ![image](InMemory.png) |
 |-|
 
-
 ### Exemple de test avec InMemoryDatabase
+
 ```csharp
 [TestClass]
 public class CardsServiceTests
@@ -190,41 +190,41 @@ public class CardsServiceTests
 
 ## La couverture de code
 
-- L'objectif d'avoir une "couverture de code **complète**", c'est que chaque ligne de code de notre application soit exécuté par au moins un test.
+- L’objectif d’avoir une « couverture de code complète », c’est que chaque ligne de code de notre application soit exécutée par au moins un test.
 
 ### Outil intéressant
-- Il y a un outil qui permet de voir la couverture de code directement dans Visual Studio
+- Il y a un outil qui permet de voir la couverture de code directement dans Visual Studio.
 
 | ![image](/img/infos/TestsUnitaires/CouvertureDeCode.png) |
 |-|
 
-Dans cet exemple:
-    - Les lignes de code en **bleu** sont couvertes par au moins un test
-    - Les lignes de code en **rouge** ne sont pas couvertes par au moins un test
-    - Pour avoir une couverture de tests complètes, il faudrait:L
-        - Faire un test avec un nombre de matches plus grand que 1 (Première section rouge)
-        - Faire un test avec un nombre de matches égal à 1 (Deuxième section rouge)
+Dans cet exemple :  
+- Les lignes de code en **bleu** sont couvertes par au moins un test  
+- Les lignes de code en **rouge** ne sont pas couvertes par un test  
+- Pour avoir une couverture de tests complète, il faudrait :  
+    - Faire un test avec un nombre de matches plus grand que 1  
+    - Faire un test avec un nombre de matches égal à 1  
 
 ### Utilisation
-- Pour démarrer la couverture de code, il faut sélectionner les tests qui nous intéresse
-- Ensuite faire Analyser la couverture du code
+- Pour démarrer la couverture de code, il faut sélectionner les tests qui nous intéressent  
+- Ensuite, faire **Analyser la couverture du code**
 
 :::warning
-Il faut la version **Pro** pour exécuter la couverture du code. **Ça FONCTIONNE à l'école**, mais ça ne fonctionnera pas si vous avez une version **Express**.
+Il faut la version **Pro** pour exécuter la couverture du code. **Ça FONCTIONNE à l’école**, mais ça ne fonctionnera pas si vous avez une version **Express**.
 :::
 
 | ![image](/img/infos/TestsUnitaires/OutilCouverture1.png) |
 |-|
 
-### Activiter ou désactiver la coloration du code
-- Il suffit de cliquer sur un petit bouton dans les résultats de la couverture du code
+### Activer ou désactiver la coloration du code
+- Il suffit de cliquer sur un petit bouton dans les résultats de la couverture du code.
 
 | ![image](/img/infos/TestsUnitaires/OutilCouverture2.png) |
 |-|
 
 ### Une autre façon de faire le setup/Dispose
-- Pour éviter d'avoir à écrire un Dispose complexe, on peut créer une BD différente pour chaque test en lui donnant un nom différent à chaque fois
-- Voici donc une autre option pour votre code de Init et Dispose (pas besoin de constructeur dans ce cas)
+- Pour éviter d’avoir à écrire un Dispose complexe, on peut créer une BD différente pour chaque test en lui donnant un nom différent à chaque fois.  
+- Voici donc une autre option pour votre code de Init et Dispose (pas besoin de constructeur dans ce cas) :
 
 ```csharp
 [TestClass]
@@ -297,8 +297,6 @@ public class CardsServiceTests
 }
 ```
 
-
-## Quoi tester?
-- Nous testerons uniquement les **services** et les méthodes **HasPower** et **GetPowerValue** pour le Sprint 2 **(TP2)**.
-- Plus tard, **TP3**, nous allons également apprendre à écrire des tests pour nos **contrôleurs**.
-
+## Quoi tester ?
+- Nous testerons uniquement les **services** et les méthodes **HasPower** et **GetPowerValue** pour le Sprint 2 (**TP2**).  
+- Plus tard, dans le **TP3**, nous apprendrons également à écrire des tests pour nos **contrôleurs**.
