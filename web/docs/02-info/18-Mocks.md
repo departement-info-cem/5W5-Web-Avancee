@@ -3,23 +3,23 @@
 ## Les Mocks
 
 - Objets simulés qui simulent le comportement de vrais objets
-    - Les mocks sont habituellement utilisés pour faire des tests unitaires
-    - Les mocks sont utilisés pour tester le comportement d’un autre objet
+  - Les mocks sont habituellement utilisés pour faire des tests unitaires
+  - Les mocks sont utilisés pour tester le comportement d’un autre objet
 - “Mocké” c’est imiter l’objet réel et faire des opérations de façon contrôlée pour qu’on obtienne toujours le résultat attendu
 
 ## Pourquoi?
 
 - Pour simuler des résultats non déterministes
-    - L’heure, la température, etc.
-- Pour simuler des objets avec des états difficiles à  reproduire
-    - Erreur réseau
+  - L’heure, la température, etc.
+- Pour simuler des objets avec des états difficiles à reproduire
+  - Erreur réseau
 - Pour simuler des objets qui sont lents
-    - Base de données
+  - Base de données
 - Pour simuler des objets qui n’existent pas encore ou qui vont changer
 - Parce qu’il y a des trucs qu’on ne veut pas avoir à tester
-    - HttpContext
-        - Qui inclus User
-    - Les services lorsqu’on test un contrôleur
+  - HttpContext
+    - Qui inclus User
+  - Les services lorsqu’on test un contrôleur
 
 ## Comprendre les MOCKS
 
@@ -29,14 +29,34 @@ S'il n’y a pas de Setup pour une méthode, il retourne default.
 
 ## L’interface
 
-Prenons une interface d'un service pour obtenir de l’information de la bourse.
+Prenons une interface d'un service pour obtenir de l’information de la bourse. Un fois implémentée, elle ferait des appels d'API à un service externe qui permet d'obtenir la valeur courante d'un titre à la bourse.
 
 ```csharp
-public interface IStockMarketService
+public interface IStonkMarketService
 {
-    decimal GetStockValue(string stockTicker, DateTime date);
+    decimal GetStonkValue(Stonk stonk);
 
-    int GetNbStocks(string stockTicker, DateTime date);
+    int GetNbStonks(Stonk stonk);
+}
+
+public enum Stonk
+{
+    Nvda, // NVIDIA
+    Opai, // Open AI
+    Aapl, // Apple
+    Amd, // AMD
+}
+```
+
+et un controlleur qui utilise ce service :
+
+```csharp
+public class StonksAnalyzerController(IStonkMarketService stonkMarketService)
+{
+    public decimal GetPortfolioStonkValue(Stonk stonk)
+    {
+        return stonkMarketService.GetNbStonks(stonk) * stonkMarketService.GetStonkValue(stonk);
+    }
 }
 ```
 
@@ -45,30 +65,36 @@ public interface IStockMarketService
 Au moment où l’on a créé le Mock
 
 ```csharp
-// Créer 
-var stockMarketMock = new Mock<IStockMarketService>();
+// Créer
+var stonkMarketMock = new Mock<IStonkMarketService>();
 
 // Notre controlleur prend normalement une implémentation de l'interface du service.
 // Dans le cas normal, ce sera une implémentation qui effectue le bon comportement.
-// Dans le cas de nos tests, ce sera un service Mocké, qui émule le comportement d'une implémentation de service. 
-var analyzerController = new StonksAnalyzerController(stockMarketMock.Object);
+// Dans le cas de nos tests, ce sera un service Mocké, qui émule le comportement d'une implémentation de service.
+var analyzerController = new StonksAnalyzerController(stonkMarketMock.Object);
+
+Console.WriteLine("Bienvenu dans votre portfolio. Voici vos actifs :");
+Console.WriteLine("- NVIDIA   " + analyzerController.GetPortfolioStonkValue(Stonk.Nvda));
+Console.WriteLine("- Open AI  " + analyzerController.GetPortfolioStonkValue(Stonk.Opai));
+Console.WriteLine("- Apple    " + analyzerController.GetPortfolioStonkValue(Stonk.Aapl));
+Console.WriteLine("- AMD      " + analyzerController.GetPortfolioStonkValue(Stonk.Amd));
 ```
 
 Le mock du service (qu'on ne voit pas) ressemblerait à ceci :
 
 ```csharp
-public class StockMarketMocked : IStockMarketService
+public class StonkMarketMocked : IStonkMarketService
 {
-    public int NbGetStockValueCalls { get; set; }
-    public int NbGetNbStocksCalls { get; set; }
-    public decimal GetStockValue(string stockTicker, DateTime date)
+    public int NbGetStonkValueCalls { get; set; }
+    public int NbGetNbStonkCalls { get; set; }
+    public decimal GetStonkValue(Stonk stonk)
     {
-        NbGetStockValueCalls++;
+        NbGetStonkValueCalls++;
         return default;
     }
-    public int GetNbStocks(string stockTicker, DateTime date)
+    public int GetNbStonk(Stonk stonk)
     {
-        NbGetNbStocksCalls++;
+        NbGetNbStonksCalls++;
         return default;
     }
 }
@@ -79,26 +105,26 @@ public class StockMarketMocked : IStockMarketService
 Si on utilise la méthode Setup
 
 ```csharp
-// En français : la méthode (string stockTicker, DateTime date) prend en paramètre "ABC" et n'importe quelle date, et retourne 42.42.
-stockMarketMock.Setup(x => x.GetStockValue("ABC", It.IsAny<Date>()).Returns(42.42M);
-// En français : la méthode (string stockTicker, DateTime date) prend en paramètre "XYZ" et n'importe quelle date, et retourne 33.33.
-stockMarketMock.Setup(x => x.GetStockValue("XYZ", It.IsAny<Date>()).Returns(33.33M);
+// En français : quand la méthode GetStonkValue(Stonk stonk) prend en paramètre Stonk.Aapl, elle retourne 42.42.
+stonkMarketMock.Setup(x => x.GetStonkValue(Stonk.Aapl)).Returns(42.42M);
+// En français : quand la méthode GetStonkValue(Stonk stonk) prend en paramètre Stonk.Opai, elle retourne 69.23.
+stonkMarketMock.Setup(x => x.GetStonkValue(Stonk.Opai)).Returns(69.23M);
 ```
 
 Le mock du service (qu'on ne voit pas) ressemblerait maintenant à ceci :
 
 ```csharp
-public class ConfiguredStockMarketMockedObject : IStockMarketService
+public class ConfiguredStonkMarketMockedObject : IStonkMarketService
 {
-    public int NbGetStockValueCalls { get; set; }
-    public decimal GetStockValue(string stockTicker, DateTime date)
+    public int NbGetStonkValueCalls { get; set; }
+    public decimal GetStonkValue(Stonk stonk)
     {
-        NbGetStockValueCalls++;
+        NbGetStonkValueCalls++;
         // Le deuxième appel à Setup
-        if (stockTicker == "XYZ")
-            return 33.33M;
+        if (stonk == Stonk.Opai)
+            return 69.23M;
         // Le premier appel à Setup
-        if (stockTicker == "ABC")
+        if (stonk == Stonk.Aapl)
             return 42.42M;
         return default;
     }
@@ -111,27 +137,28 @@ public class ConfiguredStockMarketMockedObject : IStockMarketService
 Si on utilise la méthode SetupSequence (sur un AUTRE mock)
 
 ```csharp
-stockMarketMock.SetupSequence(x => x.GetStockValue(It.IsAny<string>(), It.IsAny<DateTime>()))
-    .Returns(33.33M)
-    .Returns(42.00M);
+// En français : quand la méthode GetNbStonks(Stonk stonk) est appelée avec n'importe quel paramềtre, elle retourne 3 une première fois, 10 au 2ième appel, puis la valeur par défaut (0) par la suite.
+stonkMarketMock.SetupSequence(x => x.GetNbStonks(It.IsAny<Stonk>()))
+    .Returns(3)
+    .Returns(10);
 ```
 
 Le mock du service (qu'on ne voit pas) ressemblerait maintenant à ceci:
 
 ```csharp
-public class SequenceStockMarketMockedObject : IStockMarketService
+public class SequenceStonkMarketMockedObject : IStonkMarketService
 {
-    public int NbGetStockValueCalls { get; set; }
-    public int NbGetNbStocksCalls { get; set; }
-    public decimal GetStockValue(string stockTicker, DateTime date)
+    public int NbGetStonkValueCalls { get; set; }
+    public int NbGetNbStonksCalls { get; set; }
+    public decimal GetNbStonks(Stonk stonk)
     {
-        NbGetStockValueCalls++;
+        NbGetNbStonksCalls++;
         // Au premier appel de la méthode, on retourne cette valeur.
-        if (NbGetStockValueCalls == 1)
-            return 33.33M;
+        if (NbGetNbStonksCalls == 1)
+            return 3;
         // Au deuxième appel de la méthode, on retourne cette valeur.
-        if (NbGetStockValueCalls == 2)
-            return 42.42M;
+        if (NbGetNbStonksCalls == 2)
+            return 10;
         return default;
     }
    //...
