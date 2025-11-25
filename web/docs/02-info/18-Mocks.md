@@ -165,6 +165,8 @@ public class SequenceStonkMarketMockedObject : IStonkMarketService
 }
 ```
 
+[Lien vers le projet de démonstration](https://github.com/CEM-420-5W5/Stonk)
+
 ## Rappel
 
 :::warning
