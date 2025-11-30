@@ -1,5 +1,7 @@
 // @ts-check
 
+// tableau ici
+
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   docs: [
@@ -85,7 +87,6 @@ const sidebars = {
             { 1010: "2025-09-12" },
             { 1020: "2025-09-12" },
             { 1030: "2025-09-15" },
-
           ],
         },
         avancementLabel: "TP1",
@@ -362,7 +363,7 @@ const sidebars = {
           "Pierre-Olivier": [
             { 1010: "2025-11-21" },
             { 1020: "2025-11-21" },
-            { 1030: "2025-11-24" },
+            { 1030: "2025-11-27" },
           ],
         },
         avancementLabel: "TP3",
@@ -379,7 +380,7 @@ const sidebars = {
           "Pierre-Olivier": [
             { 1010: "2025-11-25" },
             { 1020: "2025-11-25" },
-            { 1030: "2025-11-27" },
+            { 1030: "2025-12-01" },
           ],
         },
         avancementLabel: "TP3",
@@ -393,9 +394,9 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-11-28" },
-            { 1020: "2025-11-28" },
-            { 1030: "2025-12-01" },
+            { 1010: "2025-12-02" },
+            { 1020: "2025-12-02" },
+            { 1030: "2025-12-04" },
           ],
         },
         avancementLabel: "TP3",
@@ -410,9 +411,9 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-12-02" },
-            { 1020: "2025-12-02" },
-            { 1030: "2025-12-04" },
+            { 1010: "2025-12-05" },
+            { 1020: "2025-12-05" },
+            { 1030: "2025-12-08" },
           ],
         },
         avancementLabel: "TP3",
@@ -426,9 +427,9 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-12-02" },
-            { 1020: "2025-12-02" },
-            { 1030: "2025-12-04" },
+            { 1010: "2025-12-05" },
+            { 1020: "2025-12-05" },
+            { 1030: "2025-12-08" },
           ],
         },
         avancementLabel: "TP3",
@@ -442,9 +443,9 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-12-05" },
-            { 1020: "2025-12-05" },
-            { 1030: "2025-12-08" },
+            { 1010: "2025-12-09" },
+            { 1020: "2025-12-09" },
+            { 1030: "2025-12-09" },
           ],
         },
         avancementLabel: "TP3",
@@ -459,8 +460,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-12-16" },
-            { 1020: "2025-12-16" },
+            { 1010: "2025-12-12" },
+            { 1020: "2025-12-12" },
             { 1030: "2025-12-11" },
           ],
         },
@@ -476,9 +477,9 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Pierre-Olivier": [
-            { 1010: "2025-12-19" },
-            { 1020: "2025-12-19" },
-            { 1030: "2025-12-22" },
+            { 1010: "2025-12-16" },
+            { 1020: "2025-12-16" },
+            { 1030: "2025-12-15" },
           ],
         },
         avancementLabel: "TP3",
