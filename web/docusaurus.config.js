@@ -45,7 +45,10 @@ const config = {
           editUrl: `https://github.com/departement-info-cem/${siteConfig.nomUrl}/tree/main/web`,
         },
         theme: {
-          customCss: [require.resolve("./src/css/custom.css")],
+          customCss: [
+            require.resolve("./src/css/custom.css"),
+            require.resolve('./src/css/reveal-fix.css')
+          ],
         },
       }),
     ],
@@ -91,6 +94,12 @@ const config = {
             position: "left",
             sidebarId: "tps",
             label: "Travaux Pratiques",
+          },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "slides",
+            label: "Slides",
           },
         ],
       },
