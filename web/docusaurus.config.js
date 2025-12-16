@@ -95,12 +95,6 @@ const config = {
             sidebarId: "tps",
             label: "Travaux Pratiques",
           },
-          {
-            type: "docSidebar",
-            position: "left",
-            sidebarId: "slides",
-            label: "Slides",
-          },
         ],
       },
       footer: {
