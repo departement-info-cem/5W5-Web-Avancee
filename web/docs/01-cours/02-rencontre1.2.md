@@ -3,6 +3,9 @@ title: 1.2 - Auth. et déboguage 🪙
 hide_table_of_contents: true
 ---
 
+import SlidePage from '@site/src/components/SlidePage';
+import Rencontre_1_2 from './Rencontre_1_2';
+
 # 1.2 - Authentification par token et déboguage 🪙
 
 ## Info
@@ -20,6 +23,10 @@ Quand on compare à la mécanique, la chimie, l'électronique, etc. On peut simp
 N'hésitez pas à modifier les exemples fournis, à suivre des tutoriels, à essayer des choses. C'est la meilleure façon **d'apprendre à apprendre!**
 
 :::
+
+<SlidePage>
+<Rencontre_1_2/>
+</SlidePage>
 
 ### Exercices
 

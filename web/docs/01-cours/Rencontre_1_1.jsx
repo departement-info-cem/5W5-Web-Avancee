@@ -38,7 +38,7 @@ const Rencontre_1_1 = () => {
       </section>
       <section>
         <h3>Aperçu de la première itération</h3>
-        <SlideImage src="/img/slides/05-1.png" />
+        <img src={useBaseUrl("/img/slides/05-1.png")} />
       </section>
       <section>
         <SlideImage src="/img/slides/06-1.png" />
