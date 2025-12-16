@@ -3,6 +3,9 @@ title: 2.1 - Relations et révision ↔️
 hide_table_of_contents: true
 ---
 
+import SlidePage from '@site/src/components/SlidePage';
+import Rencontre_2_1 from './Rencontre_2_1';
+
 # Relations et révision MVC ↔️
 
 Voir la différence lors d'une authentification par Token vs Cookie dans la vue Network des outils de déboguage d'un navigateur.
@@ -23,6 +26,10 @@ Des gens qui avaient été mes collègues dans la vingtaine et qui avaient tous 
 
 :::
 
+<SlidePage>
+<Rencontre_2_1/>
+</SlidePage>
+
 ### Exercices
 
 Créer une **organization** avec le **nom de votre choix** et un **projet** avec le nom **MusiquePlus**
@@ -30,7 +37,3 @@ Créer une **organization** avec le **nom de votre choix** et un **projet** avec
 [Création projet Azure DevOps](/exercices/AzureDevOps)
 
 [Relations et révision MVC](/exercices/Relations)
-
-### Liens
-
-[🔗Cours3.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EfXih-QqxJ9KjuHxuYDFCnIBoihZuti-21ETCJPaSusHFg?e=cMYFqQ)

@@ -38,14 +38,14 @@ const Rencontre_1_1 = () => {
       </section>
       <section>
         <h3>Aperçu de la première itération</h3>
-        <img src={useBaseUrl("/img/slides/05-1.png")} />
+        <SlideImage src="/img/slides/Rencontre_1_1/05-1.png" />
       </section>
       <section>
-        <SlideImage src="/img/slides/06-1.png" />
+        <SlideImage src="/img/slides/Rencontre_1_1/06-1.png" />
       </section>
       <section>
-        <SlideImage src="/img/slides/07-1.png" />
-        <SlideImage src="/img/slides/07-2.png" />
+        <SlideImage src="/img/slides/Rencontre_1_1/07-1.png" />
+        <SlideImage src="/img/slides/Rencontre_1_1/07-2.png" />
       </section>
       <section>
         <h3>Présences</h3>
@@ -59,7 +59,7 @@ const Rencontre_1_1 = () => {
       <section>
         <h3>Site web</h3>
         https://info.cegepmontpetit.ca/5W5-Web-Avancee/
-        <SlideImage src="/img/slides/10-1.png" />
+        <SlideImage src="/img/slides/Rencontre_1_1/10-1.png" />
       </section>
       <section>
         <h3>Horaire</h3>

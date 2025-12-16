@@ -8,12 +8,6 @@ import Rencontre_1_2 from './Rencontre_1_2';
 
 # 1.2 - Authentification par token et déboguage 🪙
 
-## Info
-
-[Bonnes pratiques avec Git/GitHub](/info/BonnesPratiquesGit)
-
-[Comment déboguer avec Angular](/info/DebogageAngular)
-
 :::tip Conseil de la séance
 
 Un des avantages les plus intéressants de l'informatique, c'est qu'on peut essayer des milliers de choses sans avoir à ne rien dépenser!
@@ -27,6 +21,12 @@ N'hésitez pas à modifier les exemples fournis, à suivre des tutoriels, à ess
 <SlidePage>
 <Rencontre_1_2/>
 </SlidePage>
+
+## Info
+
+[Bonnes pratiques avec Git/GitHub](/info/BonnesPratiquesGit)
+
+[Comment déboguer avec Angular](/info/DebogageAngular)
 
 ### Exercices
 

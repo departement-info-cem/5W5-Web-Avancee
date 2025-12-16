@@ -3,19 +3,10 @@ title: 4.2 - Événements (Partie 1) ⚡
 hide_table_of_contents: true
 ---
 
+import SlidePage from '@site/src/components/SlidePage';
+import Rencontre_4_2 from './Rencontre_4_2';
+
 # Gestion par événements (première partie) ⚡
-
-## Info
-
-[Événements](/info/Events)
-
-## Liens
-
-[🔗Cours8.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EQWELiwXvD9Ktg4Gw4tpIR8BovR09rYQrbANSGdYK5ZaDg?e=HsLQvH)
-
-## Exercices
-
-Travail sur le TP1
 
 :::tip[Conseil de la séance]
 Pour résoudre un problème, **ce qui va essentiellement être votre travail**, il y a essentiellement 4 éléments pour vous aider: - L'information - Les connaissances techniques - La déduction - L'expérience
@@ -41,3 +32,17 @@ Il faut pouvoir progresse rapidement les étapes:
 **Dans la grande majorité des cas, un programmeur senior va considérer que le plus difficile est déjà fait lorsqu'un bug est reproduit avec un breakpoint où le problème se trouve.**
 
 :::
+
+<SlidePage>
+<Rencontre_4_2/>
+</SlidePage>
+
+## Info
+
+[Événements](/info/Events)
+
+## Exercices
+
+Travail sur le TP1
+
+

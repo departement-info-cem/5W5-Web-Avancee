@@ -4,7 +4,14 @@ hide_table_of_contents: true
 sidebar_class_name: remise-tp1-uml
 ---
 
+import SlidePage from '@site/src/components/SlidePage';
+import Rencontre_4_1 from './Rencontre_4_1';
+
 ## Reactive Forms, guards et routes enfants 💂
+
+<SlidePage>
+<Rencontre_4_1/>
+</SlidePage>
 
 ## Info
 
@@ -17,7 +24,3 @@ sidebar_class_name: remise-tp1-uml
 [Guards](/exercices/Guards)
 
 [ReactiveForms](/exercices/ReactiveForms)
-
-## Liens
-
-[🔗Cours6.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/Ec0BrFx0KElDtqjGZl0cirEBvoIDq3PhwiudBrVoFh5pcg?e=LhNl6m)

@@ -3,6 +3,9 @@ title: 3.2 - Polling / SignalR 👉👈🥺
 hide_table_of_contents: true
 ---
 
+import SlidePage from '@site/src/components/SlidePage';
+import Rencontre_3_2 from './Rencontre_3_2';
+
 # Polling et Signal R (première partie) 👉👈🥺
 
 :::warning
@@ -10,6 +13,10 @@ hide_table_of_contents: true
 Remise du diagramme de classe pour le TP1
 
 :::
+
+<SlidePage>
+<Rencontre_3_2/>
+</SlidePage>
 
 ## Info
 
@@ -20,7 +27,3 @@ Remise du diagramme de classe pour le TP1
 ## Exercices
 
 [Exercice Polling et SignalR](/exercices/Polling)
-
-## Liens
-
-[🔗Cours7.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EYkZPNdGGy9EgFc4uX04Z9wBFZLJctpNa6yEE7WNsP29oA?e=igqioC)

@@ -8,10 +8,6 @@ sidebar_class_name: remise-tp1-code
 
 - Présentation et explications courtes au sujet de **SignalR** et du **Hub** à l'aide de l'exerice.
 
-## Exercices
-
-- [Exercice SignalR #2 ](/exercices/SignalR2) avec d'autres fonctionnalités, comme la gestion de groupes.
-
 :::tip Conseil de la séance
 
 Évitez de simplement vous fier à votre "intuition" (ou StackOverflow ou ChatGPT...) et simplement essayer des choses jusqu'à ce que ça fonctionne.
@@ -23,3 +19,7 @@ J'ai eu un cours de programmation en Assembleur dans ce Cégep. On pouvait utili
 On a aujourd'hui de bien meilleurs outils et aucune raison de programmer comme on le faisait dans les années 90s, mais il y a beaucoup à gagner à prendre le temps de **comprendre chaque ligne de code que l'on utilise!**
 
 :::
+
+## Exercices
+
+- [Exercice SignalR #2 ](/exercices/SignalR2) avec d'autres fonctionnalités, comme la gestion de groupes.
