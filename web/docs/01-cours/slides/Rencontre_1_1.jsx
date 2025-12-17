@@ -44,8 +44,9 @@ const Rencontre_1_1 = () => {
         <SlideImage src="/img/slides/Rencontre_1_1/06-1.png" />
       </section>
       <section>
-        <SlideImage src="/img/slides/Rencontre_1_1/07-1.png" />
-        <SlideImage src="/img/slides/Rencontre_1_1/07-2.png" />
+        <SlideImage src="/img/slides/Rencontre_1_1/07-2.png" style={{maxWidth: "66%", paddingBottom: "1rem", paddingTop: "1rem"}} />
+        <SlideImage src="/img/slides/Rencontre_1_1/07-1.png" style={{maxWidth: "66%"}} />
+        
       </section>
       <section>
         <h3>Présences</h3>
