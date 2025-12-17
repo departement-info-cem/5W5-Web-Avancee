@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
-import "reveal.js/dist/theme/black.css";
+import "reveal.js/dist/theme/night.css";
 
 export default function SlidePage({ children }) {
   const revealRef = useRef(null);

@@ -4,14 +4,14 @@ const Rencontre_4_1 = () => {
   return (
     <div class="slides">
 {/* ===== SLIDE 1 ===== */}
-<section>
-<h2>Cours 7</h2>
+<section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+<h2>Rencontre 4.1</h2>
 <p>5W5 Programmation Web Avancée</p>
 </section>
 
 {/* ===== SLIDE 2 ===== */}
-<section>
-<h2>Résumé</h2>
+<section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+<h3>Résumé</h3>
 <ul>
   <li>Présentation sur le routage Angular et les guards</li>
   <li>Présentation sur les ReactiveForms</li>

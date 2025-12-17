@@ -4,14 +4,14 @@ const Rencontre_2_2 = () => {
   return (
     <div class="slides">
 {/* ===== SLIDE 1 ===== */}
-<section>
-<h2>Cours 4</h2>
+<section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+<h2>Rencontre 2.2</h2>
 <p>5W5 Programmation Web Avancée</p>
 </section>
 
 {/* ===== SLIDE 2 ===== */}
-<section>
-<h2>Résumé</h2>
+<section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+<h3>Résumé</h3>
 <ul>
   <li>Diapositive sur le découpage du projet en Tasks et User Stories</li>
   <li>Diapositive sur l’utilisation de Azure DevOps Boards</li>
@@ -22,8 +22,8 @@ const Rencontre_2_2 = () => {
 </section>
 
 {/* ===== SLIDE 3 ===== */}
-<section>
-<h2>Backlog</h2>
+<section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+<h3>Backlog</h3>
 <p>Diapositive qui présente les sujets suivants</p>
 <ul>
   <li>Epics</li>
@@ -35,26 +35,26 @@ const Rencontre_2_2 = () => {
 </section>
 
 {/* ===== SLIDE 4 ===== */}
-<section>
-<h2>Boards</h2>
+<section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+<h3>Boards</h3>
 <p>Diapositive qui explique l’utilisation de Azure DevOps Boards</p>
 </section>
 
 {/* ===== SLIDE 5 ===== */}
-<section>
-<h2>Info BOARDS</h2>
+<section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+<h3>Info BOARDS</h3>
 <p>Plus d’exemple d’utilisation de Boards</p>
 </section>
 
 {/* ===== SLIDE 6 ===== */}
-<section>
-<h2>Présences</h2>
+<section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+<h3>Présences</h3>
 <p>- Présences</p>
 </section>
 
 {/* ===== SLIDE 7 ===== */}
-<section>
-<h2>Exercice</h2>
+<section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+<h3>Exercice</h3>
 <p>- Exercice en équipe</p>
 </section>
 

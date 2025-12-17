@@ -94,3 +94,8 @@
 .remise-tp3-fonctionnalites::after {
   content: "Remise TP3 Fonctionnalités (10% + 4% + 2%)";
 }
+
+.petit-texte{
+  font-size: xx-large;
+  padding-right: 40px;
+}
