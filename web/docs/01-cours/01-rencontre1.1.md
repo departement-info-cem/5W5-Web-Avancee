@@ -4,7 +4,7 @@ hide_table_of_contents: true
 ---
 
 import SlidePage from '@site/src/components/SlidePage';
-import Rencontre_1_1 from './Rencontre_1_1';
+import Rencontre_1_1 from './slides/Rencontre_1_1';
 
 # MVC et WebAPI 🏠
 

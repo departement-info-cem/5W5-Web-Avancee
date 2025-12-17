@@ -4,7 +4,7 @@ hide_table_of_contents: true
 ---
 
 import SlidePage from '@site/src/components/SlidePage';
-import Rencontre_4_2 from './Rencontre_4_2';
+import Rencontre_4_2 from './slides/Rencontre_4_2';
 
 # Gestion par événements (première partie) ⚡
 

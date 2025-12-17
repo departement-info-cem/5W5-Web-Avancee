@@ -4,7 +4,7 @@ hide_table_of_contents: true
 ---
 
 import SlidePage from '@site/src/components/SlidePage';
-import Rencontre_6_1 from './Rencontre_6_1';
+import Rencontre_6_1 from './slides/Rencontre_6_1';
 
 # Travail en équipe sur le TP1 ✏️
 

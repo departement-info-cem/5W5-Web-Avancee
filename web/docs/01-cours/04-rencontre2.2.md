@@ -4,7 +4,7 @@ hide_table_of_contents: true
 ---
 
 import SlidePage from '@site/src/components/SlidePage';
-import Rencontre_2_2 from './Rencontre_2_2';
+import Rencontre_2_2 from './slides/Rencontre_2_2';
 
 # Gestion de projet avec User Stories et Azure Devops Boards 📌
 
