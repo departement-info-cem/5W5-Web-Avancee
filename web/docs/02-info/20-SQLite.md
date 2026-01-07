@@ -14,7 +14,7 @@
 - Modifier appsettings.json
 - Refaire les migrations
 - Tester localement
-- Utiliser DB Browser (SQLite)
+- Utiliser DataGrip (installé sur votre poste)
 - Ajouter une méthode WebAPI pour pouvoir appliquer notre migration (un peu hackish...)
 
 ### Créer une nouvelle branche
@@ -58,11 +58,11 @@ Par la suite, il va falloir faire attention si vous mergez des changements vers 
 
 Un petit **update-database** et vous devriez maintenant pouvoir rouler votre application sans problème!
 
-### Utiliser DB Browser (SQLite)
+### Utiliser DataGrip (installé sur votre poste)
 
-Une fois que vous avez créer un joueur, prenez le temps d'installer et d'utiliser cet outil: [DB Browser for SQLite](https://sqlitebrowser.org/)
-
-On peut ouvrir un fichier (dans notre cas le fichier **app.db** dans notre projet que l'on a configué dans **appsettings.json**) et vous allez pouvoir regarder le contenu et vous pouvez même le modifier.
+Une fois que vous avez créer un joueur, ouvrez DataGrip. Vous pourrez sélectionner le fichier sqlite qui contient la base de données. 
+On peut ouvrir un fichier (dans notre cas le fichier **\*.db** dans notre projet que l'on a configué dans **appsettings.json**) et vous allez pouvoir regarder le contenu et vous pouvez même le modifier.
+Si vous avez de la difficulté à ouvrir le fichier **\*.db**, faites appel à votre enseignant.
 
 ### Ajouter une méthode WebAPI
 
