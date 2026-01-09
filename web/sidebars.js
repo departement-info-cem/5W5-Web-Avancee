@@ -12,8 +12,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-08-22" },
-            { 1020: "2025-08-22" },
+            { 1010: "2026-01-28" },
+            { 1020: "2026-01-28" },
           ],
         },
       },
@@ -25,8 +25,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-08-26" },
-            { 1020: "2025-08-26" },
+            { 1010: "2026-01-30" },
+            { 1020: "2026-01-30" },
           ],
         },
       },
@@ -38,8 +38,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-09-02" },
-            { 1020: "2025-09-02" },
+            { 1010: "2026-02-04" },
+            { 1020: "2026-02-04" },
           ],
         },
       },
@@ -51,8 +51,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-09-05" },
-            { 1020: "2025-09-05" },
+            { 1010: "2026-02-06" },
+            { 1020: "2026-02-06" },
           ],
         },
       },
@@ -64,8 +64,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-09-09" },
-            { 1020: "2025-09-09" },
+            { 1010: "2026-02-11" },
+            { 1020: "2026-02-11" },
           ],
         },
         avancementLabel: "TP1 créé, ",
@@ -79,8 +79,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-09-12" },
-            { 1020: "2025-09-12" },
+            { 1010: "2026-02-13" },
+            { 1020: "2026-02-13" },
           ],
         },
         avancementLabel: "TP1",
@@ -95,8 +95,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-09-16" },
-            { 1020: "2025-09-16" },
+            { 1010: "2026-02-18" },
+            { 1020: "2026-02-18" },
           ],
         },
         avancementLabel: "TP1",
@@ -110,8 +110,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-09-19" },
-            { 1020: "2025-09-19" },
+            { 1010: "2026-02-20" },
+            { 1020: "2026-02-20" },
           ],
         },
         avancementLabel: "TP1",
@@ -126,8 +126,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-09-23" },
-            { 1020: "2025-09-23" },
+            { 1010: "2026-02-25" },
+            { 1020: "2026-02-25" },
           ],
         },
         avancementLabel: "TP1",
@@ -142,8 +142,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-09-26" },
-            { 1020: "2025-09-26" },
+            { 1010: "2026-02-27" },
+            { 1020: "2026-02-27" },
           ],
         },
         avancementLabel: "TP1",
@@ -157,8 +157,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-09-30" },
-            { 1020: "2025-09-30" },
+            { 1010: "2026-03-04" },
+            { 1020: "2026-03-04" },
           ],
         },
         avancementLabel: "TP1",
@@ -173,8 +173,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-10-03" },
-            { 1020: "2025-10-03" },
+            { 1010: "2026-03-06" },
+            { 1020: "2026-03-06" },
           ],
         },
         avancementLabel: "TP1",
@@ -188,8 +188,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-10-07" },
-            { 1020: "2025-10-07" },
+            { 1010: "2026-03-11" },
+            { 1020: "2026-03-11" },
           ],
         },
         avancementLabel: "TP1",
@@ -204,8 +204,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-10-10" },
-            { 1020: "2025-10-10" },
+            { 1010: "2026-03-13" },
+            { 1020: "2026-03-13" },
           ],
         },
       },
@@ -217,8 +217,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-10-21" },
-            { 1020: "2025-10-21" },
+            { 1010: "2026-03-25" },
+            { 1020: "2026-03-25" },
           ],
         },
         avancementLabel: "TP2 créé,",
@@ -232,8 +232,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-10-24" },
-            { 1020: "2025-10-24" },
+            { 1010: "2026-03-27" },
+            { 1020: "2026-03-27" },
           ],
         },
         avancementLabel: "TP2",
@@ -248,8 +248,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-10-28" },
-            { 1020: "2025-10-28" },
+            { 1010: "2026-03-31" },
+            { 1020: "2026-03-31" },
           ],
         },
         avancementLabel: "TP2",
@@ -263,8 +263,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-11-04" },
-            { 1020: "2025-11-04" },
+            { 1010: "2026-04-01" },
+            { 1020: "2026-04-01" },
           ],
         },
         avancementLabel: "TP2",
@@ -278,8 +278,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-11-07" },
-            { 1020: "2025-11-07" },
+            { 1010: "2026-04-08" },
+            { 1020: "2026-04-08" },
           ],
         },
         avancementLabel: "TP2",
@@ -294,8 +294,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-11-11" },
-            { 1020: "2025-11-11" },
+            { 1010: "2026-04-10" },
+            { 1020: "2026-04-10" },
           ],
         },
         avancementLabel: "TP2",
@@ -309,8 +309,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-11-14" },
-            { 1020: "2025-11-14" },
+            { 1010: "2026-04-22" },
+            { 1020: "2026-04-22" },
           ],
         },
         avancementLabel: "TP2",
@@ -324,8 +324,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-11-18" },
-            { 1020: "2025-11-18" },
+            { 1010: "2026-04-24" },
+            { 1020: "2026-04-24" },
           ],
         },
         avancementLabel: "TP3 créé, ",
@@ -339,8 +339,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-11-21" },
-            { 1020: "2025-11-21" },
+            { 1010: "2026-04-29" },
+            { 1020: "2026-04-29" },
           ],
         },
         avancementLabel: "TP3",
@@ -355,8 +355,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-11-25" },
-            { 1020: "2025-11-25" },
+            { 1010: "2026-05-01" },
+            { 1020: "2026-05-01" },
           ],
         },
         avancementLabel: "TP3",
@@ -370,8 +370,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-12-02" },
-            { 1020: "2025-12-02" },
+            { 1010: "2026-05-06" },
+            { 1020: "2026-05-06" },
           ],
         },
         avancementLabel: "TP3",
@@ -386,8 +386,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-12-05" },
-            { 1020: "2025-12-05" },
+            { 1010: "2026-05-08" },
+            { 1020: "2026-05-08" },
           ],
         },
         avancementLabel: "TP3",
@@ -401,8 +401,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-12-05" },
-            { 1020: "2025-12-05" },
+            { 1010: "2026-05-15" },
+            { 1020: "2026-05-15" },
           ],
         },
         avancementLabel: "TP3",
@@ -416,8 +416,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-12-09" },
-            { 1020: "2025-12-09" },
+            { 1010: "2026-05-20" },
+            { 1020: "2026-05-20" },
           ],
         },
         avancementLabel: "TP3",
@@ -432,8 +432,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-12-12" },
-            { 1020: "2025-12-12" },
+            { 1010: "2026-05-27" },
+            { 1020: "2026-05-27" },
           ],
         },
         avancementLabel: "TP3",
@@ -448,8 +448,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2025-12-16" },
-            { 1020: "2025-12-16" },
+            { 1010: "2026-05-29" },
+            { 1020: "2026-05-29" },
           ],
         },
         avancementLabel: "TP3",
