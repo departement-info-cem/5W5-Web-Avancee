@@ -11,6 +11,13 @@ Voici un exemple d’évènement et sa sérialisation. On peut voir qu’il cont
 Classe d'événement:
 
 ```csharp
+public abstract class MatchEvent
+{
+    public abstract string EventType { get; }
+
+    public List<MatchEvent>? Events { get; set; }
+}
+
 public class DrawCardEvent : MatchEvent
 {
     public override string EventType { get { return "DrawCard"; } }
