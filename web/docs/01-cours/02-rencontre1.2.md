@@ -31,7 +31,3 @@ N'hésitez pas à modifier les exemples fournis, à suivre des tutoriels, à ess
 ### Exercices
 
 [Authentification par token avec MVC et Angular](/exercices/AuthentificationParToken)
-
-### Liens
-
-[🔗Cours2.pptx](https://cegepedouardmontpetit.sharepoint.com/:p:/s/CMT420InformatiqueComitesCours-5W5/EZbaWe8Msr5Fl1tiB3W-GTMBV8rUYmIXOhWPXoC0L3VHmw?e=DYQngn)
