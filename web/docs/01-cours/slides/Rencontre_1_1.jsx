@@ -71,9 +71,6 @@ const Rencontre_1_1 = () => {
         <li>Groupe 1020:</li>
         <li>le cours du mardi commence à ?.</li>
         <li>le cours du jeudi commence à ?.</li>
-        <li>Groupe 1030:</li>
-        <li>le cours du lundi commence à ?.</li>
-        <li>le cours du mercredi commence à ?.</li>
       </section>
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Plan de cours et présences</h3>
