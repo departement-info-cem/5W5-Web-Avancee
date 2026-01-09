@@ -11,7 +11,7 @@ const sidebars = {
       id: "cours/rencontre1.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-08-22" },
             { 1020: "2025-08-22" },
             { 1030: "2025-08-25" },
@@ -25,7 +25,7 @@ const sidebars = {
       id: "cours/rencontre1.2",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-08-26" },
             { 1020: "2025-08-26" },
             { 1030: "2025-08-28" },
@@ -39,7 +39,7 @@ const sidebars = {
       id: "cours/rencontre2.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-09-02" },
             { 1020: "2025-09-02" },
             { 1030: "2025-08-29" },
@@ -53,7 +53,7 @@ const sidebars = {
       id: "cours/rencontre2.2",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-09-05" },
             { 1020: "2025-09-05" },
             { 1030: "2025-09-04" },
@@ -67,7 +67,7 @@ const sidebars = {
       id: "cours/rencontre3.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-09-09" },
             { 1020: "2025-09-09" },
             { 1030: "2025-09-11" },
@@ -83,7 +83,7 @@ const sidebars = {
       id: "cours/rencontre3.2",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-09-12" },
             { 1020: "2025-09-12" },
             { 1030: "2025-09-15" },
@@ -100,7 +100,7 @@ const sidebars = {
       className: "remise-tp1-uml",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-09-16" },
             { 1020: "2025-09-16" },
             { 1030: "2025-09-22" },
@@ -116,7 +116,7 @@ const sidebars = {
       id: "cours/rencontre4.2",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-09-19" },
             { 1020: "2025-09-19" },
             { 1030: "2025-09-18" },
@@ -133,7 +133,7 @@ const sidebars = {
       className: "remise-tp1-code",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-09-23" },
             { 1020: "2025-09-23" },
             { 1030: "2025-09-25" },
@@ -150,7 +150,7 @@ const sidebars = {
       className: "remise-tp1-signalr",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-09-26" },
             { 1020: "2025-09-26" },
             { 1030: "2025-09-29" },
@@ -166,7 +166,7 @@ const sidebars = {
       id: "cours/rencontre6.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-09-30" },
             { 1020: "2025-09-30" },
             { 1030: "2025-10-02" },
@@ -183,7 +183,7 @@ const sidebars = {
       className: "remise-tp1-groupe",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-10-03" },
             { 1020: "2025-10-03" },
             { 1030: "2025-10-06" },
@@ -199,7 +199,7 @@ const sidebars = {
       id: "cours/rencontre7.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-10-07" },
             { 1020: "2025-10-07" },
             { 1030: "2025-10-20" },
@@ -216,7 +216,7 @@ const sidebars = {
       className: "examen",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-10-10" },
             { 1020: "2025-10-10" },
             { 1030: "2025-10-09" },
@@ -230,7 +230,7 @@ const sidebars = {
       id: "cours/rencontre8.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-10-21" },
             { 1020: "2025-10-21" },
             { 1030: "2025-10-23" },
@@ -246,7 +246,7 @@ const sidebars = {
       id: "cours/rencontre8.2",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-10-24" },
             { 1020: "2025-10-24" },
             { 1030: "2025-10-27" },
@@ -263,7 +263,7 @@ const sidebars = {
       className: "remise-tp2-groupe-devops",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-10-28" },
             { 1020: "2025-10-28" },
             { 1030: "2025-10-30" },
@@ -279,7 +279,7 @@ const sidebars = {
       id: "cours/rencontre9.2",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-11-04" },
             { 1020: "2025-11-04" },
             { 1030: "2025-11-03" },
@@ -295,7 +295,7 @@ const sidebars = {
       id: "cours/rencontre10.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-11-07" },
             { 1020: "2025-11-07" },
             { 1030: "2025-11-06" },
@@ -312,7 +312,7 @@ const sidebars = {
       className: "remise-tp2-fonctionnalites",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-11-11" },
             { 1020: "2025-11-11" },
             { 1030: "2025-11-13" },
@@ -328,7 +328,7 @@ const sidebars = {
       id: "cours/rencontre11.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-11-14" },
             { 1020: "2025-11-14" },
             { 1030: "2025-11-17" },
@@ -344,7 +344,7 @@ const sidebars = {
       id: "cours/rencontre11.2",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-11-18" },
             { 1020: "2025-11-18" },
             { 1030: "2025-11-20" },
@@ -360,7 +360,7 @@ const sidebars = {
       id: "cours/rencontre12.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-11-21" },
             { 1020: "2025-11-21" },
             { 1030: "2025-11-27" },
@@ -377,7 +377,7 @@ const sidebars = {
       className: "remise-tp3-groupe",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-11-25" },
             { 1020: "2025-11-25" },
             { 1030: "2025-12-01" },
@@ -393,7 +393,7 @@ const sidebars = {
       id: "cours/rencontre13.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-12-02" },
             { 1020: "2025-12-02" },
             { 1030: "2025-12-04" },
@@ -410,7 +410,7 @@ const sidebars = {
       className: "remise-tp3-devops",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-12-05" },
             { 1020: "2025-12-05" },
             { 1030: "2025-12-08" },
@@ -426,7 +426,7 @@ const sidebars = {
       id: "cours/rencontre14.1",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-12-05" },
             { 1020: "2025-12-05" },
             { 1030: "2025-12-08" },
@@ -442,7 +442,7 @@ const sidebars = {
       id: "cours/rencontre14.2",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-12-09" },
             { 1020: "2025-12-09" },
             { 1030: "2025-12-09" },
@@ -459,7 +459,7 @@ const sidebars = {
       className: "examen",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-12-12" },
             { 1020: "2025-12-12" },
             { 1030: "2025-12-11" },
@@ -476,7 +476,7 @@ const sidebars = {
       className: "remise-tp3-fonctionnalites",
       customProps: {
         calendrier: {
-          "Pierre-Olivier": [
+          "Mathieu": [
             { 1010: "2025-12-16" },
             { 1020: "2025-12-16" },
             { 1030: "2025-12-15" },
