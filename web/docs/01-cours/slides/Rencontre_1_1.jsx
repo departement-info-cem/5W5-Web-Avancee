@@ -65,12 +65,18 @@ const Rencontre_1_1 = () => {
       </section>
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Horaire</h3>
-        <li>Groupe 1010:</li>
-        <li>le cours du mardi commence à ?.</li>
-        <li>le cours du jeudi commence à ?.</li>
-        <li>Groupe 1020:</li>
-        <li>le cours du mardi commence à ?.</li>
-        <li>le cours du jeudi commence à ?.</li>
+        <h4>Groupe 1010:</h4>
+        <ul>
+          <li>le cours du mercredi commence à 9:40</li>
+          <li>le cours du vendredi commence à 15:10</li>
+        </ul>
+        <br></br>
+        <br></br>
+        <h4>Groupe 1020:</h4>
+        <ul>
+          <li>le cours du mercredi commence à 14:10</li>
+          <li>le cours du vendredi commence à 8:40</li>
+        </ul>
       </section>
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Plan de cours et présences</h3>
