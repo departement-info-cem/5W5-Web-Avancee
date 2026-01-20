@@ -2,6 +2,7 @@ import React, { useEffect, useRef } from "react";
 import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/night.css";
+import BrowserOnly from '@docusaurus/BrowserOnly';
 
 export default function SlidePage({ children }) {
   const revealRef = useRef(null);
@@ -38,15 +39,18 @@ export default function SlidePage({ children }) {
 
   return (
     <div>
-      <div ref={containerRef} style={{ height: "75vh" }}>
-        <div
-          className="reveal"
-          ref={revealRef}
-          style={{ height: "100%" }}
-        >
-          {children}
+      <BrowserOnly>
+      {() => <div ref={containerRef} style={{ height: "75vh" }}>
+          <div
+            className="reveal"
+            ref={revealRef}
+            style={{ height: "100%" }}
+          >
+            {children}
+          </div>
         </div>
-      </div>
+      }
+      </BrowserOnly>
     </div>
   );
 }
