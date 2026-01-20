@@ -2,7 +2,7 @@ import SlideImage from '@site/src/components/SlideImage';
 
 const Rencontre_1_1 = () => {
   return (
-    <div class="slides">
+    <div className="slides">
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h2>5W5 Programmation Web Avancée</h2>
       </section>

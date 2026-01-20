@@ -1,5 +1,4 @@
 import React, { useEffect, useRef } from "react";
-import Reveal from "reveal.js";
 import "reveal.js/dist/reveal.css";
 import "reveal.js/dist/theme/night.css";
 import BrowserOnly from '@docusaurus/BrowserOnly';
@@ -12,7 +11,10 @@ export default function SlidePage({ children }) {
   useEffect(() => {
     if (!revealRef.current) return;
 
-    // Initialise Reveal sur le bon élément
+    const Reveal = require('reveal.js');
+
+    console.log(Reveal);
+    /*// Initialise Reveal sur le bon élément
     const deck = new Reveal(revealRef.current, {
       embedded: true,
       controls: true,
@@ -34,13 +36,12 @@ export default function SlidePage({ children }) {
       try {
         deck.destroy();
       } catch (err) {}
-    };
+    };*/
   }, []);
 
   return (
     <div>
-      <BrowserOnly>
-      {() => <div ref={containerRef} style={{ height: "75vh" }}>
+      <div ref={containerRef} style={{ height: "75vh" }}>
           <div
             className="reveal"
             ref={revealRef}
@@ -49,8 +50,6 @@ export default function SlidePage({ children }) {
             {children}
           </div>
         </div>
-      }
-      </BrowserOnly>
     </div>
   );
 }
