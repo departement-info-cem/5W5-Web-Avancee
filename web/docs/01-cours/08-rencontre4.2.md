@@ -33,9 +33,13 @@ Il faut pouvoir progresse rapidement les étapes:
 
 :::
 
-<SlidePage>
-<Rencontre_4_2/>
-</SlidePage>
+<iframe 
+  src="/5W5-Web-Avancee/slides/Rencontre_4_2.html" 
+  width="100%" 
+  height="800px" 
+  style={{ border: 'none' }} 
+  allowFullScreen 
+/>
 
 ## Info
 

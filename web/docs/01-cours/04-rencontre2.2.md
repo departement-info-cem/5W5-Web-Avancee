@@ -12,9 +12,13 @@ import Rencontre_2_2 from './slides/Rencontre_2_2';
 
 🛠️ Demo d'authentification avec token VS cookies (En regardant la console de développement d'un navigateur)
 
-<SlidePage>
-<Rencontre_2_2/>
-</SlidePage>
+<iframe 
+  src="/5W5-Web-Avancee/slides/Rencontre_2_2.html" 
+  width="100%" 
+  height="800px" 
+  style={{ border: 'none' }} 
+  allowFullScreen 
+/>
 
 ## Info
 

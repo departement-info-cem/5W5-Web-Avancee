@@ -9,9 +9,13 @@ import Rencontre_4_1 from './slides/Rencontre_4_1';
 
 ## Reactive Forms, guards et routes enfants 💂
 
-<SlidePage>
-<Rencontre_4_1/>
-</SlidePage>
+<iframe 
+  src="/5W5-Web-Avancee/slides/Rencontre_4_1.html" 
+  width="100%" 
+  height="800px" 
+  style={{ border: 'none' }} 
+  allowFullScreen 
+/>
 
 ## Info
 

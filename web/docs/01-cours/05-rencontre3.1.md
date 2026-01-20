@@ -16,9 +16,13 @@ On évite d'avoir une mauvaise surprise et d'avoir à changer le travail que l'o
 On peut également mieux planifier notre temps lorsque l'on comprend bien le travail qui reste à faire.
 :::
 
-<SlidePage>
-<Rencontre_3_1/>
-</SlidePage>
+<iframe 
+  src="/5W5-Web-Avancee/slides/Rencontre_3_1.html" 
+  width="100%" 
+  height="800px" 
+  style={{ border: 'none' }} 
+  allowFullScreen 
+/>
 
 ## TP
 
