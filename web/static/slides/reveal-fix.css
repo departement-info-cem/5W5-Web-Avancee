@@ -1,0 +1,21 @@
+/* Empêche Reveal de modifier les styles globaux */
+.reveal {
+  font-size: 1rem;
+  position: relative;
+}
+
+.reveal section {
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* centre vertical */
+  height: 100%;
+}
+
+/* Fixe pour que les images ne débordent jamais */
+.reveal section img {
+  max-width: 90%;
+  height: auto;
+  margin: 0 auto;
+  display: block;
+}

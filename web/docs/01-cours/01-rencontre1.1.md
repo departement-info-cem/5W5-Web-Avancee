@@ -34,7 +34,7 @@ Quand on génère du code avec **ChatGPT** que l'on ne comprend pas: ça prend *
 <iframe 
   src="/5W5-Web-Avancee/slides/Rencontre_1_1.html" 
   width="100%" 
-  height="800px" 
+  height="1024px" 
   style={{ border: 'none' }} 
   allowFullScreen 
 />

@@ -21,7 +21,7 @@ N'hésitez pas à modifier les exemples fournis, à suivre des tutoriels, à ess
 <iframe 
   src="/5W5-Web-Avancee/slides/Rencontre_1_2.html" 
   width="100%" 
-  height="800px" 
+  height="1024px" 
   style={{ border: 'none' }} 
   allowFullScreen 
 />

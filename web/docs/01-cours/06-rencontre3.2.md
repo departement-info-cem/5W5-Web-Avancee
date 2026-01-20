@@ -17,7 +17,7 @@ Remise du diagramme de classe pour le TP1
 <iframe 
   src="/5W5-Web-Avancee/slides/Rencontre_3_2.html" 
   width="100%" 
-  height="800px" 
+  height="1024px" 
   style={{ border: 'none' }} 
   allowFullScreen 
 />

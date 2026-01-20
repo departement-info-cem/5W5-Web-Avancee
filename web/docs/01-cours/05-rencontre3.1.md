@@ -19,7 +19,7 @@ On peut également mieux planifier notre temps lorsque l'on comprend bien le tra
 <iframe 
   src="/5W5-Web-Avancee/slides/Rencontre_3_1.html" 
   width="100%" 
-  height="800px" 
+  height="1024px" 
   style={{ border: 'none' }} 
   allowFullScreen 
 />

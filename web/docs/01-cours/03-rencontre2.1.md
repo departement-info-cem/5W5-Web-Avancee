@@ -29,7 +29,7 @@ Des gens qui avaient été mes collègues dans la vingtaine et qui avaient tous 
 <iframe 
   src="/5W5-Web-Avancee/slides/Rencontre_2_1.html" 
   width="100%" 
-  height="800px" 
+  height="1024px" 
   style={{ border: 'none' }} 
   allowFullScreen 
 />

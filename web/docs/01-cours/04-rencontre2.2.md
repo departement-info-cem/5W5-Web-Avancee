@@ -15,7 +15,7 @@ import Rencontre_2_2 from './slides/Rencontre_2_2';
 <iframe 
   src="/5W5-Web-Avancee/slides/Rencontre_2_2.html" 
   width="100%" 
-  height="800px" 
+  height="1024px" 
   style={{ border: 'none' }} 
   allowFullScreen 
 />
