@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="./reset.css">
+    <link rel="stylesheet" href="./reveal.css">
+    <link rel="stylesheet" href="./black.css" id="theme">
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>Slide 1</section>
+            <section>Slide 2</section>
+        </div>
+    </div>
+
+    <!-- Load the core and plugins as ES modules -->
+    <script type="module">
+        // Import the main Reveal class
+        import Reveal from './reveal.esm.js';
+        // Import a plugin (optional, but a common use case)
+        import Markdown from './markdown.esm.js';
+
+        // Initialize the presentation
+        let deck = new Reveal({
+            plugins: [Markdown]
+        });
+        deck.initialize();
+    </script>
+</body>
+</html>

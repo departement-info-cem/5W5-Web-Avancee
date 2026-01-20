@@ -18,9 +18,13 @@ N'hésitez pas à modifier les exemples fournis, à suivre des tutoriels, à ess
 
 :::
 
-<SlidePage>
-<Rencontre_1_2/>
-</SlidePage>
+<iframe 
+  src="/5W5-Web-Avancee/slides/Rencontre_1_2.html" 
+  width="100%" 
+  height="800px" 
+  style={{ border: 'none' }} 
+  allowFullScreen 
+/>
 
 ## Info
 
