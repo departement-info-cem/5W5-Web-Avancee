@@ -7,11 +7,7 @@ sidebar_class_name: remise-tp1-groupe
 # TP1
 
 - Évaluation individuelle de DevOps au prochain cours
-- [JsonIgnore] ou comment éviter des boucles infinies.
 
-:::info
-[JsonIgnore] permet également de réduire la quantité de données qui est échangée entre le serveur et le client. C'est donc plus rapide et ça réduit les coûts!
-:::
 
 ## Pratique examen intra
 

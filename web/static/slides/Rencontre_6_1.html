@@ -22,6 +22,7 @@
         <ul class="petit-texte">
           <li>Évaluation de la tâche Individuelle Hub</li>
           <li>Comprendre la fonctionnalité Stash et Pop de GitKraken</li>
+          <li>JsonIgnore</li>
           <li>Update-database PLUS</li>
           <li>Comment merger efficacement et sans risque</li>
           <li>Pas de rebase</li>
@@ -40,6 +41,72 @@
           </li>
           <li>Possible de changer de branche</li>
         </ul>
+      </section>
+
+      <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+        <h3>JsonIgnore</h3>
+          <p class="petit-texte">Permet d'éviter des boucles infinies</p>
+          <pre><code class="petit-texte" data-trim class="language-cs">
+public class A
+{
+    public int Id { get; set; }
+    public List&lt;B&gt; Bs { get; set; }
+}
+public class B
+{
+    public int Id { get; set; }
+    public A A { get; set; }
+}
+</code></pre>
+<pre><code data-trim class="">
+System.Text.Json.JsonException: A possible object cycle was detected.
+This can either be due to a cycle or if the object depth is larger than the maximum allowed depth of 32.
+</code></pre>
+
+      </section>
+
+      <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+        <h3>JsonIgnore (Solution 1)</h3>
+        <ul>
+          <p>Ignorer la liste de Bs</p>
+          <pre><code data-trim class="language-cs">
+public class A
+{
+    public int Id { get; set; }
+    [JsonIgnore]
+    public List&lt;B&gt; Bs { get; set; }
+}
+public class B
+{
+    public int Id { get; set; }
+    public A A { get; set; }
+}
+</code></pre>
+
+      </section>
+
+      <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+        <h3>JsonIgnore (Solution 2)</h3>
+
+          <p>Ignorer A</p>
+          <pre><code data-trim class="language-cs">
+public class A
+{
+    public int Id { get; set; }
+    public List&lt;B&gt; Bs { get; set; }
+}
+public class B
+{
+    public int Id { get; set; }
+    [JsonIgnore]
+    public A A { get; set; }
+}
+</code></pre>
+      </section>
+
+      <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+        <h3>JsonIgnore (Conclusion)</h3>
+        <p class="petit-texte">JsonIgnore permet également de réduire la quantité de données qui est échangée entre le serveur et le client. C'est donc plus rapide et ça réduit les coûts!</p>
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
@@ -101,7 +168,7 @@ remove-migration
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
-        <h3>Importance d'être "PrOPRE" dans Une branche</h3>
+        <h3>Importance d'être "PROPRE" dans Une branche</h3>
         <p class="petit-texte">Les branches dans un compagnie n'ont pas toute la même importance. En gros, voici l'ordre d'importante (les
           noms varient un peu d'une compagnie à l'autre).</p>
         <p class="petit-texte">Prod > Staging(test) > Dev > Feature > Branche personnelle</p>
