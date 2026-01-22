@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./reveal/reveal.css">
   <link rel="stylesheet" href="./reveal/reveal-fix.css">
   <link rel="stylesheet" href="./reveal/black.css" id="theme">
+  <link rel="stylesheet" href="./reveal/monokai.css" />
 </head>
 
 <body>
@@ -18,7 +19,7 @@
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Résumé</h3>
-        <ul>
+        <ul class="petit-texte">
           <li>Évaluation de la tâche Individuelle Hub</li>
           <li>Comprendre la fonctionnalité Stash et Pop de GitKraken</li>
           <li>Update-database PLUS</li>
@@ -50,49 +51,79 @@
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Update-database PLUS</h3>
-        <p>C’est possible de spécifier un nom de migration à update-database pour retourner en arrière!</p>
-        <p>update-database nomMigration</p>
-        <p>Les fonctions Down des migrations qui ont été générées après celle que l’on a sélectionné sont exécutés, une
+        <p class="petit-texte">C’est possible de spécifier un nom de migration à update-database pour retourner en arrière!</p>
+        <pre><code data-noescape data-trim class="language-ps">
+update-database nomMigration
+  </code></pre>
+        <p class="petit-texte">Les fonctions Down des migrations qui ont été générées après celle que l’on a sélectionné sont exécutés, une
           après l’autre, pour retourner à cette migration.</p>
-        <p>Une fois que c’est fait, on peut utiliser remove-migration pour retirer une migration à la fois! (Jusqu’à ce
+          <pre><code data-trim class="language-cs" style="max-height: 250px;">
+
+public partial class elo : Migration
+{
+    protected override void Up(MigrationBuilder mb)
+    {
+        mb.AddColumn&lt;int&gt;(
+            name: "Elo",
+            table: "Players",
+            type: "INTEGER",
+            nullable: false,
+            defaultValue: 0);
+    }
+
+    protected override void Down(MigrationBuilder mb)
+    {
+        mb.DropColumn(
+            name: "Elo",
+            table: "Players");
+    }
+}</code></pre>
+      </section>
+
+      <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+        <h3>Update-database PLUS (suite)</h3>
+        <p class="petit-texte">Une fois que c’est fait, on peut utiliser remove-migration pour retirer une migration à la fois! (Jusqu’à ce
           que l’on atteigne la migration « nomMigration »)</p>
-        <p>Démo!</p>
+          <pre><code data-trim class="language-ps">
+remove-migration
+  </code></pre>
+        <p class="petit-texte">Démo!</p>
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Comment merger dans un gros projet</h3>
-        <p>Il existe plusieurs techniques, mais la plus simple et robuste c’est de ramener la branche vers laquelle on
+        <p class="petit-texte">Il existe plusieurs techniques, mais la plus simple et robuste c’est de ramener la branche vers laquelle on
           veut appliquer nos changements vers notre branche avant de faire le merge.</p>
-        <p>Donc si on veut merger A dans B:</p>
-        <p>- On commence par merger B dans A et régler les conflits et les problèmes dans NOTRE branche</p>
-        <p>- Ensuite on test</p>
-        <p>- Finalement on peut merger A vers B, sans conflit et sans risque</p>
+        <p class="petit-texte">Donc si on veut merger A dans B:</p>
+        <p class="petit-texte">- On commence par merger B dans A et régler les conflits et les problèmes dans NOTRE branche</p>
+        <p class="petit-texte">- Ensuite on test</p>
+        <p class="petit-texte">- Finalement on peut merger A vers B, sans conflit et sans risque</p>
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Importance d'être "PrOPRE" dans Une branche</h3>
-        <p>Les branches dans un compagnie n'ont pas toute la même importance. En gros, voici l'ordre d'importante (les
+        <p class="petit-texte">Les branches dans un compagnie n'ont pas toute la même importance. En gros, voici l'ordre d'importante (les
           noms varient un peu d'une compagnie à l'autre).</p>
-        <p>Prod {'>'} Staging(test) {'>'} Dev {'>'} Feature {'>'} Branche personnelle</p>
-        <p>Pourquoi? C'est toujours une question de la quantité de gens qui sont impactées par un problème. Le "coût"
+        <p class="petit-texte">Prod > Staging(test) > Dev > Feature > Branche personnelle</p>
+        <p class="petit-texte">Pourquoi? C'est toujours une question de la quantité de gens qui sont impactées par un problème. Le "coût"
           pour régler un problème augmente également!</p>
-        <p>Pour cette raison, on merge toujours les changements vers l'endroit le moins important en premier!</p>
-        <p>Tout le monde se fou que vous ayez un conflit dans votre branche, mais pas dans la branche Prod!!!</p>
+        <p class="petit-texte">Pour cette raison, on merge toujours les changements vers l'endroit le moins important en premier!</p>
+        <p class="petit-texte">Tout le monde se fou que vous ayez un conflit dans votre branche, mais pas dans la branche Prod!!!</p>
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Les fonctionnalités à éviter</h3>
-        <p>Ces fonctionnalités ne doivent pas être utilisé sans comprendre exactement ce que l’on fait:</p>
-        <p>- Pas de Rebase</p>
-        <p>- Pas de « Force » quoi que ce soit</p>
-        <p>En respectant ces règles, on garde toujours un historique clair des changements qu’on a fait!</p>
+        <p class="petit-texte">Ces fonctionnalités ne doivent pas être utilisé sans comprendre exactement ce que l’on fait:</p>
+        <p class="petit-texte">- Pas de Rebase</p>
+        <p class="petit-texte">- Pas de « Force » quoi que ce soit</p>
+        <p class="petit-texte">En respectant ces règles, on garde toujours un historique clair des changements qu’on a fait!</p>
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Travail d’équipe</h3>
-        <p>Vous pouvez commencer à merger aujourd’hui, même si votre Hub n’est pas terminé/évalué.</p>
-        <p>Il y a une section dans le TP1 pour le travail nécessaire pour terminer le TP1 en équipe.</p>
-        <p>N’oubliez pas que vous pouvez toujours regarder le projet de référence si vous n’êtes pas certain de savoir
+        <p class="petit-texte">Vous pouvez commencer à merger aujourd’hui, même si votre Hub n’est pas terminé/évalué.</p>
+        <p class="petit-texte">Il y a une section dans le TP1 pour le travail nécessaire pour terminer le TP1 en équipe.</p>
+        <p class="petit-texte">N’oubliez pas que vous pouvez toujours regarder le projet de référence si vous n’êtes pas certain de savoir
           comment l’application devrait fonctionner!</p>
       </section>
 
@@ -105,10 +136,11 @@
     import Reveal from './reveal/reveal.esm.js';
     // Import a plugin (optional, but a common use case)
     import Markdown from './reveal/markdown.esm.js';
+    import RevealHighlight from './reveal/highlight.esm.js';
 
     // Initialize the presentation
     let deck = new Reveal({
-      plugins: [Markdown]
+      plugins: [Markdown, RevealHighlight]
     });
     deck.initialize();
   </script>

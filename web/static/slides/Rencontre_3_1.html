@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="./reveal/reveal.css">
   <link rel="stylesheet" href="./reveal/reveal-fix.css">
   <link rel="stylesheet" href="./reveal/black.css" id="theme">
+  <link rel="stylesheet" href="./reveal/monokai.css" />
 </head>
 
 <body>
@@ -41,11 +42,24 @@
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Fluent API</h3>
         <ul>
-          <li>Fluent API va être présenté avec plus de détails plus tard dans la session.</li>
-          <li>En résumé, il permet de créer ou clarifier des relations entre des objets. C’est un outil qui complète
-            l’utilisation des propriétés de navigation.</li>
+          <li class="petit-texte">Permet de créer ou clarifier des relations entre des objets</li>
+            <li class="petit-texte">Complète l’utilisation des propriétés de navigation</li>
+            <li class="petit-texte">Dans cet exemple, on évite de faire un <b>cascade delete</b>, qui est le comportement par défaut pour une relation.</li>
         </ul>
-        <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_3_1/03-1.png" />
+        <pre><code data-trim>
+builder.Entity<Match>()
+  .HasOne(m => m.PlayerDataA)
+  .WithMany()
+  .OnDelete(DeleteBehavior.NoAction);
+
+builder.Entity<Match>()
+  .HasOne(m => m.PlayerDataB)
+  .WithMany()
+  .OnDelete(DeleteBehavior.NoAction);
+  </code></pre>
+        <ul>
+          <li class="petit-texte">Fluent API va être présenté avec plus de détails plus tard dans la session</li>
+        </ul>
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
@@ -85,10 +99,11 @@
     import Reveal from './reveal/reveal.esm.js';
     // Import a plugin (optional, but a common use case)
     import Markdown from './reveal/markdown.esm.js';
+    import RevealHighlight from './reveal/highlight.esm.js';
 
     // Initialize the presentation
     let deck = new Reveal({
-      plugins: [Markdown]
+      plugins: [Markdown, RevealHighlight]
     });
     deck.initialize();
   </script>

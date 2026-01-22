@@ -1,5 +1,5 @@
 ---
-title: 4.1 - Forms, guards, routes 💂
+title: 4.1 - Reactive Forms, guards et routes enfants 
 hide_table_of_contents: true
 sidebar_class_name: remise-tp1-uml
 ---
@@ -7,6 +7,9 @@ sidebar_class_name: remise-tp1-uml
 import SlidePage from '@site/src/components/SlidePage';
 import Rencontre_4_1 from './slides/Rencontre_4_1';
 
+
+
+<!-- 
 ## Reactive Forms, guards et routes enfants 💂
 
 <iframe 
@@ -16,15 +19,16 @@ import Rencontre_4_1 from './slides/Rencontre_4_1';
   style={{ border: 'none' }} 
   allowFullScreen 
 />
+-->
 
 ## Info
 
-[Guards](/info/Guards)
+[Guards💂](/info/Guards)
 
 [ReactiveForms](/info/ReactiveForms)
 
 ## Exercices
 
-[Guards](/exercices/Guards)
+[Guards💂](/exercices/Guards)
 
 [ReactiveForms](/exercices/ReactiveForms)
