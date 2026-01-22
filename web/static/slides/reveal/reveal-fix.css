@@ -19,3 +19,8 @@
   margin: 0 auto;
   display: block;
 }
+
+.petit-texte{
+  font-size: xx-large;
+  padding-right: 40px;
+}

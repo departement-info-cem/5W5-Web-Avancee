@@ -2,10 +2,10 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="./reset.css">
-  <link rel="stylesheet" href="./reveal.css">
-  <link rel="stylesheet" href="./reveal-fix.css">
-  <link rel="stylesheet" href="./black.css" id="theme">
+  <link rel="stylesheet" href="./reveal/reset.css">
+  <link rel="stylesheet" href="./reveal/reveal.css">
+  <link rel="stylesheet" href="./reveal/reveal-fix.css">
+  <link rel="stylesheet" href="./reveal/black.css" id="theme">
 </head>
 
 <body>
@@ -34,7 +34,7 @@
       </section>
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Un grand projet en équipe</h3>
-        <li>Faire un jeu de carte du même style que Hearthstone</li>
+        <li>Faire un jeu de carte du même style que Magic: The Gathering, Hearthstone et compagnie</li>
         <li>Doit utiliser les technologies web services (4W6) et MVC (3W6)</li>
         <li>Le thème est libre, mais doit rester de bon goût!</li>
         <ul>
@@ -45,8 +45,8 @@
         <li>Plus de détails la semaine prochaine!</li>
       </section>
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
-        <h3>Aperçu de la première itération</h3>
-        <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_1_1/05-1.png" />
+        <h3>Aperçu du projet</h3>
+        <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_1_1/captureEcranSCI.png" />
       </section>
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_1_1/06-1.png" />
@@ -61,8 +61,6 @@
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Présences</h3>
         <li>Ce cours se concentre sur le travail en équipe, la présence au cours est donc très importante</li>
-        <li>Si un étudiant n’est pas assez présent pour contribuer au projet, il pourra être expulsé de son équipe et
-          devra réaliser le travail par lui-même</li>
       </section>
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Formation d’équipe</h3>
@@ -110,9 +108,9 @@
   <!-- Load the core and plugins as ES modules -->
   <script type="module">
     // Import the main Reveal class
-    import Reveal from './reveal.esm.js';
+    import Reveal from './reveal/reveal.esm.js';
     // Import a plugin (optional, but a common use case)
-    import Markdown from './markdown.esm.js';
+    import Markdown from './reveal/markdown.esm.js';
 
     // Initialize the presentation
     let deck = new Reveal({

@@ -2,10 +2,10 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="./reset.css">
-  <link rel="stylesheet" href="./reveal.css">
-  <link rel="stylesheet" href="./reveal-fix.css">
-  <link rel="stylesheet" href="./black.css" id="theme">
+  <link rel="stylesheet" href="./reveal/reset.css">
+  <link rel="stylesheet" href="./reveal/reveal.css">
+  <link rel="stylesheet" href="./reveal/reveal-fix.css">
+  <link rel="stylesheet" href="./reveal/black.css" id="theme">
 </head>
 
 <body>
@@ -40,23 +40,23 @@
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Relations N à N sans doublon</h3>
-        <p className='petit-texte'>- Lorsque l’on a simplement une liste de A dans B et une liste de B dans A,
+        <p class='petit-texte'>- Lorsque l’on a simplement une liste de A dans B et une liste de B dans A,
           EntityFramework va créer une table intermédiaire avec une clé primaire composite (avec les deux Ids).</p>
-        <p className='petit-texte'>- Comme une clé primaire doit être unique, on ne peut donc pas avoir la même relation
+        <p class='petit-texte'>- Comme une clé primaire doit être unique, on ne peut donc pas avoir la même relation
           2 fois!</p>
-        <p className='petit-texte'>- C’est parfois souhaitable et parfois pas, ça dépend du problème que l’on veut
+        <p class='petit-texte'>- C’est parfois souhaitable et parfois pas, ça dépend du problème que l’on veut
           résoudre!</p>
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Relations N à N sans doublon (Le « bug »)</h3>
-        <p className='petit-texte'>- Lorsqu’on n’a pas de support pour les doublons, le comportement d’EntityFramework
+        <p class='petit-texte'>- Lorsqu’on n’a pas de support pour les doublons, le comportement d’EntityFramework
           est assez particulier. C’est bon de le comprendre pour éviter de se taper la tête sur les murs pendant des
           heures!</p>
-        <p className='petit-texte'>- La liste n’a pas de vérification pour les doublons, alors lorsque l’on ajoute un
+        <p class='petit-texte'>- La liste n’a pas de vérification pour les doublons, alors lorsque l’on ajoute un
           doublon, le modèle ne va pas refuser l’information. Il n’y aura même pas d’erreur au moment de sauvegarder
           l’information dans la BD!</p>
-        <p className='petit-texte'>- Par contre, quand vient le moment de récupérer l’information de la BD avec un Find,
+        <p class='petit-texte'>- Par contre, quand vient le moment de récupérer l’information de la BD avec un Find,
           First, ToList, etc. Et bien le doublon va avoir disparu. On se retrouve donc avec une donnée « fantôme ».</p>
       </section>
 
@@ -64,13 +64,13 @@
         <h3>Fork</h3>
         <p>On peut créer un fork pour créer une copie d’un projet. On a alors notre propre repository, basé sur le repo
           original.</p>
-        <SlideImage src="/img/slides/Rencontre_2_1/06-1.png" />
+        <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_2_1/06-1.png" />
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>Fork</h3>
         <p>On a quelques options lorsque l’on va créer un fork.</p>
-        <SlideImage src="/img/slides/Rencontre_2_1/07-1.png" />
+        <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_2_1/07-1.png" />
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
@@ -102,8 +102,8 @@
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
         <h3>DEVOPS USER ACCESS</h3>
         <p>StakeHolder vs Basic</p>
-        <SlideImage src="/img/slides/Rencontre_2_1/12-2.png" style={{maxHeight: "55%" , float: "left" }} />
-        <SlideImage src="/img/slides/Rencontre_2_1/12-1.png" style={{maxHeight: "55%" }} />
+        <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_2_1/12-2.png" style="max-height: 55%; float: left;"/>
+        <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_2_1/12-1.png" style="max-height: 55%;"/>
       </section>
     </div>
   </div>
@@ -111,9 +111,9 @@
   <!-- Load the core and plugins as ES modules -->
   <script type="module">
     // Import the main Reveal class
-    import Reveal from './reveal.esm.js';
+    import Reveal from './reveal/reveal.esm.js';
     // Import a plugin (optional, but a common use case)
-    import Markdown from './markdown.esm.js';
+    import Markdown from './reveal/markdown.esm.js';
 
     // Initialize the presentation
     let deck = new Reveal({

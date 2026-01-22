@@ -2,10 +2,11 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="./reset.css">
-    <link rel="stylesheet" href="./reveal.css">
-    <link rel="stylesheet" href="./reveal-fix.css">
-    <link rel="stylesheet" href="./black.css" id="theme">
+    <link rel="stylesheet" href="./reveal/reset.css">
+    <link rel="stylesheet" href="./reveal/reveal.css">
+    <link rel="stylesheet" href="./reveal/reveal-fix.css">
+    <link rel="stylesheet" href="./reveal/black.css" id="theme">
+    <link rel="stylesheet" href="./reveal/monokai.css" />
 </head>
 
 <body>
@@ -32,10 +33,27 @@
                 <h3>Localstorage et sessionstorage</h3>
                 <p>JavaScript (et donc Angular) possède 2 façons très semblables pour pour sauvegarder des données. Les
                     deux utilisent les méthodes setItem et getItem.</p>
+                <pre><code data-trim class="language-ts">
+localStorage.setItem("nom", "Jean");
+
+// Ailleurs dans le code ...
+let nom = localStorage.getItem("nom");
+// Affiche "Jean" si setItem a été appelé avant et null sinon
+console.log(nom);
+  </code></pre>
+            </section>
+
+            <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+                <h3>Local Storage</h3>
                 <p>localStorage: permet de stocker les données indéfiniment et partagées entres les fenêtres pour un
                     même site.</p>
+            </section>
+
+            <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
+                <h3>Session Storage</h3>
                 <p>sessionStorage: permet de stocker des données qui sont effacées lorsque l'on ferme la fenêtre et qui
                     peuvent être différente d'une fenêtre à l'autre pour un même site.</p>
+                <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_1_2/SessionStorage.png" />
             </section>
 
             <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
@@ -83,13 +101,13 @@
             <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
                 <h3>Authentification par TOKEN</h3>
                 <ul>
-                    <li className="petit-texte">Un des avantages des cookies, c’est que le navigateur les gère très bien
-                        tout seul. Donc, moins de travail!</li>
-                    <li className="petit-texte">Mais les cookies ne sont pas un bon choix pour l’authentification
+                    <li class="petit-texte">Un des avantages des cookies, c’est que le navigateur les gère très bien
+                        tout seul. Donc, moins de travail! (La solution simple pour MVC)</li>
+                    <li class="petit-texte">Mais les cookies ne sont pas un bon choix pour l’authentification
                         lorsque l’on utilise un API car les services sont fréquemment distribués sur de nombreux
-                        serveurs. On se retrouve alors avec un ThirdParty cookie qui cause de potentiel problème de
+                        serveurs. On se retrouve alors avec un <b>ThirdParty cookie</b> qui cause de potentiels problèmes de
                         sécurité. (On utilise alors les tokens, comme vous avez vu en 4W6)</li>
-                    <li className="petit-texte">Pour plus de détails: <a
+                    <li class="petit-texte">Pour plus de détails: <a
                             href="https://developer.okta.com/blog/2022/02/08/cookies-vs-tokens">https://developer.okta.com/blog/2022/02/08/cookies-vs-tokens</a>
                     </li>
                 </ul>
@@ -113,13 +131,14 @@
     <!-- Load the core and plugins as ES modules -->
     <script type="module">
         // Import the main Reveal class
-        import Reveal from './reveal.esm.js';
+        import Reveal from './reveal/reveal.esm.js';
         // Import a plugin (optional, but a common use case)
-        import Markdown from './markdown.esm.js';
+        import Markdown from './reveal/markdown.esm.js';
+        import RevealHighlight from './reveal/highlight.esm.js';
 
         // Initialize the presentation
         let deck = new Reveal({
-            plugins: [Markdown]
+            plugins: [Markdown, RevealHighlight]
         });
         deck.initialize();
     </script>

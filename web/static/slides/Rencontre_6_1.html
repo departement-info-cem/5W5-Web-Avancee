@@ -2,10 +2,10 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="./reset.css">
-  <link rel="stylesheet" href="./reveal.css">
-  <link rel="stylesheet" href="./reveal-fix.css">
-  <link rel="stylesheet" href="./black.css" id="theme">
+  <link rel="stylesheet" href="./reveal/reset.css">
+  <link rel="stylesheet" href="./reveal/reveal.css">
+  <link rel="stylesheet" href="./reveal/reveal-fix.css">
+  <link rel="stylesheet" href="./reveal/black.css" id="theme">
 </head>
 
 <body>
@@ -45,7 +45,7 @@
         <h3>Update-database Voir les migrations</h3>
         <p>On peut utiliser Get-Migration pour voir toutes les migrations dans l’ordre.</p>
         <p>Version « dotnet » de la commande: dotnet ef migrations list</p>
-        <SlideImage src="/img/slides/Rencontre_6_1/04-1.png" />
+        <img class="slide-image" src="/5W5-Web-Avancee/img/slides/Rencontre_6_1/04-1.png" />
       </section>
 
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
@@ -102,9 +102,9 @@
   <!-- Load the core and plugins as ES modules -->
   <script type="module">
     // Import the main Reveal class
-    import Reveal from './reveal.esm.js';
+    import Reveal from './reveal/reveal.esm.js';
     // Import a plugin (optional, but a common use case)
-    import Markdown from './markdown.esm.js';
+    import Markdown from './reveal/markdown.esm.js';
 
     // Initialize the presentation
     let deck = new Reveal({
