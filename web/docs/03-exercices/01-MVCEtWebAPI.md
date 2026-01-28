@@ -57,28 +57,49 @@ Comme on va avoir 2 projets dans notre solution qui utilise les mêmes données,
 
 ### Utilisation de la BD avec plusieurs projets
 
-Il faut maintenant créer notre migration et mettre la BD à jour.
+Il faut maintenant créer notre migration et mettre la BD à jour avec un projet séparé pour les données.
 
-Voici comment le faire en utilisant un projet séparé pour les données:
+Voici 2 options:
 
-- Ouvrez un terminal au niveau de la solution
+- Ouvrir un terminal ou powershell au niveau de la solution.
+- Ouvrir la console de gestionnaire de package (C'est celle que j'utilise en cours)
+
+![alt text](image.png)
+
+#### Façon terminal/powershell
+
 - Créez la migration en spécifiant le nom des deux projets
-
 ```powershell
 dotnet ef migrations add Initiale --project Models --startup-project MVCEtWebAPI
 ```
-
 - Créer la BD
-
 ```powershell
 dotnet ef database update --project MVCEtWebAPI
 ```
+
+#### Façon gestionnaire de package
+- Sélectionner le projet Models (vos options sont un peu différentes de l'image)
+
+![alt text](image-1.png)
+
+- Créez la migration
+```powershell
+add-migration Initiale
+```
+- Créer la BD
+```powershell
+update-database
+```
+
+#### Tester le login!
 
 - Lancez maintenant l'application est vérifiez que c'est possible de **créer un utilisateur** et de faire un **login** en utilisant les pages générées par défaut.
 
 - Il faut simplement cliquer ici pour compléter la création de l'utilisateur.
 
 ![alt text](_01-MVCEtWebAPI/image-13.png)
+
+- Vérifier que vous pouvez également faire un login
 
 :::info
 On a maintenant une application MVC fonctionnelle avec une authentification par **Cookie**. Dans ce cours, vous allez utiliser cette application pour gérer **les données** de votre jeu.
