@@ -62,16 +62,16 @@ Il faut maintenant créer notre migration et mettre la BD à jour.
 Voici comment le faire en utilisant un projet séparé pour les données:
 
 - Ouvrez un terminal au niveau de la solution
-- Créez la migration
+- Créez la migration en spécifiant le nom des deux projets
 
 ```powershell
-dotnet ef migrations add Initiale --project Models --startup-project WebAPI
+dotnet ef migrations add Initiale --project Models --startup-project MVCEtWebAPI
 ```
 
 - Créer la BD
 
 ```powershell
-dotnet ef database update
+dotnet ef database update --project MVCEtWebAPI
 ```
 
 - Lancez maintenant l'application est vérifiez que c'est possible de **créer un utilisateur** et de faire un **login** en utilisant les pages générées par défaut.
