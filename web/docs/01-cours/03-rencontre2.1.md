@@ -38,6 +38,9 @@ Des gens qui avaient été mes collègues dans la vingtaine et qui avaient tous 
 
 Créer une **organization** avec le **nom de votre choix** et un **projet** avec le nom **MusiquePlus**
 
+:::danger
+Cette exercice vient d'être modifié, à voir en classe
+:::
 [Création projet Azure DevOps](/exercices/AzureDevOps)
 
 [Relations et révision MVC](/exercices/Relations)
