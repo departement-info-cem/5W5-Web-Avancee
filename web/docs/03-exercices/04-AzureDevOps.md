@@ -1,5 +1,38 @@
 # Azure DevOps - Configuration
 
+## Ajouter les membres à votre projet avec des droits administrateurs
+
+Nous utilisons une instance d'Azure DevOps qui roule sur un serveur du cégep, voici l'adresse:
+
+https://infdevops.cegepmontpetit.ca/
+
+L'enseignant devrait avoir déjà ajouté un étudiant pour chaque équipe. (le premier de la liste)
+Cet étudiant devrait déjà voir le projet et pouvoir ajouter les étudiants.
+
+Pour ajouter un membre:
+
+![alt text](image-2.png)
+
+Sélectionner Teams et cliquer ensuite sur le nom de l'équipe à droite:
+
+![alt text](image-3.png)
+
+Cliquer sur Add et sélectionner votre coéquipier
+Cliquer ensuite sur +Add dans la section Administrators et sélectionner encore la même personne
+
+![alt text](image-4.png)
+
+Une fois qu'on a ajouté:
+
+![alt text](image-5.png)
+
+:::warning
+On fait la même chose jusqu'à avoir tous les membres de l'équipe comme administrateur
+:::
+
+<!--
+ANCIENNE Façon
+
 ### Inscription
 - Rendez-vous sur le portail d'Azure DevOps
 https://aex.dev.azure.com
@@ -22,6 +55,7 @@ S'inscrire avec un compte qui n'est pas celui du cégep!
 
 -->
 
+<!--
 ### Créer l'organisation pour l'équipe
 - Pour débuter, il faut créer une organisation. 
 
@@ -36,6 +70,7 @@ Un seul membre de votre équipe doit créer l'organisation. On va ajouter les au
 
 |![image](/img/infos/DevOps/Configuration/5W5-s2-org2.jpg)|
 |-|
+-->
 
 ### Dark Mode
 - Se mettre en Dark Mode
@@ -48,7 +83,7 @@ Un seul membre de votre équipe doit créer l'organisation. On va ajouter les au
 |![image](/img/infos/DevOps/Configuration/5W5-s2-dark2.jpg)|
 |-|
 
-
+<!--
 ### Créer le projet
 - Choisir un nom pour le projet
 :::danger
@@ -104,5 +139,6 @@ Votre équipe s'agrandit!!!
 
 - Pour finir, **ajouter votre enseignant à votre projet**.
   - po.brillant@cegepmontpetit.ca
+-->
 
 - C'est fini pour l'instant, on va utiliser Azure DevOps au prochain cours et pour les TPs!
