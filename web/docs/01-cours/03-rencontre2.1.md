@@ -36,11 +36,8 @@ Des gens qui avaient été mes collègues dans la vingtaine et qui avaient tous 
 
 ### Exercices
 
-Créer une **organization** avec le **nom de votre choix** et un **projet** avec le nom **MusiquePlus**
+Gérer le projet **MusiquePlus** déjà créé pour votre équipe (un seul membre de votre équipe a déjà accès)
 
-:::danger
-Cette exercice vient d'être modifié, à voir en classe
-:::
-[Création projet Azure DevOps](/exercices/AzureDevOps)
+[Configuration projet Azure DevOps](/exercices/AzureDevOps)
 
 [Relations et révision MVC](/exercices/Relations)

@@ -9,7 +9,26 @@ Ce document est un complément d'information au PowerPoint :
 
 [Azure Devops](https://dev.azure.com)
 
-### Ajouter des features au backlog
+### Ajouter une épique
+
+- Cliquer sur nouvel élément de travail et choisir l'option "Épopée"
+
+![alt text](image-25.png)
+
+- Créer une première épopée
+
+
+### Ajouter des user stories 
+
+- Cliquer sur Ajouter un lien et Nouvel élément
+
+![alt text](image-24.png)
+
+- Choisir user storie (scénario utilisateur) et entrer le nom de la user storie (En tant que ... afin de ...)
+
+![alt text](image-26.png)
+
+### Ajouter des user stories au backlog (méthode alternative)
 
 - Cliquer sur Backlogs dans menu de gauche (dans le menu Boards)
 - Cliquer sur + New Work Item
@@ -19,6 +38,8 @@ Ce document est un complément d'information au PowerPoint :
 - Inscrire le nom de la feature
 
 ![image](/img/infos/DevOps/Utilisation/5W5-s2-us2.jpg)
+
+- Vous pouvez ensuite ajouter un parent en sélectionnant élément existant et l'épique du user storie
 
 
 ### Ajouter une tâche
