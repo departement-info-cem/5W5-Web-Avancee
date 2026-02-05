@@ -7,7 +7,7 @@ Ce document est un complément d'information au PowerPoint :
 
 **Azure DevOps Boards** est un outil complexe où il y a de nombreuses façon de faire les mêmes actions. Voici donc quelques façons de l'utiliser.
 
-[Azure Devops](https://dev.azure.com)
+[Azure Devops](https://infdevops.cegepmontpetit.ca/)
 
 ### Ajouter une épique
 
