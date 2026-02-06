@@ -26,6 +26,20 @@ On est en **2006** et vous avez décidé de révolutionner le monde de la musiqu
 
 ### Travail à faire
 
+https://infdevops.cegepmontpetit.ca/, votre équipe devrait déjà avoir un projet MusiquePlus avec lequel travailler!
+
+:::info
+Le language utilisé pour une épique est simple, comme: "Permettre à un client de commander de la nourriture de centaines de restaurants", "Que n'importe qui puisse livrer de la nourriture", etc.
+:::
+
+:::info
+Pour une User storie (Scénario d'utilisateur) on utilise toujours "En tant que ..., je veux .... afin de ...". Il doit identifier une fonctionnalité de façon précise et être compréhensible par un gestionnaire de projet.
+:::
+
+:::info
+Pour une Task (tâche), on change complètement de language et on devient très précis. On parle à un programmeur ou une autre personne technique. Imaginez-vous si vous étiez dans un tâche et qu'on vous assigne: "Faire le code pour le feature". Des bons exemples: "Ajouter une classe X à notre modèle de donnée", "Ajouter une méthode JouerUneCarte au WebAPI pour mettre une carte en jeu", "Faire un nouveau component angular pour gérer le login"
+:::
+
 - Écrivez **au moins 5 epics** (Il y a déjà au moins 4 **acteurs**, si on inclut les compagnies de publicités)
 - Choisissez **2 epics** qui vous semblent être les **plus prioritaires** et créer au moins **7 user stories** 
 - Choisissez les **3 users stories** qui vous semblent les **plus prioritaires** et créer au moin **8 tâches en tout**
