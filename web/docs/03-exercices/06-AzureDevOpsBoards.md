@@ -29,15 +29,15 @@ On est en **2006** et vous avez décidé de révolutionner le monde de la musiqu
 https://infdevops.cegepmontpetit.ca/, votre équipe devrait déjà avoir un projet MusiquePlus avec lequel travailler!
 
 :::info
-Le language utilisé pour une épique est simple, comme: "Permettre à un client de commander de la nourriture de centaines de restaurants", "Que n'importe qui puisse livrer de la nourriture", etc.
+Le language utilisé pour une **epic (épique)** est simple, comme: "Permettre à un client de commander de la nourriture de centaines de restaurants", "Que n'importe qui puisse livrer de la nourriture", etc.
 :::
 
 :::info
-Pour une User storie (Scénario d'utilisateur) on utilise toujours "En tant que ..., je veux .... afin de ...". Il doit identifier une fonctionnalité de façon précise et être compréhensible par un gestionnaire de projet.
+Pour une **user storie (Scénario d'utilisateur)** on utilise toujours "En tant que ..., je veux .... afin de ...". Il doit identifier une fonctionnalité de façon précise et être compréhensible par un gestionnaire de projet.
 :::
 
 :::info
-Pour une Task (tâche), on change complètement de language et on devient très précis. On parle à un programmeur ou une autre personne technique. Imaginez-vous si vous étiez dans un tâche et qu'on vous assigne: "Faire le code pour le feature". Des bons exemples: "Ajouter une classe X à notre modèle de donnée", "Ajouter une méthode JouerUneCarte au WebAPI pour mettre une carte en jeu", "Faire un nouveau component angular pour gérer le login"
+Pour une **task (tâche)**, on change complètement de language et on devient très précis. **On parle à un programmeur ou une autre personne technique**. Imaginez-vous si vous étiez dans un stage et qu'on vous assigne: "Faire le code pour le feature". Des bons exemples: "Ajouter une classe X à notre modèle de donnée", "Ajouter une méthode JouerUneCarte au WebAPI pour mettre une carte en jeu", "Faire un nouveau component angular pour gérer le login"
 :::
 
 - Écrivez **au moins 5 epics** (Il y a déjà au moins 4 **acteurs**, si on inclut les compagnies de publicités)
@@ -45,3 +45,7 @@ Pour une Task (tâche), on change complètement de language et on devient très 
 - Choisissez les **3 users stories** qui vous semblent les **plus prioritaires** et créer au moin **8 tâches en tout**
 - Inclure les **3 users stories** dans le sprint courrant et retirer le reste
 - Assignez 1 tâche à **chacun des membres de l'équipe** dans au moins **2 users stories différentes** et déplacer 1 user story comme **Active** et 1 user story comme **Resolved** (avec toutes ses tâches terminées également)
+
+:::warning
+Dans un véritable projet, les tâches et scénario d'utilisateur comprendraient une description complète pour qu'un programmeur puisse exécuter la tâche sans plus d'information. Dans notre cas, on veut apprendre à utiliser les outils et à organiser notre travail, mais c'est la mêmme personne qui va écrire la tâche que celle qui va la coder, on peut donc simplement écrire un bon titre pour l'instant!
+:::
