@@ -33,7 +33,7 @@ Le language utilisé pour une **epic (épique)** est simple, comme: "Permettre �
 :::
 
 :::info
-Pour une **user storie (Scénario d'utilisateur)** on utilise toujours "En tant que ..., je veux .... afin de ...". Il doit identifier une fonctionnalité de façon précise et être compréhensible par un gestionnaire de projet.
+Pour une **user story (Scénario d'utilisateur)** on utilise toujours "En tant que ..., je veux .... afin de ...". Il doit identifier une fonctionnalité de façon précise et être compréhensible par un gestionnaire de projet.
 :::
 
 :::info
@@ -47,5 +47,5 @@ Pour une **task (tâche)**, on change complètement de language et on devient tr
 - Assignez 1 tâche à **chacun des membres de l'équipe** dans au moins **2 users stories différentes** et déplacer 1 user story comme **Active** et 1 user story comme **Resolved** (avec toutes ses tâches terminées également)
 
 :::warning
-Dans un véritable projet, les tâches et scénario d'utilisateur comprendraient une description complète pour qu'un programmeur puisse exécuter la tâche sans plus d'information. Dans notre cas, on veut apprendre à utiliser les outils et à organiser notre travail, mais c'est la mêmme personne qui va écrire la tâche que celle qui va la coder, on peut donc simplement écrire un bon titre pour l'instant!
+Dans un véritable projet, les **tâches et scénarios d'utilisateur** comprendraient une description complète pour qu'un programmeur puisse **exécuter la tâche sans plus d'information**. Dans notre cas, on veut apprendre à utiliser les outils et à organiser notre travail, mais c'est **la même personne qui va écrire la tâche que celle qui va la coder**, on peut donc simplement écrire un bon titre pour l'instant!
 :::
