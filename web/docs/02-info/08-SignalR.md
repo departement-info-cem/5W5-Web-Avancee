@@ -121,11 +121,11 @@ await Groups.RemoveFromGroupAsync(Context.ConnectionId, "ancienGroupe");
 await Groups.AddToGroupAsync(Context.ConnectionId, "nouveauGroupe");
 ```
 
-### Appeler un groupe d’usager
+### Appeler un groupe de connections
 
 ```csharp
 // Appeler un groupe
-public async Task EnvoyerAUnUsager(int value, string groupName)
+public async Task EnvoyerAUnGroupe(int value, string groupName)
 {
     await Clients.Group(groupName).SendAsync("UneFonctionClient", value);
 }
