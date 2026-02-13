@@ -9,6 +9,10 @@ Les deux versions vont utiliser 2 components différents en Angular et les deux 
 
 [Projet GitHub avec Client et Serveur](https://github.com/CEM-420-5W5/PollingEtSignalR)
 
+:::danger
+Faites un Fork du projet pour pouvoir faire votre propre copie. (comme dans l'exercice sur les relations)
+:::
+
 ## La version **polling**
 
 ### Complétez la partie Angular de **Polling**
