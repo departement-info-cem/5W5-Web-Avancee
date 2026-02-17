@@ -214,4 +214,4 @@ this.formGroup.get("nom")?.value;
 
 ## Version complète
 
-Référez vous à [ce projet](https://github.com/departement-info-cem/5W5-Web-Avancee/tree/main/code/reactive-forms) pour votre la version complète du code.
+Référez vous à [ce projet](https://github.com/departement-info-cem/5W5-Web-Avancee/tree/main/code/reactive-forms) pour voir la version complète du code.
