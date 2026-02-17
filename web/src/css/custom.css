@@ -64,23 +64,23 @@
 }
 
 .remise-tp1-code::after {
-  content: "Remise TP1 Code (10%)";
+  content: "Remise TP1 Code (12%)";
 }
 
 .remise-tp1-signalr::after {
-  content: "Remise TP1 SignalR (10%)";
+  content: "Remise TP1 SignalR (12%)";
 }
 
 .remise-tp1-groupe::after {
-  content: "Remise TP1 Groupe (5% + 2%)";
+  content: "Remise TP1 Groupe (5%)";
 }
 
 .remise-tp2-groupe-devops::after {
-  content: "Remise TP2 Groupe & DevOps (2% + 3%)";
+  content: "Remise TP2 Groupe & DevOps (3% + 2%)";
 }
 
 .remise-tp2-fonctionnalites::after {
-  content: "Remise TP2 Fonctionnalités (10% + 5%)";
+  content: "Remise TP2 Fonctionnalités (5% + 10%)";
 }
 
 .remise-tp3-groupe::after {
@@ -88,11 +88,11 @@
 }
 
 .remise-tp3-devops::after {
-  content: "Remise TP3 DevOps (4%)";
+  content: "Remise TP3 DevOps (2%)";
 }
 
 .remise-tp3-fonctionnalites::after {
-  content: "Remise TP3 Fonctionnalités (10% + 4% + 2%)";
+  content: "Remise TP3 Fonctionnalités (10% + 4%)";
 }
 
 .petit-texte{
