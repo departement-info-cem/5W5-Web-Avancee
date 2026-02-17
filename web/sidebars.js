@@ -76,6 +76,7 @@ const sidebars = {
       type: "doc",
       label: "3.2 - Polling / SignalR 👉👈🥺",
       id: "cours/rencontre3.2",
+      className: "remise-tp1-uml",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -91,7 +92,6 @@ const sidebars = {
       type: "doc",
       label: "4.1 - Forms, guards, routes 💂",
       id: "cours/rencontre4.1",
-      className: "remise-tp1-uml",
       customProps: {
         calendrier: {
           "Mathieu": [
