@@ -7,7 +7,7 @@ hide_table_of_contents: true
 
 :::warning
 
-Évaluation du TP2
+Évaluation du TP2 (Individuelle + groupe)
 
 :::
 

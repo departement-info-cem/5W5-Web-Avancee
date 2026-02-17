@@ -61,6 +61,7 @@ const sidebars = {
       type: "doc",
       label: "3.1 - TP1, Github, stubs 🗂️",
       id: "cours/rencontre3.1",
+      className: "remise-tp1-uml",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -76,7 +77,6 @@ const sidebars = {
       type: "doc",
       label: "3.2 - Polling / SignalR 👉👈🥺",
       id: "cours/rencontre3.2",
-      className: "remise-tp1-uml",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -428,7 +428,7 @@ const sidebars = {
       type: "doc",
       label: "15.1 - Examen Final",
       id: "cours/rencontre15.1",
-      className: "examen",
+      className: "examen,remise-tp3-fonctionnalites",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -444,7 +444,6 @@ const sidebars = {
       type: "doc",
       label: "15.2 - Évaluation Finale TP3 💯",
       id: "cours/rencontre15.2",
-      className: "remise-tp3-fonctionnalites",
       customProps: {
         calendrier: {
           "Mathieu": [
