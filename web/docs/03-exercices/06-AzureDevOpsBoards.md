@@ -26,7 +26,7 @@ On est en **2006** et vous avez décidé de révolutionner le monde de la musiqu
 
 ### Travail à faire
 
-https://infdevops.cegepmontpetit.ca/, votre équipe devrait déjà avoir un projet MusiquePlus avec lequel travailler!
+https://infdevops.cegepmontpetit.ca/H26-5W5-WebAvancee, votre équipe devrait déjà avoir un projet MusiquePlus avec lequel travailler!
 
 :::info
 Le language utilisé pour une **epic (épique)** est simple, comme: "Permettre à un client de commander de la nourriture de centaines de restaurants", "Que n'importe qui puisse livrer de la nourriture", etc.

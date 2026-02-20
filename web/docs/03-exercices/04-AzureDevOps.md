@@ -4,7 +4,7 @@
 
 Nous utilisons une instance d'Azure DevOps qui roule sur un serveur du cégep, voici l'adresse:
 
-https://infdevops.cegepmontpetit.ca/
+https://infdevops.cegepmontpetit.ca/H26-5W5-WebAvancee
 
 L'enseignant devrait avoir déjà ajouté un étudiant pour chaque équipe. (le premier de la liste)
 Cet étudiant devrait déjà voir le projet et pouvoir ajouter les étudiants.
