@@ -147,7 +147,26 @@ Et ajouter les erreurs dans le HTML
 - Le cas le plus fréquent est de valider qu'un mot de passe et sa confirmation sont identiques
 - Créer un fichier nommé `nom-dans-courriel.ts`
 - Dans le fichier, ajouter le contenu suivant
-- Prenenz le temps de bien lire les commentaires
+
+```ts
+export function nomDansCourriel(): ValidatorFn {
+  return (control: AbstractControl): ValidationErrors | null => {
+    // On récupère les valeurs de nos champs textes
+    const courriel = control.get('courriel');
+    const nom = control.get('nom');
+    // On regarde si les champs sont remplis avant de faire la validation
+    if (!courriel?.value || !nom?.value) {
+      return null;
+    }
+    // On fait notre validation
+    const estValide = courriel.value.includes(nom.value);
+
+    return estValide ? null : { nomDansCourriel: true };
+  };
+}
+```
+
+- Dans cet exemple plus complexe, on ajoute l'erreur sur un le control en plus du formulaire
 
 <GHCode
   repo="5W5-Web-Avancee"
@@ -167,7 +186,26 @@ On Peut ajouter le validateur au groupe de champs
   ignore="36-37"
 />
 
-Et ajouter les erreurs dans le HTML
+### Et ajouter les erreurs dans le HTML
+
+Pour afficher l'erreur sur le **formulaire**:
+
+```html
+<form [formGroup]="formGroup">
+  <mat-form-field>
+    <!-- Le contenu de votre champ -->   
+  </mat-form-field>
+  <!-- On le met directement sous le form, PAS sous un mat-form-field --> 
+  @if (formGroup.hasError('nomDansCourriel')) {
+    <mat-error> Le nom doit être dans l'adresse courriel </mat-error>
+  }
+  <button mat-raised-button color="primary" [disabled]="!formGroup.valid">
+    Enregistrer
+  </button>
+</form>
+```
+
+Pour afficher l'erreur sur un **champ spécifique**:
 
 <GHCode
   repo="5W5-Web-Avancee"
@@ -176,6 +214,8 @@ Et ajouter les erreurs dans le HTML
   startLine="11"
   endLine="32"
 />
+
+
 
 ## Bouton
 
