@@ -69,6 +69,7 @@ ng generate guard
 - CanActivate
 - CanActivateChild
 - CanDeactivate
+- CanMatch
 
 ### CanActivate
 
