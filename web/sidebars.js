@@ -206,8 +206,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-03-13" },
-            { 1020: "2026-03-13" },
+            { 1010: "2026-03-25" },
+            { 1020: "2026-03-25" },
           ],
         },
       },
@@ -219,8 +219,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-03-25" },
-            { 1020: "2026-03-25" },
+            { 1010: "2026-03-27" },
+            { 1020: "2026-03-27" },
           ],
         },
         avancementLabel: "TP2 créé,",
@@ -234,8 +234,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-03-27" },
-            { 1020: "2026-03-27" },
+            { 1010: "2026-03-31" },
+            { 1020: "2026-03-31" },
           ],
         },
         avancementLabel: "TP2",
@@ -250,8 +250,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-03-31" },
-            { 1020: "2026-03-31" },
+            { 1010: "2026-04-01" },
+            { 1020: "2026-04-01" },
           ],
         },
         avancementLabel: "TP2",
@@ -265,8 +265,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-04-01" },
-            { 1020: "2026-04-01" },
+            { 1010: "2026-04-08" },
+            { 1020: "2026-04-08" },
           ],
         },
         avancementLabel: "TP2",
@@ -280,8 +280,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-04-08" },
-            { 1020: "2026-04-08" },
+            { 1010: "2026-04-10" },
+            { 1020: "2026-04-10" },
           ],
         },
         avancementLabel: "TP2",
@@ -296,8 +296,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-04-10" },
-            { 1020: "2026-04-10" },
+            { 1010: "2026-04-13" },
+            { 1020: "2026-04-13" },
           ],
         },
         avancementLabel: "TP2",
