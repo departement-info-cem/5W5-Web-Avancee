@@ -5,9 +5,9 @@ hide_table_of_contents: true
 
 # Présentation du TP2 🗣️
 
+- Révision de l'examen
 - Présentation du TP2
 - Sprints avec Azure Boards
-- Révision de l'examen
 
 [Page du TP2](/tps/tp2)
 
