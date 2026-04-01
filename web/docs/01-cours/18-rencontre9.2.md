@@ -25,9 +25,10 @@ Première partie de l'évaluation individuelle (DevOps)
 - Tests unitaires pour les méthodes HasPower et GetPowerValue
 
 - Planification avec Azure DevOps Boards
-- Explications sur MVC avec plusieurs forms dans une même page
 
 ## Info
+
+Explications sur MVC avec plusieurs forms dans une même page pour aider avec le TP
 
 [Animations](/info/Animations)
 
