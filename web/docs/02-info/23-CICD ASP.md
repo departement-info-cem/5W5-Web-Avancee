@@ -1,54 +1,5 @@
 # CI/CD ASP .NET
 
-<!--
-### Changer la BD
-- Nous utiliserons SQLite pour le déploiement
-- C'est n'est pas particulièrement bon, mais ça nous permet de garder l'hébergement gratuit!
-- Vous devrez ajouter la dépendance à Microsoft.EntityFrameworkCore.Sqlite
-
-```csharp
-builder.Services.AddDbContext<ApplicationDbContext>(options =>
-{
-    options.UseLazyLoadingProxies();
-    // Ajouter Microsoft.EntityFrameworkCore.Sqlite
-    options.UseSqlite(connectionString);
-});
-```
-
-- Ajuster maintenant appsettings.json
-- La connection string pour SQLite est très simple
-
-```csharp
-"ConnectionStrings": {
-  "DefaultConnection": "DataSource=app.db;Cache=Shared"
-},
-```
-- Comme c'est une technologie de BD différente, la syntaxe n'est pas exactement la même et les migrations ne sont pas compatibles entre les deux!
-:::warning
-Il faut également refaire les **migrations!**
-:::
-
-:::info
-Comme ce n'est pas trop intéressant de travailler avec SQLite, c'est probablement une bonne idée de vous créer une branche pour le déploiement, disons "prod". Et de faire le changement de BD dans cette branche là et continuer d'utiliser MS SQL dans vos autres branches.
-:::
--->
-<!--
-### Outil de debug EntityFramework
-
-En ajoutant cette configuration dans Program.cs, on va pouvoir obtenir des erreurs plus claires sur nos pages lorsqu'il y a un problème avec EntityFramework.
-On va également pouvoir appliquer les migrations sur le serveur facilement.
-
-```csharp
-// Permet d'obtenir des erreurs de BD plus claires et même d'appliquer des migrations manquantes
-builder.Services.AddDatabaseDeveloperPageExceptionFilter();
-```
-
-Il faut également ajouter cette libraire:
-
-|![alt text](image-2.png)|
-|-|
--->
-
 ### Déployer sur Azure
 
 - Aller sur le portail Azure: https://portal.azure.com/#home
@@ -118,11 +69,14 @@ Peut-être que votre serveur semble ne pas fonctionner et qu'il fonctionne!!! Pr
 Essayer d'accéder à l'URL où vous avez mis votre action pour mettre à jour vos migrations!
 :::
 
+<!--
 ### Appliquer les migrations
 
 Pour des raisons de sécurité, le fichier de BD que l'on a dans notre projet n'est pas directement utilisable sur le serveur déployé. Pour régler le problème, on a ajouté une action pour permettre d'appliquer les migrations. (Voir la partie sur SQLite)
 
 ![alt text](image-23.png)
+
+-->
 
 ### Configurer les CORS
 - Activer Access-Control-Allow-Credentials

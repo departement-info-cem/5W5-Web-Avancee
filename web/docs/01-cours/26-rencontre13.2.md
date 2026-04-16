@@ -6,14 +6,14 @@ sidebar_class_name: remise-tp3-devops
 
 # Déploiement 🌐
 
-- Changement de BD pour SQLite
+- Changement de BD pour Supabase
 - Déploiement
 - Comment déboguer notre serveur à distance
 - Comment mettre les données de la page à jour dans la version déployée (NgZone)
 
 ## Info
 
-- [SQLite](/info/SQLite)
+- [Supabase](/info/Supabase)
 - [CICD](/info/CICD)
 - [CICD Angular](/info/CICD%20Angular)
 - [CICD ASP](/info/CICD%20ASP)
