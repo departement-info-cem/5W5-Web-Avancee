@@ -11,14 +11,9 @@ hide_table_of_contents: true
 
 :::
 
-Faire une remise sur Léa:
-
-- Me remettre un fichier texte (.txt) contenant les liens vers vos repos GitHub avec le nom de la branche utilisée pour chaque repo.
-- Une seule remise par équipe est nécessaire.
-
 :::info
 
-Si un élève préfère que son évaluation individuelle soit faite avec une autre branche, simplement m'envoyer un message sur Teams avec le nom de la branche que je dois regarder.
+Si un élève préfère que son évaluation individuelle soit faite avec une autre branche que la branche Dev, simplement m'envoyer un message sur Teams avec le nom de la branche que je dois regarder.
 
 :::
 
