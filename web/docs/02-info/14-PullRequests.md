@@ -43,22 +43,30 @@ Dans cet exemple, il manque au moins un review et le projet ne build pas. (Mais 
 Il est toujours possible de faire un pull request, même si une branche n'est pas protégée. Par contre, si on veut s'assurer de mettre en place une bonne façon de travailler, c'est important de configurer la règle!
 :::
 
-#### On ajoute une règle de protection à une ou plusieurs branches
+#### On ajoute une règle de protection à une branche
 
-|![alt text](/img/infos/GitHub/branchRules1.png)|
+|![alt text](image-27.png)|
+|-|
+
+On doit mentionner un nom, la mettre active et faire "Add Target" avec "Include by pattern".
+Dans cet exemple, on protège la branche dev.
+
+|![alt text](image-28.png)|
+|-|
+
+On commence par ajouter l'option de protection pour les updates
+
+|![alt text](image-30.png)|
 |-|
 
 On peut spécifier un nombre minimum de personnes qui doivent faire un review du code.
 (Comme vous pouvez voir, il y a de nombreuses options)
 
-|![alt text](/img/infos/GitHub/branchRules2.png)|
-|-|
+:::warning
+Prenez le temps de retirer les options squash et rebase dans le dernier choix de cette section "Allowed merge methods"
+:::
 
-### Pour tester la protecion en tant qu'admin!
-
-Cette option empêche aux administrateurs de pouvoir forcer un PullRequest et/ou de pouvoir directement faire des push dans la branche!
-
-|![alt text](/img/infos/GitHub/rulesForAdmins.png)|
+|![alt text](image-29.png)|
 |-|
 
 ### Ajout d'un test qui ne passe pas

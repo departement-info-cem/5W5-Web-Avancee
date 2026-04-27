@@ -8,12 +8,8 @@
 
 ## Étapes
 
-- Commencer par créer un repo sur GitHub avec un nom comme "GitHubActionsAndPRs".
-    - Ajouter un fichier .gitignore pour Visual Studio.
-
-- Créer un nouveau projet .NET (Modèle Vue Contrôleur) dans ce repository
-
-- Faire un commit/push du projet
+- Le travail se fait en équipe pour apprendre à configurer votre projet.
+- Commencer par créer le projet à partir du lien envoyé par votre enseignant sur Teams.
 
 - Configurer une action de tests GitHub, comme c'est expliqué dans [ici](/info/ActionsTestGitHub#les-%C3%A9tapes)
 
