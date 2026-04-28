@@ -45,13 +45,13 @@ Il est toujours possible de faire un pull request, même si une branche n'est pa
 
 #### On ajoute une règle de protection à une branche
 
-|![alt text](image-27.png)|
+|![alt text](image-27-pr.png)|
 |-|
 
 On doit mentionner un nom, la mettre active et faire "Add Target" avec "Include by pattern".
 Dans cet exemple, on protège la branche dev.
 
-|![alt text](image-28.png)|
+|![alt text](image-28-pr.png)|
 |-|
 
 On commence par ajouter l'option de protection pour les updates

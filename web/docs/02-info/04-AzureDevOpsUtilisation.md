@@ -13,7 +13,7 @@ Ce document est un complément d'information au PowerPoint :
 
 - Cliquer sur nouvel élément de travail et choisir l'option "Épopée"
 
-![alt text](image-25.png)
+![alt text](image-25-azure.png)
 
 - Créer une première épopée
 
@@ -22,11 +22,11 @@ Ce document est un complément d'information au PowerPoint :
 
 - Cliquer sur Ajouter un lien et Nouvel élément
 
-![alt text](image-24.png)
+![alt text](image-24-azure.png)
 
 - Choisir user storie (scénario utilisateur) et entrer le nom de la user storie (En tant que ... afin de ...)
 
-![alt text](image-26.png)
+![alt text](image-26-azure.png)
 
 ### Ajouter des user stories au backlog (méthode alternative)
 

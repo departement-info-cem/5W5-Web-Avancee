@@ -7,15 +7,14 @@ sidebar_class_name: remise-tp3-devops
 # Déploiement 🌐
 
 - Changement de BD pour Supabase
+- Docker
 - Déploiement
-- Comment déboguer notre serveur à distance
 - Comment mettre les données de la page à jour dans la version déployée (NgZone)
 
 ## Info
 
 - [Supabase](/info/Supabase)
 - [CICD](/info/CICD)
-- [CICD Angular](/info/CICD%20Angular)
-- [CICD ASP](/info/CICD%20ASP)
-- [Déboguage à distance du serveur](/info/DebugAzureDevOps)
+- [Docker](/info/Docker)
+- [Déploiement Render](/info/Render)
 - [Mise à jour des données avec NgZone pour SignalR/Angular](/info/NgZone)
