@@ -54,11 +54,6 @@ Dans cet exemple, on protège la branche dev.
 |![alt text](image-28-pr.png)|
 |-|
 
-On commence par ajouter l'option de protection pour les updates
-
-|![alt text](image-30.png)|
-|-|
-
 On peut spécifier un nombre minimum de personnes qui doivent faire un review du code.
 (Comme vous pouvez voir, il y a de nombreuses options)
 
