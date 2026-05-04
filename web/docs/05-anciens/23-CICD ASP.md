@@ -90,7 +90,7 @@ Pour des raisons de sécurité, le fichier de BD que l'on a dans notre projet n'
 
 - Bon, c'est le moment de retourner du côté Angular et de copier l'adresse du serveur dans l'environement!
 
-[Configuration de l'environment Angular](/info/CICD%20Angular#utiliser-la-variable-denvironnement)
+[Configuration de l'environment Angular](/anciens/CICD%20Angular#utiliser-la-variable-denvironnement)
 
 - Une fois que le client a finalement été mis à jour avec la nouvelle adresse, vous devriez pouvoir enregistrer un joueur!
 
