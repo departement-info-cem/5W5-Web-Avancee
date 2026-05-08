@@ -67,7 +67,9 @@ Vous pouvez sauter cette étape si vous avez réussi à sélectionner votre repo
 |![alt text](image-28.png)|
 |-|
 
-6. C'est normalement pas plus compliqué de déployer sur Render (Vraiment facile si GitHub est déjà configuré)
+6. Si votre projet se trouve dans un sous répertoire, il faut le spécifier ici (L'endroit où il y a votre package.json)
+
+![alt text](image-33.png)
 
 7. Il faut configurer le build de notre projet qui se fait avec npm et spécifier l'endroit où l'on déploit
 
@@ -77,12 +79,14 @@ Vous pouvez rouler npm run build --prod dans VSCode pour valider dans quel répe
 
 ![alt text](image-32.png)
 
-8. Vous devez simplement attendre que le status soit déployé lorsque vous regardez vos projets
+8. C'est normalement pas plus compliqué de déployer sur Render (Vraiment facile si GitHub est déjà configuré)
+
+9. Vous devez simplement attendre que le status soit déployé lorsque vous regardez vos projets
 
 |![alt text](image-7.png)|
 |-|
 
-9. Vous voupez voir l'adresse de votre client déployé et l'état du déploiement en cliquant sur le projet
+10. Vous voupez voir l'adresse de votre client déployé et l'état du déploiement en cliquant sur le projet
 
 |![alt text](image-14.png)|
 |-|
