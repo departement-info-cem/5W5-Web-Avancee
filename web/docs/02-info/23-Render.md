@@ -119,12 +119,69 @@ Avant de continuer, il faut avoir générer un fichier Docker qui existe dans la
 
 ![alt text](image-31.png)
 
-:::danger
-Vous allez probablement avoir une erreur au moment d'utiliser votre client à moins que vous ayez déjà pris le temps de changer l'url du serveur auquel vous vous connectez
+## Configurer notre application Angular
+
+### Ajouter un # au routage
+- Pour s'enlever des maux de têtes de configuration, nous allons ajouter un **#** au début de nos routes
+
+:::warning
+Sans le **hashtag**, nous ne pourrons pas avoir accès directement à une url de l'application
 :::
 
+```ts
+@NgModule({
+  imports: [RouterModule.forRoot(routes, { useHash: true })],
+  exports: [RouterModule]
+})
+export class AppRoutingModule { }
+```
+
+### Ajouter des variable d'environnement
+```powershell
+ng generate environments
+```
+
+### Creer une variable pour l'url serveur
+- Ajouter une variable dans tous les fichiers d'environnement
+- Dans le fichier de developpement, nous aurons une url vers localhost
+```ts
+export const environment = {
+    production: false,
+    apiUrl: "https://localhost:7219/"
+};
+```
+
+- Dans l'environnement de production, nous aurons l'url du serveur déployé
+
+```ts
+export const environment = {
+    production: true,
+    apiUrl: "https://apisupercartesinfinies.azurewebsites.net/"
+};
+```
+
+### Utiliser une variable d'environnement
+- Maintenant, il suffit d'utiliser environment.apiUrl dans l'adresse de nos requêtes Http
+- ATTENTION, importer le fichier environment et non environment.developpement
+
+```ts
+import { environment } from 'src/environments/environment';
+@Injectable({
+  providedIn: 'root'
+})
+export class ApiService {
+  constructor(public http: HttpClient) { }
+  async register(user: Register) {
+    let player = await lastValueFrom(this.http.post<Player>(environment.apiUrl+'api/Account/Register', user));
+  }
+}
+```
+
+- Lors de ng serve, environment.developpement sera utilisé
+- Lors d'un ng build, environment sera utilisé
+
 :::danger
-Vous allez probablement avoir une erreur au moment d'utiliser votre client pour qu'il se connecte au serveur. Avez-vou pensé à mettre vos CORS à jour!?
+Vous allez probablement avoir une erreur au moment d'utiliser votre client pour qu'il se connecte au serveur. Avez-vou pensé à mettre vos CORS à jour!? (On fait ça sur le serveur!)
 :::
 
 ## Références
