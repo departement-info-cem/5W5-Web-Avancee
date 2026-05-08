@@ -109,7 +109,7 @@ update-database
 ```
 
 ## Voir notre BD
-- Vous pouvez voir BD en ligne directement sur Supabase
+- Vous pouvez voir votre BD en ligne directement sur Supabase
 <Row>
   <Column size="8">
     ![Creer le projet](/img/infos/Supabase/supa12.png)
