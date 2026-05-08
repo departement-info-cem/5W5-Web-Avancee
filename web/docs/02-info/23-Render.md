@@ -119,6 +119,13 @@ Avant de continuer, il faut avoir générer un fichier Docker qui existe dans la
 
 ![alt text](image-31.png)
 
+:::danger
+Vous allez probablement avoir une erreur au moment d'utiliser votre client à moins que vous ayez déjà pris le temps de changer l'url du serveur auquel vous vous connectez
+:::
+
+:::danger
+Vous allez probablement avoir une erreur au moment d'utiliser votre client pour qu'il se connecte au serveur. Avez-vou pensé à mettre vos CORS à jour!?
+:::
 
 ## Références
 
