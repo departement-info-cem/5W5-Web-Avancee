@@ -14,7 +14,7 @@
 |![alt text](image-4.png)|
 |-|
 
-## Déployer le client (Web Services)
+## Déployer le client (Static Site)
 
 1. Sélectionner "Static Sites"
 
@@ -79,9 +79,36 @@ Vous pouvez sauter cette étape si vous avez réussi à sélectionner votre repo
 |![alt text](image-14.png)|
 |-|
 
-6. AVANT Ajouter le support de Docker
-7. Dans la configuration de Render, on entre le path de Docker en dessous du répertoire du projet (mais on garde le root à la même place)
+## Déployer votre WebAPI (Web Services)
 
+1. On va maintenant déployé notre serveur WebAPI
+
+:::warning
+Avant de continuer, il faut avoir générer un fichier Docker qui existe dans la branche que l'on veut déployer
+:::
+
+2. Pour ce déploiement, on va choisir Web Services et sélectionner notre repository
+
+![alt text](image-19.png)
+
+3. Il faut modifier le language (même si Docker n'est pas vraiment un language, mais bon...) et également la branche déployée
+
+![alt text](image-20.png)
+
+4. Dans la configuration de Render, on entre le path de Docker. Si vous avez un répertoire sous lequel est votre fichier Docker, il faut l'entrer dans le path ici!
+
+![alt text](image-21.png)
+
+5. On prendre toujours l'option gratuire
+
+![alt text](image-22.png)
+
+6. Vous pouvez maintenant déployer votre serveur!
+
+![alt text](image-31.png)
+
+
+## Références
 
 Instructions:
 
