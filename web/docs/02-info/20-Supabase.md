@@ -78,7 +78,7 @@ Une fois qu'on a une organization, on peut la sélectionner et ajouter notre pro
 </Row>
 
 ## Configurer Entity Framework
-- Installer le package Nuget 
+- Installer le package Nuget dernière version de 8.0.X (Npgsql.EntityFrameworkCore.PostgreSQL)
 <Row>
   <Column size="8">
     ![Creer le projet](/img/infos/Supabase/supa9.png)
@@ -99,13 +99,13 @@ Une fois qu'on a une organization, on peut la sélectionner et ajouter notre pro
 - On ajoute une nouvelle migration
 
 ```bash
-dotnet ef migrations add Init
+add-migration Init
 ```
 
 - On mets à jour la base de données
 
 ```shell
-dotnet ef database update
+update-database
 ```
 
 ## Voir notre BD
