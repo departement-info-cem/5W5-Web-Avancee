@@ -16,9 +16,18 @@
 |![alt text](image-17.png)|
 |-|
 
-4. Si vous voyez ce message, vous pouvez répondre oui, mais on ne devrait pas avoir besoin de faire de débogage
+4. Si vous voyez ce message, vous pouvez répondre non, on ne devrait pas avoir besoin de faire de débogage
 
 |![alt text](image-18.png)|
 |-|
 
-5. Un fichier **Dockerfile** devrait avoir été généré. Il faut simplement faire un **commit** et un **push** et vous assurez que votre changement est dans la branche que vous voulez déployer (probablement **Dev**)
+5. On va seulement utiliser Docker pour notre version déployé, pas vraiment besoin de faire les modifications au .csprojet
+
+:::info
+Vous pouvez faire un commit avec les fichiers Dockerfile et .dockerignore et faire un "Discard changes" sur les 2 autres fichier
+:::
+
+|![alt text](image-34.png)|
+|-|
+
+6. Un fichier **Dockerfile** devrait avoir été généré. Il faut simplement faire un **commit** et un **push** et vous assurez que votre changement est dans la branche que vous voulez déployer (probablement **Dev**)
