@@ -12,10 +12,10 @@ Pour les explications suivantes, on assume qu'il y a une configuration comme cel
 
 ```ts
 trigger("shake", [
-  transition(":increment", useAnimation(shakeX, { params: { timing: 1000 } })),
+  transition(":increment", useAnimation(shakeX, { params: { timing: 1 } })),
 ]),
 trigger("flip", [
-  transition(":increment", useAnimation(flip, { params: { timing: 2000 } })),
+  transition(":increment", useAnimation(flip, { params: { timing: 2 } })),
 ]),
 // ...
 ng_shake = 0;
