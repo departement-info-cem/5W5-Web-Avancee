@@ -20,6 +20,9 @@ Mock<CatsController> controller = new Mock<CatsController>(serviceMock.Object) {
 
 - Dans chaque test, il faut vérifier que le classe de l'objet retourné est du bon type ET que la valeur retournée est la bonne (s'il y a une valeur)
 
+Vous pouvez regarder ce projet pour des exemples de vérification de type de ActionResult ET de la valeur contenu dans le action Result (Comme dans return Ok(x), vérifier la valeur x)
+[Projet GitHub action.result](https://github.com/CEM-420-5W5/action.result)
+
 ### Solution
 
 Il y a une branche **solution** dans le projet
