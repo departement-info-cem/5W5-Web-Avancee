@@ -60,6 +60,11 @@ Une fois qu'on a une organization, on peut la sélectionner et ajouter notre pro
   </Column>
 </Row>
 - Ajouter la Connection String au projet C# et remplacer le mot de passe
+
+:::warning
+Attention, vous avez 2 fichiers appsettings à modifier (MVC + WebAPI)
+:::
+
 <Row>
   <Column size="8">
     ![Creer le projet](/img/infos/Supabase/supa6.png)
@@ -85,6 +90,11 @@ Une fois qu'on a une organization, on peut la sélectionner et ajouter notre pro
   </Column>
 </Row>
 - Configurer le contexte dans Program.cs pour utiliser la librairie de Postgres
+
+:::warning
+Attention, vous avez 2 fichiers Program.cs à modifier (MVC + WebAPI)
+:::
+
 <Row>
   <Column size="8">
     ![Creer le projet](/img/infos/Supabase/supa10.png)
