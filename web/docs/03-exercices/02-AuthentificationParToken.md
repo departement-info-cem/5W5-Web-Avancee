@@ -7,7 +7,7 @@ Suite de l'exercice précédent: [MVCEtWebAPI](MVCEtWebAPI)
 ## Objectifs
 
 - Ajouter la possibilité d'utiliser un token avec Swagger
-- Créer un projet Angular qui permet de se connecter à l'API Web en utilisant une authentification par token
+- Créer un projet React qui permet de se connecter à l'API Web en utilisant une authentification par token
 
 ## .NET
 
@@ -70,9 +70,9 @@ Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
 
 ![alt text](_02-AuthentificationParToken/image-25.png)
 
-## Angular
+## React
 
-- C'est le moment de réviser Angular! Les prochaines étapes sont moins détaillées, sauf pour ce qui est nouveau!
+- C'est le moment de réviser React! Les prochaines étapes sont moins détaillées, sauf pour ce qui est nouveau!
 - Lorsque vous aurez terminé, votre application devrait ressembler à ceci (Les détails ne sont pas importants)
 - Après avoir fait un appel public sans être connecté:
 
@@ -86,26 +86,27 @@ Après s'être connecté et avoir fait un appel privé:
 
 ### Tester un appel de base
 
-Créer un client Angular
+C'est le moment de regarder vos notes de cours de 🔗[4W6](https://info.cegepmontpetit.ca/4W6-WebServices/notes/rencontre1.1#-cr%C3%A9er-un-projet-nextjs)
+
+Créer un client React et nommé le **react-mvc-et-web-api**
 
 ```powershell
-ng new ngMVCEtWebAPI
+npx create-next-app@latest
 ```
-
 | ![alt text](_02-AuthentificationParToken/image-3.png) |
 | ----------------------------------------------------- |
 
-Après utiliser cette commande pour démarrer le serveur Angular
+Après utiliser cette commande pour démarrer le serveur 
 
 ```powershell
-ng serve -o
+npm run dev
 ```
 
 - Faites une page très simple avec simplement 2 boutons "TestPublic" et "TestPrivate"
 - Créer des méthodes pour vous permettre d'appeler votre serveur web API en cliquant sur les boutons.
 - Vous pouvez simplement ajouter une section résultat sur la page et afficher le résultat du dernier appel au serveur.
 - L'appel à la fonction publique ne fonctionne probablement pas avec une **exception** à propos des **CORS**. Pourquoi? Vous faites un appel à partir d'un autre site!
-- Modifiez Program.cs pour ajouter le droit d'accès **CORS à localhost:4200**
+- Modifiez le Program.cs de votre projet WebAPI pour ajouter le droit d'accès **CORS à localhost:3000**
 
 La modification **AVANT builder.Build()**
 
@@ -113,7 +114,7 @@ La modification **AVANT builder.Build()**
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("CorsPolicy", builder => builder
-        .WithOrigins("http://localhost:4200")
+        .WithOrigins("http://localhost:3000")
         .AllowAnyMethod()
         .AllowAnyHeader());
 });
@@ -204,7 +205,7 @@ public class CreateTestDataDTO
 
 - Dans l'action, créez une nouvelle instance de TestData avec le bon nom et sauvegardez-la dans la BD
 - Testez l'action dans Swagger (Il va falloir utiliser un token après un login si vous avez bien mis un **\[Authorize\]**)
-- Ajoutez un formulaire à votre page Angular qui vous permet d'ajouter une nouvelle entrée TestData. Quelque chose d'assez simple comme ceci:
+- Ajoutez un formulaire à votre page React qui vous permet d'ajouter une nouvelle entrée TestData. Quelque chose d'assez simple comme ceci:
 
 ![alt text](_02-AuthentificationParToken/image-32.png)
 
@@ -216,11 +217,11 @@ Si vous avez bien fait la partie sur l'authentification avec l'intercepteur, l'a
 Pour l'instant, on ne fait aucune vérification de la validité de durée de vie de notre Token qui expire après 30 minutes! Si ça ne fonctionne pas et que vous avez fait votre login il y a assez longtemps, essayez de faire un Logout et un Login!
 :::
 
-- Finalement, utilisez la page MVC pour vérifier que le data que vous ajoutez avec Angular est bien présent dans la BD!
+- Finalement, utilisez la page MVC pour vérifier que le data que vous ajoutez avec React est bien présent dans la BD!
 
 ![alt text](_02-AuthentificationParToken/image-31.png)
 
 ### Solution
 
 - 🔗[Solution .NET](https://github.com/CEM-420-5W5/MVCEtWebAPI)
-- 🔗[Solution Angular](https://github.com/CEM-420-5W5/ngMVCEtWebAPI)
+- 🔗[Solution React](https://github.com/CEM-420-5W5/ReactMVCEtWebAPI)

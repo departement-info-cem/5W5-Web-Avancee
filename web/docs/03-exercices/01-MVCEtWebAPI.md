@@ -13,7 +13,7 @@ Mettre en place une solution .NET qui contient 3 projets, donc 1 MVC et un Web A
 
 ![alt text](_01-MVCEtWebAPI/image-4.png)
 
-- Gardez la version 8
+- Gardez la version 10
 - Choisissez l'option "Comptes individuels" pour le Type d'authentification
 - Par défaut, Identity est présent et fonctionnel avec l'utilisation de Cookies (Donc pas besoin de configurer Identity cette fois)
 - L'interface utilisateur est générée en utilisant Identity.UI (Donc pas de UI à faire pour l'authentification MVC non plus)
@@ -107,7 +107,7 @@ On a maintenant une application MVC fonctionnelle avec une authentification par 
 
 ### Ajout d'un projet WebAPI
 
-Votre jeu va être fait avec Angular et va se connecter à un serveur WebAPI et s'authentifier par tokens. Il y aura donc 2 serveurs différents, mais pour simplifier la gestion du projet, les deux projets vont être dans la même solution. (C'est également une bonne excuse pour vous faire apprendre comment gérer plusieurs projets dans une même solution!)
+Votre jeu va être fait avec React et va se connecter à un serveur WebAPI et s'authentifier par tokens. Il y aura donc 2 serveurs différents, mais pour simplifier la gestion du projet, les deux projets vont être dans la même solution. (C'est également une bonne excuse pour vous faire apprendre comment gérer plusieurs projets dans une même solution!)
 
 :::info
 
@@ -352,8 +352,8 @@ public async Task<ActionResult> Login(LoginDTO loginDTO)
 
         string tokenString = new JwtSecurityTokenHandler().WriteToken(token);
 
-        // On ne veut JAMAIS retouner une string directement lorsque l'on utilise Angular.
-        // Angular assume que l'on retourne un objet et donne une erreur lorsque le résultat obtenu est une simple string!
+        // On ne veut JAMAIS retouner une string directement lorsque l'on utilise React.
+        // React assume que l'on retourne un objet et donne une erreur lorsque le résultat obtenu est une simple string!
         return Ok(new LoginSuccessDTO() { Token = tokenString });
     }
 
@@ -363,7 +363,7 @@ public async Task<ActionResult> Login(LoginDTO loginDTO)
 
 :::warning
 
-Chaque année, de pauvres étudiants perdent beaucoup de temps en retournant une simple string dans un contrôleur WebAPI. Ça fonctionne bien dans Swagger ou Postman et ce n'est pas une erreur en soi, mais Angular assume que la valeur retournée est du JSON (donc un objet ou un array) et donne une erreur de parsing JSON. Essayez de ne pas être la victime de ce problème, retournez toujours un DTO, un array ou une string JSON.
+Chaque année, de pauvres étudiants perdent beaucoup de temps en retournant une simple string dans un contrôleur WebAPI. Ça fonctionne bien dans Swagger ou Postman et ce n'est pas une erreur en soi, mais React assume que la valeur retournée est du JSON (donc un objet ou un array) et donne une erreur de parsing JSON. Essayez de ne pas être la victime de ce problème, retournez toujours un DTO, un array ou une string JSON.
 
 :::
 

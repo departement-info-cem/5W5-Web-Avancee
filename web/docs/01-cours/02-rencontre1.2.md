@@ -30,8 +30,7 @@ N'hésitez pas à modifier les exemples fournis, à suivre des tutoriels, à ess
 
 [Bonnes pratiques avec Git/GitHub](/info/BonnesPratiquesGit)
 
-[Comment déboguer avec Angular](/info/DebogageAngular)
 
 ### Exercices
 
-[Authentification par token avec MVC et Angular](/exercices/AuthentificationParToken)
+[Authentification par token avec MVC et React](/exercices/AuthentificationParToken)
