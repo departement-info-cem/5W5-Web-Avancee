@@ -12,19 +12,19 @@
 ### Exemple
 
 - Un backend en C#
-- Un frontend en Angular
+- Un frontend en React
 - Une app mobile en Flutter
 
 👇
 
 - Un repo pour le backend C#
-- Un repo pour le frontend en Angular
+- Un repo pour le frontend en React
 - Un repo pour le mobile en Flutter
 
 ### Création du repo et .gitignore
 
 - À la création du repo, GitHub vous propose d'ajouter un template pour un .gitignore
-- Laisser le champ **VIDE** pour les projets **Angular**, puisque Angular génère lui-même un .gitignore
+- Laisser le champ **VIDE** pour les projets **React**, puisque React génère lui-même un .gitignore
 - Pour un projet **.NET**, vous **pouvez** laisser vide, mais il faut alors utiliser la commande dans la console après avoir créer votre projet.
 
 ![image](/img/infos/creationProjetGitHub.png)

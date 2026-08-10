@@ -14,4 +14,4 @@ sidebar_class_name: remise-tp1-signalr
 
 - MVC
 - Enregistrement et connexion
-- Angular
+- Client React
