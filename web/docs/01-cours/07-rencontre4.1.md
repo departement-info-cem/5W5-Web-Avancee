@@ -5,9 +5,6 @@ sidebar_class_name: remise-tp1-uml
 ---
 
 import SlidePage from '@site/src/components/SlidePage';
-import Rencontre_4_1 from './slides/Rencontre_4_1';
-
-
 
 <!-- 
 ## Reactive Forms, guards et routes enfants 💂

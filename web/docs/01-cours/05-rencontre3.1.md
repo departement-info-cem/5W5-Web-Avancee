@@ -4,7 +4,6 @@ hide_table_of_contents: true
 ---
 
 import SlidePage from '@site/src/components/SlidePage';
-import Rencontre_3_1 from './slides/Rencontre_3_1';
 
 # Présentation du TP1, GitHub par feature et stubs 🗂️
 

@@ -4,7 +4,6 @@ hide_table_of_contents: true
 ---
 
 import SlidePage from '@site/src/components/SlidePage';
-import Rencontre_2_1 from './slides/Rencontre_2_1';
 
 # Relations et révision MVC ↔️
 

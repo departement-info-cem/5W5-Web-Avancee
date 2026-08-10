@@ -4,7 +4,6 @@ hide_table_of_contents: true
 ---
 
 import SlidePage from '@site/src/components/SlidePage';
-import Rencontre_3_2 from './slides/Rencontre_3_2';
 
 # Polling et Signal R (première partie) 👉👈🥺
 
