@@ -43,15 +43,15 @@
   color: var(--examen-font-color);
 }
 
-.remise-tp1-uml::after,
-.remise-tp1-code::after,
-.remise-tp1-signalr::after,
-.remise-tp1-groupe::after,
-.remise-tp2-groupe-devops::after,
-.remise-tp2-fonctionnalites::after,
-.remise-tp3-groupe::after,
-.remise-tp3-devops::after,
-.remise-tp3-fonctionnalites::after {
+.remise-tp1-uml-v2::after,
+.remise-tp1-code-v2::after,
+.remise-tp1-signalr-v2::after,
+.remise-tp1-groupe-v2::after,
+.remise-tp2-groupe-devops-v2::after,
+.remise-tp2-fonctionnalites-v2::after,
+.remise-tp3-groupe-v2::after,
+.remise-tp3-devops-v2::after,
+.remise-tp3-fonctionnalites-v2::after {
   text-align: center;
   width: 100%;
   display: block;
@@ -59,39 +59,39 @@
   font-size: 0.75em;
 }
 
-.remise-tp1-uml::after {
+.remise-tp1-uml-v2::after {
   content: "Remise TP1 Diagramme (3%)";
 }
 
-.remise-tp1-code::after {
+.remise-tp1-code-v2::after {
   content: "Remise TP1 (12%)";
 }
 
-.remise-tp1-signalr::after {
+.remise-tp1-signalr-v2::after {
   content: "Remise TP1 SignalR (12%)";
 }
 
-.remise-tp1-groupe::after {
+.remise-tp1-groupe-v2::after {
   content: "Remise TP1 Groupe (5%)";
 }
 
-.remise-tp2-groupe-devops::after {
+.remise-tp2-groupe-devops-v2::after {
   content: "Remise TP2 Groupe & DevOps (3% + 2%)";
 }
 
-.remise-tp2-fonctionnalites::after {
+.remise-tp2-fonctionnalites-v2::after {
   content: "Remise TP2 Fonctionnalités (10% + 5%)";
 }
 
-.remise-tp3-groupe::after {
+.remise-tp3-groupe-v2::after {
   content: "Remise TP3 Groupe (4%)";
 }
 
-.remise-tp3-devops::after {
+.remise-tp3-devops-v2::after {
   content: "Remise TP3 DevOps (2%)";
 }
 
-.remise-tp3-fonctionnalites::after {
+.remise-tp3-fonctionnalites-v2::after {
   content: "Remise TP3 Fonctionnalités (10% + 4%)";
 }
 
