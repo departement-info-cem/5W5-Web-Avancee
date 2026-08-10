@@ -26,7 +26,7 @@ const Rencontre_1_2 = () => {
       {/* ===== SLIDE 3 ===== */}
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
       <h3>Localstorage et sessionstorage</h3>
-      <p>JavaScript (et donc Angular) possède 2 façons très semblables pour pour sauvegarder des données. Les deux utilisent les méthodes setItem et getItem.</p>
+      <p>JavaScript (et donc React) possède 2 façons très semblables pour pour sauvegarder des données. Les deux utilisent les méthodes setItem et getItem.</p>
       <p>localStorage: permet de stocker les données indéfiniment et partagées entres les fenêtres pour un même site.</p>
       <p>sessionStorage: permet de stocker des données qui sont effacées lorsque l'on ferme la fenêtre et qui peuvent être différente d'une fenêtre à l'autre pour un même site.</p>
       </section>
@@ -55,8 +55,8 @@ const Rencontre_1_2 = () => {
       {/* ===== SLIDE 6 ===== */}
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
       <h3>.gitignore (suite)</h3>
-      <p>Angular:</p>
-      <p>- /.angular (normal, il commence par un .)</p>
+      <p>React:</p>
+      <p>- /.next (normal, il commence par un .)</p>
       <p>- /node_modules</p>
       <p>Visual Studio:</p>
       <p>- /bin</p>
@@ -66,7 +66,7 @@ const Rencontre_1_2 = () => {
 
       {/* ===== SLIDE 7 ===== */}
       <section data-background-gradient="linear-gradient(to bottom, #141e30, #243b55)">
-      <h3>Débogage avec Angular</h3>
+      <h3>Débogage avec React</h3>
       <ul>
         <li>Démonstration en classe</li>
         <li>Me montrer que vous pouvez ajouter un breakpoint dans l’exercice d’aujourd’hui!</li>

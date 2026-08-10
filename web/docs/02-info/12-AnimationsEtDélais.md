@@ -1,5 +1,10 @@
 # Animations et délais
 
+🚧 À venir
+
+<!--
+TODO: Écrire comment on utiliser les animations avec React (Et les durées et timers, on peut probablement simplifier tout ça...)
+
 ## Objectif
 
 Bien comprendre l'utilisation de **setTimeout** et de **timer**, qui sont très utiles pour les animations, mais également dans de nombreuses autres situations.
@@ -224,3 +229,4 @@ playBounce() {
   },1000);
 }
 ```
+-->

@@ -20,6 +20,9 @@ sidebar_class_name: remise-tp2-fonctionnalites
 
 ## Faire jouer une animation sur une carte
 
+🚧 En construction 
+<!-- TODO: Clarifier comment les animations sont utilisés dans le TP
+
 ### CSS
 
 ```ts
@@ -49,9 +52,11 @@ Il y a présentement une class **fadeIn** sur les cartes du BattleField. C'est i
 
 :::
 
-### Angular
+### Faire jouer lesReact
 
 - Pour faire jouer une animation Angular, on peut ajouter des variables directement sur PlayableCard et déclencher les animations sur la carte avec un trigger sur ces variables
+
+ -->
 
 ### Exercices
 

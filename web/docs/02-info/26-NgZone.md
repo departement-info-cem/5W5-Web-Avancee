@@ -1,5 +1,10 @@
 # NgZone
 
+🚧 À venir
+
+<!--
+TODO: Vérifier si c'est encore nécessaire! 
+
 ## Objectif
 
 - Comprendre pourquoi la vue peut ne pas se mettre à jour une fois déployée
@@ -60,4 +65,4 @@ Jusqu'à présent, on n'a pas eu de problème avec nos applications, car on les 
 **Donc**, on va devoir ajouter un **this.zone.run** autour de chaque **callback de SignalR** si on veut que la page soit mise à jour (C'est probablement le cas dans **tous les callbacks de notre application**)
 
 
-
+-->

@@ -194,7 +194,7 @@ app.MapControllerRoute(
 app.MapHub<MatchHub>("/matchHub");
 ```
 
-## Côté Angular
+## Côté React
 
 La librairie "@microsoft/signalr" permet de communiquer facilement avec un hub.
 

@@ -7,7 +7,7 @@ sidebar_class_name: examen
 ## Examen final
 
 - SignalR (Hub avec BackgroundService)
-- Animations CSS et Angular
+- Animations
 - Tests unitaires avec Mock
 
 ## Conditions

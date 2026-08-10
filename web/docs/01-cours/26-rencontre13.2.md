@@ -17,4 +17,8 @@ sidebar_class_name: remise-tp3-devops
 - [CICD](/info/CICD)
 - [Docker](/info/Docker)
 - [Déploiement Render](/info/Render)
+
+<!-- TODO: Vérifier si il faut encore un égquivalent de NgZone? 
 - [Mise à jour des données avec NgZone pour SignalR/Angular](/info/NgZone)
+-->
+

@@ -35,7 +35,7 @@ L'enseignant va prendre jusqu'à **5 minutes** pour vérifier:
 
 ### Information supplémentaire pour les différentes sections
 
-#### Angular
+#### React
 
 - Découplage vue code
   - Il n'y a pas de traitement dans les vues

@@ -21,7 +21,7 @@
 |![alt text](image-25.png)|
 |-|
 
-2. Il faut sélection votre projet **ANGULAR**
+2. Il faut sélectionner votre projet **REACT**
 
 :::danger
 Si vous ne voyez pas votre repository, il faut faire les prochaines étapes pour donner accès à votre organization et revenir à cette étape par la suite!
@@ -119,8 +119,9 @@ Avant de continuer, il faut avoir générer un fichier Docker qui existe dans la
 
 ![alt text](image-31.png)
 
-## Configurer notre application Angular
+## Configurer notre application React
 
+<!-- TODO: Vérifier si il faut un équivalent React
 ### Ajouter un # au routage
 - Pour s'enlever des maux de têtes de configuration, nous allons ajouter un **#** au début de nos routes
 
@@ -193,3 +194,5 @@ https://www.linkedin.com/posts/milan-jovanovic_tired-of-fighting-with-cloud-conf
 Instructions détaillées:
 
 https://medium.com/@edawarekaro/containerizing-and-hosting-a-net-core-application-on-render-a-step-by-step-guide-4180f6a72b8b
+
+-->
