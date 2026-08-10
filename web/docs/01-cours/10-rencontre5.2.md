@@ -1,17 +1,9 @@
 ---
-title: 5.2 - Évaluation TP1 💯
+title: 5.2 - Travail sur TP1 
 hide_table_of_contents: true
 sidebar_class_name: remise-tp1-signalr
 ---
 
-# Évaluation individuelle du TP1 (Sauf pour la tâche Hub) 💯
+# Travail sur TP
 
-:::warning
-
-Évaluation des tâches individuelles du TP1 (Sauf Hub)
-
-:::
-
-- MVC
-- Enregistrement et connexion
-- Client React
+Travail sur [TP1](/tps/tp1)

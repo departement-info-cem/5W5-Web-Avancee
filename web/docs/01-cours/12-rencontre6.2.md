@@ -1,21 +1,30 @@
 ---
-title: 6.2 - Formatif
+title: 6.2 - Évaluation tâche SignalR et travail équipe 
 hide_table_of_contents: true
 sidebar_class_name: remise-tp1-groupe
 ---
 
-# TP1
+import SlidePage from '@site/src/components/SlidePage';
 
-- Évaluation individuelle de DevOps au prochain cours
+:::warning
 
+Évaluation de la tâche individuelle SignalR
 
-## Pratique examen intra
+:::
 
-- Il est **très fortement** recommandé de le faire **avant OU pendant** la période. Sinon, vous risquez de vous rendre compte trop tard que vous ne maitrisez pas la matière.
-- Pour le réussir, il faut bien comprendre:
-  - Guards
-  - ReactiveForms
-  - SignalR/Hub
-- L'intra vaut 20% de la note total. C'est la moitié de la la note théorique du cours qui a un double seuil!
+# Travail en équipe sur le TP1 ✏️
 
-[🔗Formatif A24](https://github.com/CEM-420-5W5/Intra_Formatif_A24)
+<iframe 
+  src="/5W5-Web-Avancee/slides/Rencontre_6_2.html" 
+  width="100%" 
+  height="1024px" 
+  style={{ border: 'none' }} 
+  allowFullScreen 
+/>
+
+- Travail en équipe pour regrouper le travail dans une même branche **ET ajouter les fonctionnalités manquantes** [Travail de groupe](http://localhost:3000/5W5-Web-Avancee/tps/tp1#int%C3%A9gration-%C3%A0-faire-seulement-une-fois-que-les-fonctionnalit%C3%A9s-sont-termin%C3%A9s-pour-l%C3%A9valuation-de-groupe)
+
+## Exercices
+
+[Git](/exercices/GitMerges)
+

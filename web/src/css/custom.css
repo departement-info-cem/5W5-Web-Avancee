@@ -64,7 +64,7 @@
 }
 
 .remise-tp1-code::after {
-  content: "Remise TP1 Code (12%)";
+  content: "Remise TP1 (12%)";
 }
 
 .remise-tp1-signalr::after {
@@ -80,7 +80,7 @@
 }
 
 .remise-tp2-fonctionnalites::after {
-  content: "Remise TP2 Fonctionnalités (5% + 10%)";
+  content: "Remise TP2 Fonctionnalités (10% + 5%)";
 }
 
 .remise-tp3-groupe::after {

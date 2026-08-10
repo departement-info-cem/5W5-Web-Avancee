@@ -1,12 +1,19 @@
 ---
-title: 8.1 - Présentation TP2 🗣️
+title: 8.1 - Évaluation TP1 (groupe) et présentation TP2
 hide_table_of_contents: true
 ---
+
+:::warning
+
+Évaluation de groupe pour le TP1
+
+:::
 
 # Présentation du TP2 🗣️
 
 - Révision de l'examen
 - Présentation du TP2
+- Évaluation de groupe du TP1
 - Sprints avec Azure Boards
 
 [Page du TP2](/tps/tp2)
@@ -27,3 +34,5 @@ Au final, la quantité de travail est la même et si on fait notre travail à te
 Note personnelle, j'étais le roi de la procrastination jusqu'à l'université et je peux vous assurer que plus personne ne trouve ça "cool" une fois qu'on est adulte!
 
 :::
+
+

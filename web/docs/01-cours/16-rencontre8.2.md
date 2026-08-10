@@ -1,17 +1,21 @@
 ---
-title: 8.2 - Événement (Partie 2) ⚡
+title: 9.1 - Tests unitaires 🧪
 hide_table_of_contents: true
+sidebar_class_name: remise-tp2-groupe-devops
 ---
 
-# Gestion des événements (Partie 2)
+# Tests unitaires 🧪
 
-## Info (révision)
+- Tests unitaires
+  - MSTests
+  - InMemoryDatabase
+  - Gestion des exceptions
+  - Couverture des tests
 
-- Gestion par évènements (2e partie)
-- Travail sur [TP2](/tps/tp2)
+## Info
 
-[Événements](/info/Events)
+[Tests unitaires](/info/TestsUnitaires)
 
 ## Exercices
 
-- [Exercice Events](/exercices/Events) pour faire un bonhomme pendu avec SignalR et des Events.
+[Exercice tests unitaires](/exercices/TestsUnitaires)

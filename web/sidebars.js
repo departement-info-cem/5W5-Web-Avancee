@@ -61,7 +61,6 @@ const sidebars = {
       type: "doc",
       label: "3.1 - TP1, Github, stubs 🗂️",
       id: "cours/rencontre3.1",
-      className: "remise-tp1-uml",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -77,7 +76,7 @@ const sidebars = {
       type: "doc",
       label: "3.2 - Polling / SignalR 👉👈🥺",
       id: "cours/rencontre3.2",
-      className: undefined,
+      className: "remise-tp1-uml",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -91,7 +90,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "4.1 - Forms, guards, routes 💂",
+      label: "4.1 - Événements (Partie 1) ⚡",
       id: "cours/rencontre4.1",
       className: undefined,
       customProps: {
@@ -107,7 +106,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "4.2 - Événements (Partie 1) ⚡",
+      label: "4.2 - SignalR (Partie 2) 👉👈🥺",
       id: "cours/rencontre4.2",
       customProps: {
         calendrier: {
@@ -122,9 +121,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "5.1 - SignalR (Partie 2) 👉👈🥺",
+      label: "5.1 - Événement (Partie 2) ⚡",
       id: "cours/rencontre5.1",
-      className: "remise-tp1-code",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -138,9 +136,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "5.2 - Évaluation TP1 💯",
+      label: "5.2 - Travail sur TP1 ✏️",
       id: "cours/rencontre5.2",
-      className: "remise-tp1-signalr",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -154,8 +151,9 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "6.1 - Travail TP1 ✏️",
+      label: "6.1 - Évaluation TP1 💯",
       id: "cours/rencontre6.1",
+      className: "remise-tp1-code",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -169,9 +167,9 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "6.2 - Formatif",
+      label: "6.2 - Évaluation SignalR 💯",
       id: "cours/rencontre6.2",
-      className: "remise-tp1-groupe",
+      className: "remise-tp1-signalr",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -185,7 +183,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "7.1 - Évaluation de groupe TP1 💯",
+      label: "7.1 - Formatif",
       id: "cours/rencontre7.1",
       customProps: {
         calendrier: {
@@ -214,7 +212,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "8.1 - Présentation TP2 🗣️",
+      label: "8.1 - Évaluation TP1 💯 et présentation TP2 🗣️",
+      className: "remise-tp1-groupe",
       id: "cours/rencontre8.1",
       customProps: {
         calendrier: {
@@ -229,7 +228,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "8.2 - Événement (Partie 2) ⚡",
+      label: "8.2 - Tests unitaires 🧪",
       id: "cours/rencontre8.2",
       customProps: {
         calendrier: {
@@ -244,7 +243,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "9.1 - Tests unitaires 🧪",
+      label: "9.1 - Animations (Partie 1) 💫",
       id: "cours/rencontre9.1",
       className: "remise-tp2-groupe-devops",
       customProps: {
@@ -260,7 +259,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "9.2 - Animations (Partie 1) 💫",
+      label: "9.2 - Animations (Partie 2) 💫",
       id: "cours/rencontre9.2",
       customProps: {
         calendrier: {
@@ -275,7 +274,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "10.1 - Animations (Partie 2) 💫",
+      label: "10.1 - GitHub & TP2 😾",
       id: "cours/rencontre10.1",
       customProps: {
         calendrier: {
@@ -290,7 +289,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "10.2 - GitHub & TP2 😾",
+      label: "10.2 - Travail sur TP2 ✏️",
       id: "cours/rencontre10.2",
       className: "remise-tp2-fonctionnalites",
       customProps: {

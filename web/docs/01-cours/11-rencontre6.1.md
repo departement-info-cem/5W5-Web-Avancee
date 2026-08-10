@@ -1,28 +1,22 @@
 ---
-title: 6.1 - Travail TP1 ✏️
+title: 6.1 - Évaluation TP1 💯
 hide_table_of_contents: true
 ---
 
-import SlidePage from '@site/src/components/SlidePage';
-
-# Travail en équipe sur le TP1 ✏️
+# Évaluation individuelle du TP1 (Sauf pour la tâche Hub) 💯
 
 :::warning
 
-Évaluation des tâches individuelles du Hub
+Évaluation des tâches individuelles du TP1 (Sauf Hub)
 
 :::
 
-<iframe 
-  src="/5W5-Web-Avancee/slides/Rencontre_6_1.html" 
-  width="100%" 
-  height="1024px" 
-  style={{ border: 'none' }} 
-  allowFullScreen 
-/>
+- MVC
+- Enregistrement et connexion
+- Client React
 
-- Travail en équipe pour regrouper le travail dans une même branche **ET ajouter les fonctionnalités manquantes** [Travail de groupe](http://localhost:3000/5W5-Web-Avancee/tps/tp1#int%C3%A9gration-%C3%A0-faire-seulement-une-fois-que-les-fonctionnalit%C3%A9s-sont-termin%C3%A9s-pour-l%C3%A9valuation-de-groupe)
 
-## Exercices
 
-[Git](/exercices/GitMerges)
+
+
+

@@ -1,5 +1,8 @@
 # Git Branches et Merges
 ## Branches
+
+
+
 ### Jouer avec des branches!
 - Créer un nouveau repo sur GitHub appelé branches_de_chats
 - Créer 2 nouvelles branches, une branche chats et une branche plus_de_chats
