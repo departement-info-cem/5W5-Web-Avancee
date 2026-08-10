@@ -18,8 +18,9 @@ import SlidePage from '@site/src/components/SlidePage';
 />
 -->
 
-## TODO: CHANGER POUR TRAVAIL SUR TP1
+## Travail sur TP1
 
+<!--
 ## Info
 
 [Guards💂](/info/Guards)
@@ -31,3 +32,4 @@ import SlidePage from '@site/src/components/SlidePage';
 [Guards💂](/exercices/Guards)
 
 [ReactiveForms](/exercices/ReactiveForms)
+-->

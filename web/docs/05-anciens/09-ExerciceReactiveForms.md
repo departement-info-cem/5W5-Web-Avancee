@@ -10,7 +10,7 @@ ng new ngReactiveForms
 
 - Les autres options ne sont pas importantes.
   :::info
-  Si vous avez déjà créé un projet pour suivre cet exemple [Info/ReactiveForms](/info/ReactiveForms), vous pouvez simplement ajouter un autre formulaire au même projet.
+  Si vous avez déjà créé un projet pour suivre cet exemple [Anciens/ReactiveForms](/anciens/ReactiveForms), vous pouvez simplement ajouter un autre formulaire au même projet.
   Sinon, suivez les instructions pour la création du projet et la configuration.
   :::
 
