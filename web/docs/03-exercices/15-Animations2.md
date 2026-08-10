@@ -1,5 +1,9 @@
 # Animations (2e partie)
 
+🚧 À venir
+
+<!--
+
 ## Objectifs
 
 Créer des séquences et des boucles d'animations
@@ -57,3 +61,4 @@ Il faut ajouter les _trigger_ css sur le div qui contient l'image, comme pour le
 ## Solution
 
 La solution est dans la branche **solution2** du repo
+-->

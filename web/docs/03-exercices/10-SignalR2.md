@@ -82,12 +82,12 @@ Il faut également ajouter 2 invokes sur le client pour faire fonctionner les t�
 |-|
 
 - Il faut mettre les clients à jour avec la liste des canaux à la connexion et quand il y a un changement
-  - Il faut également gérer le message sur le client (TODO: Angular)
+  - Il faut également gérer le message sur le client (TODO: React)
 
 ![alt text](/img/exercices/signalR2/image-7.png)
 
 - Lorsqu'on supprime un canal, il faut faire sortir les utilisateurs de ce canal en leur envoyant un message. (Pas besoin d'enlever les utilisateurs du groupe sur le serveur)
-  - Il faut également gérer le message sur le client (TODO: Angular)
+  - Il faut également gérer le message sur le client (TODO: React)
 - Lorsqu'un utilisateur joint un canal et qu'il envoit un message, le message doit être reçu uniquement par les membres du canal et commencer par \[NomDuCanal\]
 
 ![alt text](/img/exercices/signalR2/image-2.png)

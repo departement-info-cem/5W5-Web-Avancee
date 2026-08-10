@@ -5,7 +5,7 @@ Faire deux implémentations d’une application pour gérer des tâches:
   - La première avec un Controller d’API et du polling
   - La seconde avec SignalR
 
-Les deux versions vont utiliser 2 components différents en Angular et les deux implémentations vont exister en même temps sur le même serveur.
+Les deux versions vont utiliser 2 components différents en React et les deux implémentations vont exister en même temps sur le même serveur.
 
 [Projet GitHub avec Client et Serveur](https://github.com/CEM-420-5W5/PollingEtSignalR)
 
@@ -15,7 +15,7 @@ Faites un Fork du projet pour pouvoir faire votre propre copie. (comme dans l'ex
 
 ## La version **polling**
 
-### Complétez la partie Angular de **Polling**
+### Complétez la partie React du **Polling**
 
 - Il existe déjà un contrôleur d'API pour les tâches qui est fonctionnel **UselessTasksController.cs**
 - Il faut faire les appels et mettres les données à jour du côté du client
@@ -43,9 +43,9 @@ Faites un Fork du projet pour pouvoir faire votre propre copie. (comme dans l'ex
 - Décrémenter le nombre d'utilisateurs actifs
 - Déclencher la fonction UserCount sur les clients
 
-### Angular
+### React
 - Ajouter la possibilité d'ajouter et de compléter des tâches, mais avec SignalR
-  - Voir les **TODOs** dans **signalr.component.ts**
+  - Voir les **TODOs** dans le code React
 
 ## Ajout du nombre d'utilisateurs
 

@@ -21,7 +21,7 @@ Les trois fichiers sont maintenant sur la branche main!
 ## Conflits
 ### Setup de l'exercice
 - Créer un repo sur GitHub
-- Ajouter un nouveau projet Angular sur le repo
+- Ajouter un nouveau projet React sur le repo
 - Faire 2 clones du projet sur votre poste
 
 ### Modifier le projet sans conflit

@@ -37,7 +37,7 @@ Pour une **user story (Scénario d'utilisateur)** on utilise toujours "En tant q
 :::
 
 :::info
-Pour une **task (tâche)**, on change complètement de language et on devient très précis. **On parle à un programmeur ou une autre personne technique**. Imaginez-vous si vous étiez dans un stage et qu'on vous assigne: "Faire le code pour le feature". Des bons exemples: "Ajouter une classe X à notre modèle de donnée", "Ajouter une méthode JouerUneCarte au WebAPI pour mettre une carte en jeu", "Faire un nouveau component angular pour gérer le login"
+Pour une **task (tâche)**, on change complètement de language et on devient très précis. **On parle à un programmeur ou une autre personne technique**. Imaginez-vous si vous étiez dans un stage et qu'on vous assigne: "Faire le code pour le feature". Des bons exemples: "Ajouter une classe X à notre modèle de donnée", "Ajouter une méthode JouerUneCarte au WebAPI pour mettre une carte en jeu", "Faire un nouveau component React pour gérer le login"
 :::
 
 - Écrivez **au moins 5 epics** (Il y a déjà au moins 4 **acteurs**, si on inclut les compagnies de publicités)

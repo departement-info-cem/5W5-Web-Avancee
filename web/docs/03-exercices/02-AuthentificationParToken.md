@@ -191,7 +191,7 @@ public class TestDatasController : Controller
 
 - Vérifiez que vous devez maintenant être connecté avec un utilisateur pour utiliser le contrôleur
 
-### Ajouter une action Web API et l'utiliser dans Angular
+### Ajouter une action Web API et l'utiliser dans votre client React
 
 - Ajoutez un contrôleur **TestDataController** Web API à votre projet WebAPI
 - Ajoutez une action CreateData et un CreateTestDataDTO avec simplement une propriété Name. Protégez la avec **\[Authorize\]**
