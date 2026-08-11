@@ -412,8 +412,23 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "14.2 - Formatif",
+      label: "14.2 - Évaluation Finale TP3 💯",
       id: "cours/rencontre14.2",
+      customProps: {
+        calendrier: {
+          "Mathieu": [
+            { 1010: "2026-05-29" },
+            { 1020: "2026-05-29" },
+          ],
+        },
+        avancementLabel: "TP3",
+        avancement: 1,
+      },
+    },
+    {
+      type: "doc",
+      label: "15.1 - Formatif",
+      id: "cours/rencontre15.1",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -427,8 +442,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "15.1 - Examen Final",
-      id: "cours/rencontre15.1",
+      label: "15.2 - Examen Final",
+      id: "cours/rencontre15.2",
       className: "examen,remise-tp3-fonctionnalites",
       customProps: {
         calendrier: {
@@ -439,21 +454,6 @@ const sidebars = {
         },
         avancementLabel: "TP3",
         avancement: 0.93,
-      },
-    },
-    {
-      type: "doc",
-      label: "15.2 - Évaluation Finale TP3 💯",
-      id: "cours/rencontre15.2",
-      customProps: {
-        calendrier: {
-          "Mathieu": [
-            { 1010: "2026-05-29" },
-            { 1020: "2026-05-29" },
-          ],
-        },
-        avancementLabel: "TP3",
-        avancement: 1,
       },
     },
   ],
