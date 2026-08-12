@@ -361,6 +361,20 @@ public async Task<ActionResult> Login(LoginDTO loginDTO)
 }
 ```
 
+- On va maintenant rendre notre système un peu plus rapide en modifiant la méthode Register. On va modifier le retour pour retourner ceci à la place d'un simple Ok(). On n'aura pas besoin de faire un Login chaque fois qu'on fait un Register.
+
+```csharp
+// return Ok();
+
+var loginDTO = new LoginDTO() {
+    Username = registerDTO.Username,
+    Password = registerDTO.Password
+};
+
+// On peut appeler une autre méthode dans une action de Controller et retourner ce qu'elle retourne
+return await Login(loginDTO);
+```
+
 :::warning
 
 Chaque année, de pauvres étudiants perdent beaucoup de temps en retournant une simple string dans un contrôleur WebAPI. Ça fonctionne bien dans Swagger ou Postman et ce n'est pas une erreur en soi, mais React assume que la valeur retournée est du JSON (donc un objet ou un array) et donne une erreur de parsing JSON. Essayez de ne pas être la victime de ce problème, retournez toujours un DTO, un array ou une string JSON.
