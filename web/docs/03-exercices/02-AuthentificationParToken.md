@@ -72,6 +72,10 @@ Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
 
 ## React
 
+:::info
+Prenez le temps de continuer à lire, des instructions plus détaillés suivent après l'aperçu
+:::
+
 - C'est le moment de réviser React! Les prochaines étapes sont moins détaillées, sauf pour ce qui est nouveau!
 - Lorsque vous aurez terminé, votre application devrait ressembler à ceci (Les détails ne sont pas importants)
 - Après avoir fait un appel public sans être connecté:
