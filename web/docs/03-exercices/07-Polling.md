@@ -19,7 +19,7 @@ Faites un Fork du projet pour pouvoir faire votre propre copie. (comme dans l'ex
 
 - Il existe déjà un contrôleur d'API pour les tâches qui est fonctionnel **UselessTasksController.cs**
 - Il faut faire les appels et mettres les données à jour du côté du client
-  - Regardez les TODOs dans le fichier **polling.component.ts**
+  - Regardez les TODOs dans le fichier **polling/page.tsx**
 - Une fois que c'est possible d'ajouter les tâches et de les compléter, essayez d'ouvrir un autre navigateur et vérifier que les tâches ne sont **PAS** synchronisé entre les deux!
 - Ajoutez ensuite du polling pour mettre à jour les tâches chaque seconde
 
