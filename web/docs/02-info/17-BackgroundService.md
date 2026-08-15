@@ -129,4 +129,8 @@ L'exemple qui est discuté ici fait référence à l'exercice que vous pouvez tr
 [Exercice BackgroundService](/exercices/BackgroundService)
 
 Voici également un projet de référence plus simple qui est utile pour comprendre les Background Services:
+
+🚧 À venir!
+<!--
 [Projet GitHub Simple](https://github.com/CEM-420-5W5/SimpleBackgroundService.git)
+-->

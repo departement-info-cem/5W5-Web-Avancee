@@ -15,7 +15,8 @@ hide_table_of_contents: true
 
 [BackgroundService](/info/BackgroundService)
 
-Voici également un projet de référence plus simple qui est utile pour comprendre les Background Services: [Projet GitHub Simple](https://github.com/CEM-420-5W5/SimpleBackgroundService.git)
+🚧 À venir!
+<!--Voici également un projet de référence plus simple qui est utile pour comprendre les Background Services: [Projet GitHub Simple](https://github.com/CEM-420-5W5/SimpleBackgroundService.git)-->
 
 ### Exercices
 
