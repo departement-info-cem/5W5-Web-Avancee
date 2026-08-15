@@ -68,8 +68,8 @@ const sidebars = {
             { 1020: "2026-09-08" },
           ],
         },
-        avancementLabel: "TP1 créé, ",
-        avancement: 0.12,
+        /*avancementLabel: "TP1 créé, ",
+        avancement: 0.12,*/
       },
     },
     {
@@ -84,8 +84,8 @@ const sidebars = {
             { 1020: "2026-09-11" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.25,
+        /*avancementLabel: "TP1",
+        avancement: 0.25,*/
       },
     },
     {
@@ -100,8 +100,8 @@ const sidebars = {
             { 1020: "2026-09-15" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.37,
+        /*avancementLabel: "TP1",
+        avancement: 0.37,*/
       },
     },
     {
@@ -115,8 +115,8 @@ const sidebars = {
             { 1020: "2026-09-18" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.5,
+        /*avancementLabel: "TP1",
+        avancement: 0.5,*/
       },
     },
     {
@@ -130,8 +130,8 @@ const sidebars = {
             { 1020: "2026-09-22" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.62,
+        /*avancementLabel: "TP1",
+        avancement: 0.62,*/
       },
     },
     {
@@ -145,8 +145,8 @@ const sidebars = {
             { 1020: "2026-09-25" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.75,
+        /*avancementLabel: "TP1",
+        avancement: 0.75,*/
       },
     },
     {
@@ -161,8 +161,8 @@ const sidebars = {
             { 1020: "2026-09-29" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 0.87,
+        /*avancementLabel: "TP1",
+        avancement: 0.87,*/
       },
     },
     {
@@ -177,8 +177,8 @@ const sidebars = {
             { 1020: "2026-10-02" },
           ],
         },
-        avancementLabel: "TP1",
-        avancement: 1.0,
+        /*avancementLabel: "TP1",
+        avancement: 1.0,*/
       },
     },
     {
@@ -220,8 +220,8 @@ const sidebars = {
             { 1020: "2026-10-23" },
           ],
         },
-        avancementLabel: "TP2 créé,",
-        avancement: 0.14,
+        /*avancementLabel: "TP2 créé,",
+        avancement: 0.15,*/
       },
     },
     {
@@ -235,8 +235,8 @@ const sidebars = {
             { 1020: "2026-10-27" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.28,
+        /*avancementLabel: "TP2",
+        avancement: 0.29,*/
       },
     },
     {
@@ -251,8 +251,8 @@ const sidebars = {
             { 1020: "2026-10-30" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.42,
+        /*avancementLabel: "TP2",
+        avancement: 0.42,*/
       },
     },
     {
@@ -266,8 +266,8 @@ const sidebars = {
             { 1020: "2026-11-03" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.57,
+        /*avancementLabel: "TP2",
+        avancement: 0.58,*/
       },
     },
     {
@@ -281,8 +281,8 @@ const sidebars = {
             { 1020: "2026-11-06" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.71,
+        /*avancementLabel: "TP2",
+        avancement: 0.71,*/
       },
     },
     {
@@ -297,8 +297,8 @@ const sidebars = {
             { 1020: "2026-11-10" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 0.85,
+        /*avancementLabel: "TP2",
+        avancement: 0.85,*/
       },
     },
     {
@@ -312,8 +312,8 @@ const sidebars = {
             { 1020: "2026-11-13" },
           ],
         },
-        avancementLabel: "TP2",
-        avancement: 1,
+        /*avancementLabel: "TP2",
+        avancement: 1,*/
       },
     },
     {
@@ -327,8 +327,8 @@ const sidebars = {
             { 1020: "2026-11-17" },
           ],
         },
-        avancementLabel: "TP3 créé, ",
-        avancement: 0.14,
+        /*avancementLabel: "TP3 créé, ",
+        avancement: 0.14,*/
       },
     },
     {
@@ -342,8 +342,8 @@ const sidebars = {
             { 1020: "2026-11-20" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 0.28,
+        /*avancementLabel: "TP3",
+        avancement: 0.28,*/
       },
     },
     {
@@ -358,8 +358,8 @@ const sidebars = {
             { 1020: "2026-11-24" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 0.42,
+        /*avancementLabel: "TP3",
+        avancement: 0.42,*/
       },
     },
     {
@@ -373,8 +373,8 @@ const sidebars = {
             { 1020: "2026-11-27" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 0.57,
+        /*avancementLabel: "TP3",
+        avancement: 0.57,*/
       },
     },
     {
@@ -389,8 +389,8 @@ const sidebars = {
             { 1020: "2026-12-01" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 0.71,
+        /*avancementLabel: "TP3",
+        avancement: 0.71,*/
       },
     },
     {
@@ -404,8 +404,8 @@ const sidebars = {
             { 1020: "2026-12-04" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 0.85,
+        /*avancementLabel: "TP3",
+        avancement: 0.85,*/
       },
     },
     {
@@ -419,8 +419,8 @@ const sidebars = {
             { 1020: "2026-12-08" },
           ],
         },
-        avancementLabel: "TP3",
-        avancement: 1,
+        /*avancementLabel: "TP3",
+        avancement: 1,*/
       },
     },
     {

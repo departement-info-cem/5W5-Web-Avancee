@@ -46,9 +46,9 @@ export default function MainDocsGrid() {
   };
 
   const getBackgroundColor = (className: string): string => {
-    if (className && className.includes("tp")) {
+    /*if (className && className.includes("tp")) {
       return "var(--remise-tp-bg)";
-    }
+    }*/
     if (className && className.includes("examen")) {
       return "var(--examen-bg)";
     }
