@@ -36,7 +36,7 @@ Il faut pouvoir progresse rapidement les étapes:
 <iframe 
   src="/5W5-Web-Avancee/slides/Rencontre_4_1.html" 
   width="100%" 
-  height="1024px" 
+  height="800px" 
   style={{ border: 'none' }} 
   allowFullScreen 
 />

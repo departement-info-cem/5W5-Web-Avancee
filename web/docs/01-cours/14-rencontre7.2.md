@@ -6,8 +6,7 @@ sidebar_class_name: examen
 
 # Examen Intra
 
-- Guards
-- Reactive Forms
+- Gestion d'évènements
 - SignalR
 
 ## Conditions
