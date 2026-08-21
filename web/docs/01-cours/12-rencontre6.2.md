@@ -6,13 +6,13 @@ sidebar_class_name: remise-tp1-groupe
 
 import SlidePage from '@site/src/components/SlidePage';
 
+# Travail en équipe sur le TP1 ✏️
+
 :::warning
 
 Évaluation de la tâche individuelle SignalR
 
 :::
-
-# Travail en équipe sur le TP1 ✏️
 
 <iframe 
   src="/5W5-Web-Avancee/slides/Rencontre_6_2.html" 

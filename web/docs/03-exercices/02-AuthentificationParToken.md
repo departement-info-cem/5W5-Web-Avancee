@@ -56,11 +56,13 @@ builder.Services.AddSwaggerGen(opt =>
 - Faites un register et un login avec un utilisateur en utilisant Swagger
 - Copiez le token qui a été reçu par l'appel au login (Copiez tout le contenu de la réponse, mais faites attention de garder seulement le token à la prochaine étape!)
 
-![alt text](_02-AuthentificationParToken/image-23.png)
+| ![alt text](_02-AuthentificationParToken/image-23.png) |
+| ------------------------------------------------------ |
 
 - Cliquez sur le cadenas ouvert pour spécifier le token
 
-![alt text](_02-AuthentificationParToken/image-24.png)
+| ![alt text](_02-AuthentificationParToken/image-24.png) |
+| ------------------------------------------------------ |
 
 :::warning
 Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
@@ -68,7 +70,8 @@ Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
 
 - Testez maintenant PrivateTest, vous devriez normalement obtenir un code 200
 
-![alt text](_02-AuthentificationParToken/image-25.png)
+| ![alt text](_02-AuthentificationParToken/image-25.png) |
+| ------------------------------------------------------ |
 
 ## React
 
@@ -107,10 +110,16 @@ npm run dev
 ```
 
 - Faites une page très simple avec simplement 2 boutons "TestPublic" et "TestPrivate"
+
+| ![alt text](_02-AuthentificationParToken/image-6.png) |
+| ----------------------------------------------------- |
+
 - Créer des méthodes pour vous permettre d'appeler votre serveur web API en cliquant sur les boutons.
 - Vous pouvez simplement ajouter une section résultat sur la page et afficher le résultat du dernier appel au serveur.
 - L'appel à la fonction publique ne fonctionne probablement pas avec une **exception** à propos des **CORS**. Pourquoi? Vous faites un appel à partir d'un autre site!
 - Modifiez le Program.cs de votre projet WebAPI pour ajouter le droit d'accès **CORS à localhost:3000**
+
+
 
 La modification **AVANT builder.Build()**
 
@@ -174,13 +183,16 @@ sessionStorage.removeItem("token");
 
 - Ajoutez un contrôleur pour faire les actions CRUD sur **TestData**
 
-![alt text](_02-AuthentificationParToken/image-28.png)
+| ![alt text](_02-AuthentificationParToken/image-28.png) |
+| ------------------------------------------------------ |
 
-![alt text](_02-AuthentificationParToken/image-29.png)
+| ![alt text](_02-AuthentificationParToken/image-29.png) |
+| ------------------------------------------------------ |
 
 - Assurez-vous de pouvoir ajouter une entrée **TestData** avec les pages générées. (L'image affiche le résultat après avoir ajouté une entrée)
 
-![alt text](_02-AuthentificationParToken/image-30.png)
+| ![alt text](_02-AuthentificationParToken/image-30.png) |
+| ------------------------------------------------------ |
 
 :::info
 N'oubliez pas de faire une migration et de mettre la BD à jour. Il y a les détails sur comment faire dans l'exercice précédent!
@@ -211,7 +223,8 @@ public class CreateTestDataDTO
 - Testez l'action dans Swagger (Il va falloir utiliser un token après un login si vous avez bien mis un **\[Authorize\]**)
 - Ajoutez un formulaire à votre page React qui vous permet d'ajouter une nouvelle entrée TestData. Quelque chose d'assez simple comme ceci:
 
-![alt text](_02-AuthentificationParToken/image-32.png)
+| ![alt text](_02-AuthentificationParToken/image-32.png) |
+| ------------------------------------------------------ |
 
 :::info
 Si vous avez bien fait la partie sur l'authentification avec l'intercepteur, l'appel devrait fonctionner après avoir fait un login.
@@ -223,9 +236,11 @@ Pour l'instant, on ne fait aucune vérification de la validité de durée de vie
 
 - Finalement, utilisez la page MVC pour vérifier que le data que vous ajoutez avec React est bien présent dans la BD!
 
-![alt text](_02-AuthentificationParToken/image-31.png)
+| ![alt text](_02-AuthentificationParToken/image-31.png) |
+| ------------------------------------------------------ |
 
 ### Solution
 
 - 🔗[Solution .NET](https://github.com/CEM-420-5W5/MVCEtWebAPI)
 - 🔗[Solution React](https://github.com/CEM-420-5W5/ReactMVCEtWebAPI)
+
