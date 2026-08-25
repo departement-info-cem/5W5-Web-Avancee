@@ -4,6 +4,10 @@
 
 Mettre en place une solution .NET qui contient 3 projets, donc 1 MVC et un Web API.
 
+:::warning
+Nous allons continuer à travailler sur le même exercice au prochain cours, c'est une bonne idée de le sauvegarder sur GitHub. Nous allons travailler avec GitHub toute la session. 
+:::
+
 ## La partie .NET
 
 ### Création d'un projet MVC
