@@ -39,7 +39,7 @@ Comme on va avoir 2 projets dans notre solution qui utilise les mêmes données,
 
 - On va également déplacer les dépendances et comme c'est assez long et péniblre à faire avec le UI de gestion de package, on va simplement modifier les fichiers de projet
   - Ouvrez les fichiers de projet Models et MVCEtWebAPI et déplacer toutes les dépendances SAUF celle de **Microsoft.EntityFrameworkCore.Tools**
-  - Le résultat doit ressemble à ceci:
+  - Le résultat doit ressemble à ceci: (Mais avec des versions 10.0.11 à la dernière mise à jour)
 
 ![alt text](_01-MVCEtWebAPI/image-8.png)
 
@@ -115,17 +115,45 @@ C'est **possible** de rouler à la fois des contrôleurs de **WebAPI** et **MVC*
 
 :::
 
-- Ajoutez projet **WebAPI** à l'intérieur de la **même solution**
+- Ajoutez un projet de type **API Web** à l'intérieur de la **même solution**
 - Nommez-le simplement "WebAPI"
 - Ne choisissez **PAS** de type d'authentification (il faut malheureusement faire la configuration de l'authentification par token nous-même...)
 
 ![alt text](_01-MVCEtWebAPI/image-14.png)
 
+- Il faut ajouter la dépendance suivante. Vous pouvez cliquez sur le projet WebAPI et modifier directement le fichier ou ajouter avec le package manager.
+
+```csharp
+<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.2.3" />
+```
+
+- On doit également configurer Swagger. Vous devez modifier le Program.cs (Attention, prenez le bon)
+
+```csharp
+if (app.Environment.IsDevelopment())
+{
+    app.MapOpenApi();
+    // AJOUTER CETTE LIGNE!
+    app.UseSwaggerUI(options => { options.SwaggerEndpoint("/openapi/v1.json", "My API v1"); });
+}
+```
+
 - Regardez le menu en haut, il y a maintenant une nouvelle option pour choisir le projet que vous voulez lancer
 
 ![alt text](_01-MVCEtWebAPI/image-15.png)
 
-- Choisissez WebAPI et vérifiez que ça se lance bien et que vous avez maintenant
+- Choisissez WebAPI et vérifiez et assurez-vous d'utiliser **http**
+
+- Il faut également configurer l'action à faire quand on lance le débogage en cliquant sur:
+1. "Propriétés" avec un clic droit sur le projet
+2. Un clic sur Déboguer
+3. Un clic sur Profils de lancement de débogage
+4. Un clic sur Lancer le navigateur (pour l'activer)
+5. Et finalement écrire swagger/index.html dans la zone URL
+
+![alt text](image-6.png)
+
+- Vous pouvez maintenant vérifier que ça se lance bien et que vous avez maintenant
 
 ![alt text](_01-MVCEtWebAPI/image-16.png)
 
