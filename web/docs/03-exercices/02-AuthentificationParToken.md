@@ -43,6 +43,10 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 ```
 
+:::info
+Vous devriez maintenant pouvoir démarrer votre serveur web et utiliser Swagger sans problème.
+:::
+
 ### Ajouter l'utilisation de token avec Swagger
 
 Cette partie est seulement pour **vous aider à tester** vos applications.
@@ -135,7 +139,7 @@ npx create-next-app@latest
 | ![alt text](_02-AuthentificationParToken/image-3.png) |
 | ----------------------------------------------------- |
 
-Après utiliser cette commande pour démarrer le serveur 
+Utiliser cette commande pour démarrer le serveur 
 
 ```powershell
 npm run dev
