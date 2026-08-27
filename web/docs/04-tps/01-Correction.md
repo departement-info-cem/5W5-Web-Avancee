@@ -7,9 +7,8 @@ Pour se préparer à l'évaluation en classe, l'étudiant doit:
 1. Ouvrir son **serveur** et son **client** et être prête à faire une démonstration du travail
    - Faire le **update-database**
    - S'assurer que **tout fonctionne**
-   - N'oubliez pas de générer un bon certificat si nécessaire (**dotnet dev-certs https** ...)
 2. Ouvrir **DevOps** et être prêt à présenter ses tâches et UserStories
-3. Ouvrir **GitKraken** et être prêt à présenter ses commits
+3. Ouvrir **Fork** et être prêt à présenter ses commits
 
 L'enseignant va prendre jusqu'à **5 minutes** pour vérifier:
 
@@ -40,7 +39,7 @@ L'enseignant va prendre jusqu'à **5 minutes** pour vérifier:
 - Découplage vue code
   - Il n'y a pas de traitement dans les vues
 - Structure du projet client
-  - Appels HTTP regroupés (service)
+  - Appels HTTP regroupés (hooks)
   - Structure et noms homogènes et standards
   - Lisibilité du code (1 fonction < 1 page, etc.)
 - Stabilité
