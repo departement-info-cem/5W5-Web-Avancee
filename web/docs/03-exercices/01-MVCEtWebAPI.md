@@ -63,25 +63,10 @@ Comme on va avoir 2 projets dans notre solution qui utilise les mêmes données,
 
 Il faut maintenant créer notre migration et mettre la BD à jour avec un projet séparé pour les données.
 
-Voici 2 options:
-
-- Ouvrir un terminal ou powershell au niveau de la solution.
-- Ouvrir la console de gestionnaire de package (C'est celle que j'utilise en cours)
+- Ouvrir la console de gestionnaire de package
 
 ![alt text](image.png)
 
-#### Façon terminal/powershell
-
-- Créez la migration en spécifiant le nom des deux projets
-```powershell
-dotnet ef migrations add Initiale --project Models --startup-project MVCEtWebAPI
-```
-- Créer la BD
-```powershell
-dotnet ef database update --project MVCEtWebAPI
-```
-
-#### Façon gestionnaire de package
 - Sélectionner le projet Models (vos options sont un peu différentes de l'image)
 
 ![alt text](image-1.png)

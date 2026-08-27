@@ -11,6 +11,38 @@ Suite de l'exercice précédent: [MVCEtWebAPI](MVCEtWebAPI)
 
 ## .NET
 
+### Utiliser une version précédente de Swagger (sans OpenAPI)
+
+Dans le projet WebAPI, on va **effacer** les packages suivants:
+
+```csharp
+<PackageReference Include="Microsoft.AspNetCore.OpenApi" Version="10.0.11" />
+<PackageReference Include="Swashbuckle.AspNetCore.SwaggerUI" Version="10.2.3" />
+```
+
+et le remplacer par:
+
+```csharp
+<PackageReference Include="Swashbuckle.AspNetCore" Version="6.9.0" />
+```
+
+Dans Program.cs (celui de WebAPI), on va changer nos appels pour
+
+```csharp
+//app.MapOpenApi();
+//app.UseSwaggerUI(options => { options.SwaggerEndpoint("/openapi/v1.json", "My API v1"); });
+app.UseSwagger();
+app.UseSwaggerUI();
+```
+
+et on va utiliser addEndpointsApiExplorer() et addSwaggerGen()
+
+```csharp
+//builder.Services.AddOpenApi();
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
+```
+
 ### Ajouter l'utilisation de token avec Swagger
 
 Cette partie est seulement pour **vous aider à tester** vos applications.
