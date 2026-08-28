@@ -33,3 +33,12 @@ N'hésitez pas à modifier les exemples fournis, à suivre des tutoriels, à ess
 ### Exercices
 
 [Authentification par token avec MVC et React](/exercices/AuthentificationParToken)
+
+### Truc avec update-database et add-migration
+
+Si vous avez l'erreur suivante: "L’exécution de la commande s’est arrêtée, car la variable de préférence « ErrorActionPreference » ou le paramètre courant a la valeur Stop : System.Management.Automation.RemoteException"
+
+Ajoutez -ErrorAction Continue à votre commande:
+
+update-database -ErrorAction Continue
+
