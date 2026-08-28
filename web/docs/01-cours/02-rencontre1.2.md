@@ -36,11 +36,19 @@ N'hésitez pas à modifier les exemples fournis, à suivre des tutoriels, à ess
 
 ### Truc avec update-database et add-migration
 
-Si vous avez l'erreur suivante: "L’exécution de la commande s’est arrêtée, car la variable de préférence « ErrorActionPreference » ou le paramètre courant a la valeur Stop : System.Management.Automation.RemoteException"
+Si vous avez l'erreur suivante:
+
+:::danger
+L’exécution de la commande s’est arrêtée, car la variable de préférence « ErrorActionPreference » ou le paramètre courant a la valeur Stop : System.Management.Automation.RemoteException
+:::
 
 Ajoutez -ErrorAction Continue à votre commande:
 
 ```powershell
 update-database -ErrorAction Continue
 ```
+
+:::info
+Ça ne va probablement pas régler votre erreur, MAIS ça va vous donner assez d'information pour la régler!
+:::
 
