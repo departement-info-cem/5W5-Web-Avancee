@@ -110,7 +110,7 @@ Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
 | ------------------------------------------------------ |
 
 :::warning
-Si vous avez un message d'erreur à propos de l'adresse de signature du token, vérifiez votre la variable **serverAdress** dans **Program.cs** (WebAPI). Est-ce qu'il est avec http? Est-ce qu'il utilise le bon port?
+Si vous avez un message d'erreur à propos de l'adresse de signature du token, vérifiez votre la variable **serverAdress** dans **Program.cs** (WebAPI). Est-ce qu'elle utilise http vs https? Est-ce qu'ell utilise le bon port?
 :::
 
 ## React
