@@ -109,6 +109,10 @@ Faites attention d'effacer le " \} à la fin et le \{ "token": " au début
 | ![alt text](_02-AuthentificationParToken/image-25.png) |
 | ------------------------------------------------------ |
 
+:::warning
+Si vous avez un message d'erreur à propos de l'adresse de signature du token, vérifiez votre la variable **serverAdress** dans **Program.cs** (WebAPI). Est-ce qu'il est avec http? Est-ce qu'il utilise le bon port?
+:::
+
 ## React
 
 :::info
