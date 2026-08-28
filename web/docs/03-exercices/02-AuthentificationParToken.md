@@ -221,6 +221,15 @@ sessionStorage.removeItem("token");
 - Ajoutez également une propriété **Name**
 - ATTENTION: Comme c'est un modèle, ajoutez la classe dans le projet **Models**. Il va être utilisé par les 2 autres projets.
 
+:::warning
+Vérifiez que votre projet **MVC** contient bien ces packages: (Ils doivent exister directement dans le projet, pas par référence à l'intérieur du projet Models)
+:::
+```cs
+<PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="10.0.2" />
+<PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="10.0.11"/>
+<PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="10.0.11"/>
+```
+
 - Ajoutez un contrôleur pour faire les actions CRUD sur **TestData**
 
 | ![alt text](_02-AuthentificationParToken/image-28.png) |
@@ -228,6 +237,11 @@ sessionStorage.removeItem("token");
 
 | ![alt text](_02-AuthentificationParToken/image-29.png) |
 | ------------------------------------------------------ |
+
+:::danger
+Si la génération de contrôleur ne fonctionne pas la première fois, essayer de fermer Visual Studio et de le redémarrer
+:::
+
 
 - Assurez-vous de pouvoir ajouter une entrée **TestData** avec les pages générées. (L'image affiche le résultat après avoir ajouté une entrée)
 
