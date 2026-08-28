@@ -40,5 +40,7 @@ Si vous avez l'erreur suivante: "L’exécution de la commande s’est arrêtée
 
 Ajoutez -ErrorAction Continue à votre commande:
 
+```powershell
 update-database -ErrorAction Continue
+```
 
