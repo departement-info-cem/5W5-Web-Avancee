@@ -244,6 +244,10 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 
 ![image](/img/exercices/relations/GenerationController.png)
 
+:::warning
+Si le répertoire dans **Views/** se nomme Genre, renommé le pour Genres (Avec un s, il doit avoir le même nom que le contrôleur!)
+:::
+
 - Ajouter un lien dans la barre de navigation
 
 | ![image](/img/exercices/relations/NavbarGenres.png) |
@@ -253,9 +257,18 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
   - shooter
   - fighting
 
+:::warning
+Il y a un bug avec VisualStudio 2026 et il affiche une colonne pour Games comme du texte, vous pouvez simplement ne pas l'afficher dans la vue Index et ignorer l'input dans les formulaires pour l'exerice...
+:::
+
 ![image](/img/exercices/relations/Genres.png)
 
 - Générer un contrôleur avec une vue pour **Game**
+
+:::warning
+Si le répertoire dans **Views/** se nomme Game, renommé le pour Games (Avec un s, il doit avoir le même nom que le contrôleur!)
+:::
+
 - Ajouter un lien dans la barre de navigation
 - La vue générée a probablement un problème avec le champ optionnel Genre. On peut simplement modifier pour afficher le nom lorsque le genre n'est pas null:
 
@@ -274,13 +287,17 @@ Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas
 |-|
 
 - Afficher les images avec un height de 200
-- Corriger le Contrôleur **GamesController** pour afficher le **Name** des **Genre**. Il y a 4 endroits où un SelectList est créé. Il faut simplement utiliser le champ "Name" à la place du champ "Id"
+- Corriger le Contrôleur **GamesController** et ses vues pour utiliser un SelectList qui permet de choisir un **Genre** par son champ "Name". Il y a 4 endroits où un SelectList est créé dans chaque contrôleur (Edit et Create) et il faut également mettre les vues à jour!
 
 :::info Conseil
 Si vous avez oublié comment faire, vous pouvez aller voir comment vous aviez fait dans le cours de [3W6 - Programmation Web Transactionnelle](https://info.cegepmontpetit.ca/3W6-Web-Transactionelle/).
 :::
 
 - Corriger **les** vues **Edit** et **Create** pour bien supporter la possibilité de n'avoir aucun genre.
+
+:::info
+Votre code risque d'être un peu différent, mais ça vous donne une façon de faire pour ajouter une option "null"
+:::
 
 ```html
 <select asp-for="GenreId" class="form-control" asp-items="ViewBag.GenreId">
@@ -289,6 +306,10 @@ Si vous avez oublié comment faire, vous pouvez aller voir comment vous aviez fa
 ```
 
 - Vérifier qu'il est possible de choisir un nouveau genre pour un jeu existant
+
+- Une fois que tout est fonctionnel:
+
+![alt text](image-7.png)
 
 ### Relation N à N sans doublon entre Game et Platform
 
@@ -492,6 +513,11 @@ if (_context.Platform.Count() == 0)
 :::warning
 Faites attention, il y a plusieurs endroits où l'on génère une `SelectList` pour les plateformes. Pour l'exercice, ce n'est **pas** nécessaire de s'occuper des actions **Create**, seulement **Edit**.
 :::
+
+Une fois terminé, vous devriez avoir un affichage comme ceci:
+
+| ![alt text](image-8.png) |
+| --- | 
 
 ### Relation N à N avec doublon entre Game et Purchase
 
