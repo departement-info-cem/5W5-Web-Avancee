@@ -3,11 +3,11 @@
 ### Objectif
 L'objectif de cet exercice est:
 - De vous faire travailler en équipe
-- De mettre en pratique les notions de Backlog, Epics, User Stories, Tasks et Sprints vues en classe
+- De mettre en pratique les notions de Backlog, User Stories, Tasks et Sprints vues en classe
 - D'apprendre à utiliser les fonctionnalités des Boards en Azure DevOps
 
 :::info
-L'objectif de l'exercice est surtout de se familiariser avec les outils et avec les concepts, alors ne soyez **pas trop stressé ou pointilleux** au moment de découper votre projet en epics, user stories et tasks!
+L'objectif de l'exercice est surtout de se familiariser avec les outils et avec les concepts, alors ne soyez **pas trop stressé ou pointilleux** au moment de découper votre projet en user stories et tasks! (Mais faites attention d'utiliser la bonne formulation pour les user stories et faire que les tasks soient des choses à faire par les gens qui travaillent sur le projet!)
 :::
 
 :::warning
@@ -27,10 +27,6 @@ On est en **2006** et vous avez décidé de révolutionner le monde de la musiqu
 ### Travail à faire
 
 https://infdevops.cegepmontpetit.ca/H26-5W5-WebAvancee, votre équipe devrait déjà avoir un projet MusiquePlus avec lequel travailler!
-
-:::info
-Le language utilisé pour une **epic (épique)** est simple, comme: "Permettre à un client de commander de la nourriture de centaines de restaurants", "Que n'importe qui puisse livrer de la nourriture", etc.
-:::
 
 :::info
 Pour une **user story (Scénario d'utilisateur)** on utilise toujours "En tant que ..., je veux .... afin de ...". Il doit identifier une fonctionnalité de façon précise et être compréhensible par un gestionnaire de projet.
