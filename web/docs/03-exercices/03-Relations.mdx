@@ -236,16 +236,15 @@ remove-migration
 update-database
 ```
 
-- Générer un contrôleur avec une vue pour **Genre**
+- Générer un contrôleur avec une vue pour **Genre** en utilisant cette commande
 
-:::danger
-Il y a déjà un context qui existe dans le projet. Il faut l'utiliser et ne pas en créer un nouveau!
-:::
+```powershell
+//dotnet aspnet-codegenerator controller -m NOM_DU_MODEL -dc NOM_DU_CONTEXT -scripts -udl -outDir Controllers -name NOM_DU_CONTROLEUR -async -actions
+dotnet aspnet-codegenerator controller -m Genre -dc RelationsNaNContext -scripts -udl -outDir Controllers -name GenresController -async -actions
+```
 
-![image](/img/exercices/relations/GenerationController.png)
-
-:::warning
-Si le répertoire dans **Views/** se nomme Genre, renommé le pour Genres (Avec un s, il doit avoir le même nom que le contrôleur!)
+:::info
+Le générateur de scaffolding de VisualStudio 2026 n'est vaiment pas fameux, alors on utilise l'ancienne version!
 :::
 
 - Ajouter un lien dans la barre de navigation
@@ -257,16 +256,13 @@ Si le répertoire dans **Views/** se nomme Genre, renommé le pour Genres (Avec 
   - shooter
   - fighting
 
-:::warning
-Il y a un bug avec VisualStudio 2026 et il affiche une colonne pour Games comme du texte, vous pouvez simplement ne pas l'afficher dans la vue Index et ignorer l'input dans les formulaires pour l'exerice...
-:::
 
 ![image](/img/exercices/relations/Genres.png)
 
 - Générer un contrôleur avec une vue pour **Game**
 
-:::warning
-Si le répertoire dans **Views/** se nomme Game, renommé le pour Games (Avec un s, il doit avoir le même nom que le contrôleur!)
+:::info
+Modifier  la commande pour générer un contrôleur pour Game maintenant (Attention, il faut faire 2 changements dans la commande)
 :::
 
 - Ajouter un lien dans la barre de navigation
