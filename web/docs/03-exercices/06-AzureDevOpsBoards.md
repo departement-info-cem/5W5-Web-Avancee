@@ -36,8 +36,7 @@ Pour une **user story (Scénario d'utilisateur)** on utilise toujours "En tant q
 Pour une **task (tâche)**, on change complètement de language et on devient très précis. **On parle à un programmeur ou une autre personne technique**. Imaginez-vous si vous étiez dans un stage et qu'on vous assigne: "Faire le code pour le feature". Des bons exemples: "Ajouter une classe X à notre modèle de donnée", "Ajouter une méthode JouerUneCarte au WebAPI pour mettre une carte en jeu", "Faire un nouveau component React pour gérer le login"
 :::
 
-- Écrivez **au moins 5 epics** (Il y a déjà au moins 4 **acteurs**, si on inclut les compagnies de publicités)
-- Choisissez **2 epics** qui vous semblent être les **plus prioritaires** et créer au moins **7 user stories** 
+- Créer au moins **7 user stories** qui vont être utiles pour au moins **4 acteurs** (Il y a déjà au moins 4 **acteurs**, si on inclut les compagnies de publicités)
 - Choisissez les **3 users stories** qui vous semblent les **plus prioritaires** et créer au moin **8 tâches en tout**
 - Inclure les **3 users stories** dans le sprint courrant et retirer le reste
 - Assignez 1 tâche à **chacun des membres de l'équipe** dans au moins **2 users stories différentes** et déplacer 1 user story comme **Active** et 1 user story comme **Resolved** (avec toutes ses tâches terminées également)
