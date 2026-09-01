@@ -247,6 +247,41 @@ dotnet aspnet-codegenerator controller -m Genre -dc RelationsNaNContext -scripts
 Le générateur de scaffolding de VisualStudio 2026 n'est vaiment pas fameux, alors on utilise l'ancienne version!
 :::
 
+:::danger
+Il y a des problèmes avec l'image présentement, on va donc devoir faire les actions suivantes si vous avez une erreur qui vous indique qu'il ne trouve pas aspnet-codegenerator
+:::
+
+#### Régler le problème de path pour trouver la commande
+
+1. Ouvrir le prompt de commande (PAS powershell) avec touche windows + r, écrire cmd et faire enter
+2. Taper la commande suivante: echo %USERPROFILE%\.dotnet\tools
+
+| ![alt text](image-9.png) |
+|-|
+
+3. Copier le réultat (avec votre numéro d'étudiant)
+4. Ouvrir l'outil suivant:
+
+| ![alt text](image-10.png) |
+|-|
+
+5. Cliquer sur Variables d'environnement...
+
+| ![alt text](image-11.png) |
+|-|
+
+6. Choisir Path et cliquer sur Modifier...
+
+| ![alt text](image-12.png) |
+|-|
+
+7. Cliquer sur Nouveau et copier le path que vous avez obtenu avec echo
+
+| ![alt text](image-13.png) |
+|-|
+
+8. Redémarrer Visual Studio et rouler la commande à nouveau, vous devriez réussir à générer le contrôleur!
+
 - Ajouter un lien dans la barre de navigation
 
 | ![image](/img/exercices/relations/NavbarGenres.png) |
