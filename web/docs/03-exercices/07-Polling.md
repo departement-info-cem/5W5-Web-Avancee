@@ -51,7 +51,7 @@ Faites un Fork du projet pour pouvoir faire votre propre copie. (comme dans l'ex
 
 Maintenant que les deux versions sont fonctionnels, on va ajouter une fonctionnalité à la version SignalR.
 
-- Chaque fois qu'un client se connecte au Hub incrémenter le nombre de connection (Une simpleme variable int à ajouter)
+- Chaque fois qu'un client se connecte au Hub incrémenter le nombre de connexions (Une simpleme variable int à ajouter)
 - Déclencher également une méthode sur les clients pour mettre à jour le nombre de connexions (Il faut ajouter la méthode)
 - Faire ensuite la même chose avec la déconnexion pour réduire le compte
 - Sur le client, il faut ajouter un affichage pour le nombre d'utilisateurs et la méthode pour mettre à jour le nombre de connexions.

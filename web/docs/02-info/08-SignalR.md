@@ -43,7 +43,7 @@ public class WebSocketController : ControllerBase {
 
 ## Le protocol
 
-Avec websockets et SignalR, il faut d’abord établir une connection avant de pouvoir communiquer de façon full-duplex.
+Avec websockets et SignalR, il faut d’abord établir une connexion avant de pouvoir communiquer de façon full-duplex.
 
 ![Alt text](/img/infos/signalR/SignalRProtocol.png)
 
@@ -86,11 +86,11 @@ public async Task EnvoyerAuxAutres(int value)
 }
 ```
 
-### Envoyer des données à une connection
+### Envoyer des données à une connexion
 
 ```csharp
-// Appeler une connection
-public async Task EnvoyerAUneConnection(int value, string connectionId)
+// Appeler une connexion
+public async Task EnvoyerAUneConnexion(int value, string connectionId)
 {
     await Clients.Client(connectionId).SendAsync("UneFonctionClient", value);
 }
@@ -98,7 +98,7 @@ public async Task EnvoyerAUneConnection(int value, string connectionId)
 
 ### C'est quoi un connectionId?
 
-Comme son nom l'indique, c'est l'Id de la connection établie entre le serveur et le client. Il n'est **PAS** unique par utilisateur et si la même page ouvre 2 connections différentes, il y aura 2 connectionIds **différents**.
+Comme son nom l'indique, c'est l'Id de la connexion établie entre le serveur et le client. Il n'est **PAS** unique par utilisateur et si la même page ouvre 2 connexions différentes, il y aura 2 connectionIds **différents**.
 
 ### Envoyer des données à un usager
 
@@ -157,7 +157,7 @@ public async Task EnvoyerPlusieursParametres()
 }
 ```
 
-### Pour faire une action lors d'une connection ou déconnection au Hub
+### Pour faire une action lors d'une connexion ou déconnexion au Hub
 
 ```csharp
 public override async Task OnConnectedAsync()
@@ -198,7 +198,7 @@ app.MapHub<MatchHub>("/matchHub");
 
 La librairie "@microsoft/signalr" permet de communiquer facilement avec un hub.
 
-### Connection
+### Connexion
 
 ```ts
 connectToHub() {
@@ -271,8 +271,8 @@ faireQuelqueChose() {
 
 ## Cycle de vie
 
-- Les connections peuvent être fermées de chaque côté
-- Les connections ont une durée de vie (2 minutes par défaut)
+- Les connecxons peuvent être fermées de chaque côté
+- Les connexions ont une durée de vie (2 minutes par défaut)
 - La durée de vie est remise à zéro chaque fois que le client envoit  une requête
 - Un client peut envoyer un message « keep alive » pour garder une connexion ouverte sans envoyer de données
 
