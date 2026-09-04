@@ -386,35 +386,7 @@ Pour l'évaluation, le projet de tests doit compiler et les tests que vous avez 
 
 </details>
 
-<details>
-    <summary>Ajout des decks</summary>
-    - Un deck a un nom en plus de contenir des cartes (les cartes qu'un joueur possède)
-    - Lors du register, un deck qui se nomme "Depart" est créé automatiquement avec toutes les cartes du joueur. (C'est le deck courant du joueur)
-    - Une même carte peut faire partie de plusieurs decks. (Les decks sont indépendants les uns des autres)
-    - Si j'ai une copie (1 entrée OwnedCard) pour une carte, je peux la mettre au maximum une fois dans un deck. Si j'en ai N, je peux en ajouter N.
-        - Donc quand j'ajoute une carte à un deck, je dois proposer à l'usager **SES** cartes qui ne sont **PAS** déjà dans **CE** deck.
-    - Configuration MVC:
-        - Nombre max de decks
-        - Nombre max de cartes dans un deck
-    - Client:
-        - Afficher la liste des decks d'un joueur dans une section "Mes Decks"
-        - Pouvoir créer un nouveau deck avec un nom au choix (en respectant la limite de decks de la configuration)
-        - Pouvoir effacer un deck, si ce n'est pas le deck courant (On n'efface jamais de owned cards ou cards!)
-        - Pouvoir ajouter et retirer une carte à un deck existant (en respectant la limite de carte de la configuration)
-            - Assurez-vous de trier les cartes du joueur pour faciliter la sélection
-        - Pouvoir rendre un deck courant
-        - Doit etre impossible d'effacer le deck courant (vérification serveur)
-    - Le code serveur doit être mis dans un service que vous devez créer.
-    - Ajouter des tests unitaires pour le nouveaux service. Avec au minimum les tests suivants:
-        - Tester la création d'un Deck
-        - Tester la suppression d'un Deck
-        - Tester l'**impossibilité** d'effacer un Deck qui n'est PAS au Player
-        - Tester l'ajout d'une carte à un Deck (et l'impossibilité si la carte ET le Deck ne sont pas au Player)
-        - Tester le retrait d'une carte d'un Deck (et l'impossibilité si le Deck n'est pas au Player)
-    - Seul les cartes du Deck courant sont disponibles lors d’une partie. (Ce sont les cartes qui vont remplir le CardsPile du match pour ce joueur)
-        - Changer le démarrage d'un Match pour utiliser les cartes du deck courrant
 
-</details>
 
 <details>
     <summary>Achat de paquets de cartes (Pour les équipes de 4)</summary>
