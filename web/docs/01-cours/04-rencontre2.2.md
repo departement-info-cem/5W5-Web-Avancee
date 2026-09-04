@@ -9,8 +9,6 @@ import SlidePage from '@site/src/components/SlidePage';
 
 ## Gestion de projet avec User Stories et Azure Devops Boards
 
-🛠️ Demo d'authentification avec token VS cookies (En regardant la console de développement d'un navigateur)
-
 <iframe 
   src="/5W5-Web-Avancee/slides/Rencontre_2_2.html" 
   width="100%" 
