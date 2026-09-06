@@ -26,7 +26,7 @@ Quand on modifie du code qu'on ne comprend pas trop sur **Stack Overflow**: ça 
 
 Quand on génère du code avec **ChatGPT** que l'on ne comprend pas: ça prend **5 minutes** de travail et **3 jours** pour régler les problèmes!
 
-**Pas d'IA pour les examens** (Pour vous protéger!)
+**Pas d'IA pour les examens**
 
 :::
 
