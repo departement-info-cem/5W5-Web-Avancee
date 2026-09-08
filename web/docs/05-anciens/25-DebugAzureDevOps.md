@@ -6,7 +6,7 @@
 
 ## Étapes
 
-- Configurer le projet pour supporter une connection de déboguage
+- Configurer le projet pour supporter une connexion de déboguage
 - Connecter Visual Studio au processus
 - Ajouter des points d'arrêts
 
