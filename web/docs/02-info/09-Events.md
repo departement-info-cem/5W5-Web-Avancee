@@ -163,54 +163,42 @@ public abstract class MatchEvent
 ```ts
 // La méthode qui passe à travers l'arbre d'évènements reçu par le serveur
 // Utiliser pour mettre les données à jour et jouer les animations
-async applyEvent(event:any){
+const applyEvent = async (event:any) => {
     console.log("ApplyingEvent: " + event.eventType);
     switch(event.eventType){
-        case "StartMatch": {
-            // Un petit délai avant de commencer à pigner les cartes
-            await new Promise(resolve => setTimeout(resolve, 1000));
-            break;
-        }
+      case "StartMatch": {
+        // On veut attendre un peu pour que le joueur puisse voir l'animation de début de match
+        await wait(1000);
+        break;
+      }
 
-        case "GainMana": {
-            // TODO
-            break;
-        }
+      case "PlayerEndTurn": {
+        // Cette technique permet d'obtenir la valeur actuelle de isCurrentPlayerTurn et de l'inverser
+        setIsCurrentPlayerTurn((prevData: boolean) => !prevData);
+        break;
+      }
 
-        case "PlayerEndTurn": {
-            if(this.match)
-            {
-                this.match.isPlayerATurn = !this.match.isPlayerATurn;
-                this.isCurrentPlayerTurn = event.playerId != this.currentPlayerId;
-            }
+      case "DrawCard": {
+        let playerData = getPlayerDataCopy(event.playerId);
+        moveCard(playerData.cardsPile, playerData.hand, event.playableCardId);
+        await wait(250);
+        updatePlayerData(playerData);
+        break;
+      }
 
-            break;
-        }
-
-        case "DrawCard": {
-            let playerData = this.getPlayerData(event.playerId);
-            if(playerData)
-            {
-                this.moveCard(playerData.cardsPile, playerData.hand, event.playableCardId);
-                await new Promise(resolve => setTimeout(resolve, 250));
-            }
-
-            break;
-        }
-
-        case "EndMatch": {
-            this.matchData!.winningPlayerId = event.winningPlayerId;
-            this.match!.isMatchCompleted = true;
-            break;
-        }
+      case "EndMatch": {
+        // TODO: Afficher un popup de fin de match avec le résultat qui indique si le joueur a gagné ou perdu
+        // Pour l'instant on va simplement arrêter le match, mais il faudrait attendre que le joueur clique sur un bouton pour fermer le popup
+        clearMatch();
+        break;
+      }
     }
-    // On exécute à nouveau cette méthode, mais pour les évènements enfant
     if(event.events){
-        for(let e of event.events){
-            await this.applyEvent(e);
-        }
+      for(let e of event.events){
+        await applyEvent(e);
+      }
     }
-}
+  }
 ```
 
 

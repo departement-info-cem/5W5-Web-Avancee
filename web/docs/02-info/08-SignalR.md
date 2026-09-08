@@ -201,29 +201,33 @@ La librairie "@microsoft/signalr" permet de communiquer facilement avec un hub.
 ### Connexion
 
 ```ts
+const [hubConnection, setHubConnection] = React.useState<HubConnection>();
+
 connectToHub() {
     // On doit commencer par créer la connexion vers le Hub
-    this.hubConnection = new signalR.HubConnectionBuilder()
+    let newHubConnection = new HubConnectionBuilder()
                               .withUrl('https://localhost:7060/chat')
                               .build();
 
     // On peut commencer à écouter pour les évènements qui vont déclencher des callbacks
-    this.hubConnection!.on('UneFonction', (data) => {
+    newHubConnection.on('UneFonction', (data) => {
         // data a le même type que ce qui a été envoyé par le serveur
         console.log(data);
     });
     
-    this.hubConnection!.on('UneAutreFonction', (data) => {
+    newHubConnection.on('UneAutreFonction', (data) => {
         console.log(data);
     });
 
     // On se connecte au Hub  
-    this.hubConnection
+    newHubConnection
         .start()
         .then(() => {
             console.log('La connexion est active!');
           })
         .catch(err => console.log('Error while starting connection: ' + err));
+
+    setHubConnection(newHubConnection);
 }
 ```
 
@@ -231,22 +235,24 @@ connectToHub() {
 Le moment est important!
 :::
 ```ts
-    this.hubConnection = new signalR.HubConnectionBuilder()
+    let newHubConnection = new HubConnectionBuilder()
         .withUrl(environment.apiUrl + 'monHub')
         .build();
 
     // Il faut écouter les messages avant de faire start() sur la connection. On ne risque pas d'avoir un problème où le message est reçu avant même d'avoir exécuté le .on
     // ATTENTION: Ce problème risque d'arriver beaucoup plus souvent dans une version DÉPLOYÉE de l'application
-    this.hubConnection?.on("DoSomething", (data:number) => {
+    newHubConnection.on("DoSomething", (data:number) => {
         // Faire quelque chose
     });
 
-    this.hubConnection
+    newHubConnection
         .start()
         .then(() => {
-            this.isConnected = true;
+            setIsConnected(true);
             // Ne PAS faire de .on() ICI
         });
+
+    setHubConnection(newHubConnection);
 
 ```
 
@@ -254,7 +260,7 @@ Le moment est important!
 (Voir la section [Possible d'envoyer plusieurs paramètres](/info/SignalR#possible-denvoyer-plusieurs-paramètres))
 
 ```ts
-this.hubConnection?.on("PlusieursParametres", (a:number, b:number, c:string) => {
+newHubConnection.on("PlusieursParametres", (a:number, b:number, c:string) => {
     // Faire quelque chose
 });
 ```
@@ -265,13 +271,13 @@ Une fois la connexion établit, on peut appeler les méthodes que l’on veut su
 
 ```ts
 faireQuelqueChose() {
-    this.hubConnection!.invoke('FaireQuelqueChose', this.uneString, 42);
+    newHubConnection.invoke('FaireQuelqueChose', uneString, 42);
 }
 ```
 
 ## Cycle de vie
 
-- Les connecxons peuvent être fermées de chaque côté
+- Les connexions peuvent être fermées de chaque côté
 - Les connexions ont une durée de vie (2 minutes par défaut)
 - La durée de vie est remise à zéro chaque fois que le client envoit  une requête
 - Un client peut envoyer un message « keep alive » pour garder une connexion ouverte sans envoyer de données
