@@ -16,11 +16,11 @@ Pour apprendre à garder un bon contrôle sur ce qui est généré par l'IA, il 
 
 Vous devez faire le travail en plusieurs parties! Donc ce n'est pas permis de copier toute la consigne du TP et de demander à un agent de la faire d'un seul coup! Je demande à ce que le travail soit découpé en **AU MOINS** 3 parties importantes. Note: Vous pourriez en théorie faire certaines parties vous même et en faire d'autre avec de l'IA.
 
-::: info
+:::info
 3 c'est vraiment un minimum, vous pouvez le faire en 42 prompts et commits si vous voulez!
 :::
 
-::: warning
+:::warning
 Chaque partie doit être assez grande, pas demander de faire 90% du travail et après faire 2 petites demandes pour faire les derniers 10%!
 :::
 
