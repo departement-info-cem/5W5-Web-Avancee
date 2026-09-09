@@ -43,3 +43,6 @@ C'est de l'information qui va aider les enseignants à comprendre ce qui fonctio
 Il faut commencer le travail tôt! Il y aura des pénalités si vous avez simplement généré tout le travail dans les derniers jours avant la remise. Il faut comprendre que l'idée c'est de mettre en place une façon d'apprendre l'informatique avec l'IA au cégep et non de réussir à passer le cours en ne fournissant aucun effort!
 
 
+### Règle #4
+
+Il faut comprendre le code généré par l'IA. L'étudiant va perdre des points si il n'arrive pas à répondre à des questions reliées au code produit par l'IA.
