@@ -9,7 +9,7 @@ sidebar_class_name: remise-tp1-code
 ## Info (révision)
 
 - Gestion par évènements (2e partie)
-- Travail sur [TP2](/tps/tp2)
+- Travail sur [TP1](/tps/tp1)
 
 [Événements](/info/Events)
 
