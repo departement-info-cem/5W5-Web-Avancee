@@ -14,7 +14,9 @@
 ```ts
 async polling() {
   console.log("======= Je polle ======");
-  this.result = await this.api.maRequeteHttp();
+  const result = await this.api.maRequeteHttp();
+  // On appel généralement une méthode set pour mettre à jour certaines données
+  setTheData(result);
   //On recommence dans 0.5 seconde en rappelant la même méthode
   setTimeout(() => {this.polling()}, 500);
 }
@@ -25,7 +27,9 @@ async polling() {
 ```ts
 async polling() {
   console.log("======= Je polle ======");
-  this.result = await this.api.maRequeteHttp();
+  const result = await this.api.maRequeteHttp();
+  // On appel généralement une méthode set pour mettre à jour certaines données
+  setTheData(result);
   // On peut décidé de continer de poller dans certains cas
   if(this.result == something) {
     //On recommence dans 0.5 seconde en rappelant la même méthode
