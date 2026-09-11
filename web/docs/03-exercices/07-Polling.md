@@ -31,21 +31,23 @@ Faites un Fork du projet pour pouvoir faire votre propre copie. (comme dans l'ex
 
 ### Créer un Hub qui permet de supporter les actions suivantes :
 #### Connexion
-- Déclencher la fonction TaskList sur **le client qui a fait l’appel**
+- Envoyer le message "TaskList" avec la liste des tasks comme paramètre vers **le client qui a fait l’appel**
 
 #### Ajouter une tâche
-- Ajouter une nouvelle tâche dans la BD, puis déclencher la fonction TaskList sur **tous les clients**
+- Ajouter une nouvelle tâche dans la BD, puis envoyer le message "TaskList" avec la liste des tasks comme paramètre vers **tout les clients**
 
 #### Compléter une tâche
-- Marquer une tâche comme complétée dans BD, puis déclencher la fonction TaskList sur **tous les clients**
+- Marquer une tâche comme complétée dans BD, puis envoyer le message "TaskList" avec la liste des tasks comme paramètre vers **tout les clients**
 
 #### Déconnexion
 - Décrémenter le nombre d'utilisateurs actifs
 - Déclencher la fonction UserCount sur les clients
 
 ### React
-- Ajouter la possibilité d'ajouter et de compléter des tâches, mais avec SignalR
-  - Voir les **TODOs** dans le code React
+- Voir les **TODOs** dans le code React
+  - Il faut se connecter au Hub
+  - Il faut ensuite écouter le message "TaskList"
+  - Il faut également ajouter les bons invokes pour faire les actions sur le Hub
 
 ## Ajout du nombre d'utilisateurs
 
