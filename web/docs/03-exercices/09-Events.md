@@ -84,11 +84,11 @@ Regardez maintenant sur le client, l'event "Won" n'est pas gérer. Il faut mettr
 
 ### Ajouter un **LostEvent**
 
-Lorsqu'on fait un erreur, on doit éventuellement perdre. Ajoutez un **LostEvent**.
+Lorsqu'on fait un erreur, on doit éventuellement perdre. Ajoutez un **LostEvent** quannd ça arrive.
 
 Regardez maintenant sur le client, l'event "Lost" n'est pas gérer non plus. Il faut mettre gameState à jour.
 
-Lorsqu'on perd, il faudrait afficher le mot qu'on cherchait dans le message d'erreur. Il existe déjà la variable **wronglyGuessedWord** dans **app.component.ts**
+Lorsqu'on perd, il faudrait afficher le mot qu'on cherchait dans le message d'erreur. Il existe déjà la variable **wronglyGuessedWord** dans **page.tsx**
 
 |![alt text](/img/exercices/events/image-6.png)|
 |-|
