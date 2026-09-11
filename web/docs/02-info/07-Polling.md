@@ -39,6 +39,10 @@ async polling() {
 }
 ```
 
+:::info
+Le nom de la méthode n'est pas importante, l'important c'est l'idée d'avoir une méthode qui s'appelle elle même après un intervalle de temps.
+:::
+
 ### Inefficace
 
 Le principal désavantage de cette technique, c'est qu'elle utilise mal les resources.
