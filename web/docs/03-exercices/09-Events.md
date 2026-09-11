@@ -41,11 +41,11 @@ Voicie le résultat voulu:
 |![alt text](/img/exercices/events/image-3.png)|
 |-|
 
-C'est assez simplement, vous pouvez simplement créer un **GuessedLetterEvent** dans le constructeur de **GuessEvent**.
+C'est "relativement" simple, vous devez créer un **GuessedLetterEvent** dans le constructeur de **GuessEvent**.
 
-Il faut également mettre à jour **gameData.GuessedLetters**.
+Il faut également mettre à jour **gameData.GuessedLetters** dans cet Event.
 
-Si vous regardez le client, vous allez voir que pendant la gestion de l'événement **GuessedLetter**, on s'attend à avoir une propriété **letter** (Sur le serveur, commencez par une lettre majuscule pour la propriété)
+Si vous regardez le client, vous allez voir que pendant la gestion de l'événement **GuessedLetter**, on s'attend à avoir une propriété **letter** pour pouvoir syncrhoniser le client. (Sur le serveur, commencez par une lettre majuscule pour la propriété)
 
 ### Afficher lorsqu'une lettre n'est pas dans le mot avec **WrongGuessEvent**
 
@@ -61,7 +61,7 @@ Ensuite, utilisez **HasSameLetterAtIndex** pour chercher la lettre et créer un 
 :::
 
 :::info
-Si vous voulez vérifier si vous mettez correctement GameData à jour, faites un refresh du client!
+Si vous voulez vérifier si vous mettez correctement GameData à jour, faites un refresh du client! (Même si le client n'a pas géré les events, il va lire le GameData de nouveau)
 :::
 
 ### Remplacer les lettres avec **RevealLetterEvent**
