@@ -71,22 +71,22 @@ Il faut créer un **RevealLetterEvent** pour chaque occurence de la lettre dans 
 |![alt text](/img/exercices/events/image-5.png)|
 |-|
 
-### Ajouter un **WinEvent**
+### Ajouter un **WonEvent**
 
-Lorsqu'on trouve une lettre dans un mot, si le mot est complétement trouvé, on doit créer un WinEvent.
+Lorsqu'on trouve une lettre dans un mot, si le mot est complétement trouvé, on doit créer un WonEvent.
 
-Il **FAUT** enregistrer **WinEvent** pour qu'il soit correctement sérialisé lorsqu'il est envoyé au client. Regardez la classe **GameEvent** et enregistrez le comme les autres!
+Il **FAUT** enregistrer **WonEvent** pour qu'il soit correctement sérialisé lorsqu'il est envoyé au client. Regardez la classe **GameEvent** et enregistrez le comme les autres!
 
-Regardez maintenant sur le client, l'event "Win" n'est pas gérer. Il faut mettre la propriété won du GameData à jour.
+Regardez maintenant sur le client, l'event "Won" n'est pas gérer. Il faut mettre gameState à jour.
 
 |![alt text](/img/exercices/events/image-8.png)|
 |-|
 
-### Ajouter un **LoseEvent**
+### Ajouter un **LostEvent**
 
-Lorsqu'on fait un erreur, on doit éventuellement perdre. Ajoutez un **LoseEvent**.
+Lorsqu'on fait un erreur, on doit éventuellement perdre. Ajoutez un **LostEvent**.
 
-Regardez maintenant sur le client, l'event "Lose" n'est pas gérer non plus. Il faut mettre la propriété lost du GameData à jour.
+Regardez maintenant sur le client, l'event "Lost" n'est pas gérer non plus. Il faut mettre gameState à jour.
 
 Lorsqu'on perd, il faudrait afficher le mot qu'on cherchait dans le message d'erreur. Il existe déjà la variable **wronglyGuessedWord** dans **app.component.ts**
 
@@ -95,7 +95,7 @@ Lorsqu'on perd, il faudrait afficher le mot qu'on cherchait dans le message d'er
 
 ### Dead eyes
 
-Il existe une dernière étape au bonhomme pendu pour afficher les yeux rouges. Le mini défi c'est d'appeler hangman.showMore() une fois de plus après une défaite MAIS après un délai de quelques secondes.
+Il existe une dernière étape au bonhomme pendu pour afficher les yeux rouges. Le mini défi c'est d'augmenter nbWrongGuesses une fois de plus après une défaite MAIS après un délai d'une seconde.
 
 |![alt text](/img/exercices/events/image-7.png)|
 |-|
