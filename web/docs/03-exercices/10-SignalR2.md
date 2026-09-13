@@ -30,7 +30,6 @@ AddJwtBearer(options =>
           IssuerSigningKey = signingKey
       };
 
-      // DÉBUT DU CODE À AJOUTER
       // Va lire le token de la requête et mettre le Token du context à jour pour les requêtes vers le Hub
       options.Events = new JwtBearerEvents
       {
@@ -49,7 +48,6 @@ AddJwtBearer(options =>
               return Task.CompletedTask;
           }
       };
-      // FIN DU CODE À AJOUTER
   }
 ```
 
@@ -73,7 +71,7 @@ C'est normal que les messages ne soient pas dans la BD. Vous pouvez simplement a
 :::
 
 :::warning
-Il faut également ajouter 2 invokes sur le client pour faire fonctionner les tâches suivantes: Voir les **TODOs**
+Il faut également ajouter 2 invokes sur le client pour faire fonctionner les tâches suivantes: Voir les **TODOs** dans **components/chat/chat.tsx**
 :::
 
 - Il faut mettre les clients à jour avec la liste des utilisateurs connectés après chaque connexion/déconnexion
