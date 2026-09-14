@@ -277,8 +277,21 @@ faireQuelqueChose() {
 
 ## Cycle de vie
 
+### Le cycle de vie
+
 - Les connexions peuvent être fermées de chaque côté
 - Les connexions ont une durée de vie (2 minutes par défaut)
 - La durée de vie est remise à zéro chaque fois que le client envoit  une requête
 - Un client peut envoyer un message « keep alive » pour garder une connexion ouverte sans envoyer de données
+
+### Auto reconnect
+
+On peut ajouter ceci à notre configuration de connexion pour que SignalR se reconnecte automatiquement lorsqu'il veut utiliser une connexion et qu'elle avait expiré
+
+```ts
+let newHubConnection = new HubConnectionBuilder()
+        .withUrl(environment.apiUrl + 'monHub')
+        .withAutomaticReconnect()
+        .build();
+```
 
