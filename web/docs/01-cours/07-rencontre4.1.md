@@ -41,6 +41,10 @@ Il faut pouvoir progresse rapidement les étapes:
   allowFullScreen 
 />
 
+## Démo
+
+[States avec React](https://github.com/CEM-420-5W5/react-state-demo)
+
 ## Info
 
 [Événements](/info/Events)
