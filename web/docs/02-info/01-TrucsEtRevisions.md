@@ -130,7 +130,17 @@ Pour le moment, on va utiliser le modèle Claude Haiku 4.5 (on va expliquer en c
 <img width="592" height="616" alt="image" src="https://github.com/user-attachments/assets/d5bafea8-447e-429c-a3fc-22fe190e095f" />
 
 
+### Activer copilot dans Visual Studio 2026
 
+On commence par se connecter à notre compte GitHub en clique "s'identifier" (L'image montre le résultat une fois connecté)
+<img width="208" height="83" alt="image" src="https://github.com/user-attachments/assets/bb0395ce-58bb-4332-bcde-fc4603299be1" />
+
+On va ensuite ouvrir la fenêtre de Copilot
+<img width="340" height="260" alt="image" src="https://github.com/user-attachments/assets/93f3bd8e-b439-4cac-b413-a082328f8ad8" />
+
+On peut maintenant choisir le mode Agent (traduit par "Countourner!??" et choisir Haiku 4.5)
+
+<img width="356" height="437" alt="image" src="https://github.com/user-attachments/assets/8b4d8f99-5070-4d7e-9fc8-00567df35149" />
 
 
 
