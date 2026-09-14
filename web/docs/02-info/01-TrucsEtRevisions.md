@@ -111,7 +111,7 @@ Va appeler la méthode Ajouter de notre TachesController et lui passer:
 - Par le queryParams: la raison "Pour gagner la guerre commercial"
 - Par le body: un object Tache avec la proriété texte "Arrêter d'écouter Netflix" et la propriété priorite 42
 
-##IA
+## IA
 
 ### Activer copilot dans VS Code
 
