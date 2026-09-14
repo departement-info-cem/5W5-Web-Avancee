@@ -142,6 +142,19 @@ On peut maintenant choisir le mode Agent (traduit par "Countourner!??" et choisi
 
 <img width="356" height="437" alt="image" src="https://github.com/user-attachments/assets/8b4d8f99-5070-4d7e-9fc8-00567df35149" />
 
+### Voir son utilisation!
+
+:::warning
+On a un budget d'utilisation **MENSUEL** d'IA!
+:::
+
+Vous pouvez le consulter ici en cliquant sur "Copilot Settings":
+
+<img width="266" height="475" alt="image" src="https://github.com/user-attachments/assets/c539381a-8ae9-4eb2-94fa-b9d300e81217" />
+
+On voit ensuite notre utilisation pour le mois avec la date où les crédits sont remis à zéro:
+
+<img width="989" height="477" alt="image" src="https://github.com/user-attachments/assets/9dbb1ccd-c656-4670-8de5-f39f49d1ee05" />
 
 
 
