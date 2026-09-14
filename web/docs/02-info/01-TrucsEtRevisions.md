@@ -22,7 +22,7 @@ update-database -ErrorAction Continue
 Ça ne va pas toujours régler votre erreur (parfois oui), MAIS sinon ça va au moins vous donner plus d'information pour la régler!
 :::
 
-### Révision
+## Révision
 
 ### Comment passer des données avec une requête à un serveur web
 
@@ -110,3 +110,28 @@ Va appeler la méthode Ajouter de notre TachesController et lui passer:
 - Par l'URL: l'id 28
 - Par le queryParams: la raison "Pour gagner la guerre commercial"
 - Par le body: un object Tache avec la proriété texte "Arrêter d'écouter Netflix" et la propriété priorite 42
+
+##IA
+
+### Activer copilot dans VS Code
+
+Voici des instructions pour utiliser les modèles d'IA que vous pouvez utiliser avec votre **compte éducation** de GitHub avec VS Code.
+
+Il faut sélectionner le menu d'extension à gauche et trouver GitHub Copilot Chat
+<img width="352" height="239" alt="image" src="https://github.com/user-attachments/assets/24333529-ecee-42c1-b45c-7df7d4b3c43d" />
+
+Il faut ensuite activer les fonctionnalités IA
+<img width="384" height="135" alt="image" src="https://github.com/user-attachments/assets/f57a7dbc-7f6b-4231-8c73-301ccc120580" />
+
+On peut maintenant cliquer sur le bouton à droite de la barre de recherche au haut de l'écran et discuter avec notre Agent
+<img width="722" height="1028" alt="image" src="https://github.com/user-attachments/assets/22020399-dab0-4867-9fda-9f5274a349ba" />
+
+Pour le moment, on va utiliser le modèle Claude Haiku 4.5 (on va expliquer en classe pourquoi on le choisit pour le moment)
+<img width="592" height="616" alt="image" src="https://github.com/user-attachments/assets/d5bafea8-447e-429c-a3fc-22fe190e095f" />
+
+
+
+
+
+
+
