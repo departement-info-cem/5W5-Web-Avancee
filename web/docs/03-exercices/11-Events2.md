@@ -1,4 +1,4 @@
-# Events
+# Events, 2e partie
 
 ## Objectifs
 Compléter l'implémentation d'une application de bonhomme pendu en utilisant des événements.
