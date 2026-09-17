@@ -82,6 +82,10 @@ Regardez maintenant sur le client, l'event "Won" n'est pas gérer. Il faut mettr
 |![alt text](/img/exercices/events/image-8.png)|
 |-|
 
+:::info
+Les mots sont souvent vraiment difficiles! N'hésitez pas à mettre un breakpoint sur le serveur pour tricher et lire la réponse dans le GameData!
+:::
+
 ### Ajouter un **LostEvent**
 
 Lorsqu'on fait un erreur, on doit éventuellement perdre. Ajoutez un **LostEvent** quannd ça arrive.
