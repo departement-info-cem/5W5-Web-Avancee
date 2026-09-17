@@ -61,7 +61,7 @@ this.hubConnection = new signalR.HubConnectionBuilder()
 ```
 
 :::info
-Si j'avais à faire un TP avec SignalR et une authentification par token, je me dirais: "Hum, ça va vraiment être utile à savoir une fois que je vais intégrer les changements de mon équipe"
+Si j'avais à faire un TP avec SignalR et une authentification par token, je me dirais: "Hum, ça va vraiment être utile à savoir!"
 :::
 
 ### Complétez les tâches suivantes côté serveur
