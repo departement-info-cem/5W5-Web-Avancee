@@ -11,8 +11,9 @@ sidebar_class_name: remise-tp1-code
 - Gestion par évènements (2e partie)
 - Travail sur [TP1](/tps/tp1)
 
-[Événements](/info/Events2)
+Rappel:
+[Événements](/info/Events)
 
 ## Exercices
 
-- [Exercice Events](/exercices/Events) pour faire un bonhomme pendu avec SignalR et des Events.
+- [Exercice Events](/exercices/Events2) pour faire un bonhomme pendu avec SignalR et des Events.
