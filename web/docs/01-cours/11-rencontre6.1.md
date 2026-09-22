@@ -11,9 +11,9 @@ hide_table_of_contents: true
 
 :::
 
-- MVC
-- Enregistrement et connexion
-- Client React
+- Admin MVC
+- Cartes (Et autres React)
+- Decks
 
 
 
