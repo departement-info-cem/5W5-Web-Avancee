@@ -34,6 +34,10 @@ Il n'y a pas de base de données, alors si vous redémarrez le serveur pendant q
 Certains events ont besoin d'avoir des propriétés qui vont être lues par le client!
 :::
 
+:::danger
+Encore une fois, il n'y a PAS de BD! Donc vous ne pouvez pas faire de update-database!
+:::
+
 ### La première fonctionnalité à ajouter, c'est d'afficher les lettres essayées par les utilisateurs avec **GuessedLetterEvent**
 
 Voicie le résultat voulu:
