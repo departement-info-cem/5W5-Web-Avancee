@@ -17,6 +17,10 @@ Dans ce jeu, tous les utilisateurs jouent ENSEMBLE pour découvrir le mot. Il y 
 Il n'y a pas de base de données, alors si vous redémarrez le serveur pendant que vous devinez un mot, la "partie" est perdu.
 :::
 
+:::danger
+Encore une fois, il n'y a PAS de BD! Donc vous ne pouvez pas faire de update-database!
+:::
+
 ## État initial
 
 - Le client se connecte déjà au Hub et écoute déjà la majorité des messages. Parcontre, le serveur ne fait rien du tout lorsqu'il reçoit une action pour voir si une lettre est dans le mot à deviner.
@@ -32,10 +36,6 @@ Il n'y a pas de base de données, alors si vous redémarrez le serveur pendant q
 
 :::warning
 Certains events ont besoin d'avoir des propriétés qui vont être lues par le client!
-:::
-
-:::danger
-Encore une fois, il n'y a PAS de BD! Donc vous ne pouvez pas faire de update-database!
 :::
 
 ### La première fonctionnalité à ajouter, c'est d'afficher les lettres essayées par les utilisateurs avec **GuessedLetterEvent**
