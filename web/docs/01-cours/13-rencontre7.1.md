@@ -11,11 +11,4 @@ hide_table_of_contents: true
   - SignalR/Hub
 - L'intra vaut 20% de la note total. C'est la moitié de la la note théorique du cours qui a un double seuil!
 
-🚧 À venir!
-<!--
-TODO: Faire un nouveau formatif
-[🔗Formatif A24](https://github.com/CEM-420-5W5/Intra_Formatif_A24)
--->
-
-
-
+[🔗Formatif A26](https://github.com/CEM-420-5W5/Intra_Formatif_A26)
