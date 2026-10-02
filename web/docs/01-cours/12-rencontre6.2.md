@@ -23,7 +23,7 @@ import SlidePage from '@site/src/components/SlidePage';
 />
 
 
-- Travail en équipe pour regrouper le travail dans une même branche **ET ajouter les fonctionnalités manquantes** [Travail de groupe](http://localhost:3000/5W5-Web-Avancee/tps/tp1#int%C3%A9gration)
+- Travail en équipe pour regrouper le travail dans une même branche **ET ajouter les fonctionnalités manquantes** [Travail de groupe](/tps/tp1#int%C3%A9gration)
 
 ## Exercices
 
