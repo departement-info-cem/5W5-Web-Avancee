@@ -25,7 +25,7 @@ int Double(int x){
 int resultat = Double(42);
 ```
 
-### Utilisation d'un lambda pour modifier les données
+### Utilisation d'un lambda pour modifier (ou filtrer) des données
 
 ```cs
 // Un cas très particulier, mais il contient déjà un lambda
@@ -33,6 +33,9 @@ List<Card> cards = dbContext.Cards.Where((c) => c.Attack > 4).ToList();
 
 // Dans ce cas, le lambda est exécuté normalement
 List<Card> cards2 = cards2.Where((c) => c.Health > 4).ToList();
+
+// Dans ce cas, le lambda est exécuté normalement
+List<int> values = cards2.Select((c) => c.Health).ToList();
 ```
 
 ### Utilisation d'un appel Web
@@ -84,5 +87,9 @@ La question: Pourquoi on ne met pas simplement un await pour attendre le résult
 
 - Terminer son tour dans un jeu de carte et voir le résultat
 - Faire une recette ou assembler un meuble et voir le résultat
+
+### Pourquoi un arbre et pas une simple liste?
+
+- La réponse courte: Parce que sinon c'est vraiment plus difficile à comprendre!!
 
 Comment on peut modifier notre logique de applyEvents pour résoudre le 2e problème!?
