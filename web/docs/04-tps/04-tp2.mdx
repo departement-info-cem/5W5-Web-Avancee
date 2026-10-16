@@ -44,18 +44,6 @@ Il y a 2 évaluations, mais c'est votre responsabilité de terminer votre tâche
 - Ajout des classes suivantes **(entre autres)** pour faire l'ajout de powers aux cartes et la logique de jeu
 - **Pouvoir jouer une carte** (Les cartes jouées sont sur le BattleField, mais ne font rien pour l'instant)
 
-L'event **PlayCardEvent**
-    
-```csharp
-public class PlayCardEvent : MatchEvent
-{
-    // TODO: Ajouter tout ce qui manque
-    public PlayCardEvent(MatchPlayerData currentPlayerData, int playableCardId)
-    {
-    }
-}
-```
-
 La classe `Power`
 
 ```csharp
@@ -133,6 +121,21 @@ Ces tests ne vont pas passer pour l'instant (C'est le travail d'un membre de vot
 :::info
 Pour l'évaluation, le projet de tests doit compiler et les tests que vous avez ajoutés pour les pouvoirs doivent bien vérifier le fonctionnement de ces méthodes et passer avec succès.
 :::
+
+Gérer le **PlayCardEvent**
+    
+```csharp
+public class PlayCardEvent : MatchEvent
+{
+    // TODO: Ajouter tout ce qui manque
+    public PlayCardEvent(MatchPlayerData currentPlayerData, int playableCardId)
+    {
+    }
+}
+```
+
+- Il faut ajouter une méthode PlayCard dans MatchService, qui va générer un PlayCardEvent.
+- Il faut ajouter une action PlayCard sur le Hub. Cette méthode va appeler PlayCard du MatchService et faire un ApplyEvents, comme les autres actions du Hub.
 
 ## Tâches individuelles
 
@@ -377,7 +380,46 @@ Pour l'évaluation, le projet de tests doit compiler et les tests que vous avez 
 
 </details>
 
+<details>
+    <summary>Simulation</summary>
 
+    Un des secrets pour qu'un projet ait du succès, c'est de développer les bons outils pour être capable de travailler et tester efficacement. On va donc mettre en place deux types de simulation:
+        - La première va permettre de créer des scénarios pour tester des pouvoirs précis
+        - La deuxième va permettre de faire rouler plusieurs bots sur un même client pour simuler de nombreuses parties en même temps
+
+    Sur le client on va pouvoir écrire: "adminmode" sur la page d'accueil pour exécuter un méthode qui va ajouter une entrée dans le localStorage pour afficher les options de simulation.
+
+    TODO: Afficher les 2 nouveaux liens (tests et simulation)
+
+    Tester une partie à la fois:
+        - Il faut ajouter une configuration MVC avec un nouveau modèle de données qui permet de configurer une partie. Pour garder ça simple, on va utiliser un champ qui permet d'écrire du JSON pour définir l'état initiale de la partie.
+        - Voici à quoi devra ressembler la configuration pour les parties:
+        TODO
+        - On veut pouvoir voir la liste des tests sur le client et pouvoir les exécuter
+        - Une fois que l'on clique sur un test, on va démarrer une partie et jouer normalement (voir les détails plus bas)
+        - On va devoir faire **DEUX** connexions avec SignalR:
+            - La première va être celle qui existe déjà et qui permet à un joueur de jouer
+            - La deuxième va être utilisé par un mini bot qui va être exécuté par le client et qui va jouer chaque fois que c'est son tour
+             
+    Tester plusieurs parties:
+        - Ajouter le menu suivant qui permet simplement de définir un nombre de parties à simuler en même temps en utilisant un des tests défini dans la partie précédente.
+        - Cette fois-ci les deux joueurs sont des bots et si on test 10 parties, il y aura 20 bots avec chacun une connexion sur le même client
+        - Il faut afficher l'état des 20 parties comme ceci:
+
+
+    Logique du bot:
+        - Le bot est très simple, lorsque c'est son tour il va vérifier si il a assez de mana pour jouer la première carte dans ses mains
+            - Si oui, il va la jouer et terminer son tour
+            - Si non, il termine son tour
+
+    Comment faire pour que l'on puisse utiliser la fonctionnalité et créer des parties utilisables par nos bots?
+        - Ajouter une action au Hub qui va créer deux faux Players et faire un JoinMatch pour chacun
+        - Il faut utiliser l'information du test pour créer les players et modifier le match
+        - On retourne ensuite les playerIds et le matchId au client
+        TODO: Il faut donner plus d'infos sur comment jouer avec différents players à partir du même client. On veut probablement un flag qui permet d'identifier qu'un match est utilisé pour des tests. 
+
+
+</details>
 
 <details>
     <summary>Achat de paquets de cartes (Pour les équipes de 4)</summary>
@@ -428,8 +470,6 @@ Pour l'évaluation, le projet de tests doit compiler et les tests que vous avez 
   N'oubliez pas de commencer par faire un merge de la branche commune vers votre branche individuelle pour régler les conflits!
   :::
 
-- Il faut ajouter une méthode PlayCard dans MatchService, qui va générer un PlayCardEvent.
-- Il faut ajouter une action PlayCard sur le Hub. Cette méthode va appeler PlayCard du MatchService et faire un ApplyEvents, comme les autres actions du Hub.
 - Ajoutez la gestion des évènements sur le client dans MatchService.
   - Il faut déplacer les cartes vers le BattleField lorsqu'elles sont jouées
   - Les déplacer vers le Graveyard lorsqu'elles meurent
