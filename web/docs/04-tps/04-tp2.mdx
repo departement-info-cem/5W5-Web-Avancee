@@ -19,7 +19,7 @@ Si vous avez choisi la tâche MVC pour le TP1, vous ne pouvez pas choisir la tâ
 
 - **\[Obligatoire\]** MVC - Ajout des pouvoirs (Powers)
 - **\[Obligatoire\]** Logique de jeu
-- **\[Obligatoire\]** Ajout des decks
+- **\[Obligatoire\]** Simulation
 - Rareté et achat de paquets de cartes
 
 ### Contraintes
@@ -38,10 +38,23 @@ Il y a 2 évaluations, mais c'est votre responsabilité de terminer votre tâche
 
 ## Premier livrable d'équipe
 
-- Planification du travail dans Azure DevOps
+- Planification du travail dans Azure DevOps (Évalué individuellement)
 - Diagramme de classes
 - Changements au modèle de données (pour satisfaire à toutes les tâches individuelles de votre équipe)
 - Ajout des classes suivantes **(entre autres)** pour faire l'ajout de powers aux cartes et la logique de jeu
+- **Pouvoir jouer une carte** (Les cartes jouées sont sur le BattleField, mais ne font rien pour l'instant)
+
+L'event **PlayCardEvent**
+    
+```csharp
+public class PlayCardEvent : MatchEvent
+{
+    // TODO: Ajouter tout ce qui manque
+    public PlayCardEvent(MatchPlayerData currentPlayerData, int playableCardId)
+    {
+    }
+}
+```
 
 La classe `Power`
 
@@ -123,12 +136,6 @@ Pour l'évaluation, le projet de tests doit compiler et les tests que vous avez 
 
 ## Tâches individuelles
 
-### Les tâches individuelles
-- **\[Obligatoire\]** Logique de jeu
-- **\[Obligatoire\]** Achat de paquets de cartes
-- **\[Obligatoire\]** Animations???
-- MVC - Ajout des pouvoirs (Powers)
-
 <details>
     <summary>MVC - Ajout des pouvoirs (Powers)</summary>
 
@@ -156,18 +163,6 @@ Pour l'évaluation, le projet de tests doit compiler et les tests que vous avez 
 <details>
     <summary>Logique de jeu</summary>
     - Faire passer les tests de TDD (Voir les [règles de jeu](#les-règles-de-jeu))
-
-    L'event **PlayCardEvent**
-    
-    ```csharp
-    public class PlayCardEvent : MatchEvent
-    {
-        // TODO: Ajouter tout ce qui manque
-        public PlayCardEvent(MatchPlayerData currentPlayerData, int playableCardId)
-        {
-        }
-    }
-    ```
 
     - IMPORTANT: Il faut ajouter un pouvoir de votre choix. Si vous n'êtes pas certain ou si vous manquez d'inspiration, demandez à votre enseignant!
     - Il faut écrire des tests pour **le pouvoir au choix** et ils doivent également passer avec succès
