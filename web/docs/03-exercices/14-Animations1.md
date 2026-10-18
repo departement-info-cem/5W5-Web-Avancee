@@ -1,9 +1,5 @@
 # Animations
 
-🚧 À venir
-
-<!--
-
 ## Objectifs
 
 Faire jouer des animations avec CSS et Angular Animations
@@ -150,4 +146,3 @@ Il faut mettre la classe sur le parent (div) de l'image, sinon l'animation ne jo
 ## Solution
 
 La solution est dans la branche **solution1** du repo
--->

@@ -3,7 +3,7 @@ title: 9.2 - Animations (Partie 1) 💫
 hide_table_of_contents: true
 ---
 
-# Animations (Partie 1) 💫
+# Animations JS 💫
 
 ## TP
 
