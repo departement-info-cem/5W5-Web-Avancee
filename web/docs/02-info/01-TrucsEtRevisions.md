@@ -75,7 +75,7 @@ Va appeler la méthode Add de notre TaskController et lui passer la valeur "bana
 La méthode la plus utilisée nous permet d'envoyer un objet dans notre requête.
 
 :::info
-C'est la seule technique qui permet d'avoir de la confidentialité pour les données envoyés, car les autres techniques passent leur données dans le URL et l'URL n'est pas encrypté. Même en utilisant https!
+C'est la seule technique qui permet d'avoir de la confidentialité pour les données envoyés, car les autres techniques passent leur données dans le URL et l'URL est sauvegardé localement de plusieurs façons: favoris, historiques, etc. Même en utilisant https! (qui l'encrypte seulement dans sa communication avec le serveur)
 :::
 
 ```ts
