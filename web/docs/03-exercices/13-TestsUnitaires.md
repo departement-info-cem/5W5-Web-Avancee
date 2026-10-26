@@ -20,6 +20,9 @@ Ajouter des tests unitaires pour tester une méthode de service en utilisant une
 
 :::info
 Utilisez des constantes pour les IDs de vos tests, on veut éviter d'utiliser des **chiffres magiques**
+
+private const int CHAT_AVEC_MAISON_ID = 1;
+private const int CHAT_SANS_MAISON_ID = 2;
 :::
 
 - Atteindre une **couverte de 100%** sur la méthode Move du CatsService
@@ -30,6 +33,10 @@ Utilisez des constantes pour les IDs de vos tests, on veut éviter d'utiliser de
     - Vérifiez qu'un Move d'un chat qui n'a pas de maison lance une exception **WildCatException**
     - Vérifiez qu'un Move d'un chat se fait bien à partir de sa maison **DontStealMyCatException**
 - Il faut **valider les messages des exceptions**
+
+:::info
+Par exemple: Assert.AreEqual("On n'apprivoise pas les chats sauvages", exception.Message);
+:::
 
 ## Solution
 
