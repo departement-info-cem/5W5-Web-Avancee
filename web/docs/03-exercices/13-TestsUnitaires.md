@@ -11,7 +11,9 @@ Ajouter des tests unitaires pour tester une méthode de service en utilisant une
 
 ## Complétez les tâches suivantes
 
-- Générez des tests pour la méthode **Move de CatsService** (Ça devrait **générer le projet de tests** pour vous!)
+- Générez des tests pour la méthode **Move de CatsService** (Voir les étapes dans l'[info](/info/TestsUnitaires))
+    - Créer un projet MSTest
+    - Renommer le fichier de test et créer la même arborescence
 - Utilisez une **InMemoryDatabase**
 - Il faut écrire du code pour ajouter les données à notre BD pour pouvoir rouler les tests. Il va falloir ajouter:
     - Au moins 2 maisons
