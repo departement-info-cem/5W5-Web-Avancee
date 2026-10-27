@@ -33,9 +33,24 @@
 | ![image](/img/infos/TestsUnitaires/CreerDesTestsUnitaires.png) |
 |-|
 
-:::info
-On peut utiliser cette fonctionnalité même s’il n’y a pas encore de projet de tests dans la solution !
+:::danger
+Malheureusement, cette fonctionnalité n'est PLUS disponible avec Visual Studio 2026 !
 :::
+
+On doit donc créer un projet nous mêmes de type MSTest:
+
+![alt text](image-35.png)
+
+![alt text](image-36.png)
+
+On veut modifier le fichier déjà généré pour faire une copie de l'arborescence de notre projet. Donc par défaut on avait ceci :
+
+![alt text](image-37.png)
+
+Et vous le modifiez pour avoir :
+
+![alt text](image-38.png)
+
 
 ## Tests unitaires avec MSTest
 
