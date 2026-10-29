@@ -121,13 +121,13 @@ Bref: La première valeur c'est le début et la deuxième c'est la fin
 
 ```ts
 const translationKeyframes: Keyframe[] = [
-  { transform: 'translateX(-200%)' },
   { transform: 'translateX(0%)' },
-  { transform: 'translateX(100%)' }
+  { transform: 'translateX(100%)' },
+  { transform: 'translateX(500%)' }
 ];
 ```
 
-La proprété transform va appliquer instantanément une translation de -200% et va **terminer** avec une translation de 100%
+La proprété transform va appliquer instantanément une translation de 0% et va **terminer** avec une translation de 500%
 
 Mais qu'est-ce qui se passe entre les deux???
 
@@ -135,168 +135,27 @@ Pour s'aider on va donner une durée à l'animation, par exemple 2 secondes.
 
 Donc le premier va logiquement arriver au moment 0 seconde.
 Le dernier va logiquement arriver au moment 2 secondes (la fin).
-Et celui du millieu? Et bien au millieu, à 1 seconde.
+Et celui du millieu? Et bien au millieu du temps, à 1 seconde.
 
 C'est important de comprendre que cette animation n'est plus à vitesse constante! Pourquoi?
 
-On se déplace de 200% pendant la première seconde (-200% à 0%) et de 100% pendant la deuxième seconde (0% à 100%)
+On se déplace de 100% pendant la première seconde (0% à 100%) et de 400% pendant la deuxième seconde (100% à 500%)
 
+### Visualiser la translation
 
+Le graphique ci-dessous montre la valeur de `transform` au fil du temps. Le carré et le point suivent la même valeur. Le point avance plus lentement pendant la première seconde (100% d'écart) que pendant la deuxième (400% d'écart).
 
+import TranslationGraph from '@site/src/components/TranslationGraph';
 
-## CSS
+<TranslationGraph />
 
-### Comment ça marche
-
-- Principalement on change une propriété CSS
-- On décide combien de temps dure transition
-
-### Exemple
-
-- On change la propriété **top** de 0px à 20px en 0.2 seconde, voilà une animation qui fait descendre un objet de 20 pixels en 0.2 seconde.
-
-### Keyframes
-
-- On peut avoir différentes étapes à notre animation
-- Ces étapes sont des Keyframes
-
-### Utiliser avec Angular
-
-- Il faut commencer par créer l'animation en CSS
-
-```css
-@keyframes attack {
-  0% {
-    transform: translateY(0%);
-  }
-  20% {
-    transform: translateY(10%);
-  }
-  60% {
-    transform: translateY(-50%);
-  }
-  100% {
-    transform: translateY(0%);
-  }
-}
-```
-
-- Ensuite on assigne l'animation à une classe CSS
-
-```css
-.attack {
-  animation: attack 0.5s;
-  -webkit-animation: attack 0.5s;
-  //C'est peut-être overkill de mettre toutes les autres, mais 🤷‍♂️
-  -moz-animation: attack 0.5s;
-  -o-animation: attack 0.5s;
-  -ms-animation: attack 0.5s;
-}
-```
-
-- Finalement, on peut assigner la classe CSS avec une condition
-
-```html
-<app-card [class.attack]="mycard.attack===true"></app-card>
-```
-
-## Angular animations
-
-### ng-animate
-
-- Librairie Angular pour les animations: https://www.npmjs.com/package/ng-animate
-- [Page pour voir les animations](https://jiayihu.github.io/ng-animate/)
-
-### Exemple
-
-```ts
-@Component({
-  selector: "my-component",
-  templateUrl: "my-component.component.html",
-  animations: [
-    trigger("montrigger", [transition("* => *", useAnimation(bounce))]),
-  ],
-})
-export class MyComponent {
-  mavariable: any;
-}
-```
-
-- Dans le html
-
-```html
-<div [@montrigger]="mavariable"></div>
-```
-
-### Trigger
-
-- C'est ce qui va permettre de déclencher l'animation
-
-```ts
-animations: [
-    trigger('montrigger',
-      [transition('* => *', useAnimation(bounce))]
-    )
-],
-```
-
-### Transition
-
-- C'est le changement sur la variable qui va déclencher l'animation
-  '_ => _' signifie n'importe quel changement d'état
-
-- On peut également mettre des ':increment' ou ':decrement'
-
-```ts
-animations: [
-    trigger('bounce', [transition(':increment', useAnimation(bounce))]),
-    trigger('shake', [transition(':decrement', useAnimation(shake))])
-],
-```
-
-```html
-<div [@shake]="mavariable" [@bounce]="mavariable"></div>
-```
-
-### useAnimation
-
-- Dans les exemples, on utilise une animation prédéfinie, mais on pourrait également créer nos propres animations avec des keyframes
-
-## Générateur d'animations CSS
-
-- Le site **animista** contient des centaines d'animations que l'on peut modifier avec des paramètres pour générer nos keyframes.
-
-[https://animista.net](https://animista.net)
-
-| ![alt text](animista.png) |
-| ------------------------- |
-
-## Délais
-
-Quand on parle d'animation, on parle presque toujours de délais. Surtout lorsque l'on fait des séquences d'animations.
-
-Dans l'exemple suivant, on voit que l'on met bounce à true et on le met à false après 1000 ms (donc 1 seconde).
-
-```ts
-bounceMe() {
-  this.bounce = true;
-  setTimeout(() => {this.bounce = false;}, 1000);
-}
-```
-
-On imagine qu'une animation est déclenchée quand la valeur de la variable bounce change (comme dans l'exemple complet un peu plus bas.)
-
-:::warning
-Sans le **setTimeout**, l'animation joue correctement la première fois, mais comme le système détecte les changements, rien ne se passe la 2e fois que l'on clique, car bounce est **ENCORE** à true.
+:::info
+Le graphique est une animation en direct. Le point se déplace sur la courbe pendant que le carré se translate selon la même valeur.
 :::
 
-:::danger
-Sans le **setTimeout**, on obtient des résultats encore **PLUS** bizarres. Par exemple, en jouant une autre animation, on risque d'avoir un **bounce** en plus à la fin, car le système va réévaluer les animations après en avoir terminé une. En résumé, il faut utiliser un setTimeout de la même durée que notre animation pour remettre cette valeur à false.
-:::
 
-## Exemple
 
-Un exemple qui montre comment utiliser à la fois des animations Angular et des animations css générées avec **animista**
+
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
