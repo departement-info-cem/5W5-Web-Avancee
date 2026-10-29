@@ -27,12 +27,14 @@ const cubicBezier = (x1: number, y1: number, x2: number, y2: number) => {
 const easeInOut = cubicBezier(0.42, 0, 0.58, 1);
 
 // Valeur de transform (en %) selon le temps en secondes
+// L'easing est appliqué à chaque segment entre deux keyframes (comme `easing` dans un Keyframe),
+// donc le point de jonction reste à l'offset du keyframe du milieu.
 const valueAt = (t: number, middleOffset: number, easing: Easing) => {
   const linear = Math.min(Math.max(t / (DURATION / 1000), 0), 1);
-  const p = easing === 'ease-in-out' ? easeInOut(linear) : linear;
-  return p < middleOffset
-    ? POSITION_INITIAL + (POSITION_MIDDLE - POSITION_INITIAL) * (p / middleOffset)
-    : POSITION_MIDDLE + (POSITION_FINAL - POSITION_MIDDLE) * ((p - middleOffset) / (1 - middleOffset));
+  const ease = (x: number) => (easing === 'ease-in-out' ? easeInOut(x) : x);
+  return linear < middleOffset
+    ? POSITION_INITIAL + (POSITION_MIDDLE - POSITION_INITIAL) * ease(linear / middleOffset)
+    : POSITION_MIDDLE + (POSITION_FINAL - POSITION_MIDDLE) * ease((linear - middleOffset) / (1 - middleOffset));
 };
 
 // Conversion vers les coordonnées du SVG
@@ -82,7 +84,15 @@ export default function TranslationGraph({ middleOffset = 0.5, easing = 'linear'
           strokeWidth="5"
         />
         <circle cx={toX(t)} cy={toY(v)} r="7" fill="#ef4444" />
-        <text x="40" y="285" fontSize="12">temps (0 à 2 s)</text>
+        {/* Échelle de temps : une marque tous les 0.5 s */}
+        <line x1={toX(0)} y1="250" x2={toX(2)} y2="250" stroke="#666" strokeWidth="1" />
+        {[0, 0.5, 1, 1.5, 2].map((s) => (
+          <g key={s}>
+            <line x1={toX(s)} y1="250" x2={toX(s)} y2="258" stroke="#666" strokeWidth="1" />
+            <text x={toX(s)} y="272" fontSize="12" textAnchor="middle">{s}</text>
+          </g>
+        ))}
+        <text x={toX(1)} y="292" fontSize="12" textAnchor="middle">temps (s)</text>
         <text x="5" y="20" fontSize="12">transform</text>
       </svg>
 
