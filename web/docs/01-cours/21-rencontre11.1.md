@@ -20,7 +20,7 @@ Si un élève préfère que son évaluation individuelle soit faite avec une aut
 L'évaluation en classe:
 
 - 20 minutes par équipe
-- Il faut se préparer pour l'évaluation (clone, update-database, génération de certificats, etc.)
+- Il faut se préparer pour l'évaluation (clone, update-database, npm install)
 - Évaluation des fonctionnalités pour commencer
 - Si le temps le permet, on regarde le code
 
