@@ -8,14 +8,46 @@ const POSITION_MIDDLE = 100; // %
 const POSITION_FINAL = 500; // %
 
 // Valeur de transform (en %) selon le temps en secondes
-const valueAt = (t: number) => (t < 1 ? POSITION_INITIAL + (POSITION_MIDDLE - POSITION_INITIAL) * t : POSITION_MIDDLE + (POSITION_FINAL - POSITION_MIDDLE) * (t - 1));
+type Easing = 'linear' | 'ease-in-out';
+
+// Courbe de Bézier cubique CSS (ease-in-out = cubic-bezier(0.42, 0, 0.58, 1))
+const cubicBezier = (x1: number, y1: number, x2: number, y2: number) => {
+  const coord = (a: number, b: number, s: number) => 3 * a * s * (1 - s) ** 2 + 3 * b * s * s * (1 - s) + s ** 3;
+  return (x: number) => {
+    let lo = 0;
+    let hi = 1;
+    for (let i = 0; i < 30; i++) {
+      const mid = (lo + hi) / 2;
+      if (coord(x1, x2, mid) < x) lo = mid;
+      else hi = mid;
+    }
+    return coord(y1, y2, (lo + hi) / 2);
+  };
+};
+const easeInOut = cubicBezier(0.42, 0, 0.58, 1);
+
+// Valeur de transform (en %) selon le temps en secondes
+const valueAt = (t: number, middleOffset: number, easing: Easing) => {
+  const linear = Math.min(Math.max(t / (DURATION / 1000), 0), 1);
+  const p = easing === 'ease-in-out' ? easeInOut(linear) : linear;
+  return p < middleOffset
+    ? POSITION_INITIAL + (POSITION_MIDDLE - POSITION_INITIAL) * (p / middleOffset)
+    : POSITION_MIDDLE + (POSITION_FINAL - POSITION_MIDDLE) * ((p - middleOffset) / (1 - middleOffset));
+};
 
 // Conversion vers les coordonnées du SVG
 const toX = (t: number) => 40 + t * 160;
 // Valeurs de 0 à POSITION_FINAL (%) ramenées entre y=250 (bas) et y=30 (haut)
 const toY = (v: number) => 250 - (v / POSITION_FINAL) * 220;
 
-export default function TranslationGraph() {
+type Props = {
+  /** Offset du keyframe du milieu (0.5 par défaut avec 3 keyframes) */
+  middleOffset?: number;
+  /** Courbe d'accélération de l'animation */
+  easing?: Easing;
+};
+
+export default function TranslationGraph({ middleOffset = 0.5, easing = 'linear' }: Props) {
   const [elapsed, setElapsed] = useState(0);
 
   useEffect(() => {
@@ -31,13 +63,20 @@ export default function TranslationGraph() {
   }, []);
 
   const t = Math.min(elapsed, DURATION) / 1000;
-  const v = valueAt(t);
+  const v = valueAt(t, middleOffset, easing);
+
+  // Tracé échantillonné de la courbe (valeur en fonction du temps)
+  const steps = 60;
+  const path = Array.from({ length: steps + 1 }, (_, i) => {
+    const ti = (i / steps) * (DURATION / 1000);
+    return `${i === 0 ? 'M' : 'L'} ${toX(ti)} ${toY(valueAt(ti, middleOffset, easing))}`;
+  }).join(' ');
 
   return (
     <div style={{ display: 'flex', gap: 24, alignItems: 'center', flexWrap: 'wrap' }}>
       <svg viewBox="0 0 400 300" width="400" height="300" style={{ border: '1px solid #ccc' }}>
         <path
-          d={`M ${toX(0)} ${toY(POSITION_INITIAL)} L ${toX(1)} ${toY(POSITION_MIDDLE)} L ${toX(2)} ${toY(POSITION_FINAL)}`}
+          d={path}
           fill="none"
           stroke="#3b82f6"
           strokeWidth="5"

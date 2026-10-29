@@ -193,10 +193,9 @@ const translationKeyframes: Keyframe[] = [
 
 Ici on va avoir une différence de vitesse encore **plus** grande. Car on prend 75% du temps (offset de 0.75) pour se rendre à 100% de translation et les autres 25% du temps pour se rendre à 500% de translation.
 
+<TranslationGraph middleOffset={0.75} />
 
-<TranslationGraph />
-
-
+<TranslationGraph middleOffset={0.75} easing="ease-in-out" />
 
 import Tabs from "@theme/Tabs";
 import TabItem from "@theme/TabItem";
