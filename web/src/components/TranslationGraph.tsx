@@ -12,7 +12,8 @@ const valueAt = (t: number) => (t < 1 ? POSITION_INITIAL + (POSITION_MIDDLE - PO
 
 // Conversion vers les coordonnées du SVG
 const toX = (t: number) => 40 + t * 160;
-const toY = (v: number) => 250 - (v + 200) * 0.7;
+// Valeurs de 0 à POSITION_FINAL (%) ramenées entre y=250 (bas) et y=30 (haut)
+const toY = (v: number) => 250 - (v / POSITION_FINAL) * 220;
 
 export default function TranslationGraph() {
   const [elapsed, setElapsed] = useState(0);
