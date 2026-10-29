@@ -139,6 +139,7 @@ C'est important de comprendre que cette animation n'est plus à vitesse constant
 On se déplace de 100% pendant la première seconde (0% à 100%) et de 400% pendant la deuxième seconde (100% à 500%)
 
 import TranslationGraph from '@site/src/components/TranslationGraph';
+import WalkingCharacter, { WalkingPlayAll } from '@site/src/components/WalkingCharacter';
 
 <TranslationGraph />
 
@@ -202,7 +203,34 @@ Pour donner quelque chose de plus doux et agréable à regarder on va générale
 - Ease out
 - Ease in and out
 
-On ne va pas passer beaucoup de temps sur ce concept, vous n'avez pas besoin de devenir des animateurs non plus, mais voici une représentation visuelle de la même animation avec une interpolation in-out.
+On ne va pas passer beaucoup de temps sur ce concept, vous n'avez pas besoin de devenir des animateurs non plus, mais pensez à quelqu'un qui marche: il ne part pas instantanément à pleine vitesse et ne s'arrête pas d'un coup, il accélère au début et ralentit à la fin. C'est exactement ce que fait **ease-in-out**.
+
+Pour spécifier l'interpolation, on utilise l'option `easing` (`'linear'`, `'ease-in'`, `'ease-out'`, `'ease-in-out'`):
+
+```ts
+const marcheKeyframes: Keyframe[] = [
+  { transform: 'translateX(0px)' },
+  { transform: 'translateX(300px)' }
+];
+
+element?.animate(marcheKeyframes, { duration: 3000, easing: 'ease-in-out' });
+```
+
+Cliquez sur les boutons pour comparer. Le même déplacement, la même durée, seule l'option `easing` change:
+
+**linear** : le personnage part et s'arrête brusquement, ça fait robotique.
+
+<WalkingCharacter easing="linear" />
+
+**ease-in-out** : le personnage démarre doucement, atteint sa vitesse de marche, puis ralentit jusqu'à l'arrêt. Beaucoup plus naturel!
+
+<WalkingCharacter easing="ease-in-out" />
+
+Pour les voir côte à côte, on peut aussi les faire partir en même temps:
+
+<WalkingPlayAll />
+
+Pour les curieux, voici la même animation (avec l'offset de 0.75) sous forme de graphique:
 
 <TranslationGraph middleOffset={0.75} easing="ease-in-out" />
 

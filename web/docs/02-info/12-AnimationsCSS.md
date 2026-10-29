@@ -1,5 +1,8 @@
 # Animations et délais
 
+🚧 À venir!
+<!--
+
 ## Objectif
 
 Bien comprendre l'utilisation de **setTimeout** et de **timer**, qui sont très utiles pour les animations, mais également dans de nombreuses autres situations.
@@ -285,3 +288,5 @@ playBounce() {
   },1000);
 }
 ```
+
+-->
