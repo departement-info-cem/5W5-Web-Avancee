@@ -237,5 +237,9 @@ On ne va pas passer beaucoup de temps sur ce concept, vous n'avez pas besoin de 
 Les animations peuvent rapidement devenir complexes! Elles peuvent contenir des dizaines de keyframes et des fonction d'interpolation qui changent d'un keyframe à l'autre. En plus chaque keyframe peut modifier plusieurs valeurs en même temps. Mais on utilise des outils (ou maintenant de l'AI) pour générer ces animations complexes.
 :::
 
+:::info
+Dans ce cours, l'animation obligatoire la plus complexe à réaliser est celle de l'attaque d'une carte qui doit simplement avancer et reculer. Elle peut être rendu plus complexe pour être plus jolie en utilisant de nombreux keyframes et des courbes d'interpolation, mais l'évaluation se limite à voir la carte faire un mouvement vers l'avant et retourner où elle était. ATTENTION, les cartes de l'aversaire doivent faire le mouvement mirroir.
+:::
+
 
 Vous pouvez voir de nombreux autres exemples sur ce [repo](https://github.com/CEM-420-5W5/animations-info).
