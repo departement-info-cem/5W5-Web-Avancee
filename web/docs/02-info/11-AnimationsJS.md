@@ -117,7 +117,7 @@ const translationKeyframes: Keyframe[] = [
 La proprété transform va appliquer instantanément une translation de -100% et va **terminer** avec une translation de 100%
 Bref: La première valeur c'est le début et la deuxième c'est la fin
 
-#### Cas 3: Il y a 3 valeurs dans l'array 
+#### Cas 3: Il y a 3 valeurs dans l'array (ou plus)
 
 ```ts
 const translationKeyframes: Keyframe[] = [
@@ -141,19 +141,60 @@ C'est important de comprendre que cette animation n'est plus à vitesse constant
 
 On se déplace de 100% pendant la première seconde (0% à 100%) et de 400% pendant la deuxième seconde (100% à 500%)
 
-### Visualiser la translation
-
-Le graphique ci-dessous montre la valeur de `transform` au fil du temps. Le carré et le point suivent la même valeur. Le point avance plus lentement pendant la première seconde (100% d'écart) que pendant la deuxième (400% d'écart).
-
 import TranslationGraph from '@site/src/components/TranslationGraph';
 
 <TranslationGraph />
 
 :::info
-Le graphique est une animation en direct. Le point se déplace sur la courbe pendant que le carré se translate selon la même valeur.
+Si il y a plus de 3 valeurs, on va avoir la première et la dernière valeur et les autres vont être à une distance égale dans le temps. On va voir comment on peut avoir plus de contrôle au prochain point.
 :::
 
 
+#### Utiliser des offsets pour avoir plus de contrôle!
+
+Si on regarde l'exemple précédent:
+
+```ts
+const translationKeyframes: Keyframe[] = [
+  { transform: 'translateX(0%)' },
+  { transform: 'translateX(100%)' },
+  { transform: 'translateX(500%)' }
+];
+```
+
+Il utilise l'équivalent des valeurs d'offset suivantes:
+
+```ts
+const translationKeyframes: Keyframe[] = [
+  { transform: 'translateX(0%)', offset: 0 },
+  { transform: 'translateX(100%)', offset: 0.5 },
+  { transform: 'translateX(500%)', offset: 1 }
+];
+
+// ou de façon plus simple 
+
+const translationKeyframes: Keyframe[] = [
+  { transform: 'translateX(0%)' },
+  { transform: 'translateX(100%)', offset: 0.5 },
+  { transform: 'translateX(500%)' }
+];
+```
+
+On peut donc modifier l'offset et obtenir quelque chose qui ressemble à ceci:
+
+```ts
+// Les commentaires aident à comprendre quand ça arrive si la durée est de 2 secondes, mais l'offset est un ratio du temps total. Donc une durée d'animation différente donnerait d'autres valeurs
+const translationKeyframes: Keyframe[] = [
+  { transform: 'translateX(0%)' }, // 0 seconde
+  { transform: 'translateX(100%)', offset: 0.75 }, // 1.5 secondes (avec une durée de 2 secondes)
+  { transform: 'translateX(500%)' } // 2 seconde (avec une durée de 2 secondes)
+];
+```
+
+Ici on va avoir une différence de vitesse encore **plus** grande. Car on prend 75% du temps (offset de 0.75) pour se rendre à 100% de translation et les autres 25% du temps pour se rendre à 500% de translation.
+
+
+<TranslationGraph />
 
 
 
