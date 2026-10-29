@@ -195,6 +195,30 @@ Ici on va avoir une différence de vitesse encore **plus** grande. Car on prend 
 
 <TranslationGraph middleOffset={0.75} />
 
+#### Garder les valeurs de la fin de l'animation
+
+Si on veut que l'élément garde les valeurs de la fin de l'animation une fois que l'animation est terminé on va utiliser l'option fill avec la valeur "forwards":
+
+```ts
+  // En ajoutant fill: 'forwards', l'élément garde les valeurs de la fin de l'animation
+  let animation = element?.animate(keyframes, { duration: durationMS, fill: 'forwards' });
+```
+
+Voici donc notre nouvelle méthode d'animation qui contient cette option en plus!
+
+```ts
+const animer = async (elementId:string, keyframes: Keyframe[], durationMS:number, garderLesValeursFinales:boolean = false) => {
+  const element = document.getElementById(elementId);
+
+  let animation = element?.animate(keyframes, { duration: durationMS, fill: garderLesValeursFinales ? 'forwards' : 'none' } });
+  await animation?.finished;
+};
+```
+
+:::info
+Pour voir un exemple, regarder le projet avec de nombreux exemples qui est fournit à la fin de cette page.
+:::
+
 #### Utiliser une méthode d'interpolation!
 
 Pour l'instant, on passe d'une valeur à l'autre avec une vitesse constante entre les deux points. Bref, on fait une ligne droite entre chaque point.
