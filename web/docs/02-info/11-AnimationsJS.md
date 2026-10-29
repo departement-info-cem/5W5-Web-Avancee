@@ -8,10 +8,7 @@ On peut faire jour des animations en utilisant un grand nombre de technologies, 
 - CSS (Prochain cours)
 
 
-
-## Animations JS
-
-### La base pour joueur une animation
+## La base pour joueur une animation JS
 
 ```ts
 const rotationKeyframes: Keyframe[] = [
@@ -53,7 +50,7 @@ On va utiliser la méthode animer dans les exemples de cette page, c'est importa
 :::
 
 
-### Qu'est-ce qu'on peut animer?
+## Qu'est-ce qu'on peut animer?
 
 Voici une liste partielle des choses que l'on peut animer (On peut essentiellement animer toutes les propriétés!) et le keyframes le plus simple que l'on peut écrire pour chaque propriété
 
@@ -88,13 +85,13 @@ const opacityKeyframes: Keyframe[] = [
 ];
 ```
 
-### Mais c'est quoi ça un keyframe?
+## Mais c'est quoi ça un keyframe?
 
 Les clés d'animation permettent de définir les différentes valeur que vont prendre la propriété (ou les propriétés) pendant une animation.
 
 La première chose à comprendre c'est à quel moment ces valeurs vont être appliqué selon le nombre de paramètres.
 
-#### Cas 1: Il y a une seule valeur dans l'array 
+### Cas 1: Il y a une seule valeur dans l'array 
 
 ```ts
 const translationKeyframes: Keyframe[] = [
@@ -105,7 +102,7 @@ const translationKeyframes: Keyframe[] = [
 La proprété transform va valoir sa valeur sans animation au début et va **terminer** avec une translation en X équivalente à 100% de sa taille. (On pourrait utiliser un nombre de pixels)
 Bref: C'est la valeur finale!
 
-#### Cas 2: Il y a deux valeurs dans l'array 
+### Cas 2: Il y a deux valeurs dans l'array 
 
 ```ts
 const translationKeyframes: Keyframe[] = [
@@ -117,7 +114,7 @@ const translationKeyframes: Keyframe[] = [
 La proprété transform va appliquer instantanément une translation de -100% et va **terminer** avec une translation de 100%
 Bref: La première valeur c'est le début et la deuxième c'est la fin
 
-#### Cas 3: Il y a 3 valeurs dans l'array (ou plus)
+### Cas 3: Il y a 3 valeurs dans l'array (ou plus)
 
 ```ts
 const translationKeyframes: Keyframe[] = [
@@ -150,7 +147,7 @@ Si il y a plus de 3 valeurs, on va avoir la première et la dernière valeur et 
 :::
 
 
-#### Utiliser des offsets pour avoir plus de contrôle!
+### Utiliser des offsets pour avoir plus de contrôle!
 
 Si on regarde l'exemple précédent:
 
@@ -195,7 +192,21 @@ Ici on va avoir une différence de vitesse encore **plus** grande. Car on prend 
 
 <TranslationGraph middleOffset={0.75} />
 
-#### Garder les valeurs de la fin de l'animation
+### Utiliser une méthode d'interpolation!
+
+Pour l'instant, on passe d'une valeur à l'autre avec une vitesse constante entre les deux points. Bref, on fait une ligne droite entre chaque point.
+
+Pour donner quelque chose de plus doux et agréable à regarder on va généralement utiliser une méthode d'interpolation. Les plus populaires en animations:
+
+- Ease in
+- Ease out
+- Ease in and out
+
+On ne va pas passer beaucoup de temps sur ce concept, vous n'avez pas besoin de devenir des animateurs non plus, mais voici une représentation visuelle de la même animation avec une interpolation in-out.
+
+<TranslationGraph middleOffset={0.75} easing="ease-in-out" />
+
+## Garder les valeurs de la fin de l'animation
 
 Si on veut que l'élément garde les valeurs de la fin de l'animation une fois que l'animation est terminé on va utiliser l'option fill avec la valeur "forwards":
 
@@ -219,26 +230,34 @@ const animer = async (elementId:string, keyframes: Keyframe[], durationMS:number
 Pour voir un exemple, regarder le projet avec de nombreux exemples qui est fournit à la fin de cette page.
 :::
 
-#### Utiliser une méthode d'interpolation!
 
-Pour l'instant, on passe d'une valeur à l'autre avec une vitesse constante entre les deux points. Bref, on fait une ligne droite entre chaque point.
+## Jouer une animation en boucle
 
-Pour donner quelque chose de plus doux et agréable à regarder on va généralement utiliser une méthode d'interpolation. Les plus populaires en animations:
+Pour faire jouer une animation en boucle, on peut utiliser l'option `iterations` de la méthode `animate`. Par exemple, `iterations: Infinity` fait rejouer l'animation indéfiniment:
 
-- Ease in
-- Ease out
-- Ease in and out
+```ts
+const element = document.getElementById(monId);
 
-On ne va pas passer beaucoup de temps sur ce concept, vous n'avez pas besoin de devenir des animateurs non plus, mais voici une représentation visuelle de la même animation avec une interpolation in-out.
+// L'animation va jouer en boucle indéfiniment, 1 seconde par cycle
+const animation = element?.animate(rotationKeyframes, {
+  duration: 1000,
+  iterations: Infinity
+});
+```
 
-<TranslationGraph middleOffset={0.75} easing="ease-in-out" />
+Si on veut arrêter la boucle, on peut appeler `animation?.cancel()`.
 
 :::info
+On ne va pas faire beaucoup d'animations en boucle dans le projet, donc on ne modifiera pas la méthode `animer` pour ce cas. Il suffit d'utiliser le code ci-dessus au besoin.
+:::
+
+
+:::warning
 Les animations peuvent rapidement devenir complexes! Elles peuvent contenir des dizaines de keyframes et des fonction d'interpolation qui changent d'un keyframe à l'autre. En plus chaque keyframe peut modifier plusieurs valeurs en même temps. Mais on utilise des outils (ou maintenant de l'AI) pour générer ces animations complexes.
 :::
 
 :::info
-Dans ce cours, l'animation obligatoire la plus complexe à réaliser est celle de l'attaque d'une carte qui doit simplement avancer et reculer. Elle peut être rendu plus complexe pour être plus jolie en utilisant de nombreux keyframes et des courbes d'interpolation, mais l'évaluation se limite à voir la carte faire un mouvement vers l'avant et retourner où elle était. ATTENTION, les cartes de l'aversaire doivent faire le mouvement mirroir.
+Dans ce cours, l'animation la plus complexe à réaliser est celle de l'attaque d'une carte qui doit simplement avancer et reculer. Elle peut être rendu plus complexe pour être plus jolie en utilisant de nombreux keyframes et des courbes d'interpolation, mais l'évaluation se limite à voir la carte faire un mouvement vers l'avant et retourner où elle était. ATTENTION, les cartes de l'aversaire doivent faire le mouvement mirroir.
 :::
 
 
