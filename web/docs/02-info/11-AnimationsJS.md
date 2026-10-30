@@ -230,13 +230,13 @@ Pour les voir côte à côte, on peut aussi les faire partir en même temps:
 
 <WalkingPlayAll />
 
-Pour les curieux, voici la même animation (avec l'offset de 0.75) sous forme de graphique:
+Voici l'animation du point précédent (avec l'offset de 0.75), mais avec l'utilisation de ease-in-out:
 
 <TranslationGraph middleOffset={0.75} easing="ease-in-out" />
 
 ## Garder les valeurs de la fin de l'animation
 
-Si on veut que l'élément garde les valeurs de la fin de l'animation une fois que l'animation est terminé on va utiliser l'option fill avec la valeur "forwards":
+Si on veut que l'élément garde les valeurs de la fin de l'animation une fois que l'animation est terminé on va utiliser l'option fill avec la valeur "forwards", sinon l'objet retourne dans l'état où il était avant de jouer l'animation!:
 
 ```ts
   // En ajoutant fill: 'forwards', l'élément garde les valeurs de la fin de l'animation
