@@ -30,9 +30,7 @@ Première partie de l'évaluation individuelle (DevOps)
 
 ## Info
 
-Explications sur MVC avec plusieurs forms dans une même page pour aider avec le TP
-
-[Animations](/info/Animations)
+[Animations](/info/AnimationsJS)
 
 ### Exercices
 
