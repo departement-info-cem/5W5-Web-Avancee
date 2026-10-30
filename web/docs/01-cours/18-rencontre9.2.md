@@ -7,8 +7,8 @@ hide_table_of_contents: true
 
 ## Info
 
-[Animations et délais](/info/AnimationsEtDélais)
+[Animations CSS](/info/AnimationsCSS)
 
 ### Exercices
 
-[Exercice Animations (2e partie)](/exercices/Animations2)
+[Exercice Animations CSS](/exercices/AnimationsCSS)
