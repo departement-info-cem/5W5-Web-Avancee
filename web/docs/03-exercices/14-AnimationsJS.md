@@ -19,7 +19,7 @@ Faire jouer des animations JavaScript (méthode `animate`) dans un projet React 
 Tout le travail se fait dans le fichier `app/page.tsx`.
 :::
 
-## Partie 1
+## Étapes
 
 ### Faire apparaître Slimey
 
@@ -49,10 +49,6 @@ Si les deux `animer` sont appelés l'un après l'autre **sans** `await`, les deu
 :::info Coup de pouce
 Pour qu'une animation commence seulement quand la précédente est terminée, utilisez `await` devant l'appel à `animer`.
 :::
-
-## Partie 2
-
-Les boutons **Bounce/Shake/Flip** et **Infinite Triple Spin** sont déjà affichés. Il faut maintenant écrire leur logique.
 
 ### Bounce/Shake/Flip
 
