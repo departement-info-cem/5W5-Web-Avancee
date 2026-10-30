@@ -81,6 +81,10 @@ Une boucle `while (true)` dans une méthode `async` avec des `await` à l'intér
 Il faut penser à ajouter un rotateX(0deg) pour que cette rotation ne commence pas au début de l'animation!
 :::
 
+:::warning
+Pour utiliser l'option de boucle, il faut modifier animer ou faire l'appel a animate vous même pour fournir l'option qui permet de boucler
+:::
+
 ## Solution
 
 La solution est dans la branche **solution** du repo.
