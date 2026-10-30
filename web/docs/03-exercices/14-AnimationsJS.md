@@ -44,6 +44,7 @@ Si les deux `animer` sont appelés l'un après l'autre **sans** `await`, les deu
 
 1. Écrivez le keyframes `PULSE`: l'échelle (`scale`) passe de `1` à `4.5`, puis revient à `1` (3 valeurs).
 2. Dans la méthode `attack`, faites jouer **d'abord** l'animation `JELLO` (fournie), pour montrer que Slimey prend son élan, **ensuite** l'animation `PULSE`.
+3. Modifiez maintenant votre keyframes `PULSE` pour que le changement de Scale se fasse rapidement au début. Au lieu de le faire à 50% du temps, faites le 4.5 à 10% du temps. Utilisez un offset. 
 
 :::info Coup de pouce
 Pour qu'une animation commence seulement quand la précédente est terminée, utilisez `await` devant l'appel à `animer`.
