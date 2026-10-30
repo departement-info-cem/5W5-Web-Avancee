@@ -1,4 +1,7 @@
-# Animations (2e partie)
+# Animations CSS
+
+🚧 À venir!
+<!--
 
 ## Objectifs
 
@@ -57,3 +60,4 @@ Il faut ajouter les _trigger_ css sur le div qui contient l'image, comme pour le
 ## Solution
 
 La solution est dans la branche **solution2** du repo
+-->

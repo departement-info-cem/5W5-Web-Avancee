@@ -36,4 +36,4 @@ Explications sur MVC avec plusieurs forms dans une même page pour aider avec le
 
 ### Exercices
 
-[Exercice Animations](/exercices/Animations1)
+[Exercice Animations](/exercices/AnimationsJS)
