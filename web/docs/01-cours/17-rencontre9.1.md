@@ -1,9 +1,9 @@
 ---
-title: 9.2 - Animations (Partie 1) 💫
+title: 9.2 - Animations JavaScript 💫
 hide_table_of_contents: true
 ---
 
-# Animations (Partie 1) 💫
+# Animations JS 💫
 
 ## TP
 
@@ -22,9 +22,11 @@ Première partie de l'évaluation individuelle (DevOps)
 - Diagramme de classes
 - Code pour les modèles de données
 - Code pour les méthodes HasPower et GetPowerValue
+- Projet de tests avec tests fournis pour la logique de jeu
 - Tests unitaires pour les méthodes HasPower et GetPowerValue
-
 - Planification avec Azure DevOps Boards
+- Jouer une carte
+- Seed pour les TestMatchs
 
 ## Info
 
@@ -34,4 +36,4 @@ Explications sur MVC avec plusieurs forms dans une même page pour aider avec le
 
 ### Exercices
 
-[Exercice Animations](/exercices/Animations1)
+[Exercice Animations](/exercices/AnimationsJS)

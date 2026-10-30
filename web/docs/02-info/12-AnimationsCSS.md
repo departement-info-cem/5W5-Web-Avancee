@@ -1,13 +1,72 @@
 # Animations et délais
 
-🚧 À venir
-
+🚧 À venir!
 <!--
-TODO: Écrire comment on utiliser les animations avec React (Et les durées et timers, on peut probablement simplifier tout ça...)
 
 ## Objectif
 
 Bien comprendre l'utilisation de **setTimeout** et de **timer**, qui sont très utiles pour les animations, mais également dans de nombreuses autres situations.
+
+
+
+## CSS
+
+### Comment ça marche
+
+- Principalement on change une propriété CSS
+- On décide combien de temps dure transition
+
+### Exemple
+
+- On change la propriété **top** de 0px à 20px en 0.2 seconde, voilà une animation qui fait descendre un objet de 20 pixels en 0.2 seconde.
+
+### Keyframes
+
+- On peut avoir différentes étapes à notre animation
+- Ces étapes sont des Keyframes
+
+### Utiliser avec Angular
+
+- Il faut commencer par créer l'animation en CSS
+
+```css
+@keyframes attack {
+  0% {
+    transform: translateY(0%);
+  }
+  20% {
+    transform: translateY(10%);
+  }
+  60% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0%);
+  }
+}
+```
+
+- Ensuite on assigne l'animation à une classe CSS
+
+```css
+.attack {
+  animation: attack 0.5s;
+  -webkit-animation: attack 0.5s;
+  //C'est peut-être overkill de mettre toutes les autres, mais 🤷‍♂️
+  -moz-animation: attack 0.5s;
+  -o-animation: attack 0.5s;
+  -ms-animation: attack 0.5s;
+}
+```
+
+- Finalement, on peut assigner la classe CSS avec une condition
+
+```html
+<app-card [class.attack]="mycard.attack===true"></app-card>
+```
+
+
+
 
 ## Différentes techniques
 
@@ -229,4 +288,5 @@ playBounce() {
   },1000);
 }
 ```
+
 -->

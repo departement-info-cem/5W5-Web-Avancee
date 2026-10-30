@@ -1,7 +1,6 @@
-# Animations (2e partie)
+# Animations CSS
 
-🚧 À venir
-
+🚧 À venir!
 <!--
 
 ## Objectifs

@@ -9,6 +9,7 @@ hide_table_of_contents: true
 - Animations
 - Tests unitaires avec Mock
 
+🚧 À venir!
 <!-- TODO: Ajouter un lien vers le nouveau formatif
 [🔗Formatif](https://github.com/CEM-420-5W5/Final_Formatif_A24)
 -->

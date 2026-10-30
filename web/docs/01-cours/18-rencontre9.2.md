@@ -1,9 +1,9 @@
 ---
-title: 10.1 - Animations (Partie 2) 💫
+title: 10.1 - Animations CSS 💫
 hide_table_of_contents: true
 ---
 
-# Animations (Partie 2) 💫
+# Animations CSS 💫
 
 ## Info
 
