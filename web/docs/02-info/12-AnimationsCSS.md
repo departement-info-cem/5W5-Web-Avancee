@@ -148,7 +148,7 @@ jouerAnimationAvecCallback("monId", "classe", () => {
 ```
 
 :::danger
-Mais qu'est-ce qui se passe quand on va appeler cette méthode plusieurs fois sur le même élément? Et bien on va ajouter plusieurs event listeners! Donc il faudrait retirer le event listener dans "animationend"...
+Mais qu'est-ce qui se passe quand on appele pleins de fois addEventListener sur le même élément? Et bien on va ajouter plusieurs event listeners! Donc il **faudrait** retirer le event listener dans "animationend"... Mais ça devient franchement compliqué et on va donc arrêter là!
 :::
 
 :::danger
@@ -159,13 +159,12 @@ Est-ce que j'ai mentionné que si vous ajoutez deux classes pour animer en même
 C'est parcontre possible de faire une seule animation avec une séquence complexe qui modifient plusieurs chosent différentes!
 :::
 
-
 Donc en résumé, c'est préférable de ne pas utiliser les animations CSS pour les cas complexes avec des séquences qui dépendant de notre logique. Mais les animations CSS peuvent être une bonne façon d'animer plus efficacement les cas simples!
 
 
 ## Générateur d'animations CSS
 
-- Le site **animista** contient des centaines d'animations que l'on peut modifier avec des paramètres pour générer nos keyframes. Ils permettent d'ajouter un grand nombre d'effets intéressants et fonctionnent très bien.
+- Le site **animista** contient des centaines d'animations que l'on peut modifier avec des paramètres pour générer nos keyframes css. Ils permettent d'ajouter un grand nombre d'effets intéressants et fonctionnent très bien.
 
 [https://animista.net](https://animista.net)
 
