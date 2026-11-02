@@ -58,7 +58,7 @@ La classe card-can-be-played permet d'afficher une bordure animée en boucle
 
 Ici c'est presque exactement le même problème que pour jouer une attaque. Mais comment bien identifier les différents pouvoirs?
 
-Modifier la propriété id des pouvoirs pour qu'elle soit vraiment unique. Le truc c'est de combiner le id de la carte avec celui du pouvoir!
+Modifier la propriété id des pouvoirs pour qu'elle soit vraiment unique dans le fichier **playing-card.tsx**. Le truc c'est de combiner le id de la carte avec celui du pouvoir!
 
 Modifiez ensuite **activatePower** pour jouer les animations.
 
