@@ -1,63 +1,77 @@
 # Animations CSS
 
-🚧 À venir!
-<!--
-
 ## Objectifs
 
-Créer des séquences et des boucles d'animations
+Utiliser des animations CSS pour animer des cartes.
+
+[Projet](https://github.com/CEM-420-5W5/css-animations-exercice)
 
 ## État initial
 
-Continuez avec le projet de l'exercice précédent
+Le projet est déjà assez complet, mais il faut faire quelques modifications à chaque étape
 
 ## Complétez les tâches suivantes
 
-### Ajoutez les boutons
+### Faire apparaître la carte
 
-Ajoutez deux boutons qui vont déclencher 2 séquences d'animations (**Bounce/Shake/Flip** et **Infinite Triple Spin**)
+Ici on va utiliser la propriété className pour mettre fade-in directement sur l'élément dans le JSX
 
-| ![alt text](/img/exercices/animations/image-3.png) |
-| -------------------------------------------------- |
+### Faire disparaître la carte
 
-### Ajoutez la logique pour Bounce/Shake/Flip
+On va travailler un peu plus cette fois-ci.
 
-- Utilisez les animations Angular de la libraire ng-animate.
-- Pour _shake_, réutilisez l'animation **shakeX**.
-- Ajoutez les animations **bounce** et **flip**.
+Premièrement créer une animation fade-out dans le fichier **animations.css** (il faut créer la classe et les keyframes). C'est assez simple, faites le contraire du fade-in!
 
-Pour les durées d'animation:
+Dans la méthode afficherCarte, il faut faire quelque chose quand la valeur est false (pour la cacher).
+Premièrement, trouvez l'élément et ensuite ajoutez-lui la classe fade-out que vous venez de créer.
 
-- **Bounce** : 1 seconde
-- **Shake** : 0.75 seconde
-- **Flip** : 0.75 seconde
+Ça ne fonctionne pas? Ça serait mieux d'attendre que l'animation soit terminé avant d'exécuter la ligne setCardVisible, sinon l'élément disparaît instantanément!
 
-- Utilisez une méthode **async** avec des **await** pour faire jouer la séquence suivante d'animation: **Bounce/Shake/Flip**.
+Gardons ça simple avec une autre stratégie qui fonctionne bien dans ces cas simples:
 
-### Ajoutez la logique pour Infinite Triple Spin
+```ts
+// On attend 500 ms avec ce code (la méthode doit être async)
+await new Promise(resolve => setTimeout(resolve, 500));
+```
 
-- Utilisez encore le site [Animista](https://animista.net). Dans la section _basic_ il y a _Rotate_.
+### Faire jouer une animation d'attaque
 
-| ![alt text](/img/exercices/animations/image-2.png) |
-| -------------------------------------------------- |
+Dans la méthode **jouerAttaque**, on peut obtenir l'élément avec son id en fonction de la variable side.
 
-- Ajoutez à votre projet les 2 animations CSS suivantes
-
-**rotate-center** (duration: 0.8 seconde, timing-function: easeInQuart, iteration-count: **2**)
-
-:::info
-Avec l'option iteration-count, l'animation va jouer 2 fois chaque fois que le CSS est déclenché. Assurez-vous de bien ajuster votre délai!
-:::
-
-**rotate-hor-top** (duration: 0.7 seconde, timing-function: easeInOut)
+On peut ensuite ajouter la classe d'animation pour jouer la bonne animation d'attaque (player-attack ou opponent-attack)
 
 :::warning
-Il faut ajouter les _trigger_ css sur le div qui contient l'image, comme pour le _wobble_ du hit dans la première partie de l'exercice.
+Êtes-vous capable de jouer les animations plusieurs fois? Si non, allez-y avec la première solution présenté en classe.
 :::
 
-- Utilisez `setTimeout` et 2 méthodes qui s'appellent l'une, l'autre pour faire une **boucle infinie** qui jouent la double rotation autour du centre et ensuite la rotation horizontale.
+:::danger
+On montre comment le faire avec une animation CSS, mais ça sera sans doute plus facile de le faire avec une animation JS dans votre TP
+:::
+
+### Afficher une animation autour de la carte quand on peut la jouer
+
+Pas de méthode à modifier ici, on va uniquement définir le className des cartes de cette section en fonction du coût en mana de la carte et de la variable mana.
+
+La classe card-can-be-played permet d'afficher une bordure animée en boucle
+
+### Activer un pouvoir sur une carte
+
+Ici c'est presque exactement le même problème que pour jouer une attaque. Mais comment bien identifier les différents pouvoirs?
+
+Modifier la propriété id des pouvoirs pour qu'elle soit vraiment unique. Le truc c'est de combiner le id de la carte avec celui du pouvoir!
+
+Modifiez ensuite **activatePower** pour jouer les animations.
+
+Utilisez les variables **selectedCardId** et **selectedPowerId**
+
+:::warning
+Êtes-vous capable d'animer les pouvoirs plusieurs fois? Utilisez encore le même fix.
+:::
+
+:::danger
+On montre comment le faire avec une animation CSS, mais ça sera sans doute plus facile de le faire avec une animation JS dans votre TP
+:::
 
 ## Solution
 
-La solution est dans la branche **solution2** du repo
--->
+La solution est dans la branche **solution** du repo
