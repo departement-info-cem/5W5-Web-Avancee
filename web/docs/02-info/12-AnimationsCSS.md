@@ -61,6 +61,8 @@ element?.classList.add(classe);
 
 ## Les problèmes!
 
+### Rejouer la même animation
+
 Ça serait merveilleux si c'était aussi simple, mais comme on peut le voir dans le premier exemple du repository fournis à la fin de cette page, on a rapidement un problème quand on veut faire jouer l'animation une 2e fois!
 
 Pourquoi? Car la ligne suivante n'a AUCUN effet si la classe est déjà présente sur l'élément!
@@ -82,7 +84,7 @@ box.addEventListener('mouseleave', () => {
 });
 ```
 
-#### Est-ce qu'on peut quand même jouer une animation plusieurs fois avec CSS?
+### Est-ce qu'on peut quand même jouer une animation plusieurs fois avec CSS?
 
 Quelle excellente question! Je suis content que vous me la posiez!
 
@@ -103,7 +105,7 @@ void element.offsetWidth;
 element.classList.add(classe);
 ```
 
-Et vous pouvez deviner l'autre défi qu'il faut régler?
+### On fait comment si on veut jouer une séquence d'animations?
 
 Comment on fait pour jouer des séquences d'animations? Est-ce que ça serait même utile de mettre un await devant le add au classList?
 
@@ -117,32 +119,32 @@ element.addEventListener('animationend', () => {
 ```
 
 :::warning
-Ça fonctionne bien, mais on peut rapidement tomber sur un problème. Le listener est sur l'élément en général, pas sur une animation en particulier. Imaginez que quelqu'un d'autre décide de joueur une autre animation sur le même élément ailleurs dans son code! C'est le genre de code qui peut causer des problèmes vraiment difficiles à prévoir et comprendre... Bref, soyez prudent avec ce genre de logique.
+Ça fonctionne bien dans un cas simple, mais on peut rapidement tomber sur un problème. Le listener est sur l'élément en général, pas sur une animation en particulier. Imaginez que quelqu'un d'autre décide de joueur une autre animation sur le même élément ailleurs dans son code! C'est le genre de code qui peut causer des problèmes vraiment difficiles à prévoir et comprendre... Bref, soyez prudent avec ce genre de logique.
 :::
 
 Mais voici donc à quoi ressemblerait notre méthode:
 
 ```ts
-const jouerAnimationAvecCallback = (elementId: string, classe: string, callback:Fn) => {
-  return new Promise<void>((resolve) => {
-    const element = document.getElementById(elementId);
-    if (!element) {
-      resolve();
-      return;
-    }
+const jouerAnimationAvecCallback = (elementId: string, classe: string, callback: () => void) => {
+  const element = document.getElementById(elementId);
+  if (!element) {
+    return;
+  }
 
-    element.classList.add(classe);
+  element.classList.add(classe);
 
-    element.addEventListener('animationend', () => {
-      // La bonne nouvelle, c'est qu'on peut se débarrasser du hack, on va retirer la classe une fois qu'on a terminé
-      element.classList.remove(classe);
-      resolve();
-    });
-  });
+  element.addEventListener('animationend', () => {
+    element.classList.remove(classe);
+    callback();
+  }, { once: true });
 };
 
 // Et vous pourriez l'utiliser comme ceci:
-jouerAnimationAvecCallback("monId", "classe", () => alert("l'animation est terminé"));
+jouerAnimationAvecCallback("monId", "classe", () => {
+  jouerAnimationAvecCallback("monId", "autreClasse", () => {
+    alert("les animations sont terminés")
+  });
+});
 ```
 
 :::danger
@@ -170,5 +172,6 @@ Donc en résumé, c'est préférable de ne pas utiliser les animations CSS pour 
 | ![alt text](animista.png) |
 | ------------------------- |
 
+## Repo avec les exemples
 
 Vous pouvez voir de nombreux exemples metionnées sur cette page sur ce [repo](https://github.com/CEM-420-5W5/css-animations-info).
