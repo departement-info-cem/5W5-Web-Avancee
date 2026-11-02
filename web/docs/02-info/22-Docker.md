@@ -1,6 +1,9 @@
 # Docker
 ## Ajout d'un Dockerfile pour déployer l'application
 
+🚧 À venir (Mise à jour pour Visual Studio 2026)
+<!--
+
 1. Dans votre solution, faites "Ajouter" sur votre projet WebAPI
 
 |![alt text](image-16.png)|
@@ -31,3 +34,5 @@ Vous pouvez faire un commit avec les fichiers Dockerfile et .dockerignore et fai
 |-|
 
 6. Un fichier **Dockerfile** devrait avoir été généré. Il faut simplement faire un **commit** et un **push** et vous assurez que votre changement est dans la branche que vous voulez déployer (probablement **Dev**)
+
+-->

@@ -1,5 +1,7 @@
 # Déployer votre application sur Render
 
+🚧 À venir (Mise à jour pour React)
+<!--
 ## Commencer par se créer un compte
 
 [Free Render](https://render.com/docs/free)

@@ -9,7 +9,6 @@ sidebar_class_name: remise-tp3-devops
 - Changement de BD pour Supabase
 - Docker
 - Déploiement
-- Comment mettre les données de la page à jour dans la version déployée (NgZone)
 
 ## Info
 
@@ -18,7 +17,4 @@ sidebar_class_name: remise-tp3-devops
 - [Docker](/info/Docker)
 - [Déploiement Render](/info/Render)
 
-<!-- TODO: Vérifier si il faut encore un égquivalent de NgZone? 
-- [Mise à jour des données avec NgZone pour SignalR/Angular](/info/NgZone)
--->
 
