@@ -1,36 +1,35 @@
 # Animations et délais
 
-🚧 À venir!
-<!--
+
 
 ## Objectif
 
-Bien comprendre l'utilisation de **setTimeout** et de **timer**, qui sont très utiles pour les animations, mais également dans de nombreuses autres situations.
-
+Apprendre à utiliser des animations CSS qui permettent de rouler des animations de façon plus efficace, mais avec moins de contrôle.
 
 
 ## CSS
 
 ### Comment ça marche
 
-- Principalement on change une propriété CSS
-- On décide combien de temps dure transition
+- Principalement on ajoute une classe à la liste de classe d'un élément
+- L'animation est spécifié dans une classe css qui spécifie la durée et si on utilise forwards ou pas (Pour garder la valeur à la fin)
+
+### Keyframes
+
+- On peut avoir différentes étapes à notre animation et ces étapes se nomment encore une fois des keyframes
+- Ils fonctionnent de la même façon que pour les animations JS, même si la syntaxe est un peu différente
 
 ### Exemple
 
 - On change la propriété **top** de 0px à 20px en 0.2 seconde, voilà une animation qui fait descendre un objet de 20 pixels en 0.2 seconde.
 
-### Keyframes
+### Utiliser avec React
 
-- On peut avoir différentes étapes à notre animation
-- Ces étapes sont des Keyframes
-
-### Utiliser avec Angular
-
-- Il faut commencer par créer l'animation en CSS
+- Il faut commencer par créer l'animation en CSS avec des keyframes
+- L'animation suivante fait bouger en Y de 10% après 20% du temps et ensuite bouger à -50% après 60% du temps epour ensuite retourner à la position de départ.
 
 ```css
-@keyframes attack {
+@keyframes attackKeyframes {
   0% {
     transform: translateY(0%);
   }
@@ -46,247 +45,124 @@ Bien comprendre l'utilisation de **setTimeout** et de **timer**, qui sont très 
 }
 ```
 
-- Ensuite on assigne l'animation à une classe CSS
+- Ensuite on assigne les keyframes à l'animation d'une classe CSS en spécificant la durée et potentiellement l'option forwards
 
 ```css
 .attack {
-  animation: attack 0.5s;
-  -webkit-animation: attack 0.5s;
-  //C'est peut-être overkill de mettre toutes les autres, mais 🤷‍♂️
-  -moz-animation: attack 0.5s;
-  -o-animation: attack 0.5s;
-  -ms-animation: attack 0.5s;
+  animation: attackKeyframes 0.5s;
+  -webkit-animation: attackKeyframes 0.5s;
 }
 ```
 
-- Finalement, on peut assigner la classe CSS avec une condition
-
-```html
-<app-card [class.attack]="mycard.attack===true"></app-card>
-```
-
-
-
-
-## Différentes techniques
-
-Il y a de nombreuses façons d'obtenir le même résultat lorsque l'on veut jouer des animations. Voici quelques exemples qui font tous un peu la même chose: "Jouer une animation shake pendant 1 seconde, puis flip pendant 2 secondes"
-
-Pour les explications suivantes, on assume qu'il y a une configuration comme celle-ci pour les animations Angular:
+- Finalement, on peut assigner la classe CSS à l'élément
 
 ```ts
-trigger("shake", [
-  transition(":increment", useAnimation(shakeX, { params: { timing: 1 } })),
-]),
-trigger("flip", [
-  transition(":increment", useAnimation(flip, { params: { timing: 2 } })),
-]),
-// ...
-ng_shake = 0;
-ng_flip = 0;
+const element = document.getElementById(elementId);
+element?.classList.add(classe);
 ```
 
-```html
-<div [@shake]="ng_shake" [@flip]="ng_flip"></div>
-```
+## Les problèmes!
 
-Et dans le cas d'une animation CSS, il y a la configuration suivante:
+Ça serait merveilleux si c'était aussi simple, mais comme on peut le voir dans le premier exemple du repository fournis à la fin de cette page, on a rapidement un problème quand on veut faire jouer l'animation une 2e fois!
+
+Pourquoi? Car la ligne suivante n'a AUCUN effet si la classe est déjà présente sur l'élément!
 
 ```ts
-css_shake = false;
-css_flip = false;
+element?.classList.add(classe);
 ```
 
-```html
-<div [class.shake]="css_shake" [class.flip]="css_flip"></div>
-```
-
-```css
-.shake {
-  // Voir les exemples d'animations
-}
-
-.flip {
-  // Voir les exemples d'animations
-}
-```
-
-### setTimeout les uns dans les autres
-
-#### Avec les animations Angular
+Pour cette raison, les animations CSS sont un bon choix pour reflèter un état. Par exemple animer un fadeIn ou fadeOut selon si un objet devrait être affiché ou non. On jouer une animation quand on passe la souris sur un élément et autres exemples du genre. Pourquoi? Car on peut alors facilement avoir 2 listeners:
 
 ```ts
-shakeFlipAndBounce_Angular_1() {
-  this.ng_shake++;
-  setTimeout(() => {
-    // Après 1 seconde
-    this.ng_flip++;
-  }, 1000);
-  // Après 0 seconde
-}
+box.addEventListener('mouseenter', () => {
+  box.classList.add(classeAnimation);
+});
+
+// Triggers when the mouse leaves the element
+box.addEventListener('mouseleave', () => {
+  box.classList.remove(classeAnimation);
+});
 ```
 
-#### Avec les animations CSS, c'est un peu moins joli, car il faut également mettre les valeurs à false!
+#### Est-ce qu'on peut quand même jouer une animation plusieurs fois avec CSS?
 
-```csharp
-shakeFlipAndBounce_CSS_1() {
-  this.css_shake = true;
-  setTimeout(() => {
-    // Après 1 seconde
-    this.css_shake = false;
-    this.css_flip = true;
-    setTimeout(() => {
-      // Après 3 secondes
-      this.css_flip = false;
-    }, 2000);
-  }, 1000);
-  // Après 0 seconde
-}
+Quelle excellente question! Je suis content que vous me la posiez!
+
+On peut retirer la classe juste avant de l'ajouter, mais il faut connaître la petite astuce. Cette façon ne fonctionne pas!
+
+```ts
+element?.classList.remove(classe);
+element?.classList.add(classe);
 ```
 
-:::info
-On avait déjà vu que les animations Angular peuvent être déclenchées chaque fois qu'une valeur change ou encore qu'elle est incrémentée ou décrémentée. Alors que pour les animations CSS, il faut s'assurer de retirer la class lorsque l'animation est terminée (et donc de mettre la valeur à false).
+Mais celle-ci oui! Je passe les détails, mais dans le premier cas on remet dans le même état avant que la liste de classes soient évalué.
+
+```ts
+element.classList.remove(classe);
+// Forcer le reflow pour que l'animation puisse être relancée
+// Ou en language plus simple, un hack JS qui fonctionne particulièrement bien si vous n'oubliez pas de faire brûler des poils de chats dans la flamme d'une chandelle à chaque plein lune (chandelle et poils de chat non inclus)
+void element.offsetWidth;
+element.classList.add(classe);
+```
+
+Et vous pouvez deviner l'autre défi qu'il faut régler?
+
+Comment on fait pour jouer des séquences d'animations? Est-ce que ça serait même utile de mettre un await devant le add au classList?
+
+JS fournit des tonnes des listeners et on peut les utiliser pour savoir quand une animation se termine avec quelque chose comme ceci:
+
+```ts
+element?.classList.add(classe);
+element.addEventListener('animationend', () => {
+  // Faire quelque chose à la fin de l'animation
+});
+```
+
+:::warning
+Ça fonctionne bien, mais on peut rapidement tomber sur un problème. Le listener est sur l'élément en général, pas sur une animation en particulier. Imaginez que quelqu'un d'autre décide de joueur une autre animation sur le même élément ailleurs dans son code! C'est le genre de code qui peut causer des problèmes vraiment difficiles à prévoir et comprendre... Bref, soyez prudent avec ce genre de logique.
 :::
 
-### setTimeout un à la suite de l'autre
-
-On peut également démarrer tous les setTimeout d'un même coup, mais avec délais différents
-
-#### CSS
+Mais voici donc à quoi ressemblerait notre méthode:
 
 ```ts
-shakeFlipAndBounce_CSS_2() {
-  this.css_shake = true;
+const jouerAnimationAvecCallback = (elementId: string, classe: string, callback:Fn) => {
+  return new Promise<void>((resolve) => {
+    const element = document.getElementById(elementId);
+    if (!element) {
+      resolve();
+      return;
+    }
 
-  setTimeout(() => {
-    // Après 1 seconde (shake est terminé)
-    this.css_shake = false;
-    this.css_flip = true;
-  },1000);
+    element.classList.add(classe);
 
-  setTimeout(() => {
-    // Après 3 (1+2) secondes (flip est terminé)
-    this.css_flip = false;
-  },3000);
-  // Après 0 seconde
-}
+    element.addEventListener('animationend', () => {
+      // La bonne nouvelle, c'est qu'on peut se débarrasser du hack, on va retirer la classe une fois qu'on a terminé
+      element.classList.remove(classe);
+      resolve();
+    });
+  });
+};
+
+// Et vous pourriez l'utiliser comme ceci:
+jouerAnimationAvecCallback("monId", "classe", () => alert("l'animation est terminé"));
 ```
 
-### Avec une méthode async
-
-On peut également utiliser un mélange de await et de async et un timer
-
-#### CSS
-
-```ts
-async shakeFlipAndBounce_CSS_3() {
-  this.css_shake = true;
-
-  await lastValueFrom(timer(1000));
-  // Après 1 seconde
-  this.css_shake = false;
-  this.css_flip = true;
-
-  await lastValueFrom(timer(2000));
-  // Après 3 secondes
-  this.css_flip = false;
-}
-```
-
-On peut se créer une méthode pour faire nos délais. On peut l'appeler waitFor
-
-```ts
-async waitFor(delayInSeconds:number) {
-  await lastValueFrom(timer(delayInSeconds * 1000));
-}
-```
-
-Et ensuite, l'utiliser dans une méthode async:
-
-#### CSS avec waitFor
-
-```ts
-async shakeFlipAndBounce_CSS_4() {
-  this.css_shake = true;
-
-  await waitFor(1);
-  // Après 1 seconde
-  this.css_shake = false;
-  this.css_flip = true;
-
-  await waitFor(2);
-  // Après 3 secondes
-  this.css_flip = false;
-}
-```
-
-#### Angular avec waitFor
-
-```ts
-async shakeFlipAndBounce_Angular_4() {
-  this.ng_shake++;
-
-  await waitFor(1);
-  // Après 1 seconde
-  this.ng_flip++;
-}
-```
-
-:::info
-Comme on peut voir, en utilisant une méthode async et des animations Angular, on arrive à une écriture qui est très facile à lire!
+:::danger
+Mais qu'est-ce qui se passe quand on va appeler cette méthode plusieurs fois sur le même élément? Et bien on va ajouter plusieurs event listeners! Donc il faudrait retirer le event listener dans "animationend"...
 :::
 
-### Boucle infinie
+:::danger
+Est-ce que j'ai mentionné que si vous ajoutez deux classes pour animer en même temps, seulement celle qui est la derniìer dans les déclarations CSS s'appliquent! Donc pas possible de joueur 2 animations en même temps non plus...
+:::
 
-Si on veut joueur la même animation, tant qu'une valeur est vraie, on peut le faire avec de la récursion
+:::info
+C'est parcontre possible de faire une seule animation avec une séquence complexe qui modifient plusieurs chosent différentes!
+:::
 
-```ts
-playLoop_Angular_1() {
-  this.ng_shake++;
 
-  setTimeout(() => {
-    // Après 1 seconde
-    if(this.keepPlayingAnimation)
-      this.playLoop_Angular_1();
-  },1000);
-  // Après 0 seconde
-}
-```
+Donc en résumé, c'est préférable de ne pas utiliser les animations CSS pour les cas complexes avec des séquences et de la logique. Mais les animations CSS peuvent être une bonne façon d'animer plus efficacement les cas simples!
 
-Mais on peut également le faire dans une boucle avec une méthode async
+Voici un site qui vous permet de créer des animations CSS intéressantes à partir de modèles d'animations que vous pouvez ajuster pour vos besoins. Ils permettent d'ajouter un grand nombre d'effets intéressants et fonctionnent très bien (sauf quand on décide de les mettre en séquence.) 
 
-```ts
-async playLoop_Angular_2() {
-  while(this.keepPlayingAnimation){
-    this.ng_shake++;
-    await lastValueFrom(timer(1000));
-  }
-}
-```
 
-### Boucle infinie avec une séquence
-
-Si on veut joueur 2 animations (shake et bounce), une après l'autre, à l'infini
-
-```ts
-playLoop_Angular_3() {
-  this.playShake();
-}
-
-playShake() {
-  this.ng_shake++;
-  setTimeout(() => {
-    // On appel playBounce, qui va appeler playShake, qui va appeler playBounce, qui va appeler playShake, qui va appeler....
-    this.playBounce();
-  },1000);
-}
-
-playBounce() {
-  this.ng_bounce++;
-  setTimeout(() => {
-    this.playShake();
-  },1000);
-}
-```
-
--->
+Vous pouvez voir de nombreux exemples metionnées sur cette page sur ce [repo](https://github.com/CEM-420-5W5/css-animations-info).
