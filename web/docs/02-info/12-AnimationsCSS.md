@@ -1,6 +1,4 @@
-# Animations et délais
-
-
+# Animations CSS
 
 ## Objectif
 
@@ -152,7 +150,7 @@ Mais qu'est-ce qui se passe quand on va appeler cette méthode plusieurs fois su
 :::
 
 :::danger
-Est-ce que j'ai mentionné que si vous ajoutez deux classes pour animer en même temps, seulement celle qui est la derniìer dans les déclarations CSS s'appliquent! Donc pas possible de joueur 2 animations en même temps non plus...
+Est-ce que j'ai mentionné que si vous ajoutez deux classes pour animer en même temps, seulement celle qui est la dernière dans les déclarations CSS s'appliquent! Donc pas possible de joueur 2 animations en même temps non plus...
 :::
 
 :::info
@@ -160,9 +158,17 @@ C'est parcontre possible de faire une seule animation avec une séquence complex
 :::
 
 
-Donc en résumé, c'est préférable de ne pas utiliser les animations CSS pour les cas complexes avec des séquences et de la logique. Mais les animations CSS peuvent être une bonne façon d'animer plus efficacement les cas simples!
+Donc en résumé, c'est préférable de ne pas utiliser les animations CSS pour les cas complexes avec des séquences qui dépendant de notre logique. Mais les animations CSS peuvent être une bonne façon d'animer plus efficacement les cas simples!
 
-Voici un site qui vous permet de créer des animations CSS intéressantes à partir de modèles d'animations que vous pouvez ajuster pour vos besoins. Ils permettent d'ajouter un grand nombre d'effets intéressants et fonctionnent très bien (sauf quand on décide de les mettre en séquence.) 
+
+## Générateur d'animations CSS
+
+- Le site **animista** contient des centaines d'animations que l'on peut modifier avec des paramètres pour générer nos keyframes. Ils permettent d'ajouter un grand nombre d'effets intéressants et fonctionnent très bien.
+
+[https://animista.net](https://animista.net)
+
+| ![alt text](animista.png) |
+| ------------------------- |
 
 
 Vous pouvez voir de nombreux exemples metionnées sur cette page sur ce [repo](https://github.com/CEM-420-5W5/css-animations-info).
