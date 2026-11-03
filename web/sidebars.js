@@ -262,8 +262,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-11-03" },
-            { 1020: "2026-11-03" },
+            { 1010: "2026-11-06" },
+            { 1020: "2026-11-06" },
           ],
         },
         /*avancementLabel: "TP2",
@@ -277,8 +277,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-11-06" },
-            { 1020: "2026-11-06" },
+            { 1010: "2026-11-10" },
+            { 1020: "2026-11-10" },
           ],
         },
         /*avancementLabel: "TP2",
@@ -293,8 +293,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-11-10" },
-            { 1020: "2026-11-10" },
+            { 1010: "2026-11-13" },
+            { 1020: "2026-11-13" },
           ],
         },
         /*avancementLabel: "TP2",
@@ -308,8 +308,8 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-11-13" },
-            { 1020: "2026-11-13" },
+            { 1010: "2026-11-17" },
+            { 1020: "2026-11-17" },
           ],
         },
         /*avancementLabel: "TP2",
@@ -318,13 +318,13 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "11.2 - Présentation TP3 🗣️",
+      label: "11.2 - TP3 🗣️ et Background Services 🦺",
       id: "cours/rencontre11.2",
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-11-17" },
-            { 1020: "2026-11-17" },
+            { 1010: "2026-11-20" },
+            { 1020: "2026-11-20" },
           ],
         },
         /*avancementLabel: "TP3 créé, ",
@@ -333,24 +333,8 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "12.1 - Background Services 🦺",
+      label: "12.1 - Mocks et tests 🤡",
       id: "cours/rencontre12.1",
-      customProps: {
-        calendrier: {
-          "Mathieu": [
-            { 1010: "2026-11-20" },
-            { 1020: "2026-11-20" },
-          ],
-        },
-        /*avancementLabel: "TP3",
-        avancement: 0.28,*/
-      },
-    },
-    {
-      type: "doc",
-      label: "12.2 - Mocks et tests 🤡",
-      id: "cours/rencontre12.2",
-      className: "remise-tp3-groupe",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -359,18 +343,34 @@ const sidebars = {
           ],
         },
         /*avancementLabel: "TP3",
-        avancement: 0.42,*/
+        avancement: 0.28,*/
       },
     },
     {
       type: "doc",
-      label: "13.1 - Évaluation TP3 💯",
-      id: "cours/rencontre13.1",
+      label: "12.2 - TP3",
+      id: "cours/rencontre12.2",
+      className: "remise-tp3-groupe",
       customProps: {
         calendrier: {
           "Mathieu": [
             { 1010: "2026-11-27" },
             { 1020: "2026-11-27" },
+          ],
+        },
+        /*avancementLabel: "TP3",
+        avancement: 0.42,*/
+      },
+    },
+    {
+      type: "doc",
+      label: "13.1 - Évaluation #1 TP3 💯",
+      id: "cours/rencontre13.1",
+      customProps: {
+        calendrier: {
+          "Mathieu": [
+            { 1010: "2026-12-01" },
+            { 1020: "2026-12-01" },
           ],
         },
         /*avancementLabel: "TP3",
@@ -385,32 +385,30 @@ const sidebars = {
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-12-01" },
-            { 1020: "2026-12-01" },
+            { 1010: "2026-12-04" },
+            { 1020: "2026-12-04" },
           ],
         },
         /*avancementLabel: "TP3",
         avancement: 0.71,*/
       },
     },
-    {
+    /*{
       type: "doc",
       label: "14.1 - Évaluation DevOps TP3 💯",
       id: "cours/rencontre14.1",
       customProps: {
         calendrier: {
           "Mathieu": [
-            { 1010: "2026-12-04" },
-            { 1020: "2026-12-04" },
+            { 1010: "2026-12-08" },
+            { 1020: "2026-12-08" },
           ],
-        },
-        /*avancementLabel: "TP3",
-        avancement: 0.85,*/
+        }
       },
-    },
+    },*/
     {
       type: "doc",
-      label: "14.2 - Évaluation Finale TP3 💯",
+      label: "14.2 - Formatif",
       id: "cours/rencontre14.2",
       customProps: {
         calendrier: {
@@ -425,7 +423,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "15.1 - Formatif",
+      label: "15.1 - Évaluation Finale TP3 💯",
       id: "cours/rencontre15.1",
       customProps: {
         calendrier: {

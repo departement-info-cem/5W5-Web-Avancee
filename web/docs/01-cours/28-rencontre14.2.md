@@ -1,7 +1,19 @@
 ---
-title: 14.2 - Évaluation Finale TP3 💯
+title: 14.2 - Formatif
 hide_table_of_contents: true
-sidebar_class_name: remise-tp3-fonctionnalites
 ---
 
-# Évaluation finale du TP3 💯
+# Pratique examen final
+
+- SignalR (Hub avec BackgroundService)
+- Animations
+- Tests unitaires avec Mock
+
+🚧 À venir!
+<!-- TODO: Ajouter un lien vers le nouveau formatif
+[🔗Formatif](https://github.com/CEM-420-5W5/Final_Formatif_A24)
+-->
+
+:::info
+Le cours précédent (14.1) a été annulé
+:::

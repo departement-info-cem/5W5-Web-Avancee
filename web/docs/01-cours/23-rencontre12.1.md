@@ -1,25 +1,19 @@
 ---
-title: 12.1 - Background Services 🦺
+title: 12.1 - Mocks et tests 🤡
 hide_table_of_contents: true
 ---
 
-# Background Services 🦺
+# Mocks et tests pour contrôleurs 🤡
 
-- .NET BackgroundService avec un Hub
-- Utilisation de Scope à l'intérieur d'un service Singleton
-- Erreur de **JsonIgnore...** Il faut faire attention de ne **JAMAIS utiliser** celui de **Newtonsoft**
+- Explication sur les tests de pouvoirs Random [Projet GitHub DemoMockNumberGenerator](https://github.com/CEM-420-5W5/DemoMockNumberGenerator).
 
-![Alt text](image.png)
+- Profiter du cours pour me poser des questions sur votre tâche individuelle de TP si il y a des choses qui ne sont pas encore claires!
 
 ## Info
 
-[BackgroundService](/info/BackgroundService)
+- [Mocks](/info/Mocks)
+- [Utilisation des Mocks](/info/UtilisationMocks)
 
-🚧 À venir!
-<!--Voici également un projet de référence plus simple qui est utile pour comprendre les Background Services: [Projet GitHub Simple](https://github.com/CEM-420-5W5/SimpleBackgroundService.git)-->
+## Exercices
 
-### Exercices
-
-[Exercice BackgroundService #1](/exercices/BackgroundService)
-
-[Exercice BackgroundService #2](/exercices/BackgroundService2)
+[Exercice sur les Mocks](/exercices/Mocks)
