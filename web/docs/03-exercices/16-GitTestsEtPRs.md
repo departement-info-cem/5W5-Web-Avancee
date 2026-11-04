@@ -83,5 +83,3 @@ Le test que vous ajouté doit simplement faire Assert.Fail(). On veut simplement
 
 - Une fois que tout est vert, c'est possible d'exécuter le Pull Request!
 
-
-[Projet GitHub avec la solution](https://github.com/CEM-420-5W5/GitHubActionsAndPRs)
