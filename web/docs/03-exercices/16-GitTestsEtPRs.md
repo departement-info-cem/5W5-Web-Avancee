@@ -9,7 +9,7 @@
 ## Étapes
 
 - Le travail se fait en équipe pour apprendre à configurer votre projet.
-- Commencer par créer le projet à partir du lien envoyé par votre enseignant sur Teams.
+- Commencer par créer un fork de ce [projet](https://github.com/CEM-420-5W5/GitHubActionsAndPRs)
 
 - Configurer une action de tests GitHub, comme c'est expliqué dans [ici](/info/ActionsTestGitHub#les-%C3%A9tapes)
 
@@ -64,10 +64,11 @@ On peut maintenant intégrer la branche test dans la branche main!
 
 ## Protection avec les tests
 
-- Toujours dans la branche test, ajouter des tests unitaires pour la méthode **Index** du HomeController (N'oubliez pas que l'on peut simplement faire un **right click** sur la méthode **Index** et choisir **Créer des tests unitaires**)
+- Toujours dans la branche **test**, ajouter des tests unitaires pour la méthode **Index** du HomeController
+- Il y a les instructions dans la sections sur les [test unitaires](https://info.cegepmontpetit.ca/5W5-Web-Avancee/info/TestsUnitaires#g%C3%A9n%C3%A9ration-de-tests).
 
 :::info
-Par défaut, le test qui est généré fait Assert.Fail() et c'est PARFAIT COMME ÇA POUR LE MOMENT
+Le test que vous ajouté doit simplement faire Assert.Fail(). On veut simplement tester comment github va réagir à ce test qui fail.
 :::
 
 - Faire un commit/push du projet dans notre branche **test**
