@@ -87,7 +87,7 @@ On va commencer par aller sur le site et choisir les options suivantes:
 - Flip-Scale-2
     - flips-scale-2-ver-right
 
-Cliquer ensuite sur le bouton rond complètement à droite {.}
+Cliquer ensuite sur le bouton rond complètement à droite \{.\}
 
 ![alt text](image-15.png)
 
