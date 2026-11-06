@@ -379,7 +379,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "13.2 - Déploiement 🌐",
+      label: "13.2 - Déploiement 🌐 et Formatif",
       id: "cours/rencontre13.2",
       className: "remise-tp3-devops",
       customProps: {
@@ -423,8 +423,9 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "15.1 - Évaluation Finale TP3 💯",
+      label: "15.1 - Examen Final",
       id: "cours/rencontre15.1",
+      className: "examen",
       customProps: {
         calendrier: {
           "Mathieu": [
@@ -436,9 +437,9 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "15.2 - Examen Final",
+      label: "15.2 - Évaluation Finale TP3 💯",
       id: "cours/rencontre15.2",
-      className: "examen,remise-tp3-fonctionnalites",
+      className: "remise-tp3-fonctionnalites",
       customProps: {
         calendrier: {
           "Mathieu": [
