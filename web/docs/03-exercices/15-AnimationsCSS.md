@@ -101,6 +101,24 @@ On va:
     - Effacer le @-webkit-keyframes au complet (donc la moitié du code de keyframes copié)
     - Effacer une ligne sur 2 du @keyframes qui reste. Vous l'aurez deviné. Toutes les lignes qui commencent par -webkit
 
+```ts
+@keyframes flip-scale-2-ver-right {
+  0% {
+            transform: translateX(100%) rotateY(-180deg) scale(1);
+            transform-origin: 0% 50%;
+  }
+  50% {
+            transform: translateX(50%) rotateY(-90deg) scale(2);
+            transform-origin: 50% 50%;
+  }
+  100% {
+            transform: translateX(0) rotateY(0) scale(1);
+            transform-origin: 100% 50%;
+  }
+}
+```
+
+
 On a maintenant une belle animation plus lisible et on va aller la mettre sur l'objet qu'on veut animer en modifiant le fichier animation-css.tsx. L'élément qui a l'id "simple_c42". On ajoute simplement le className, donc:
 
 ```ts
