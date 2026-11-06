@@ -101,6 +101,37 @@ On va:
     - Effacer le @-webkit-keyframes au complet (donc la moitié du code de keyframes copié)
     - Effacer une ligne sur 2 du @keyframes qui reste. Vous l'aurez deviné. Toutes les lignes qui commencent par -webkit
 
+Ça devrait vous donner la chose suivante:
+
+```ts
+@keyframes flip-scale-2-ver-right {
+  0% {
+            transform: translateX(0) rotateY(0) scale(1);
+            transform-origin: 100% 50%;
+  }
+  50% {
+            transform: translateX(50%) rotateY(-90deg) scale(2);
+            transform-origin: 50% 50%;
+  }
+  100% {
+            transform: translateX(100%) rotateY(-180deg) scale(1);
+            transform-origin: 0% 50%;
+  }
+}
+```
+
+Il faut faire quelques changements car l'animation qu'on a pris fait partir du côté face vers le côté pile, donc on va voir le DOS de la carte après l'animation.
+Vous pouvez prendre le temps de la modifier vous même ou vous sauvez l'effort et utiliser le code suivant.
+
+Explications:
+- On veut montrer le dos de la carte au début de l'animation, on commence donc avec un rotateY(-180 et on termine à 0)
+- La transformation de l'origine est difficile à expliquer, mais c'est ce qui donne un effect intéressant. Au lieu de pivoter par rapport au centre de la carte, on pivote par rapport à un côté de la carte et le point de rotation se déplace pendant que l'animation joue! (oui, oui, je sais, c'est compliqué, mais c'est beau). Comme on fait tout à l'envers, on va changer le transform-origin et le translateX.
+
+:::warning
+Rassurez-vous, pas besoin de comprendre tout ces détails. Dans le cours on ne va jamais faire des modifications d'animations aussi complexes!
+:::
+
+
 ```ts
 @keyframes flip-scale-2-ver-right {
   0% {
