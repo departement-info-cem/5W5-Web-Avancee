@@ -82,10 +82,10 @@ On va utiliser le site animista pour une animation qui nous permet de piger une 
 
 On va commencer par aller sur le site et choisir les options suivantes:
 
-![alt text](image-14.png)
+![alt text](image-16.png)
 
-- Flip-Scale-2
-    - flips-scale-2-ver-right
+- Flip-Scale
+    - flips-scale-up-ver-right
 
 Cliquer ensuite sur le bouton rond complètement à droite \{.\}
 
@@ -104,18 +104,15 @@ On va:
 Ça devrait vous donner la chose suivante:
 
 ```ts
-@keyframes flip-scale-2-ver-right {
+@keyframes flip-scale-up-ver {
   0% {
-            transform: translateX(0) rotateY(0) scale(1);
-            transform-origin: 100% 50%;
+            transform: scale(1) rotateY(0);
   }
   50% {
-            transform: translateX(50%) rotateY(-90deg) scale(2);
-            transform-origin: 50% 50%;
+            transform: scale(2.5) rotateY(90deg);
   }
   100% {
-            transform: translateX(100%) rotateY(-180deg) scale(1);
-            transform-origin: 0% 50%;
+            transform: scale(1) rotateY(180deg);
   }
 }
 ```
@@ -124,27 +121,18 @@ Il faut faire quelques changements car l'animation qu'on a pris fait partir du c
 Vous pouvez prendre le temps de la modifier vous même ou vous sauvez l'effort et utiliser le code suivant.
 
 Explications:
-- On veut montrer le dos de la carte au début de l'animation, on commence donc avec un rotateY(-180 et on termine à 0)
-- La transformation de l'origine est difficile à expliquer, mais c'est ce qui donne un effect intéressant. Au lieu de pivoter par rapport au centre de la carte, on pivote par rapport à un côté de la carte et le point de rotation se déplace pendant que l'animation joue! (oui, oui, je sais, c'est compliqué, mais c'est beau). Comme on fait tout à l'envers, on va changer le transform-origin et le translateX.
-
-:::warning
-Rassurez-vous, pas besoin de comprendre tout ces détails. Dans le cours on ne va jamais faire des modifications d'animations aussi complexes!
-:::
-
+- On veut montrer le dos de la carte au début de l'animation, on commence donc avec un rotateY(180 et on termine à 0)
 
 ```ts
-@keyframes flip-scale-2-ver-right {
+@keyframes flip-scale-up-ver {
   0% {
-            transform: translateX(100%) rotateY(-180deg) scale(1);
-            transform-origin: 0% 50%;
+            transform: scale(1) rotateY(180deg);
   }
   50% {
-            transform: translateX(50%) rotateY(-90deg) scale(2);
-            transform-origin: 50% 50%;
+            transform: scale(2.5) rotateY(90deg);
   }
   100% {
-            transform: translateX(0) rotateY(0) scale(1);
-            transform-origin: 100% 50%;
+            transform: scale(1) rotateY(0deg);
   }
 }
 ```
@@ -153,7 +141,7 @@ Rassurez-vous, pas besoin de comprendre tout ces détails. Dans le cours on ne v
 On a maintenant une belle animation plus lisible et on va aller la mettre sur l'objet qu'on veut animer en modifiant le fichier animation-css.tsx. L'élément qui a l'id "simple_c42". On ajoute simplement le className, donc:
 
 ```ts
-className="flip-scale-2-ver-right"
+className="flip-scale-up-ver"
 ```
 
 Quand on pige une carte, on peut voir que la carte s'anime, mais elle est déjà en haut. L'animation contient un flip, mais pas encore de translation, on va devoir la modifier!
@@ -191,7 +179,7 @@ Et ceci sur la ligne du transform du 100%:
  Même chose:
 
  ```ts
-className="flip-scale-2-ver-right"
+className="flip-scale-up-ver"
 ```
 
 Si tout va bien, on pige bien la carte, mais il n'y a pas d'animation pour le déplacement vers la droite des cartes qui sont déjà là!
@@ -212,11 +200,11 @@ Mais il reste un bug visuel! On dirait que la carte passe à travers l'autre qua
 
 Comment on règle ça? Il faut indiquer que la carte animé doit être dessiné après la carte du deck. Pour faire ça on utilise le z-index.
 
-Modifiez l'animation .flip-scale-2-ver-right en ajoutant z-index: 5
+Modifiez l'animation .flip-scale-up-ver en ajoutant z-index: 5
 
 ```ts
-.flip-scale-2-ver-right {
-  animation: flip-scale-2-ver-right 0.5s linear both;
+.flip-scale-up-ver {
+  animation: flip-scale-up-ver 0.5s linear both;
   z-index: 5;
 }
 ```
