@@ -287,7 +287,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "10.2 - Travail sur TP2 ✏️",
+      label: "10.2 - Travail TP2 en ÉQUIPE ✏️",
       id: "cours/rencontre10.2",
       className: "remise-tp2-fonctionnalites",
       customProps: {
