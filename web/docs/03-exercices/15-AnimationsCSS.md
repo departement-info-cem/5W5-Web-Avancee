@@ -82,14 +82,16 @@ On va utiliser le site animista pour une animation qui nous permet de piger une 
 
 On va commencer par aller sur le site et choisir les options suivantes:
 
-![alt text](image-16.png)
+|![alt text](image-16.png)|
+|-|
 
 - Flip-Scale
     - flips-scale-up-ver-right
 
 Cliquer ensuite sur le bouton rond complètement à droite \{.\}
 
-![alt text](image-15.png)
+|![alt text](image-15.png)|
+|-|
 
 Et faites COPY CLASS et copié le dans le fichier d'animations CSS
 
