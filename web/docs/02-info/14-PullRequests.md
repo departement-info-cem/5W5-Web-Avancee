@@ -25,7 +25,7 @@
 |-|
 
 :::info
-Pro Tip: On peut simplement utiliser ce menu pour comparer 2 branches!
+Pro Tip: On peut également utiliser ce menu pour comparer 2 branches!
 :::
 
 #### Menu d'un Pull Request
@@ -45,24 +45,31 @@ Il est toujours possible de faire un pull request, même si une branche n'est pa
 
 #### On ajoute une règle de protection à une branche
 
-|![alt text](image-27-pr.png)|
-|-|
+![alt text](image-40.png)
 
 On doit mentionner un nom, la mettre active et faire "Add Target" avec "Include by pattern".
-Dans cet exemple, on protège la branche dev.
 
-|![alt text](image-28-pr.png)|
-|-|
+![alt text](image-41.png)
 
 On peut spécifier un nombre minimum de personnes qui doivent faire un review du code.
 (Comme vous pouvez voir, il y a de nombreuses options)
+
+|![alt text](image-42.png)|
+|-|
 
 :::warning
 Prenez le temps de retirer les options squash et rebase dans le dernier choix de cette section "Allowed merge methods"
 :::
 
-|![alt text](image-29.png)|
+|![alt text](image-43.png)|
 |-|
+
+Il faut finalement aller au bas de la page et cliquer sur **Create**
+
+:::info
+Si vous êtes en train de faire l'exercice GitTestsETPRs, vous pouvez retourner à l'exercice maintenant!
+:::
+
 
 ### Ajout d'un test qui ne passe pas
 

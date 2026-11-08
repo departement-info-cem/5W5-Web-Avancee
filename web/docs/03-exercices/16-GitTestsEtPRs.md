@@ -9,7 +9,9 @@
 ## Étapes
 
 - Le travail se fait en équipe pour apprendre à configurer votre projet.
-- Commencer par créer un fork de ce [projet](https://github.com/CEM-420-5W5/GitHubActionsAndPRs)
+- Commencer par créer un fork de ce [projet](https://github.com/CEM-420-5W5/GitHubActionsAndPRs) qui est simplement une projet de base WebAPI.
+
+![alt text](image-16.png)
 
 - Configurer une action de tests GitHub, comme c'est expliqué dans [ici](/info/ActionsTestGitHub#les-%C3%A9tapes)
 
@@ -20,8 +22,7 @@ L'action passe présentement, mais notre projet n'a pas encore de tests! (On va 
 ![alt text](/img/exercices/github/image-6.png)
 
 - Configurer une règle de protection pour la branche **main**, comme c'est expliqué [ici](/info/PullRequests#prot%C3%A9ger-une-branche)
-    - Il faut demander un Pull Request, avec un moin 1 approval (valeur par défaut)
-    - Il faut également mettre l'option **Do not allow bypassing the above settings**
+    - Il faut demander un Pull Request, avec un moin 1 approval
 
 - Maintenant, on va faire un petit changement dans le code, simplement ajouter un commentaire dans un fichier et essayer de faire un commit directement dans la branche **main**
 
@@ -32,17 +33,21 @@ Le commit devrait fonctionner, mais pas le Push!
 - On va maintenant faire une petite manipulation de branches!
 
 - On commence par renommer notre branche **main** en **test** (Mais seulement la branche local!)
-![alt text](/img/exercices/github/image-8.png)
+![alt text](image-17.png)
 
-- On va ENSUITE créer une branche **test** sur GitHub
+![alt text](image-18.png)
 
-![alt text](/img/exercices/github/image-9.png)
+:::danger
+Ne choisissez **PAS** l'option: Also rename origin/main
+:::
 
-- Il faut taper test comme nom de branche dans le menu
+- On va ENSUITE choisir une nouvelle destination pour la branche sur GitHub en cliquant sur Custom...
 
-![alt text](/img/exercices/github/image-10.png)
+![alt text](image-20.png)
 
-- Et maintenant faire un **PUSH**
+- On accepte le nom par défaut test
+
+- Et on va maintenant faire un **Push** (Git Hub a maintenant cette nouvelle branche aussi)
 
 - On va maintenant faire un Pull Request de notre branche test vers la branche main
 
@@ -50,9 +55,9 @@ Comme on a fait un commit récemment, il y a un moyen rapide de créer le Pull R
 
 ![alt text](/img/exercices/github/image-11.png)
 
-On peut voir qu'il manque un review. C'est le moment d'ajouter un collaborateur à votre projet. Vous pouvez ajouter un collègue ou votre enseignant et leur demander de faire le review.
+On peut voir qu'il manque un review. C'est le moment d'ajouter un **collaborateur** à votre projet. Vous pouvez ajouter un collègue ou votre enseignant et leur demander de faire le review.
 
-![alt text](/img/exercices/github/image-12.png)
+![alt text](image-21.png)
 
 Faites un review qui approve
 
