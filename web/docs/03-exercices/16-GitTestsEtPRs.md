@@ -11,7 +11,7 @@
 - Le travail se fait en équipe pour apprendre à configurer votre projet.
 - Commencer par créer un fork de ce [projet](https://github.com/CEM-420-5W5/GitHubActionsAndPRs) qui est simplement une projet de base WebAPI.
 
-![alt text](image-16.png)
+![alt text](image-22.png)
 
 - Configurer une action de tests GitHub, comme c'est expliqué dans [ici](/info/ActionsTestGitHub#les-%C3%A9tapes)
 
