@@ -1,18 +1,7 @@
 ---
-title: 15.2 - Examen Final
+title: 15.2 - Évaluation Finale TP3 💯
 hide_table_of_contents: true
-sidebar_class_name: examen
+
 ---
 
-## Examen final
-
-- SignalR (Hub avec BackgroundService)
-- Animations
-- Tests unitaires avec Mock
-
-## Conditions
-
-- Toute documentation permise
-- Aucun accès à internet
-- Aucun accès aux intelligences artificielles (même par Copilot)
-- Tu peux emmener tes exercices et le formatif complété, à condition qu'il ait été complété par toi et seulement toi
+# Évaluation finale du TP3 💯

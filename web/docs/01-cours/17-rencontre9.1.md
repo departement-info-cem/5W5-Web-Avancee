@@ -1,5 +1,5 @@
 ---
-title: 9.2 - Animations JavaScript 💫
+title: 9.1 - Animations JavaScript 💫
 hide_table_of_contents: true
 ---
 

@@ -1,5 +1,5 @@
 ---
-title: 10.2 - GitHub & TP2 😾
+title: 10.1 - GitHub & TP2 😾
 hide_table_of_contents: true
 ---
 

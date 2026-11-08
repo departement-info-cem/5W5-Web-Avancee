@@ -1,5 +1,5 @@
 ---
-title: 10.1 - Animations CSS 💫
+title: 9.2 - Animations CSS 💫
 hide_table_of_contents: true
 ---
 
