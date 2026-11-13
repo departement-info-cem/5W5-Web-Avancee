@@ -87,3 +87,6 @@ Pendant le match, vous ne devriez pas avoir besoin de faire d'autres sorts. Les 
 :::warning
 Ce qu'il faut retenir, c'est que si l'ordre des éléments est important, il faut **TOUJOURS** faire un **OrderBy**!
 :::
+
+[Un projet GitHub qui montre le comportement des listes](https://github.com/CEM-420-5W5/DemoBugOrdreDansUneListe)
+  
