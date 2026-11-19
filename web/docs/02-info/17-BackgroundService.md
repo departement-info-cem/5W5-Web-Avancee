@@ -9,7 +9,7 @@
 
 Pour comprendre ces nouveaux concepts, nous allons regarder un exemple. L'exercice sera ensuite d'ajouter des fonctionalitées à cet exemple.
 
-L'exemple est un le jeu le plus simple que l'on puisse imagine. Il faut cliquer le plus de fois possible sur un bouton à l'intérieur d'une même round.
+L'exemple est le jeu le plus simple que l'on puisse imaginer. Il faut cliquer le plus de fois possible sur un bouton à l'intérieur d'une même round.
 
 Par défaut, un round dure 30 secondes.
 
@@ -55,7 +55,7 @@ builder.Services.AddHostedService<MonBackgroundService>;
 ```
 
 :::warning
-Cette technique est tout à fait appropriée dans de nombreux cas, mais pas si on veut que le service soit accessible par d'autres services!
+Cette technique est tout à fait appropriée dans de nombreux cas, mais **pas** si on veut que le service soit accessible par d'autres services!
 :::
 
 Pour nous permettre d'accéder à notre **BackgroundService** dans notre **Hub**, on va utiliser cette technique qui déclare un service Singleton et l'enregistre ensuite comme HostedService.
@@ -69,9 +69,9 @@ builder.Services.AddHostedService<MonBackgroundService>(p => p.GetService<MonBac
 
 Comme notre service est un **Singleton** (On en veut un seul, sinon ça va vite devenir chaotique!), on ne peut pas **injecter une dépendance** vers un **service Scoped**.
 
-Le **DbContext** est **scoped**, alors ça peut rapidement devenir un problème!
+Le **DbContext** est **scoped**, alors ça nous cause un problème!
 
-On va utiliser un **scope** et un **IServiceScopeFactory** que l'on va injecter dans notre service :
+Pour le résoudre, on va utiliser un **scope** et un **IServiceScopeFactory** que l'on va injecter dans notre service :
 
 ```csharp
 public MonBackgroundService(IServiceScopeFactory serviceScopeFactory)
@@ -125,12 +125,6 @@ public MonHub(MonBackgroundService backgroundService)
 
 ### Références
 
-L'exemple qui est discuté ici fait référence à l'exercice que vous pouvez trouver ici:
-[Exercice BackgroundService](/exercices/BackgroundService)
+Voici un projet de référence simple qui est utile pour comprendre les Background Services:
 
-Voici également un projet de référence plus simple qui est utile pour comprendre les Background Services:
-
-🚧 À venir!
-<!--
 [Projet GitHub Simple](https://github.com/CEM-420-5W5/SimpleBackgroundService.git)
--->

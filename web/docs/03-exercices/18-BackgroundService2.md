@@ -6,7 +6,7 @@
 
 ## Étapes
 
-Commencer par mettre en place le projet.
+Commencer par faire une copie du projet de base.
 
 [Projet GitHub](https://github.com/CEM-420-5W5/BackgroundService)
 

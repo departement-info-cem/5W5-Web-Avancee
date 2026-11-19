@@ -1,4 +1,4 @@
-# .NET BackgroundService #2
+# .NET BackgroundService (Changement à l'exercice SignalR #2)
 
 ## Objectifs
 - Ajouter un **BackgroundService** à l'exerice [SignalR, 2e partie](/exercices/SignalR2)
@@ -8,9 +8,9 @@
 Continuer l'exercice sur **SignalR, 2e partie** disponible ici: 
 
 [Projet GitHub avec Client et Serveur](https://github.com/CEM-420-5W5/SignalR_2)
-(il existe une branche solution à partir de laquelle vous pouvez commencer cette partie)
+(il existe une branche **solution** à partir de laquelle vous pouvez commencer cette partie si vous n'avez plus la votre)
 
-Une fois que vous avez fait fonctionner l'exemple et que vous avez bien compris comment il fonctionne, on veut ajouter les choses suivantes:
+On veut ajouter les choses suivantes:
 
 ### Ajout d'un NbMessages sur la classe Channel (sur le serveur)
 
