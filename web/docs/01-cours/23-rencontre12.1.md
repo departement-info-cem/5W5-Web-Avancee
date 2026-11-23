@@ -7,8 +7,6 @@ hide_table_of_contents: true
 
 - Explication sur les tests de pouvoirs Random [Projet GitHub DemoMockNumberGenerator](https://github.com/CEM-420-5W5/DemoMockNumberGenerator).
 
-- Profiter du cours pour me poser des questions sur votre tâche individuelle de TP si il y a des choses qui ne sont pas encore claires!
-
 ## Info
 
 - [Mocks](/info/Mocks)
@@ -17,3 +15,7 @@ hide_table_of_contents: true
 ## Exercices
 
 [Exercice sur les Mocks](/exercices/Mocks)
+
+:::info
+Profiter du cours pour me poser des questions sur votre tâche individuelle de TP s'il y a des choses qui ne sont pas encore claires!
+:::
