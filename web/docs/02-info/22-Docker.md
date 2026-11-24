@@ -24,7 +24,7 @@
 5. On va seulement utiliser Docker pour notre version déployé, pas vraiment besoin de faire les modifications au .csprojet (S'il y en a)
 
 :::info
-Vous pouvez faire un commit avec les fichiers Dockerfile et .dockerignore et faire un "Discard changes" sur les 2 autres fichier. Mais c'est possible qu'ils ne soient pas modifiés de toute façon!
+Vous pouvez faire un commit avec les fichiers Dockerfile et .dockerignore et faire un "Discard changes" sur les autres fichier. Mais c'est possible qu'ils ne soient pas modifiés de toute façon!
 :::
 
 |![alt text](image-34.png)|
