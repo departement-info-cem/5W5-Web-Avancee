@@ -5,12 +5,11 @@ hide_table_of_contents: true
 
 # Mocks et tests pour contrôleurs 🤡
 
-- Explication sur les tests de pouvoirs Random [Projet GitHub DemoMockNumberGenerator](https://github.com/CEM-420-5W5/DemoMockNumberGenerator).
-
 ## Info
 
 - [Mocks](/info/Mocks)
-- [Utilisation des Mocks](/info/UtilisationMocks)
+- Explication sur les tests de pouvoirs Random [Projet GitHub DemoMockNumberGenerator](https://github.com/CEM-420-5W5/DemoMockNumberGenerator).
+- [Utilisation des Mocks avec contrôleurs](/info/UtilisationMocks)
 
 ## Exercices
 
